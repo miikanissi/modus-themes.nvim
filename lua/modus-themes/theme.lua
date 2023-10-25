@@ -29,6 +29,9 @@ function M.setup()
 		-- UI
 		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text
 		NormalNC = { fg = c.fg_inactive, bg = c.bg_main }, -- Normal text in non-current windows
+		NormalFloat = { fg = c.fg_main, bg = c.bg_active }, -- Float Window
+		FloatBorder = { fg = c.border, bg = c.bg_dim }, -- Float Border
+		FloatTitle = { fg = c.border, bg = c.bg_dim }, -- Float Title
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
 		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -46,7 +49,7 @@ function M.setup()
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting
-		QuickFixLine = { fg = c.fg_main, bg = c.bg_main }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item
 		PmenuSel = { fg = c.fg_dim, bg = c.bg_dim }, -- Popup menu: selected item
 		PmenuSbar = { fg = c.bg_main, bg = c.fg_dim }, -- Popup menu: scrollbar
@@ -319,6 +322,421 @@ function M.setup()
 		GitSignsAdd = { link = "DiffAdd" }, -- diff mode: Added line |diff.txt|
 		GitSignsChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
+
+		-- Telescope
+		TelescopeBorder = { fg = c.border, bg = c.bg_main },
+		TelescopeNormal = { fg = c.fg_main, bg = c.bg_main },
+
+		-- NvimTree
+		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
+		NvimTreeWinSeparator = { fg = c.bg_active, bg = c.bg_active },
+		NvimTreeNormalNC = { fg = c.fg_active, bg = c.bg_active },
+		NvimTreeRootFolder = { fg = c.blue, bold = true },
+		NvimTreeGitDirty = { fg = c.fg_changed },
+		NvimTreeGitNew = { fg = c.fg_added },
+		NvimTreeGitDeleted = { fg = c.fg_removed },
+		NvimTreeOpenedFile = { bg = c.bg_hl_line },
+		NvimTreeSpecialFile = { fg = c.magenta_cooler, underline = true },
+		NvimTreeIndentMarker = { fg = c.fg_dim },
+		NvimTreeImageFile = { fg = c.fg_active },
+		NvimTreeSymlink = { fg = c.blue },
+		NvimTreeFolderIcon = { bg = c.none, fg = c.blue },
+
+		NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
+		NeoTreeNormalNC = { fg = c.fg_active, bg = c.bg_active },
+		NeoTreeDimText = { fg = c.fg_dim },
+
+		-- Fern
+		FernBranchText = { fg = c.blue },
+
+		-- glyph palette
+		GlyphPalette1 = { fg = c.red_warmer },
+		GlyphPalette2 = { fg = c.green },
+		GlyphPalette3 = { fg = c.yellow },
+		GlyphPalette4 = { fg = c.blue },
+		GlyphPalette6 = { fg = c.green_warmer },
+		GlyphPalette7 = { fg = c.fg_main },
+		GlyphPalette9 = { fg = c.red },
+
+		-- Dashboard
+		DashboardShortCut = { fg = c.cyan },
+		DashboardHeader = { fg = c.blue },
+		DashboardCenter = { fg = c.magenta },
+		DashboardFooter = { fg = c.blue_warmer },
+		DashboardKey = { fg = c.yellow_warmer },
+		DashboardDesc = { fg = c.cyan },
+		DashboardIcon = { fg = c.cyan, bold = true },
+
+		-- Alpha
+		AlphaShortcut = { fg = c.yellow_warmer },
+		AlphaHeader = { fg = c.blue },
+		AlphaHeaderLabel = { fg = c.yellow_warmer },
+		AlphaFooter = { fg = c.blue_warmer },
+		AlphaButtons = { fg = c.cyan },
+
+		-- WhichKey
+		WhichKey = { fg = c.cyan },
+		WhichKeyGroup = { fg = c.blue },
+		WhichKeyDesc = { fg = c.magenta },
+		WhichKeySeperator = { fg = c.fg_alt },
+		WhichKeySeparator = { fg = c.fg_alt },
+		WhichKeyFloat = { bg = c.bg_active },
+		WhichKeyValue = { fg = c.fg_dim },
+
+		-- LspSaga
+		DiagnosticWarning = { link = "DiagnosticWarn" },
+		DiagnosticInformation = { link = "DiagnosticInfo" },
+
+		LspFloatWinNormal = { bg = c.bg_active },
+		LspFloatWinBorder = { fg = c.border },
+		LspSagaBorderTitle = { fg = c.cyan },
+		LspSagaHoverBorder = { fg = c.blue },
+		LspSagaRenameBorder = { fg = c.green },
+		LspSagaDefPreviewBorder = { fg = c.green },
+		LspSagaCodeActionBorder = { fg = c.blue },
+		LspSagaFinderSelection = { fg = c.bg_magenta_intense },
+		LspSagaCodeActionTitle = { fg = c.blue_warmer },
+		LspSagaCodeActionContent = { fg = c.magenta_cooler },
+		LspSagaSignatureHelpBorder = { fg = c.red },
+		ReferencesCount = { fg = c.magenta_cooler },
+		DefinitionCount = { fg = c.magenta_cooler },
+		DefinitionIcon = { fg = c.blue },
+		ReferencesIcon = { fg = c.blue },
+		TargetWord = { fg = c.cyan },
+
+		-- NeoVim
+		healthError = { fg = c.red_cooler },
+		healthSuccess = { fg = c.green_cooler },
+		healthWarning = { fg = c.yellow_cooler },
+
+		-- BufferLine
+		BufferLineIndicatorSelected = { fg = c.fg_changed },
+
+		-- Barbar
+		BufferCurrent = { bg = c.bg_main, fg = c.fg_main },
+		BufferCurrentERROR = { bg = c.bg_main, fg = c.red_cooler },
+		BufferCurrentHINT = { bg = c.bg_main, fg = c.cyan_cooler },
+		BufferCurrentINFO = { bg = c.bg_main, fg = c.blue_cooler },
+		BufferCurrentWARN = { bg = c.bg_main, fg = c.yellow_cooler },
+		BufferCurrentIndex = { bg = c.bg_main, fg = c.blue_cooler },
+		BufferCurrentMod = { bg = c.bg_main, fg = c.yellow_cooler },
+		BufferCurrentSign = { bg = c.bg_main, fg = c.bg_main },
+		BufferCurrentTarget = { bg = c.bg_main, fg = c.red },
+		BufferAlternate = { bg = c.fg_dim, fg = c.fg_main },
+		BufferAlternateERROR = { bg = c.fg_dim, fg = c.red_cooler },
+		BufferAlternateHINT = { bg = c.fg_dim, fg = c.cyan_cooler },
+		BufferAlternateIndex = { bg = c.fg_dim, fg = c.blue_cooler },
+		BufferAlternateINFO = { bg = c.fg_dim, fg = c.blue_cooler },
+		BufferAlternateMod = { bg = c.fg_dim, fg = c.yellow_cooler },
+		BufferAlternateSign = { bg = c.fg_dim, fg = c.blue_cooler },
+		BufferAlternateTarget = { bg = c.fg_dim, fg = c.red },
+		BufferAlternateWARN = { bg = c.fg_dim, fg = c.yellow_cooler },
+		BufferVisible = { bg = c.bg_active, fg = c.fg_main },
+		BufferVisibleERROR = { bg = c.bg_active, fg = c.red_cooler },
+		BufferVisibleHINT = { bg = c.bg_active, fg = c.cyan_cooler },
+		BufferVisibleINFO = { bg = c.bg_active, fg = c.blue_cooler },
+		BufferVisibleWARN = { bg = c.bg_active, fg = c.yellow_cooler },
+		BufferVisibleIndex = { bg = c.bg_active, fg = c.blue_cooler },
+		BufferVisibleMod = { bg = c.bg_active, fg = c.yellow_cooler },
+		BufferVisibleSign = { bg = c.bg_active, fg = c.blue_cooler },
+		BufferVisibleTarget = { bg = c.bg_active, fg = c.red },
+		BufferInactive = { bg = c.bg_inactive, fg = c.fg_dim },
+		BufferInactiveERROR = { bg = c.bg_inactive, fg = c.red_faint },
+		BufferInactiveHINT = { bg = c.bg_inactive, fg = c.cyan_faint },
+		BufferInactiveINFO = { bg = c.bg_inactive, fg = c.blue_faint },
+		BufferInactiveWARN = { bg = c.bg_inactive, fg = c.yellow_faint },
+		BufferInactiveIndex = { bg = c.bg_inactive, fg = c.fg_dim },
+		BufferInactiveMod = { bg = c.bg_inactive, fg = c.yellow_faint },
+		BufferInactiveSign = { bg = c.bg_inactive, fg = c.bg_main },
+		BufferInactiveTarget = { bg = c.bg_inactive, fg = c.red },
+		BufferOffset = { bg = c.bg_active, fg = c.fg_dim },
+		BufferTabpageFill = { bg = c.bg_inactive, fg = c.fg_dim },
+		BufferTabpages = { bg = c.bg_active, fg = c.none },
+
+		-- Sneak
+		Sneak = { fg = c.bg_hl_line, bg = c.magenta },
+		SneakScope = { bg = c.bg_magenta_intense },
+
+		-- Hop
+		HopNextKey = { fg = c.magenta_cooler, bold = true },
+		HopNextKey1 = { fg = c.blue_warmer, bold = true },
+		HopNextKey2 = { fg = c.blue_faint },
+		HopUnmatched = { fg = c.fg_dim },
+
+		TSNodeKey = { fg = c.magenta_cooler, bold = true },
+		TSNodeUnmatched = { fg = c.fg_dim },
+
+		LeapMatch = { bg = c.magenta_cooler, fg = c.fg_main, bold = true },
+		LeapLabelPrimary = { fg = c.magenta_cooler, bold = true },
+		LeapLabelSecondary = { fg = c.green_warmer, bold = true },
+		LeapBackdrop = { fg = c.fg_dim },
+
+		FlashBackdrop = { fg = c.fg_dim },
+		FlashLabel = { bg = c.magenta_cooler, bold = true, fg = c.fg_main },
+
+		LightspeedGreyWash = { fg = c.fg_dim },
+		LightspeedLabel = { fg = c.magenta_cooler, bold = true, underline = true },
+		LightspeedLabelDistant = { fg = c.green_warmer, bold = true, underline = true },
+		LightspeedLabelDistantOverlapped = { fg = c.green_cooler, underline = true },
+		LightspeedLabelOverlapped = { fg = c.magenta_cooler, underline = true },
+		LightspeedMaskedChar = { fg = c.yellow_warmer },
+		LightspeedOneCharMatch = { bg = c.magenta_cooler, fg = c.fg_main, bold = true },
+		LightspeedPendingOpArea = { bg = c.magenta_cooler, fg = c.fg_main },
+		LightspeedShortcut = { bg = c.magenta_cooler, fg = c.fg_main, bold = true, underline = true },
+		LightspeedUnlabeledMatch = { fg = c.blue_warmer, bold = true },
+
+		-- Cmp
+		CmpDocumentation = { fg = c.fg_main, bg = c.bg_main },
+		CmpDocumentationBorder = { fg = c.border, bg = c.bg_main },
+		CmpGhostText = { fg = c.fg_dim },
+
+		CmpItemAbbr = { fg = c.fg_main, bg = c.none },
+		CmpItemAbbrDeprecated = { fg = c.fg_dim, bg = c.none, strikethrough = true },
+		CmpItemAbbrMatch = { fg = c.blue_warmer, bg = c.none },
+		CmpItemAbbrMatchFuzzy = { fg = c.blue_warmer, bg = c.none },
+
+		CmpItemMenu = { fg = c.fg_alt, bg = c.none },
+
+		CmpItemKindDefault = { fg = c.fg_dim, bg = c.none },
+
+		CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
+
+		CmpItemKindVariable = { fg = c.magenta, bg = c.none },
+		CmpItemKindConstant = { fg = c.magenta, bg = c.none },
+		CmpItemKindReference = { fg = c.magenta, bg = c.none },
+		CmpItemKindValue = { fg = c.magenta, bg = c.none },
+		CmpItemKindCopilot = { fg = c.cyan_cooler, bg = c.none },
+		CmpItemKindCodeium = { fg = c.cyan_cooler, bg = c.none },
+		CmpItemKindTabNine = { fg = c.cyan_cooler, bg = c.none },
+
+		CmpItemKindFunction = { fg = c.blue, bg = c.none },
+		CmpItemKindMethod = { fg = c.blue, bg = c.none },
+		CmpItemKindConstructor = { fg = c.blue, bg = c.none },
+
+		CmpItemKindClass = { fg = c.yellow_warmer, bg = c.none },
+		CmpItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
+		CmpItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
+		CmpItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
+		CmpItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
+		CmpItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
+
+		CmpItemKindModule = { fg = c.yellow, bg = c.none },
+		CmpItemKindPackage = { fg = c.yellow, bg = c.none },
+
+		CmpItemKindProperty = { fg = c.green_warmer, bg = c.none },
+		CmpItemKindField = { fg = c.green_warmer, bg = c.none },
+		CmpItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
+		CmpItemKindEnumMember = { fg = c.green_warmer, bg = c.none },
+		CmpItemKindOperator = { fg = c.green_warmer, bg = c.none },
+		CmpItemKindSnippet = { fg = c.fg_dim, bg = c.none },
+
+		-- headlines.nvim
+		CodeBlock = { bg = c.bg_dim },
+
+		-- navic
+		NavicIconsFile = { fg = c.fg_main, bg = c.none },
+		NavicIconsModule = { fg = c.yellow, bg = c.none },
+		NavicIconsNamespace = { fg = c.fg_main, bg = c.none },
+		NavicIconsPackage = { fg = c.fg_main, bg = c.none },
+		NavicIconsClass = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsMethod = { fg = c.blue, bg = c.none },
+		NavicIconsProperty = { fg = c.green_warmer, bg = c.none },
+		NavicIconsField = { fg = c.green_warmer, bg = c.none },
+		NavicIconsConstructor = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsEnum = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsInterface = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsFunction = { fg = c.blue, bg = c.none },
+		NavicIconsVariable = { fg = c.magenta, bg = c.none },
+		NavicIconsConstant = { fg = c.magenta, bg = c.none },
+		NavicIconsString = { fg = c.green, bg = c.none },
+		NavicIconsNumber = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsBoolean = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsArray = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsObject = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsKey = { fg = c.magenta_cooler, bg = c.none },
+		NavicIconsKeyword = { fg = c.magenta_cooler, bg = c.none },
+		NavicIconsNull = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsEnumMember = { fg = c.green_warmer, bg = c.none },
+		NavicIconsStruct = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsEvent = { fg = c.yellow_warmer, bg = c.none },
+		NavicIconsOperator = { fg = c.fg_main, bg = c.none },
+		NavicIconsTypeParameter = { fg = c.green_warmer, bg = c.none },
+		NavicText = { fg = c.fg_main, bg = c.none },
+		NavicSeparator = { fg = c.fg_main, bg = c.none },
+
+		AerialFileIcon = { fg = c.fg_main, bg = c.none },
+		AerialModuleIcon = { fg = c.yellow, bg = c.none },
+		AerialNamespaceIcon = { fg = c.cyan, bg = c.none },
+		AerialPackageIcon = { fg = c.cyan, bg = c.none },
+		AerialClassIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialMethodIcon = { fg = c.blue, bg = c.none },
+		AerialPropertyIcon = { fg = c.green_warmer, bg = c.none },
+		AerialFieldIcon = { fg = c.green_warmer, bg = c.none },
+		AerialConstructorIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialEnumIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialInterfaceIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialFunctionIcon = { fg = c.blue, bg = c.none },
+		AerialVariableIcon = { fg = c.magenta, bg = c.none },
+		AerialConstantIcon = { fg = c.magenta, bg = c.none },
+		AerialStringIcon = { fg = c.green, bg = c.none },
+		AerialNumberIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialBooleanIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialArrayIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialObjectIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialKeyIcon = { fg = c.magenta_cooler, bg = c.none },
+		AerialKeywordIcon = { fg = c.magenta_cooler, bg = c.none },
+		AerialNullIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialEnumMemberIcon = { fg = c.green_warmer, bg = c.none },
+		AerialStructIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialEventIcon = { fg = c.yellow_warmer, bg = c.none },
+		AerialOperatorIcon = { fg = c.blue_intense, bg = c.none },
+		AerialTypeParameterIcon = { fg = c.green_warmer, bg = c.none },
+		AerialNormal = { fg = c.fg_main, bg = c.none },
+		AerialGuide = { fg = c.fg_dim },
+		AerialLine = { link = "LspInlayHint" },
+
+		IndentBlanklineChar = { fg = c.fg_dim, nocombine = true },
+		IndentBlanklineContextChar = { fg = c.magenta_cooler, nocombine = true },
+		IblIndent = { fg = c.fg_dim, nocombine = true },
+		IblScope = { fg = c.magenta_cooler, nocombine = true },
+
+		-- Scrollbar
+		ScrollbarHandle = { fg = c.none, bg = c.bg_hl_line },
+
+		ScrollbarSearchHandle = { fg = c.yellow_warmer, bg = c.bg_hl_line },
+		ScrollbarSearch = { fg = c.yellow_warmer, bg = c.none },
+
+		ScrollbarErrorHandle = { fg = c.red_cooler, bg = c.bg_hl_line },
+		ScrollbarError = { fg = c.red_cooler, bg = c.none },
+
+		ScrollbarWarnHandle = { fg = c.yellow_cooler, bg = c.bg_hl_line },
+		ScrollbarWarn = { fg = c.yellow_cooler, bg = c.none },
+
+		ScrollbarInfoHandle = { fg = c.blue_cooler, bg = c.bg_hl_line },
+		ScrollbarInfo = { fg = c.blue_cooler, bg = c.none },
+
+		ScrollbarHintHandle = { fg = c.cyan_cooler, bg = c.bg_hl_line },
+		ScrollbarHint = { fg = c.cyan_cooler, bg = c.none },
+
+		ScrollbarMiscHandle = { fg = c.magenta_cooler, bg = c.bg_hl_line },
+		ScrollbarMisc = { fg = c.magenta_cooler, bg = c.none },
+
+		-- Yanky
+		YankyPut = { link = "IncSearch" },
+		YankyYanked = { link = "IncSearch" },
+
+		-- Lazy
+		LazyProgressDone = { bold = true, fg = c.magenta_cooler },
+		LazyProgressTodo = { bold = true, fg = c.fg_dim },
+
+		-- Notify
+		NotifyBackground = { fg = c.fg_main, bg = c.bg_main },
+		--- Border
+		NotifyERRORBorder = { fg = c.red_faint, bg = c.bg_main },
+		NotifyWARNBorder = { fg = c.yellow_faint, bg = c.bg_main },
+		NotifyINFOBorder = { fg = c.blue_faint, bg = c.bg_main },
+		NotifyDEBUGBorder = { fg = c.fg_alt, bg = c.bg_main },
+		NotifyTRACEBorder = { fg = c.magenta_faint, bg = c.bg_main },
+		--- Icons
+		NotifyERRORIcon = { fg = c.red_cooler },
+		NotifyWARNIcon = { fg = c.yellow_cooler },
+		NotifyINFOIcon = { fg = c.blue_cooler },
+		NotifyDEBUGIcon = { fg = c.fg_alt },
+		NotifyTRACEIcon = { fg = c.magenta_cooler },
+		--- Title
+		NotifyERRORTitle = { fg = c.red_cooler },
+		NotifyWARNTitle = { fg = c.yellow_cooler },
+		NotifyINFOTitle = { fg = c.blue_cooler },
+		NotifyDEBUGTitle = { fg = c.fg_alt },
+		NotifyTRACETitle = { fg = c.magenta_cooler },
+		--- Body
+		NotifyERRORBody = { fg = c.fg_main, bg = c.bg_main },
+		NotifyWARNBody = { fg = c.fg_main, bg = c.bg_main },
+		NotifyINFOBody = { fg = c.fg_main, bg = c.bg_main },
+		NotifyDEBUGBody = { fg = c.fg_main, bg = c.bg_main },
+		NotifyTRACEBody = { fg = c.fg_main, bg = c.bg_main },
+
+		-- Mini
+		MiniCompletionActiveParameter = { underline = true },
+
+		MiniCursorword = { bg = c.fg_dim },
+		MiniCursorwordCurrent = { bg = c.fg_dim },
+
+		MiniIndentscopeSymbol = { fg = c.blue_warmer, nocombine = true },
+		MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
+
+		MiniJump = { bg = c.magenta_cooler, fg = "#ffffff" },
+
+		MiniJump2dSpot = { fg = c.magenta_cooler, bold = true, nocombine = true },
+
+		MiniStarterCurrent = { nocombine = true },
+		MiniStarterFooter = { fg = c.yellow, italic = true },
+		MiniStarterHeader = { fg = c.blue },
+		MiniStarterInactive = { fg = c.fg_alt },
+		MiniStarterItem = { fg = c.fg_main, bg = c.bg_main },
+		MiniStarterItemBullet = { fg = c.border },
+		MiniStarterItemPrefix = { fg = c.yellow_cooler },
+		MiniStarterSection = { fg = c.blue_warmer },
+		MiniStarterQuery = { fg = c.blue_cooler },
+
+		MiniStatuslineDevinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
+		MiniStatuslineFileinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
+		MiniStatuslineFilename = { fg = c.fg_dim, bg = c.fg_dim },
+		MiniStatuslineInactive = { fg = c.blue, bg = c.bg_active },
+		MiniStatuslineModeCommand = { fg = c.fg_main, bg = c.yellow, bold = true },
+		MiniStatuslineModeInsert = { fg = c.fg_main, bg = c.green, bold = true },
+		MiniStatuslineModeNormal = { fg = c.fg_main, bg = c.blue, bold = true },
+		MiniStatuslineModeOther = { fg = c.fg_main, bg = c.cyan_cooler, bold = true },
+		MiniStatuslineModeReplace = { fg = c.fg_main, bg = c.red, bold = true },
+		MiniStatuslineModeVisual = { fg = c.fg_main, bg = c.magenta, bold = true },
+
+		MiniSurround = { bg = c.yellow_warmer, fg = c.fg_main },
+
+		MiniTablineCurrent = { fg = c.fg_main, bg = c.fg_dim },
+		MiniTablineFill = { bg = c.fg_main },
+		MiniTablineHidden = { fg = c.fg_dim, bg = c.bg_active },
+		MiniTablineModifiedCurrent = { fg = c.yellow_cooler, bg = c.fg_dim },
+		MiniTablineModifiedHidden = { bg = c.bg_active, fg = c.yellow_faint },
+		MiniTablineModifiedVisible = { fg = c.yellow_cooler, bg = c.bg_active },
+		MiniTablineTabpagesection = { bg = c.bg_active, fg = c.none },
+		MiniTablineVisible = { fg = c.fg_main, bg = c.bg_active },
+
+		MiniTestEmphasis = { bold = true },
+		MiniTestFail = { fg = c.red, bold = true },
+		MiniTestPass = { fg = c.green, bold = true },
+
+		MiniTrailspace = { bg = c.red },
+
+		-- Noice
+
+		NoiceCompletionItemKindDefault = { fg = c.fg_dim, bg = c.none },
+
+		NoiceCompletionItemKindKeyword = { fg = c.cyan, bg = c.none },
+
+		NoiceCompletionItemKindVariable = { fg = c.magenta, bg = c.none },
+		NoiceCompletionItemKindConstant = { fg = c.magenta, bg = c.none },
+		NoiceCompletionItemKindReference = { fg = c.magenta, bg = c.none },
+		NoiceCompletionItemKindValue = { fg = c.magenta, bg = c.none },
+
+		NoiceCompletionItemKindFunction = { fg = c.blue, bg = c.none },
+		NoiceCompletionItemKindMethod = { fg = c.blue, bg = c.none },
+		NoiceCompletionItemKindConstructor = { fg = c.blue, bg = c.none },
+
+		NoiceCompletionItemKindClass = { fg = c.yellow_warmer, bg = c.none },
+		NoiceCompletionItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
+		NoiceCompletionItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
+		NoiceCompletionItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
+		NoiceCompletionItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
+		NoiceCompletionItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
+
+		NoiceCompletionItemKindModule = { fg = c.yellow, bg = c.none },
+
+		NoiceCompletionItemKindProperty = { fg = c.green_warmer, bg = c.none },
+		NoiceCompletionItemKindField = { fg = c.green_warmer, bg = c.none },
+		NoiceCompletionItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
+		NoiceCompletionItemKindEnumMember = { fg = c.green_warmer, bg = c.none },
+		NoiceCompletionItemKindOperator = { fg = c.green_warmer, bg = c.none },
+		NoiceCompletionItemKindSnippet = { fg = c.fg_dim, bg = c.none },
 	}
 
 	local markdown_rainbow = { c.blue, c.yellow, c.yellow_warmer, c.cyan_cooler, c.magenta, c.magenta_cooler }
