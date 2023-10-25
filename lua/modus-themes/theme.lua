@@ -1,4 +1,3 @@
-local util = require("modus-themes.util")
 local colors = require("modus-themes.colors")
 
 local M = {}
@@ -30,14 +29,14 @@ function M.setup()
 		-- UI
 		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text
 		NormalNC = { fg = c.fg_inactive, bg = c.bg_main }, -- Normal text in non-current windows
-		Folded = { fg = c.fg_special_mild, bg = c.bg_special_mild }, -- Line for closed folds
-		LineNr = { fg = c.fg_alt, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
+		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
+		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		SignColumn = { fg = c.fg_dim, bg = c.bg_inactive }, -- Column where |signs| are displayed
+		SignColumn = { fg = c.fg_dim, bg = c.bg_main }, -- Column where |signs| are displayed
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		NonText = { fg = c.fg_alt }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		NonText = { fg = c.fg_dim }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line
-		Conceal = { fg = c.fg_special_warm, bg = c.bg_dim }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = c.bg_main, bg = c.fg_main }, -- Character under the cursor
 		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|
@@ -55,14 +54,14 @@ function M.setup()
 		Menu = { link = "Pmenu" }, -- Menu
 		Scrollbar = { link = "PmenuSbar" }, -- Scrollbar
 		Directory = { fg = c.blue }, -- Directory names (and other special names in listings)
-		Title = { fg = c.fg_special_cold, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
+		Title = { fg = c.fg_alt, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- Visual mode selection
-		VisualNOS = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- Visual mode selection when vim is "Not Owning the Selection"
+		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection"
 		WildMenu = { bg = c.bg_magenta_intense }, -- current match in 'wildmenu' completion
-		Whitespace = { fg = c.fg_dim }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+		Whitespace = { link = "NonText" }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		TabLine = { fg = c.fg_main, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label
 		TabLineSel = { fg = c.slate, bg = c.bg_tab_current }, -- Tab pages line, active tab page label
-		TabLineFill = { fg = c.bg_main, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels
+		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels
 		EndOfBuffer = { fg = c.fg_inactive }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		MatchParen = { fg = c.fg_main, bg = c.bg_paren_match }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.fg_dim, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -70,8 +69,8 @@ function M.setup()
 		MoreMsg = { fg = c.blue }, -- |more-prompt|
 		StatusLine = { fg = c.fg_active, bg = c.bg_active }, -- Status line of current window
 		StatusLineNC = { fg = c.fg_inactive, bg = c.bg_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		VertSplit = { fg = c.fg_main }, -- The column separating vertically split windows
-		WinSeparator = { fg = c.fg_main, bold = true }, -- The column separating vertically split windows
+		VertSplit = { fg = c.border }, -- The column separating vertically split windows
+		WinSeparator = { fg = c.border, bold = true }, -- The column separating vertically split windows
 		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|
 		DiffChange = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed line |diff.txt|
 		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|
@@ -85,13 +84,14 @@ function M.setup()
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
 
 		-- Syntax
-		Comment = { fg = c.fg_alt, italic = true }, -- Any comment
+		Comment = { fg = c.fg_dim, italic = true }, -- Any comment
 		String = { fg = c.blue_warmer }, -- String constant: "this is a string"
 		Character = { fg = c.blue_warmer }, -- Character constant: 'c', '\n'
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant: TRUE, false
-		Conditional = { fg = c.magenta_cooler }, -- if, then, else, endif, switch, etc.
 		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement
+		Conditional = { fg = c.magenta_cooler }, -- if, then, else, endif, switch, etc.
 		Repeat = { fg = c.magenta_cooler }, -- for, do, while, etc.
+		Label = { fg = c.cyan }, -- case, default, etc.
 		Keyword = { fg = c.magenta_cooler }, -- Any other keyword
 		Exception = { fg = c.magenta_cooler }, -- try, catch, throw
 		StorageClass = { fg = c.magenta_cooler }, -- static, register, volatile, etc.
@@ -104,15 +104,15 @@ function M.setup()
 		Define = { fg = c.red_cooler }, -- preprocessor #define
 		Macro = { fg = c.red_cooler }, -- Same as Define
 		PreCondit = { fg = c.red_cooler }, -- preprocessor #if, #else, #endif, etc.
-		Label = { fg = c.cyan }, -- case, default, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type = { fg = c.cyan_cooler }, -- (preferred) int, long, char, etc.
-		TypeDef = { fg = c.cyan_cooler }, -- A typedef
+		Type = { fg = c.magenta_cooler }, -- (preferred) int, long, char, etc.
+		TypeDef = { fg = c.magenta_cooler }, -- A typedef
 		Number = { fg = c.blue_faint }, -- Number constant: 234, 0xff
 		Float = { link = "Number" }, -- Floating point constant: 2.3e10
 		Operator = { fg = c.magenta_cooler }, -- "sizeof", "+", "*", etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this
-		Delimiter = { fg = c.fg_main }, -- Character that needs attention
+		Delimiter = { fg = c.magenta_cooler }, -- Character that needs attention ie "."
+		Special = { link = "Type" },
 		Underlined = { fg = c.fg_main, underline = true }, -- (preferred) text that stands out, HTML links
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct
 
@@ -149,18 +149,18 @@ function M.setup()
 		["@operator"] = { link = "Operator" }, -- For any operator: `+`, but also `->` and `*` in C.
 
 		--- Punctuation
-		["@punctuation.delimiter"] = { fg = c.fg_main }, -- For delimiters ie: `.`
+		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters ie: `.`
 		["@punctuation.bracket"] = { fg = c.fg_main }, -- For brackets and parens.
 		["@punctuation.special"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the categories before.
 
 		--- Literals
 		["@string.documentation"] = { link = "String" },
-		["@string.regex"] = { fg = c.red_failt }, -- For regexes.
+		["@string.regex"] = { fg = c.red_faint }, -- For regexes.
 		["@string.escape"] = { fg = c.yellow_faint }, -- For escape characters within a string.
 
 		--- Functions
-		["@constructor"] = { link = "Type" }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@parameter"] = { link = "Label" }, -- For parameters of a function.
+		["@constructor"] = { fg = c.yellow_cooler }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		["@parameter"] = { fg = c.yellow }, -- For parameters of a function.
 
 		--- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
@@ -294,8 +294,8 @@ function M.setup()
 		NeotestRunning = { fg = c.yellow },
 		NeotestFailed = { fg = c.red },
 		NeotestSkipped = { fg = c.blue },
-		NeotestTest = { fg = c.fg_sidebar },
-		NeotestNamespace = { fg = c.green2 },
+		NeotestTest = { fg = c.bg_tab_bar },
+		NeotestNamespace = { fg = c.green_warmer },
 		NeotestFocused = { fg = c.yellow },
 		NeotestFile = { fg = c.cyan_cooler },
 		NeotestDir = { fg = c.blue },
