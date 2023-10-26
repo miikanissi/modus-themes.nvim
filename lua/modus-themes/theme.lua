@@ -40,10 +40,10 @@ function M.setup()
 		NonText = { fg = c.fg_dim }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line
 		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = c.bg_main, bg = c.fg_main }, -- Character under the cursor
+		Cursor = { fg = c.bg_main, bg = c.cursor }, -- Character under the cursor
 		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|
-		ColorColumn = { fg = c.fg_main, bg = c.bg_active }, -- Used for the columns set with 'colorcolumn'
+		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with 'colorcolumn'
 		FoldColumn = { fg = c.fg_active, bg = c.bg_active }, -- 'foldcolumn'
 		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -87,7 +87,7 @@ function M.setup()
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
 
 		-- Syntax
-		Comment = { fg = c.fg_dim, italic = true }, -- Any comment
+		Comment = { fg = c.comment, italic = true }, -- Any comment
 		String = { fg = c.blue_warmer }, -- String constant: "this is a string"
 		Character = { fg = c.blue_warmer }, -- Character constant: 'c', '\n'
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant: TRUE, false
@@ -342,6 +342,7 @@ function M.setup()
 		NvimTreeSymlink = { fg = c.blue },
 		NvimTreeFolderIcon = { bg = c.none, fg = c.blue },
 
+		-- Neotree
 		NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
 		NeoTreeNormalNC = { fg = c.fg_active, bg = c.bg_active },
 		NeoTreeDimText = { fg = c.fg_dim },
@@ -386,7 +387,6 @@ function M.setup()
 		-- LspSaga
 		DiagnosticWarning = { link = "DiagnosticWarn" },
 		DiagnosticInformation = { link = "DiagnosticInfo" },
-
 		LspFloatWinNormal = { bg = c.bg_active },
 		LspFloatWinBorder = { fg = c.border },
 		LspSagaBorderTitle = { fg = c.cyan },
@@ -463,17 +463,17 @@ function M.setup()
 		HopNextKey2 = { fg = c.blue_faint },
 		HopUnmatched = { fg = c.fg_dim },
 
-		TSNodeKey = { fg = c.magenta_cooler, bold = true },
-		TSNodeUnmatched = { fg = c.fg_dim },
-
+		-- Leap
 		LeapMatch = { bg = c.magenta_cooler, fg = c.fg_main, bold = true },
 		LeapLabelPrimary = { fg = c.magenta_cooler, bold = true },
 		LeapLabelSecondary = { fg = c.green_warmer, bold = true },
 		LeapBackdrop = { fg = c.fg_dim },
 
+		-- flash.nvim
 		FlashBackdrop = { fg = c.fg_dim },
 		FlashLabel = { bg = c.magenta_cooler, bold = true, fg = c.fg_main },
 
+		-- lightspeed.nvim
 		LightspeedGreyWash = { fg = c.fg_dim },
 		LightspeedLabel = { fg = c.magenta_cooler, bold = true, underline = true },
 		LightspeedLabelDistant = { fg = c.green_warmer, bold = true, underline = true },
@@ -489,18 +489,13 @@ function M.setup()
 		CmpDocumentation = { fg = c.fg_main, bg = c.bg_main },
 		CmpDocumentationBorder = { fg = c.border, bg = c.bg_main },
 		CmpGhostText = { fg = c.fg_dim },
-
 		CmpItemAbbr = { fg = c.fg_main, bg = c.none },
 		CmpItemAbbrDeprecated = { fg = c.fg_dim, bg = c.none, strikethrough = true },
 		CmpItemAbbrMatch = { fg = c.blue_warmer, bg = c.none },
 		CmpItemAbbrMatchFuzzy = { fg = c.blue_warmer, bg = c.none },
-
 		CmpItemMenu = { fg = c.fg_alt, bg = c.none },
-
 		CmpItemKindDefault = { fg = c.fg_dim, bg = c.none },
-
 		CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
-
 		CmpItemKindVariable = { fg = c.magenta, bg = c.none },
 		CmpItemKindConstant = { fg = c.magenta, bg = c.none },
 		CmpItemKindReference = { fg = c.magenta, bg = c.none },
@@ -508,21 +503,17 @@ function M.setup()
 		CmpItemKindCopilot = { fg = c.cyan_cooler, bg = c.none },
 		CmpItemKindCodeium = { fg = c.cyan_cooler, bg = c.none },
 		CmpItemKindTabNine = { fg = c.cyan_cooler, bg = c.none },
-
 		CmpItemKindFunction = { fg = c.blue, bg = c.none },
 		CmpItemKindMethod = { fg = c.blue, bg = c.none },
 		CmpItemKindConstructor = { fg = c.blue, bg = c.none },
-
 		CmpItemKindClass = { fg = c.yellow_warmer, bg = c.none },
 		CmpItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
 		CmpItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
 		CmpItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
 		CmpItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
 		CmpItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
-
 		CmpItemKindModule = { fg = c.yellow, bg = c.none },
 		CmpItemKindPackage = { fg = c.yellow, bg = c.none },
-
 		CmpItemKindProperty = { fg = c.green_warmer, bg = c.none },
 		CmpItemKindField = { fg = c.green_warmer, bg = c.none },
 		CmpItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
@@ -564,6 +555,7 @@ function M.setup()
 		NavicText = { fg = c.fg_main, bg = c.none },
 		NavicSeparator = { fg = c.fg_main, bg = c.none },
 
+		-- aerial
 		AerialFileIcon = { fg = c.fg_main, bg = c.none },
 		AerialModuleIcon = { fg = c.yellow, bg = c.none },
 		AerialNamespaceIcon = { fg = c.cyan, bg = c.none },
@@ -595,6 +587,7 @@ function M.setup()
 		AerialGuide = { fg = c.fg_dim },
 		AerialLine = { link = "LspInlayHint" },
 
+		-- indent-blankline.nvim
 		IndentBlanklineChar = { fg = c.fg_dim, nocombine = true },
 		IndentBlanklineContextChar = { fg = c.magenta_cooler, nocombine = true },
 		IblIndent = { fg = c.fg_dim, nocombine = true },
@@ -602,22 +595,16 @@ function M.setup()
 
 		-- Scrollbar
 		ScrollbarHandle = { fg = c.none, bg = c.bg_hl_line },
-
 		ScrollbarSearchHandle = { fg = c.yellow_warmer, bg = c.bg_hl_line },
 		ScrollbarSearch = { fg = c.yellow_warmer, bg = c.none },
-
 		ScrollbarErrorHandle = { fg = c.red_cooler, bg = c.bg_hl_line },
 		ScrollbarError = { fg = c.red_cooler, bg = c.none },
-
 		ScrollbarWarnHandle = { fg = c.yellow_cooler, bg = c.bg_hl_line },
 		ScrollbarWarn = { fg = c.yellow_cooler, bg = c.none },
-
 		ScrollbarInfoHandle = { fg = c.blue_cooler, bg = c.bg_hl_line },
 		ScrollbarInfo = { fg = c.blue_cooler, bg = c.none },
-
 		ScrollbarHintHandle = { fg = c.cyan_cooler, bg = c.bg_hl_line },
 		ScrollbarHint = { fg = c.cyan_cooler, bg = c.none },
-
 		ScrollbarMiscHandle = { fg = c.magenta_cooler, bg = c.bg_hl_line },
 		ScrollbarMisc = { fg = c.magenta_cooler, bg = c.none },
 
@@ -629,27 +616,23 @@ function M.setup()
 		LazyProgressDone = { bold = true, fg = c.magenta_cooler },
 		LazyProgressTodo = { bold = true, fg = c.fg_dim },
 
-		-- Notify
+		-- nvim-notify
 		NotifyBackground = { fg = c.fg_main, bg = c.bg_main },
-		--- Border
 		NotifyERRORBorder = { fg = c.red_faint, bg = c.bg_main },
 		NotifyWARNBorder = { fg = c.yellow_faint, bg = c.bg_main },
 		NotifyINFOBorder = { fg = c.blue_faint, bg = c.bg_main },
 		NotifyDEBUGBorder = { fg = c.fg_alt, bg = c.bg_main },
 		NotifyTRACEBorder = { fg = c.magenta_faint, bg = c.bg_main },
-		--- Icons
 		NotifyERRORIcon = { fg = c.red_cooler },
 		NotifyWARNIcon = { fg = c.yellow_cooler },
 		NotifyINFOIcon = { fg = c.blue_cooler },
 		NotifyDEBUGIcon = { fg = c.fg_alt },
 		NotifyTRACEIcon = { fg = c.magenta_cooler },
-		--- Title
 		NotifyERRORTitle = { fg = c.red_cooler },
 		NotifyWARNTitle = { fg = c.yellow_cooler },
 		NotifyINFOTitle = { fg = c.blue_cooler },
 		NotifyDEBUGTitle = { fg = c.fg_alt },
 		NotifyTRACETitle = { fg = c.magenta_cooler },
-		--- Body
 		NotifyERRORBody = { fg = c.fg_main, bg = c.bg_main },
 		NotifyWARNBody = { fg = c.fg_main, bg = c.bg_main },
 		NotifyINFOBody = { fg = c.fg_main, bg = c.bg_main },
@@ -658,17 +641,12 @@ function M.setup()
 
 		-- Mini
 		MiniCompletionActiveParameter = { underline = true },
-
 		MiniCursorword = { bg = c.fg_dim },
 		MiniCursorwordCurrent = { bg = c.fg_dim },
-
 		MiniIndentscopeSymbol = { fg = c.blue_warmer, nocombine = true },
 		MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
-
-		MiniJump = { bg = c.magenta_cooler, fg = "#ffffff" },
-
+		MiniJump = { bg = c.magenta_cooler, fg = c.fg_main },
 		MiniJump2dSpot = { fg = c.magenta_cooler, bold = true, nocombine = true },
-
 		MiniStarterCurrent = { nocombine = true },
 		MiniStarterFooter = { fg = c.yellow, italic = true },
 		MiniStarterHeader = { fg = c.blue },
@@ -678,7 +656,6 @@ function M.setup()
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
 		MiniStarterSection = { fg = c.blue_warmer },
 		MiniStarterQuery = { fg = c.blue_cooler },
-
 		MiniStatuslineDevinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
 		MiniStatuslineFileinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
 		MiniStatuslineFilename = { fg = c.fg_dim, bg = c.fg_dim },
@@ -689,9 +666,7 @@ function M.setup()
 		MiniStatuslineModeOther = { fg = c.fg_main, bg = c.cyan_cooler, bold = true },
 		MiniStatuslineModeReplace = { fg = c.fg_main, bg = c.red, bold = true },
 		MiniStatuslineModeVisual = { fg = c.fg_main, bg = c.magenta, bold = true },
-
 		MiniSurround = { bg = c.yellow_warmer, fg = c.fg_main },
-
 		MiniTablineCurrent = { fg = c.fg_main, bg = c.fg_dim },
 		MiniTablineFill = { bg = c.fg_main },
 		MiniTablineHidden = { fg = c.fg_dim, bg = c.bg_active },
@@ -700,37 +675,28 @@ function M.setup()
 		MiniTablineModifiedVisible = { fg = c.yellow_cooler, bg = c.bg_active },
 		MiniTablineTabpagesection = { bg = c.bg_active, fg = c.none },
 		MiniTablineVisible = { fg = c.fg_main, bg = c.bg_active },
-
 		MiniTestEmphasis = { bold = true },
 		MiniTestFail = { fg = c.red, bold = true },
 		MiniTestPass = { fg = c.green, bold = true },
-
 		MiniTrailspace = { bg = c.red },
 
 		-- Noice
-
 		NoiceCompletionItemKindDefault = { fg = c.fg_dim, bg = c.none },
-
 		NoiceCompletionItemKindKeyword = { fg = c.cyan, bg = c.none },
-
 		NoiceCompletionItemKindVariable = { fg = c.magenta, bg = c.none },
 		NoiceCompletionItemKindConstant = { fg = c.magenta, bg = c.none },
 		NoiceCompletionItemKindReference = { fg = c.magenta, bg = c.none },
 		NoiceCompletionItemKindValue = { fg = c.magenta, bg = c.none },
-
 		NoiceCompletionItemKindFunction = { fg = c.blue, bg = c.none },
 		NoiceCompletionItemKindMethod = { fg = c.blue, bg = c.none },
 		NoiceCompletionItemKindConstructor = { fg = c.blue, bg = c.none },
-
 		NoiceCompletionItemKindClass = { fg = c.yellow_warmer, bg = c.none },
 		NoiceCompletionItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
 		NoiceCompletionItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
 		NoiceCompletionItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
 		NoiceCompletionItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
 		NoiceCompletionItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
-
 		NoiceCompletionItemKindModule = { fg = c.yellow, bg = c.none },
-
 		NoiceCompletionItemKindProperty = { fg = c.green_warmer, bg = c.none },
 		NoiceCompletionItemKindField = { fg = c.green_warmer, bg = c.none },
 		NoiceCompletionItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
