@@ -79,11 +79,11 @@ function M.setup()
 		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|
 		DiffText = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed text within a changed line |diff.txt|
 		SpecialKey = { fg = c.fg_dim }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
-		SpellBad = { sp = c.red_cooler, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = c.yellow_cooler, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal = { sp = c.blue_cooler, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = c.cyan_cooler, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		WarningMsg = { fg = c.yellow_cooler },
+		SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
+		WarningMsg = { fg = c.warning },
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
 
 		-- Syntax
@@ -126,24 +126,24 @@ function M.setup()
 		LspReferenceRead = { bg = c.fg_alt }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = c.fg_alt }, -- used for highlighting "write" references
 
-		DiagnosticError = { fg = c.red_cooler }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { fg = c.yellow_cooler }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { fg = c.blue_cooler }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = c.cyan_cooler }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticVirtualTextError = { fg = c.red_cooler }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn = { fg = c.yellow_cooler }, -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo = { fg = c.blue_cooler }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint = { fg = c.cyan_cooler }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextError = { fg = c.error }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn = { fg = c.warning }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo = { fg = c.info }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint = { fg = c.hint }, -- Used for "Hint" diagnostic virtual text
 
-		DiagnosticUnderlineError = { undercurl = true, sp = c.red_cooler }, -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn = { undercurl = true, sp = c.yellow_cooler }, -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo = { undercurl = true, sp = c.blue_cooler }, -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint = { undercurl = true, sp = c.cyan_cooler }, -- Used to underline "Hint" diagnostics
+		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
+		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
+		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
+		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
 
-		ALEErrorSign = { fg = c.red_cooler },
-		ALEWarningSign = { fg = c.yellow_cooler },
+		ALEErrorSign = { fg = c.error },
+		ALEWarningSign = { fg = c.warning },
 
 		-- These groups are for the Neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -188,8 +188,8 @@ function M.setup()
 
 		["@text.todo.unchecked"] = { fg = c.blue }, -- For brackets and parens.
 		["@text.todo.checked"] = { fg = c.green }, -- For brackets and parens.
-		["@text.warning"] = { fg = c.bg_main, bg = c.red_cooler },
-		["@text.danger"] = { fg = c.bg_main, bg = c.yellow_cooler },
+		["@text.warning"] = { fg = c.bg_main, bg = c.warning },
+		["@text.danger"] = { fg = c.bg_main, bg = c.error },
 
 		["@text.diff.add"] = { link = "DiffAdd" },
 		["@text.diff.delete"] = { link = "DiffDelete" },
@@ -222,7 +222,7 @@ function M.setup()
 		["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
 		["@lsp.type.string"] = { link = "@string" },
 		["@lsp.type.typeAlias"] = { link = "@type.definition" },
-		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.red_cooler },
+		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
 		["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
 		["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
@@ -405,37 +405,37 @@ function M.setup()
 		TargetWord = { fg = c.cyan },
 
 		-- NeoVim
-		healthError = { fg = c.red_cooler },
+		healthError = { fg = c.error },
 		healthSuccess = { fg = c.green_cooler },
-		healthWarning = { fg = c.yellow_cooler },
+		healthWarning = { fg = c.warning },
 
 		-- BufferLine
 		BufferLineIndicatorSelected = { fg = c.fg_changed },
 
 		-- Barbar
 		BufferCurrent = { bg = c.bg_main, fg = c.fg_main },
-		BufferCurrentERROR = { bg = c.bg_main, fg = c.red_cooler },
-		BufferCurrentHINT = { bg = c.bg_main, fg = c.cyan_cooler },
-		BufferCurrentINFO = { bg = c.bg_main, fg = c.blue_cooler },
-		BufferCurrentWARN = { bg = c.bg_main, fg = c.yellow_cooler },
+		BufferCurrentERROR = { bg = c.bg_main, fg = c.error },
+		BufferCurrentHINT = { bg = c.bg_main, fg = c.hint },
+		BufferCurrentINFO = { bg = c.bg_main, fg = c.info },
+		BufferCurrentWARN = { bg = c.bg_main, fg = c.warning },
 		BufferCurrentIndex = { bg = c.bg_main, fg = c.blue_cooler },
 		BufferCurrentMod = { bg = c.bg_main, fg = c.yellow_cooler },
 		BufferCurrentSign = { bg = c.bg_main, fg = c.bg_main },
 		BufferCurrentTarget = { bg = c.bg_main, fg = c.red },
 		BufferAlternate = { bg = c.fg_dim, fg = c.fg_main },
-		BufferAlternateERROR = { bg = c.fg_dim, fg = c.red_cooler },
-		BufferAlternateHINT = { bg = c.fg_dim, fg = c.cyan_cooler },
+		BufferAlternateERROR = { bg = c.fg_dim, fg = c.error },
+		BufferAlternateHINT = { bg = c.fg_dim, fg = c.hint },
 		BufferAlternateIndex = { bg = c.fg_dim, fg = c.blue_cooler },
-		BufferAlternateINFO = { bg = c.fg_dim, fg = c.blue_cooler },
+		BufferAlternateINFO = { bg = c.fg_dim, fg = c.info },
 		BufferAlternateMod = { bg = c.fg_dim, fg = c.yellow_cooler },
 		BufferAlternateSign = { bg = c.fg_dim, fg = c.blue_cooler },
 		BufferAlternateTarget = { bg = c.fg_dim, fg = c.red },
-		BufferAlternateWARN = { bg = c.fg_dim, fg = c.yellow_cooler },
+		BufferAlternateWARN = { bg = c.fg_dim, fg = c.warning },
 		BufferVisible = { bg = c.bg_active, fg = c.fg_main },
-		BufferVisibleERROR = { bg = c.bg_active, fg = c.red_cooler },
-		BufferVisibleHINT = { bg = c.bg_active, fg = c.cyan_cooler },
-		BufferVisibleINFO = { bg = c.bg_active, fg = c.blue_cooler },
-		BufferVisibleWARN = { bg = c.bg_active, fg = c.yellow_cooler },
+		BufferVisibleERROR = { bg = c.bg_active, fg = c.error },
+		BufferVisibleHINT = { bg = c.bg_active, fg = c.hint },
+		BufferVisibleINFO = { bg = c.bg_active, fg = c.info },
+		BufferVisibleWARN = { bg = c.bg_active, fg = c.warning },
 		BufferVisibleIndex = { bg = c.bg_active, fg = c.blue_cooler },
 		BufferVisibleMod = { bg = c.bg_active, fg = c.yellow_cooler },
 		BufferVisibleSign = { bg = c.bg_active, fg = c.blue_cooler },
@@ -597,14 +597,14 @@ function M.setup()
 		ScrollbarHandle = { fg = c.none, bg = c.bg_hl_line },
 		ScrollbarSearchHandle = { fg = c.yellow_warmer, bg = c.bg_hl_line },
 		ScrollbarSearch = { fg = c.yellow_warmer, bg = c.none },
-		ScrollbarErrorHandle = { fg = c.red_cooler, bg = c.bg_hl_line },
-		ScrollbarError = { fg = c.red_cooler, bg = c.none },
-		ScrollbarWarnHandle = { fg = c.yellow_cooler, bg = c.bg_hl_line },
-		ScrollbarWarn = { fg = c.yellow_cooler, bg = c.none },
-		ScrollbarInfoHandle = { fg = c.blue_cooler, bg = c.bg_hl_line },
-		ScrollbarInfo = { fg = c.blue_cooler, bg = c.none },
-		ScrollbarHintHandle = { fg = c.cyan_cooler, bg = c.bg_hl_line },
-		ScrollbarHint = { fg = c.cyan_cooler, bg = c.none },
+		ScrollbarErrorHandle = { fg = c.error, bg = c.bg_hl_line },
+		ScrollbarError = { fg = c.error, bg = c.none },
+		ScrollbarWarnHandle = { fg = c.warning, bg = c.bg_hl_line },
+		ScrollbarWarn = { fg = c.warning, bg = c.none },
+		ScrollbarInfoHandle = { fg = c.info, bg = c.bg_hl_line },
+		ScrollbarInfo = { fg = c.info, bg = c.none },
+		ScrollbarHintHandle = { fg = c.hint, bg = c.bg_hl_line },
+		ScrollbarHint = { fg = c.hint, bg = c.none },
 		ScrollbarMiscHandle = { fg = c.magenta_cooler, bg = c.bg_hl_line },
 		ScrollbarMisc = { fg = c.magenta_cooler, bg = c.none },
 
@@ -623,14 +623,14 @@ function M.setup()
 		NotifyINFOBorder = { fg = c.blue_faint, bg = c.bg_main },
 		NotifyDEBUGBorder = { fg = c.fg_alt, bg = c.bg_main },
 		NotifyTRACEBorder = { fg = c.magenta_faint, bg = c.bg_main },
-		NotifyERRORIcon = { fg = c.red_cooler },
-		NotifyWARNIcon = { fg = c.yellow_cooler },
-		NotifyINFOIcon = { fg = c.blue_cooler },
+		NotifyERRORIcon = { fg = c.error },
+		NotifyWARNIcon = { fg = c.warning },
+		NotifyINFOIcon = { fg = c.info },
 		NotifyDEBUGIcon = { fg = c.fg_alt },
 		NotifyTRACEIcon = { fg = c.magenta_cooler },
-		NotifyERRORTitle = { fg = c.red_cooler },
-		NotifyWARNTitle = { fg = c.yellow_cooler },
-		NotifyINFOTitle = { fg = c.blue_cooler },
+		NotifyERRORTitle = { fg = c.error },
+		NotifyWARNTitle = { fg = c.warning },
+		NotifyINFOTitle = { fg = c.info },
 		NotifyDEBUGTitle = { fg = c.fg_alt },
 		NotifyTRACETitle = { fg = c.magenta_cooler },
 		NotifyERRORBody = { fg = c.fg_main, bg = c.bg_main },

@@ -36,8 +36,11 @@ M.modus_operandi = {
 	green_cooler = "#00663f",
 	green_faint = "#2a5045",
 	yellow = "#6f5500",
+	deuteranopia_yellow = "#695500",
 	yellow_warmer = "#884900",
+	deuteranopia_yellow_warmer = "#973300",
 	yellow_cooler = "#7a4f2f",
+	deuteranopia_yellow_cooler = "#77492f",
 	yellow_faint = "#624416",
 	blue = "#0031a9",
 	blue_warmer = "#354fcf",
@@ -117,17 +120,23 @@ M.modus_operandi = {
 	-- mode line colors can be used for status line
 	bg_mode_line_active = "#c8c8c8",
 	tinted_bg_mode_line_active = "#cab9b2",
+	deuteranopia_bg_mode_line_active = "#d0d6ff",
 	fg_mode_line_active = "#000000",
+	deuteranopia_fg_mode_line_active = "#0f0f0f",
 	border_mode_line_active = "#5a5a5a",
 	tinted_border_mode_line_active = "#545454",
+	deuteranopia_border_mode_line_active = "#4f4f74",
 	bg_mode_line_inactive = "#e6e6e6",
 	tinted_bg_mode_line_inactive = "#dfd9cf",
 	fg_mode_line_inactive = "#585858",
 	border_mode_line_inactive = "#a3a3a3",
 	tinted_border_mode_line_inactive = "#a59a94",
 	modeline_err = "#7f0000",
+	deuteranopia_modeline_err = "#603a00",
 	modeline_warning = "#5f0070",
+	deuteranopia_modeline_warning = "#454500",
 	modeline_info = "#002580",
+	deuteranopia_modeline_info = "#023d92",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#dfdfdf",
 	tinted_bg_tab_bar = "#e0d4ce",
@@ -138,29 +147,47 @@ M.modus_operandi = {
 	-- git diffs
 	bg_added = "#c1f2d1",
 	tinted_bg_added = "#c3ebc1",
+	deuteranopia_bg_added = "#d5d7ff",
 	bg_added_faint = "#d8f8e1",
 	tinted_bg_added_faint = "#dcf8d1",
+	deuteranopia_bg_added_faint = "#e6e6ff",
 	bg_added_refine = "#aee5be",
 	tinted_bg_added_refine = "#acd6a5",
+	deuteranopia_bg_added_refine = "#babcef",
 	bg_added_fringe = "#6cc06c",
+	deuteranopia_bg_added_fringe = "#275acc",
 	fg_added = "#005000",
+	deuteranopia_fg_added = "#303099",
 	fg_added_intense = "#006700",
+	deuteranopia_fg_added_intense = "#0303cc",
 	bg_changed = "#ffdfa9",
+	deuteranopia_bg_changed = "#eecfdf",
 	bg_changed_faint = "#ffefbf",
+	deuteranopia_bg_changed_faint = "#f0dde5",
 	bg_changed_refine = "#fac090",
+	deuteranopia_bg_changed_refine = "#e0b0d0",
 	bg_changed_fringe = "#d7c20a",
 	tinted_bg_changed_fringe = "#c0b200",
+	deuteranopia_bg_changed_fringe = "#9f6ab0",
 	fg_changed = "#553d00",
+	deuteranopia_fg_changed = "#6f1343",
 	fg_changed_intense = "#655000",
+	deuteranopia_fg_changed_intense = "#7f0f9f",
 	bg_removed = "#ffd8d5",
 	tinted_bg_removed = "#f4d0cf",
+	deuteranopia_bg_removed = "#f4f099",
 	bg_removed_faint = "#ffe9e9",
 	tinted_bg_removed_faint = "#ffe9e5",
+	deuteranopia_bg_removed_faint = "#f6f6b7",
 	bg_removed_refine = "#f3b5af",
 	tinted_bg_removed_refine = "#f3b5a7",
+	deuteranopia_bg_removed_refine = "#ede06f",
 	bg_removed_fringe = "#d84a4f",
+	deuteranopia_bg_removed_fringe = "#c0b200",
 	fg_removed = "#8f1313",
+	deuteranopia_fg_removed = "#553d00",
 	fg_removed_intense = "#aa2222",
+	deuteranopia_fg_removed_intense = "#7f6f00",
 	bg_diff_context = "#f3f3f3",
 	tinted_bg_diff_context = "#efe9df",
 }
@@ -199,8 +226,11 @@ M.modus_vivendi = {
 	green_cooler = "#00c06f",
 	green_faint = "#88ca9f",
 	yellow = "#d0bc00",
+	deuteranopia_yellow = "#cabf00",
 	yellow_warmer = "#fec43f",
+	deuteranopia_yellow_warmer = "#ffa00f",
 	yellow_cooler = "#dfaf7a",
+	deuteranopia_yellow_cooler = "#d8af7a",
 	yellow_faint = "#d2b580",
 	blue = "#2fafff",
 	blue_warmer = "#79a8ff",
@@ -280,17 +310,23 @@ M.modus_vivendi = {
 	-- mode line colors can be used for status line
 	bg_mode_line_active = "#505050",
 	tinted_bg_mode_line_active = "#484d67",
+	deuteranopia_bg_mode_line_active = "#2a2a6a",
 	fg_mode_line_active = "#ffffff",
+	deuteranopia_fg_mode_line_active = "#f0f0f0",
 	border_mode_line_active = "#959595",
 	tinted_border_mode_line_active = "#979797",
+	deuteranopia_border_mode_line_active = "#8080a7",
 	bg_mode_line_inactive = "#2d2d2d",
 	tinted_bg_mode_line_inactive = "#292d48",
 	fg_mode_line_inactive = "#969696",
 	border_mode_line_inactive = "#606060",
 	tinted_border_mode_line_inactive = "#606270",
 	modeline_err = "#ffa9bf",
+	deuteranopia_modeline_err = "#e5bf00",
 	modeline_warning = "#dfcf43",
+	deuteranopia_modeline_warning = "#c0cf35",
 	modeline_info = "#9fefff",
+	deuteranopia_modeline_info = "#abeadf",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#313131",
 	tinted_bg_tab_bar = "#2c3045",
@@ -301,31 +337,49 @@ M.modus_vivendi = {
 	-- git diffs
 	bg_added = "#00381f",
 	tinted_bg_added = "#003a2f",
+	deuteranopia_bg_added = "#003066",
 	bg_added_faint = "#002910",
 	tinted_bg_added_faint = "#002922",
+	deuteranopia_bg_added_faint = "#001a4f",
 	bg_added_refine = "#034f2f",
 	tinted_bg_added_refine = "#035542",
+	deuteranopia_bg_added_refine = "#0f4a77",
 	bg_added_fringe = "#237f3f",
 	tinted_bg_added_fringe = "#23884f",
+	deuteranopia_bg_added_fringe = "#006fff",
 	fg_added = "#a0e0a0",
+	deuteranopia_fg_added = "#c4d5ff",
 	fg_added_intense = "#80e080",
+	deuteranopia_fg_added_intense = "#8080ff",
 	bg_changed = "#363300",
+	deuteranopia_bg_changed = "#2f123f",
 	bg_changed_faint = "#2a1f00",
+	deuteranopia_bg_changed_faint = "#1f022f",
 	bg_changed_refine = "#4a4a00",
+	deuteranopia_bg_changed_refine = "#3f325f",
 	bg_changed_fringe = "#8a7a00",
 	tinted_bg_changed_fringe = "#8f7a30",
+	deuteranopia_bg_changed_fringe = "#7f55a0",
 	fg_changed = "#efef80",
+	deuteranopia_fg_changed = "#e3cfff",
 	fg_changed_intense = "#c0b05f",
+	deuteranopia_fg_changed_intense = "#cf9fe2",
 	bg_removed = "#4f1119",
 	tinted_bg_removed = "#4f1127",
+	deuteranopia_bg_removed = "#3d3d00",
 	bg_removed_faint = "#380a0f",
 	tinted_bg_removed_faint = "#380a19",
+	deuteranopia_bg_removed_faint = "#281f00",
 	bg_removed_refine = "#781a1f",
 	tinted_bg_removed_refine = "#781a3a",
+	deuteranopia_bg_removed_refine = "#555500",
 	bg_removed_fringe = "#b81a1f",
 	tinted_bg_removed_fringe = "#b81a26",
+	deuteranopia_bg_removed_fringe = "#d0c03f",
 	fg_removed = "#ffbfbf",
+	deuteranopia_fg_removed = "#d4d48f",
 	fg_removed_intense = "#ff9095",
+	deuteranopia_fg_removed_intense = "#d0b05f",
 	bg_diff_context = "#1a1a1a",
 	tinted_bg_diff_context = "#1a1f30",
 }
@@ -343,7 +397,11 @@ function M.setup(opts)
 	local colors = M[style]
 
 	colors.cursor = colors.fg_main
-	colors.comment = colors.fg_alt
+	colors.comment = colors.fg_dim
+	colors.error = colors.red_cooler
+	colors.warning = colors.yellow_cooler
+	colors.info = colors.blue_cooler
+	colors.hint = colors.cyan_cooler
 
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main
@@ -385,6 +443,47 @@ function M.setup(opts)
 		end
 		if style == "modus_vivendi" then
 			colors.cursor = colors.magenta_warmer
+		end
+	end
+
+	if variant == "deuteranopia" then
+		colors.yellow = colors.deuteranopia_yellow
+		colors.yellow_warmer = colors.deuteranopia_yellow_warmer
+		colors.yellow_cooler = colors.deuteranopia_yellow_cooler
+		colors.bg_mode_line_active = colors.deuteranopia_bg_mode_line_active
+		colors.fg_mode_line_active = colors.deuteranopia_fg_mode_line_active
+		colors.modeline_err = colors.deuteranopia_modeline_err
+		colors.modeline_warning = colors.deuteranopia_modeline_warning
+		colors.modeline_info = colors.deuteranopia_modeline_info
+		colors.bg_added = colors.deuteranopia_bg_added
+		colors.bg_added_faint = colors.deuteranopia_bg_added_faint
+		colors.bg_added_refine = colors.deuteranopia_bg_added_refine
+		colors.bg_added_fringe = colors.deuteranopia_bg_added_fringe
+		colors.fg_added = colors.deuteranopia_fg_added
+		colors.fg_added_intense = colors.deuteranopia_fg_added_intense
+		colors.bg_changed = colors.deuteranopia_bg_changed
+		colors.bg_changed_faint = colors.deuteranopia_bg_changed_faint
+		colors.bg_changed_refine = colors.deuteranopia_bg_changed_refine
+		colors.bg_changed_fringe = colors.deuteranopia_bg_changed_fringe
+		colors.fg_changed = colors.deuteranopia_fg_changed
+		colors.fg_changed_intense = colors.deuteranopia_fg_changed_intense
+		colors.bg_removed = colors.deuteranopia_bg_removed
+		colors.bg_removed_faint = colors.deuteranopia_bg_removed_faint
+		colors.bg_removed_refine = colors.deuteranopia_bg_removed_refine
+		colors.bg_removed_fringe = colors.deuteranopia_bg_removed_fringe
+		colors.fg_removed = colors.deuteranopia_fg_removed
+		colors.fg_removed_intense = colors.deuteranopia_fg_removed_intense
+
+		colors.comment = colors.yellow_cooler
+		colors.error = colors.yellow_warmer
+		colors.warning = colors.yellow
+		colors.info = colors.blue
+
+		if style == "modus_operandi" then
+			colors.cursor = colors.blue_intense
+		end
+		if style == "modus_vivendi" then
+			colors.cursor = colors.yellow_intense
 		end
 	end
 
