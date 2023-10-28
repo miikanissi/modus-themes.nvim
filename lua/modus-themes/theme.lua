@@ -28,10 +28,10 @@ function M.setup()
 	theme.highlights = {
 		-- UI
 		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text
-		NormalNC = { fg = c.fg_inactive, bg = c.bg_main }, -- Normal text in non-current windows
-		NormalFloat = { fg = c.fg_main, bg = c.bg_active }, -- Float Window
-		FloatBorder = { fg = c.border, bg = c.bg_dim }, -- Float Border
-		FloatTitle = { fg = c.border, bg = c.bg_dim }, -- Float Title
+		NormalNC = { fg = c.fg_inactive, bg = c.bg_inactive }, -- Normal text in non-current windows
+		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window
+		FloatBorder = { fg = c.border, bg = c.bg_active }, -- Float Border
+		FloatTitle = { fg = c.border, bg = c.bg_active }, -- Float Title
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
 		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -44,14 +44,14 @@ function M.setup()
 		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|
 		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with 'colorcolumn'
-		FoldColumn = { fg = c.fg_active, bg = c.bg_active }, -- 'foldcolumn'
+		FoldColumn = { fg = c.fg_inactive, bg = c.bg_inactive }, -- 'foldcolumn'
 		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting
 		QuickFixLine = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item
-		PmenuSel = { fg = c.fg_dim, bg = c.bg_dim }, -- Popup menu: selected item
+		PmenuSel = { fg = c.fg_main, bg = c.bg_dim }, -- Popup menu: selected item
 		PmenuSbar = { fg = c.bg_main, bg = c.fg_dim }, -- Popup menu: scrollbar
 		PmenuThumb = { link = "Cursor" }, -- Popup menu: Thumb of the scrollbar
 		Menu = { link = "Pmenu" }, -- Menu
@@ -60,15 +60,15 @@ function M.setup()
 		Title = { fg = c.fg_alt, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- Visual mode selection
 		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection"
-		WildMenu = { bg = c.bg_magenta_intense }, -- current match in 'wildmenu' completion
+		WildMenu = { fg = c.fg_main, bg = c.bg_magenta_intense }, -- current match in 'wildmenu' completion
 		Whitespace = { link = "NonText" }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		TabLine = { fg = c.fg_main, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label
-		TabLineSel = { fg = c.slate, bg = c.bg_tab_current }, -- Tab pages line, active tab page label
+		TabLineSel = { fg = c.fg_alt, bg = c.bg_tab_current }, -- Tab pages line, active tab page label
 		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels
 		EndOfBuffer = { fg = c.fg_inactive }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		MatchParen = { fg = c.fg_main, bg = c.bg_paren_match }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.fg_dim, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = c.fg_dim }, -- Area for messages and cmdline
+		MsgArea = { fg = c.fg_main }, -- Area for messages and cmdline
 		MoreMsg = { fg = c.blue }, -- |more-prompt|
 		StatusLine = { fg = c.fg_active, bg = c.bg_active }, -- Status line of current window
 		StatusLineNC = { fg = c.fg_inactive, bg = c.bg_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
@@ -87,7 +87,7 @@ function M.setup()
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
 
 		-- Syntax
-		Comment = { fg = c.comment, italic = true }, -- Any comment
+		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment
 		String = { fg = c.blue_warmer }, -- String constant: "this is a string"
 		Character = { fg = c.blue_warmer }, -- Character constant: 'c', '\n'
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant: TRUE, false
@@ -95,13 +95,13 @@ function M.setup()
 		Conditional = { fg = c.magenta_cooler }, -- if, then, else, endif, switch, etc.
 		Repeat = { fg = c.magenta_cooler }, -- for, do, while, etc.
 		Label = { fg = c.cyan }, -- case, default, etc.
-		Keyword = { fg = c.magenta_cooler }, -- Any other keyword
+		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword
 		Exception = { fg = c.magenta_cooler }, -- try, catch, throw
 		StorageClass = { fg = c.magenta_cooler }, -- static, register, volatile, etc.
 		Structure = { fg = c.magenta_cooler }, -- struct, union, enum, etc.
 		Constant = { fg = c.blue_cooler }, -- (preferred) any constant
-		Function = { fg = c.magenta }, -- Function name (also: methods for classes)
-		Identifier = { fg = c.cyan }, -- (preferred) any variable name
+		Function = { fg = c.magenta, style = options.styles.variables }, -- Function name (also: methods for classes)
+		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name
 		Include = { fg = c.red_cooler }, -- preprocessor #include
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic Preprocessor
 		Define = { fg = c.red_cooler }, -- preprocessor #define
@@ -116,7 +116,7 @@ function M.setup()
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this
 		Delimiter = { fg = c.magenta_cooler }, -- Character that needs attention ie "."
 		Special = { link = "Type" },
-		Underlined = { fg = c.fg_main, underline = true }, -- (preferred) text that stands out, HTML links
+		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out, HTML links
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct
 
 		-- These groups are for the native LSP client. Some other LSP clients may
@@ -126,24 +126,24 @@ function M.setup()
 		LspReferenceRead = { bg = c.fg_alt }, -- used for highlighting "read" references
 		LspReferenceWrite = { bg = c.fg_alt }, -- used for highlighting "write" references
 
-		DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-		DiagnosticVirtualTextError = { fg = c.error }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn = { fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo = { fg = c.info }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint = { fg = c.hint }, -- Used for "Hint" diagnostic virtual text
+		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text
+		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text
+		DiagnosticVirtualTextInfo = { fg = c.info, bold = true }, -- Used for "Information" diagnostic virtual text
+		DiagnosticVirtualTextHint = { fg = c.hint, bold = true }, -- Used for "Hint" diagnostic virtual text
 
 		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
 		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
 		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
 		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
 
-		ALEErrorSign = { fg = c.error },
-		ALEWarningSign = { fg = c.warning },
+		ALEErrorSign = { fg = c.error, bold = true },
+		ALEWarningSign = { fg = c.warning, bold = true },
 
 		-- These groups are for the Neovim tree-sitter highlights.
 		-- As of writing, tree-sitter support is a WIP, group names may change.
@@ -169,7 +169,7 @@ function M.setup()
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
 		-- TODO:
 		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
-		["@keyword.function"] = { link = "Type" }, -- For keywords used to define a function.
+		["@keyword.function"] = { link = "Function" }, -- For keywords used to define a function.
 
 		["@label"] = { link = "Label" }, -- For labels: `label:` in C and `:label:` in Lua.
 
@@ -272,15 +272,15 @@ function M.setup()
 
 		-- LspTrouble
 		TroubleText = { fg = c.fg_active },
-		TroubleCount = { fg = c.magenta, bg = c.fg_dim },
+		TroubleCount = { fg = c.magenta, bg = c.bg_dim },
 		TroubleNormal = { fg = c.fg_active, bg = c.bg_active },
 
 		-- Illuminate
-		illuminatedWord = { bg = c.fg_dim },
-		illuminatedCurWord = { bg = c.fg_dim },
-		IlluminatedWordText = { bg = c.fg_dim },
-		IlluminatedWordRead = { bg = c.fg_dim },
-		IlluminatedWordWrite = { bg = c.fg_dim },
+		illuminatedWord = { bg = c.bg_dim },
+		illuminatedCurWord = { bg = c.bg_dim },
+		IlluminatedWordText = { bg = c.bg_dim },
+		IlluminatedWordRead = { bg = c.bg_dim },
+		IlluminatedWordWrite = { bg = c.bg_dim },
 
 		-- diff
 		diffAdded = { link = "DiffAdd" },
@@ -329,8 +329,8 @@ function M.setup()
 
 		-- NvimTree
 		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
-		NvimTreeWinSeparator = { fg = c.bg_active, bg = c.bg_active },
-		NvimTreeNormalNC = { fg = c.fg_active, bg = c.bg_active },
+		NvimTreeWinSeparator = { fg = c.border, bg = c.border },
+		NvimTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
 		NvimTreeRootFolder = { fg = c.blue, bold = true },
 		NvimTreeGitDirty = { fg = c.fg_changed },
 		NvimTreeGitNew = { fg = c.fg_added },
@@ -344,7 +344,7 @@ function M.setup()
 
 		-- Neotree
 		NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
-		NeoTreeNormalNC = { fg = c.fg_active, bg = c.bg_active },
+		NeoTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
 		NeoTreeDimText = { fg = c.fg_dim },
 
 		-- Fern
@@ -394,7 +394,7 @@ function M.setup()
 		LspSagaRenameBorder = { fg = c.green },
 		LspSagaDefPreviewBorder = { fg = c.green },
 		LspSagaCodeActionBorder = { fg = c.blue },
-		LspSagaFinderSelection = { fg = c.bg_magenta_intense },
+		LspSagaFinderSelection = { fg = c.magenta_intense },
 		LspSagaCodeActionTitle = { fg = c.blue_warmer },
 		LspSagaCodeActionContent = { fg = c.magenta_cooler },
 		LspSagaSignatureHelpBorder = { fg = c.red },
@@ -650,7 +650,7 @@ function M.setup()
 		MiniStarterCurrent = { nocombine = true },
 		MiniStarterFooter = { fg = c.yellow, italic = true },
 		MiniStarterHeader = { fg = c.blue },
-		MiniStarterInactive = { fg = c.fg_alt },
+		MiniStarterInactive = { fg = c.comment, style = options.styles.comments },
 		MiniStarterItem = { fg = c.fg_main, bg = c.bg_main },
 		MiniStarterItemBullet = { fg = c.border },
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },

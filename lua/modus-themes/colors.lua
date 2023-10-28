@@ -1,4 +1,8 @@
-local util = require("modus-themes.util")
+-- Basic rules for colors:
+-- Regular text must have a contrast ratio of at least 7:1
+-- Large and bold text must have a contrast ratio of at least 4.5:1
+-- Non-text elements and state object (mouseover, focused, selected) must have a
+-- contrast ratio of at least 3:1
 
 local M = {}
 ---@class Palette
@@ -14,13 +18,7 @@ M.modus_operandi = {
 	fg_alt = "#193668",
 	border = "#9f9f9f",
 
-	-- Custom background values for on/off states and must be combined with themselves
-	bg_active = "#c4c4c4",
-	bg_inactive = "#e0e0e0",
-	fg_active = "#0a0a0a",
-	fg_inactive = "#404148",
-
-	-- Common foregrounds that can be combined with bg-main, bg-dim, bg-alt
+	-- Common foreground values
 	red = "#a60000",
 	red_warmer = "#972500",
 	red_cooler = "#a0132f",
@@ -34,7 +32,7 @@ M.modus_operandi = {
 	yellow_cooler = "#7a4f2f",
 	yellow_faint = "#624416",
 	blue = "#0031a9",
-	blue_warmer = "#354fcf",
+	blue_warmer = "#3548cf",
 	blue_cooler = "#0000b0",
 	blue_faint = "#003497",
 	magenta = "#721045",
@@ -53,8 +51,8 @@ M.modus_operandi = {
 	maroon = "#731c52",
 	pink = "#7b435c",
 
-	-- These foreground values can only be combined with bg-main and are
-	-- thus not suitable for general purpose highlighting
+	-- These foreground values can only be used for non-text elements with a 3:1
+	-- contrast ratio. Combine with bg_main, bg_dim, bg_alt
 	red_intense = "#d00000",
 	green_intense = "#008900",
 	yellow_intense = "#808000",
@@ -62,7 +60,7 @@ M.modus_operandi = {
 	magenta_intense = "#dd22dd",
 	cyan_intense = "#008899",
 
-	-- Intense should be combined with fg-main
+	-- Intense should be combined with fg_main for text
 	bg_red_intense = "#ff8f88",
 	bg_green_intense = "#8adf80",
 	bg_yellow_intense = "#f3d000",
@@ -70,7 +68,7 @@ M.modus_operandi = {
 	bg_magenta_intense = "#dfa0f0",
 	bg_cyan_intense = "#a4d5f9",
 
-	-- Subtle should be combined with fg-dim, fg-main
+	-- Subtle should be combined with fg_dim, fg_alt, fg_main
 	bg_red_subtle = "#ffcfbf",
 	bg_green_subtle = "#b3fabf",
 	bg_yellow_subtle = "#fff576",
@@ -88,26 +86,22 @@ M.modus_operandi = {
 
 	-- Special purpose
 	bg_completion = "#c0deff",
-	bg_hover = "#94d4ff",
-	bg_hover_secondary = "#f5d0a0",
 	bg_hl_line = "#d0d6ec",
 	bg_paren_match = "#5fcfff",
 	bg_paren_expression = "#efd3f5",
-	bg_region = "#bcbcbc",
-	bg_region_subtle = "#f0e0cc",
 	bg_char_0 = "#7feaff",
 	bg_char_1 = "#ffaaff",
 	bg_char_2 = "#dff000",
-	-- mode line colors can be used for status line
-	bg_mode_line_active = "#c8c8c8",
-	fg_mode_line_active = "#000000",
-	border_mode_line_active = "#5a5a5a",
-	bg_mode_line_inactive = "#e6e6e6",
-	fg_mode_line_inactive = "#585858",
-	border_mode_line_inactive = "#a3a3a3",
-	modeline_err = "#7f0000",
-	modeline_warning = "#5f0070",
-	modeline_info = "#002580",
+	-- Common active/inactive colors
+	bg_active = "#c4c4c4",
+	bg_inactive = "#e0e0e0",
+	fg_active = "#0a0a0a",
+	fg_inactive = "#404148",
+	-- Status line specific colors
+	bg_status_line_active = "#c8c8c8",
+	fg_status_line_active = "#0a0a0a",
+	bg_status_line_inactive = "#e6e6e6",
+	fg_status_line_inactive = "#585858",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#dfdfdf",
 	bg_tab_current = "#ffffff",
@@ -149,11 +143,8 @@ M.modus_operandi = {
 	tinted_bg_completion = "#f0c1cf",
 	tinted_bg_hl_line = "#f1d5d0",
 	tinted_bg_paren_match = "#7fdfcf",
-	tinted_bg_region = "#c2bcb5",
-	tinted_bg_mode_line_active = "#cab9b2",
-	tinted_border_mode_line_active = "#545454",
-	tinted_bg_mode_line_inactive = "#dfd9cf",
-	tinted_border_mode_line_inactive = "#a59a94",
+	tinted_bg_status_line_active = "#cab9b2",
+	tinted_bg_status_line_inactive = "#dfd9cf",
 	tinted_bg_tab_bar = "#e0d4ce",
 	tinted_bg_tab_current = "#fbf7f0",
 	tinted_bg_tab_other = "#c8b8b2",
@@ -172,12 +163,8 @@ M.modus_operandi = {
 	deuteranopia_yellow = "#695500",
 	deuteranopia_yellow_warmer = "#973300",
 	deuteranopia_yellow_cooler = "#77492f",
-	deuteranopia_bg_mode_line_active = "#d0d6ff",
-	deuteranopia_fg_mode_line_active = "#0f0f0f",
-	deuteranopia_border_mode_line_active = "#4f4f74",
-	deuteranopia_modeline_err = "#603a00",
-	deuteranopia_modeline_warning = "#454500",
-	deuteranopia_modeline_info = "#023d92",
+	deuteranopia_bg_status_line_active = "#d0d6ff",
+	deuteranopia_fg_status_line_active = "#0f0f0f",
 	deuteranopia_bg_added = "#d5d7ff",
 	deuteranopia_bg_added_faint = "#e6e6ff",
 	deuteranopia_bg_added_refine = "#babcef",
@@ -208,18 +195,12 @@ M.modus_operandi = {
 	tritanopia_cyan_faint = "#004f5f",
 	tritanopia_magenta_intense = "#cd22bd",
 	tritanopia_bg_completion = "#afdfef",
-	tritanopia_bg_hover = "#ffafbc",
-	tritanopia_bg_hover_secondary = "#9fdfff",
 	tritanopia_bg_hl_line = "#dfeaec",
 	tritanopia_bg_char_0 = "#ff908f",
 	tritanopia_bg_char_1 = "#bfbfff",
 	tritanopia_bg_char_2 = "#5fcfdf",
-	tritanopia_bg_mode_line_active = "#afe0f2",
-	tritanopia_fg_mode_line_active = "#0f0f0f",
-	tritanopia_border_mode_line_active = "#2f4f44",
-	tritanopia_modeline_err = "#8f0000",
-	tritanopia_modeline_warning = "#6f306f",
-	tritanopia_modeline_info = "#00445f",
+	tritanopia_bg_status_line_active = "#afe0f2",
+	tritanopia_fg_status_line_active = "#0f0f0f",
 	tritanopia_bg_added = "#b5e7ff",
 	tritanopia_bg_added_faint = "#c6f6ff",
 	tritanopia_bg_added_refine = "#9adcef",
@@ -241,18 +222,13 @@ M.modus_vivendi = {
 	-- Base values
 	bg_main = "#000000",
 	bg_dim = "#1e1e1e",
+	bg_alt = "#0f0f0f",
 	fg_main = "#ffffff",
 	fg_dim = "#989898",
 	fg_alt = "#c6daff",
 	border = "#646464",
 
-	-- Custom background values for on/off states and must be combined with themselves
-	bg_active = "#535353",
-	bg_inactive = "#303030",
-	fg_active = "#f4f4f4",
-	fg_inactive = "#bfc0c4",
-
-	-- Common foregrounds that can be combined with bg-main, bg-dim, bg-alt
+	-- Common foreground values
 	red = "#ff5f59",
 	red_warmer = "#ff6b55",
 	red_cooler = "#ff7f9f",
@@ -285,8 +261,8 @@ M.modus_vivendi = {
 	maroon = "#cf7fa7",
 	pink = "#d09dc0",
 
-	-- These foreground values can only be combined with bg-main and are
-	-- thus not suitable for general purpose highlighting
+	-- These foreground values can only be used for non-text elements with a 3:1
+	-- contrast ratio. Combine with bg_main, bg_dim, bg_alt
 	red_intense = "#ff5f5f",
 	green_intense = "#44df44",
 	yellow_intense = "#efef00",
@@ -294,7 +270,7 @@ M.modus_vivendi = {
 	magenta_intense = "#ff66ff",
 	cyan_intense = "#00eff0",
 
-	-- Intense should be combined with fg-main
+	-- Intense should be combined with fg_main for text
 	bg_red_intense = "#9d1f1f",
 	bg_green_intense = "#2f822f",
 	bg_yellow_intense = "#7a6100",
@@ -302,7 +278,7 @@ M.modus_vivendi = {
 	bg_magenta_intense = "#7030af",
 	bg_cyan_intense = "#2266ae",
 
-	-- Subtle should be combined with fg-dim, fg-main, or corresponding foreground
+	-- Subtle should be combined with fg_dim, fg_alt, fg_main
 	bg_red_subtle = "#620f2a",
 	bg_green_subtle = "#00422a",
 	bg_yellow_subtle = "#4a4000",
@@ -320,26 +296,22 @@ M.modus_vivendi = {
 
 	-- Special purpose
 	bg_completion = "#2f447f",
-	bg_hover = "#004f70",
-	bg_hover_secondary = "#654a39",
 	bg_hl_line = "#2f3849",
 	bg_paren_match = "#2f7f9f",
 	bg_paren_expression = "#453040",
-	bg_region = "#5c5c5c",
-	bg_region_subtle = "#4f1c2f",
 	bg_char_0 = "#0050af",
 	bg_char_1 = "#7f1f7f",
 	bg_char_2 = "#625a00",
-	-- mode line colors can be used for status line
-	bg_mode_line_active = "#505050",
-	fg_mode_line_active = "#ffffff",
-	border_mode_line_active = "#959595",
-	bg_mode_line_inactive = "#2d2d2d",
-	fg_mode_line_inactive = "#969696",
-	border_mode_line_inactive = "#606060",
-	modeline_err = "#ffa9bf",
-	modeline_warning = "#dfcf43",
-	modeline_info = "#9fefff",
+	-- Common active/inactive colors
+	bg_active = "#535353",
+	bg_inactive = "#303030",
+	fg_active = "#f4f4f4",
+	fg_inactive = "#bfc0c4",
+	-- Status line specific colors
+	bg_status_line_active = "#505050",
+	fg_status_line_active = "#f0f0f0",
+	bg_status_line_inactive = "#2d2d2d",
+	fg_status_line_inactive = "#969696",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#313131",
 	bg_tab_current = "#000000",
@@ -381,11 +353,8 @@ M.modus_vivendi = {
 	tinted_bg_completion = "#483d8a",
 	tinted_bg_hl_line = "#303a6f",
 	tinted_bg_paren_match = "#2f7f9f",
-	tinted_bg_region = "#555a66",
-	tinted_bg_mode_line_active = "#484d67",
-	tinted_border_mode_line_active = "#979797",
-	tinted_bg_mode_line_inactive = "#292d48",
-	tinted_border_mode_line_inactive = "#606270",
+	tinted_bg_status_line_active = "#484d67",
+	tinted_bg_status_line_inactive = "#292d48",
 	tinted_bg_tab_bar = "#2c3045",
 	tinted_bg_tab_current = "#0d0e1c",
 	tinted_bg_tab_other = "#4a4f6a",
@@ -404,12 +373,8 @@ M.modus_vivendi = {
 	deuteranopia_yellow = "#cabf00",
 	deuteranopia_yellow_warmer = "#ffa00f",
 	deuteranopia_yellow_cooler = "#d8af7a",
-	deuteranopia_bg_mode_line_active = "#2a2a6a",
-	deuteranopia_fg_mode_line_active = "#f0f0f0",
-	deuteranopia_border_mode_line_active = "#8080a7",
-	deuteranopia_modeline_err = "#e5bf00",
-	deuteranopia_modeline_warning = "#c0cf35",
-	deuteranopia_modeline_info = "#abeadf",
+	deuteranopia_bg_status_line_active = "#2a2a6a",
+	deuteranopia_fg_status_line_active = "#f0f0f0",
 	deuteranopia_bg_added = "#003066",
 	deuteranopia_bg_added_faint = "#001a4f",
 	deuteranopia_bg_added_refine = "#0f4a77",
@@ -440,18 +405,12 @@ M.modus_vivendi = {
 	tritanopia_cyan_faint = "#7fdbdf",
 	tritanopia_magenta_intense = "#ef7fff",
 	tritanopia_bg_completion = "#004253",
-	tritanopia_bg_hover = "#8e3e3b",
-	tritanopia_bg_hover_secondary = "#00405f",
 	tritanopia_bg_hl_line = "#2f3849",
 	tritanopia_bg_char_0 = "#922a00",
 	tritanopia_bg_char_1 = "#00709f",
 	tritanopia_bg_char_2 = "#5f3faf",
-	tritanopia_bg_mode_line_active = "#003c52",
-	tritanopia_fg_mode_line_active = "#f0f0f0",
-	tritanopia_border_mode_line_active = "#5f8fb4",
-	tritanopia_modeline_err = "#ff7fbf",
-	tritanopia_modeline_warning = "#df9f93",
-	tritanopia_modeline_info = "#4fcfef",
+	tritanopia_bg_status_line_active = "#003c52",
+	tritanopia_fg_status_line_active = "#f0f0f0",
 	tritanopia_bg_added = "#004254",
 	tritanopia_bg_added_faint = "#003042",
 	tritanopia_bg_added_refine = "#004f7f",
@@ -500,11 +459,8 @@ function M.setup(opts)
 		colors.bg_cyan_nuanced = colors.tinted_bg_cyan_nuanced
 		colors.bg_completion = colors.tinted_bg_completion
 		colors.bg_hl_line = colors.tinted_bg_hl_line
-		colors.bg_region = colors.tinted_bg_region
-		colors.bg_mode_line_active = colors.tinted_bg_mode_line_active
-		colors.bg_mode_line_inactive = colors.tinted_bg_mode_line_inactive
-		colors.border_mode_line_active = colors.tinted_border_mode_line_active
-		colors.border_mode_line_inactive = colors.tinted_border_mode_line_inactive
+		colors.bg_status_line_active = colors.tinted_bg_status_line_active
+		colors.bg_status_line_inactive = colors.tinted_bg_status_line_inactive
 		colors.bg_tab_bar = colors.tinted_bg_tab_bar
 		colors.bg_tab_current = colors.tinted_bg_tab_current
 		colors.bg_tab_other = colors.tinted_bg_tab_other
@@ -520,7 +476,7 @@ function M.setup(opts)
 		colors.bg_diff_context = colors.tinted_bg_diff_context
 		colors.bg_paren_match = colors.tinted_bg_paren_match
 
-		colors.comment = colors.red_faint
+		colors.comment = colors.tinted_red_faint
 
 		if style == "modus_operandi" then
 			colors.cursor = colors.red
@@ -534,12 +490,8 @@ function M.setup(opts)
 		colors.yellow = colors.deuteranopia_yellow
 		colors.yellow_warmer = colors.deuteranopia_yellow_warmer
 		colors.yellow_cooler = colors.deuteranopia_yellow_cooler
-		colors.bg_mode_line_active = colors.deuteranopia_bg_mode_line_active
-		colors.fg_mode_line_active = colors.deuteranopia_fg_mode_line_active
-		colors.border_mode_line_active = colors.deuteranopia_border_mode_line_active
-		colors.modeline_err = colors.deuteranopia_modeline_err
-		colors.modeline_warning = colors.deuteranopia_modeline_warning
-		colors.modeline_info = colors.deuteranopia_modeline_info
+		colors.bg_status_line_active = colors.deuteranopia_bg_status_line_active
+		colors.fg_status_line_active = colors.deuteranopia_fg_status_line_active
 		colors.bg_added = colors.deuteranopia_bg_added
 		colors.bg_added_faint = colors.deuteranopia_bg_added_faint
 		colors.bg_added_refine = colors.deuteranopia_bg_added_refine
@@ -559,9 +511,9 @@ function M.setup(opts)
 		colors.fg_removed = colors.deuteranopia_fg_removed
 		colors.fg_removed_intense = colors.deuteranopia_fg_removed_intense
 
-		colors.comment = colors.yellow_cooler
-		colors.error = colors.yellow_warmer
-		colors.warning = colors.yellow
+		colors.comment = colors.deuteranopia_yellow_cooler
+		colors.error = colors.deuteranopia_yellow_warmer
+		colors.warning = colors.deuteranopia_yellow
 		colors.info = colors.blue
 
 		if style == "modus_operandi" then
@@ -583,18 +535,12 @@ function M.setup(opts)
 		colors.cyan_warmer = colors.tritanopia_cyan_warmer
 		colors.cyan_faint = colors.tritanopia_cyan_faint
 		colors.bg_completion = colors.tritanopia_bg_completion
-		colors.bg_hover = colors.tritanopia_bg_hover
-		colors.bg_hover_secondary = colors.tritanopia_bg_hover_secondary
 		colors.bg_hl_line = colors.tritanopia_bg_hl_line
 		colors.bg_char_0 = colors.tritanopia_bg_char_0
 		colors.bg_char_1 = colors.tritanopia_bg_char_1
 		colors.bg_char_2 = colors.tritanopia_bg_char_2
-		colors.bg_mode_line_active = colors.tritanopia_bg_mode_line_active
-		colors.fg_mode_line_active = colors.tritanopia_fg_mode_line_active
-		colors.border_mode_line_active = colors.tritanopia_border_mode_line_active
-		colors.modeline_err = colors.tritanopia_modeline_err
-		colors.modeline_warning = colors.tritanopia_modeline_warning
-		colors.modeline_info = colors.tritanopia_modeline_info
+		colors.bg_status_line_active = colors.tritanopia_bg_status_line_active
+		colors.fg_status_line_active = colors.tritanopia_fg_status_line_active
 		colors.bg_added = colors.tritanopia_bg_added
 		colors.bg_added_faint = colors.tritanopia_bg_added_faint
 		colors.bg_added_refine = colors.tritanopia_bg_added_refine
@@ -608,7 +554,7 @@ function M.setup(opts)
 		colors.fg_changed = colors.tritanopia_fg_changed
 		colors.fg_changed_intense = colors.tritanopia_fg_changed_intense
 
-		colors.comment = colors.red_faint
+		colors.comment = colors.tritanopia_red_faint
 		colors.error = colors.red_warmer
 		colors.warning = colors.magenta
 		colors.info = colors.cyan

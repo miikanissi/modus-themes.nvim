@@ -75,7 +75,6 @@ function M.load(theme)
 
 	M.syntax(theme.highlights)
 
-	-- vim.api.nvim_set_hl_ns(M.ns)
 	M.terminal(theme.colors)
 
 	vim.defer_fn(function()

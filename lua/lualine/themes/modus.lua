@@ -3,40 +3,40 @@ local colors = require("modus-themes.colors").setup()
 local modus = {}
 
 modus.normal = {
-	a = { bg = colors.blue_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.blue_warmer },
-	c = { bg = colors.bg_mode_line_inactive, fg = colors.fg_active },
+	a = { bg = colors.blue_cooler, fg = colors.bg_dim, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.blue_cooler, gui = "bold" },
+	c = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_active },
 }
 
 modus.insert = {
-	a = { bg = colors.green_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.green_warmer },
+	a = { bg = colors.green_cooler, fg = colors.bg_dim, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.green_cooler, gui = "bold" },
 }
 
 modus.command = {
-	a = { bg = colors.yellow_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.yellow_warmer },
+	a = { bg = colors.yellow_cooler, fg = colors.bg_dim, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.yellow_cooler, gui = "bold" },
 }
 
 modus.visual = {
 	a = { bg = colors.magenta_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.magenta_warmer },
+	b = { bg = colors.bg_status_line_active, fg = colors.magenta_warmer, gui = "bold" },
 }
 
 modus.replace = {
-	a = { bg = colors.red_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.red_warmer },
+	a = { bg = colors.red_cooler, fg = colors.bg_dim, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.red_cooler, gui = "bold" },
 }
 
 modus.terminal = {
-	a = { bg = colors.green_warmer, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.fg_main },
+	a = { bg = colors.green_cooler, fg = colors.bg_dim, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.green_cooler, gui = "bold" },
 }
 
 modus.inactive = {
-	a = { bg = colors.bg_mode_line_active, fg = colors.bg_dim, gui = "bold" },
-	b = { bg = colors.bg_mode_line_active, fg = colors.fg_dim, gui = "bold" },
-	c = { bg = colors.bg_mode_line_active, fg = colors.fg_dim },
+	a = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive, gui = "bold" },
+	b = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive, gui = "bold" },
+	c = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive },
 }
 
 return modus

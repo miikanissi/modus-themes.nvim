@@ -1,6 +1,7 @@
 local M = {}
 
 ---@class Config
+---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 local defaults = {
 	style = "modus_vivendi", -- Theme comes in two styles `modus_operandi` and `modus_vivendi`

@@ -4,36 +4,47 @@ local modus = {}
 
 modus.normal = {
 
-	left = { { colors.bg_dim, colors.blue_warmer }, { colors.blue_warmer, colors.bg_dim } },
-	middle = { { colors.fg_active, colors.bg_mode_line_inactive } },
-	right = { { colors.bg_dim, colors.blue_warmer }, { colors.blue_warmer, colors.bg_dim } },
-	error = { { colors.bg_dim, colors.red_cooler } },
-	warning = { { colors.bg_dim, colors.yellow_cooler } },
+	left = {
+		{ colors.bg_status_line_active, colors.blue_cooler },
+		{ colors.blue_cooler, colors.bg_status_line_active },
+	},
+	middle = { { colors.fg_status_line_active, colors.bg_status_line_active } },
+	right = {
+		{ colors.bg_status_line_active, colors.blue_cooler },
+		{ colors.blue_cooler, colors.bg_status_line_active },
+	},
+	error = { { colors.bg_status_line_active, colors.red_cooler } },
+	warning = { { colors.bg_status_line_active, colors.yellow_cooler } },
 }
 
 modus.insert = {
-	left = { { colors.bg_dim, colors.green_warmer }, { colors.blue_warmer, colors.bg_dim } },
+	left = {
+		{ colors.bg_status_line_active, colors.green_cooler },
+		{ colors.green_cooler, colors.bg_status_line_active },
+	},
 }
 
 modus.visual = {
-	left = { { colors.bg_dim, colors.magenta_warmer }, { colors.magenta_warmer, colors.bg_dim } },
+	left = {
+		{ colors.bg_status_line_active, colors.magenta_warmer },
+		{ colors.magenta_warmer, colors.bg_status_line_active },
+	},
 }
 
 modus.replace = {
-	left = { { colors.bg_dim, colors.red_warmer }, { colors.red_warmer, colors.bg_dim } },
+	left = { { colors.bg_status_line_active, colors.red_cooler }, { colors.red_cooler, colors.bg_status_line_active } },
 }
 
 modus.inactive = {
-	left = { { colors.blue, colors.bg_mode_line_inactive }, { colors.fg_dim, colors.bg_dim } },
-	middle = { { colors.bg_mode_line_active, colors.bg_mode_line_inactive } },
-	right = { { colors.bg_mode_line_active, colors.bg_mode_line_inactive }, { colors.fg_dim, colors.bg_dim } },
-}
-
-modus.tabline = {
-	left = { { colors.fg_dim, colors.bg_hl_line }, { colors.fg_dim, colors.bg_dim } },
-	middle = { { colors.bg_mode_line_active, colors.bg_mode_line_inactive } },
-	right = { { colors.bg_mode_line_active, colors.bg_mode_line_inactive }, { colors.fg_dim, colors.bg_dim } },
-	tabsel = { { colors.blue, colors.bg_mode_line_active }, { colors.fg_dim, colors.bg_dim } },
+	left = {
+		{ colors.bg_status_line_inactive, colors.fg_status_line_inactive },
+		{ colors.fg_status_line_inactive, colors.bg_status_line_inactive },
+	},
+	middle = { { colors.fg_status_line_active, colors.bg_status_line_inactive } },
+	right = {
+		{ colors.bg_status_line_active, colors.fg_status_line_inactive },
+		{ colors.fg_status_line_inactive, colors.bg_status_line_active },
+	},
 }
 
 return modus
