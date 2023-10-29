@@ -430,7 +430,7 @@ function M.setup(opts)
 	opts = opts or {}
 	local config = require("modus-themes.config")
 
-	local style = config.is_light() and "modus_operandi" or config.options.style
+	local style = config.is_light() and "modus_operandi" or "modus_vivendi"
 	local variant = config.options.variant
 
 	-- Color Palette

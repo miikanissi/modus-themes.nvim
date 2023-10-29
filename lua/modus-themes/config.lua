@@ -4,7 +4,9 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 local defaults = {
-	style = "modus_vivendi", -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+	-- `auto` will automatically set style based on background set with vim.o.background
+	style = "auto",
 	variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
 	styles = {
 		-- Style to be applied to different syntax groups
@@ -14,7 +16,6 @@ local defaults = {
 		functions = {},
 		variables = {},
 	},
-	auto_style = true, -- automatically set style based on background set to vim.o.background
 
 	--- You can override specific color groups to use other groups or a hex color
 	--- function will be called with a ColorScheme table
@@ -42,7 +43,7 @@ function M.extend(options)
 end
 
 function M.is_light()
-	return M.options.style == "modus_operandi" or M.options.auto_style and vim.o.background == "light"
+	return M.options.style == "modus_operandi" or M.options.style == "auto" and vim.o.background == "light"
 end
 
 M.setup()

@@ -1,0 +1,15 @@
+name: Feature request
+description: Suggest an idea for Modus Themes
+labels: [enhancement]
+body:
+  - type: textarea
+    attributes:
+      label: "Description"
+      description: "A short description of the feature idea you have."
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Additional context"
+      description: "Any other context or screenshots about the feature."

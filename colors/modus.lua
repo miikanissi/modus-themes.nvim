@@ -1,1 +1,1 @@
-require("modus-themes")._load()
+require("modus-themes").load()

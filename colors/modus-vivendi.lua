@@ -1,1 +1,1 @@
-require("modus-themes")._load("modus_vivendi")
+require("modus-themes").load({ style = "modus_vivendi" })
