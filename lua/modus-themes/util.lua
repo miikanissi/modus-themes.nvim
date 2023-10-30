@@ -22,6 +22,20 @@ function M.highlight(group, hl)
 	vim.api.nvim_set_hl(0, group, hl)
 end
 
+-- Simple string interpolation.
+--
+-- Example template: "${name} is ${value}"
+--
+---@param str string template string
+---@param table table key value pairs to replace in the string
+function M.template(str, table)
+	return (
+		str:gsub("($%b{})", function(w)
+			return vim.tbl_get(table, unpack(vim.split(w:sub(3, -2), ".", { plain = true }))) or w
+		end)
+	)
+end
+
 function M.syntax(syntax)
 	for group, colors in pairs(syntax) do
 		M.highlight(group, colors)
@@ -36,22 +50,22 @@ function M.terminal(colors)
 	vim.g.terminal_color_7 = colors.bg_dim
 	vim.g.terminal_color_15 = colors.bg_main
 
-	vim.g.terminal_color_1 = colors.red_faint
+	vim.g.terminal_color_1 = colors.red
 	vim.g.terminal_color_9 = colors.red_intense
 
-	vim.g.terminal_color_2 = colors.green_faint
+	vim.g.terminal_color_2 = colors.green
 	vim.g.terminal_color_10 = colors.green_intense
 
-	vim.g.terminal_color_3 = colors.yellow_faint
+	vim.g.terminal_color_3 = colors.yellow
 	vim.g.terminal_color_11 = colors.yellow_intense
 
-	vim.g.terminal_color_4 = colors.blue_faint
+	vim.g.terminal_color_4 = colors.blue
 	vim.g.terminal_color_12 = colors.blue_intense
 
-	vim.g.terminal_color_5 = colors.magenta_faint
+	vim.g.terminal_color_5 = colors.magenta
 	vim.g.terminal_color_13 = colors.magenta_intense
 
-	vim.g.terminal_color_6 = colors.cyan_faint
+	vim.g.terminal_color_6 = colors.cyan
 	vim.g.terminal_color_14 = colors.cyan_intense
 end
 

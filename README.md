@@ -13,13 +13,14 @@ is a Neovim port of the original
 
 - Extensive `TreeSitter` syntax highlighting and `LSP` integration
 - Supports most popular plugins
-- Switch between light and dark mode automatically based on `vim.o.background`
-- Provides [extras](#-extras) to use with numerous other applications
+- Switch between light (`modus_operandi`) and dark (`modus_vivendi`) mode automatically
+  based on `vim.o.background`
+- Provides [extras](#extras) to use Modus Themes with numerous other applications
 
 ## Requirements
 
 - [Neovim](https://github.com/neovim/neovim) >=
-  [0.7.2](https://github.com/neovim/neovim/releases/tag/v0.7.2)
+  [0.8.0](https://github.com/neovim/neovim/releases/tag/v0.8.0)
 
 ## Installation
 
@@ -48,13 +49,13 @@ Plug 'miikanissi/modus-themes.nvim'
 ### Lua
 
 ```lua
-vim.cmd([[colorscheme modus]]) -- modus-operandi, modus-vivendi
+vim.cmd([[colorscheme modus]]) -- modus_operandi, modus_vivendi
 ```
 
 ### Vim Script
 
 ```vim
-colorscheme modus " modus-operandi, modus-vivendi
+colorscheme modus " modus_operandi, modus_vivendi
 ```
 
 ## Configuration
@@ -62,8 +63,8 @@ colorscheme modus " modus-operandi, modus-vivendi
 > Ensure the configuration is set **BEFORE** loading the color scheme with
 > `colorscheme modus`.
 
-By default, the theme will choose between light (modus-operandi) and dark
-(modus-vivendi) based on the background value set with `vim.o.background`.
+By default, the theme will choose between light (`modus_operandi`) and dark
+(`modus_vivendi`) based on the background value set with `vim.o.background`.
 
 If using the default options, there is no need to explicitly call `setup`.
 
@@ -113,6 +114,13 @@ require("modus-themes").setup({
 })
 ```
 
+## Extras
+
+<!-- prettier-ignore-start -->
+<!-- extras:start -->
+<!-- extras:end -->
+<!-- prettier-ignore-end -->
+
 ## Contributing
 
 Contributions are welcome. Feel free to create a pull request to add support for any
@@ -120,6 +128,24 @@ missing plugins, or to report an issue.
 
 Please ensure the WCAG AAA contrast requirements are met. You can use this
 [contrast checker](https://webaim.org/resources/contrastchecker/) for reference.
+
+For the [extras](#extras), we use a simple template system that generates the extra
+files.
+
+How to add a new extra template:
+
+1. Create a file like `lua/modus-themes/extras/extra-app.lua`.
+2. Add the name and output file extension to the `extras` table in
+   `lua/modus-themes/extras/init.lua`.
+3. Run the following command to generate new [extras](#extras) from the Modus Themes
+   plugin directory:
+
+   ```sh
+   nvim --headless "+lua require('modus-themes.extras').setup()" +qa
+   ```
+
+4. Check the newly created themes in the `extras/` directory. Please **DO NOT** commit
+   them, as they are already automatically built by the CI.
 
 ## Acknowledgements
 
