@@ -5,13 +5,17 @@ local M = {}
 
 -- map of plugin name to plugin extension
 --- @type table<string, {ext:string, url:string, label:string}>
+-- stylua: ignore
 M.extras = {
 	alacritty = { ext = "yml", url = "https://github.com/alacritty/alacritty", label = "Alacritty" },
 	delta = { ext = "gitconfig", url = "https://github.com/dandavison/delta", label = "Delta" },
+	dunst = { ext = "dunstrc", url = "https://dunst-project.org/", label = "Dunst" },
+	fish = { ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish" },
+	foot = { ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot" },
 }
 
 local function write(str, fileName)
-	print("[write] extra/" .. fileName)
+	print("[write] extras/" .. fileName .. "\n")
 	vim.fn.mkdir(vim.fs.dirname("extras/" .. fileName), "p")
 	local file = io.open("extras/" .. fileName, "w")
 	file:write(str)
@@ -40,10 +44,12 @@ function M.docs()
 	local lines = {}
 	local names = vim.tbl_keys(M.extras)
 	table.sort(names)
+	table.insert(lines, "")
 	for _, name in ipairs(names) do
 		local info = M.extras[name]
 		table.insert(lines, "- [" .. info.label .. "](" .. info.url .. ") ([" .. name .. "](extras/" .. name .. "))")
 	end
+	table.insert(lines, "")
 	readme = readme:gsub(pattern, "%1\n" .. table.concat(lines, "\n") .. "\n%2")
 	M.write_file(file, readme)
 end

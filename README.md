@@ -118,8 +118,13 @@ require("modus-themes").setup({
 
 <!-- prettier-ignore-start -->
 <!-- extras:start -->
+
 - [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](extras/alacritty))
 - [Delta](https://github.com/dandavison/delta) ([delta](extras/delta))
+- [Dunst](https://dunst-project.org/) ([dunst](extras/dunst))
+- [Fish](https://fishshell.com/docs/current/index.html) ([fish](extras/fish))
+- [Foot](https://codeberg.org/dnkl/foot) ([foot](extras/foot))
+
 <!-- extras:end -->
 <!-- prettier-ignore-end -->
 
@@ -154,4 +159,4 @@ How to add a new extra template:
 - [Modus Themes](https://protesilaos.com/emacs/modus-themes): Original Modus Themes for
   GNU Emacs
 - [Tokyo Night](https://github.com/folke/tokyonight.nvim): Neovim theme used for
-  inspiration
+  inspiration and as a base project template

@@ -13,7 +13,9 @@ function M.generate(colors)
 
 	local alacritty = util.template(
 		[[
-# Modus Themes Alacritty Colors
+# Modus Themes for Alacritty 
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/alacritty.lua
+
 colors:
   # Default colors
   primary:
@@ -45,8 +47,7 @@ colors:
   indexed_colors:
     - { index: 16, color: '${yellow_warmer}' }
     - { index: 17, color: '${red_faint}' }
-    
-  ]],
+]],
 		alacrittyColors
 	)
 

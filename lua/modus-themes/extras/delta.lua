@@ -6,6 +6,8 @@ local M = {}
 function M.generate(colors)
 	local delta = util.template(
 		[[
+; Modus Themes for Delta
+; Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/delta.lua
 [delta]
   minus-style                   = syntax "${fg_removed}"
   minus-non-emph-style          = syntax "${fg_removed}"
