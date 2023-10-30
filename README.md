@@ -118,6 +118,8 @@ require("modus-themes").setup({
 
 <!-- prettier-ignore-start -->
 <!-- extras:start -->
+- [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](extras/alacritty))
+- [Delta](https://github.com/dandavison/delta) ([delta](extras/delta))
 <!-- extras:end -->
 <!-- prettier-ignore-end -->
 

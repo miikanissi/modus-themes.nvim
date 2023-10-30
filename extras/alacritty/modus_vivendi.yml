@@ -1,0 +1,34 @@
+# Modus Themes Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xff5f59'
+    green:   '0x44bc44'
+    yellow:  '0xd0bc00'
+    blue:    '0x2fafff'
+    magenta: '0xfeacd0'
+    cyan:    '0x00d3d0'
+    white:   '0x1e1e1e'
+
+  # Bright colors
+  bright:
+    black:   '0x989898'
+    red:     '0xff5f5f'
+    green:   '0x44df44'
+    yellow:  '0xefef00'
+    blue:    '0x338fff'
+    magenta: '0xff66ff'
+    cyan:    '0x00eff0'
+    white:   '0x000000'
+
+  indexed_colors:
+    - { index: 16, color: '0xfec43f' }
+    - { index: 17, color: '0xff9580' }
+    
+  
