@@ -130,6 +130,7 @@ require("modus-themes").setup({
 - [Lua Table for testing](https://www.lua.org) ([lua](extras/lua))
 - [PrismJS](https://prismjs.com) ([prismjs](extras/prismjs))
 - [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](extras/terminator))
+- [Tilix](https://github.com/gnunn1/tilix) ([tilix](extras/tilix))
 
 <!-- extras:end -->
 <!-- prettier-ignore-end -->
