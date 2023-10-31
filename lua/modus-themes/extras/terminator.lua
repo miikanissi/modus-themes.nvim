@@ -7,7 +7,7 @@ function M.generate(colors)
 	local terminator = util.template(
 		[=[
 [[${_style_name}]]
-  palette = "${fg_main}:${red}:${green}:${yellow}:${blue}:${magenta}:${cyan}:${bg_dim}:${fg_dim}:${red_intense}:${green_intense}:${yellow_intense}:${blue_intense}:${magenta_intense}:${cyan_intense}:${bg_main}"
+  palette = "${bg_main}:${red}:${green}:${yellow}:${blue}:${magenta}:${cyan}:${fg_main}:${bg_dim}:${red_intense}:${green_intense}:${yellow_intense}:${blue_intense}:${magenta_intense}:${cyan_intense}:${fg_dim}"
   background_color = "${bg_main}"
   foreground_color = "${fg_main}"
   ]=],

@@ -13,22 +13,22 @@ function M.generate(colors)
     "foreground-color": "${fg_main}",
     "background-color": "${bg_main}",
     "palette": [
-        "${fg_main}",
+        "${bg_main}",
         "${red}",
         "${green}",
         "${yellow}",
         "${blue}",
         "${magenta}",
         "${cyan}",
+        "${fg_main}",
         "${bg_dim}",
-        "${fg_dim}",
         "${red_intense}",
         "${green_intense}",
         "${yellow_intense}",
         "${blue_intense}",
         "${magenta_intense}",
         "${cyan_intense}",
-        "${bg_main}"
+        "${fg_dim}"
     ]
 }
 ]],

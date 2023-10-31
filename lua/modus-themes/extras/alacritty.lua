@@ -24,25 +24,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '${fg_main}'
+    black:   '${bg_main}'
     red:     '${red}'
     green:   '${green}'
     yellow:  '${yellow}'
     blue:    '${blue}'
     magenta: '${magenta}'
     cyan:    '${cyan}'
-    white:   '${bg_dim}'
+    white:   '${fg_main}'
 
   # Bright colors
   bright:
-    black:   '${fg_dim}'
+    black:   '${bg_dim}'
     red:     '${red_intense}'
     green:   '${green_intense}'
     yellow:  '${yellow_intense}'
     blue:    '${blue_intense}'
     magenta: '${magenta_intense}'
     cyan:    '${cyan_intense}'
-    white:   '${bg_main}'
+    white:   '${fg_dim}'
 
   indexed_colors:
     - { index: 16, color: '${yellow_warmer}' }

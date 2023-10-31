@@ -31,13 +31,13 @@ function M.generate(colors)
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${fg_main.b}</real>
+		<real>${bg_main.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${fg_main.g}</real>
+		<real>${bg_main.g}</real>
 		<key>Red Component</key>
-		<real>${fg_main.r}</real>
+		<real>${bg_main.r}</real>
 	</dict>
 	<key>Ansi 1 Color</key>
 	<dict>
@@ -122,13 +122,13 @@ function M.generate(colors)
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${bg_main.b}</real>
+		<real>${fg_dim.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${bg_main.g}</real>
+		<real>${fg_dim.g}</real>
 		<key>Red Component</key>
-		<real>${bg_main.r}</real>
+		<real>${fg_dim.r}</real>
 	</dict>
 	<key>Ansi 2 Color</key>
 	<dict>
@@ -200,6 +200,19 @@ function M.generate(colors)
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
+		<real>${fg_main.b}</real>
+		<key>Color Space</key>
+		<string>sRGB</string>
+		<key>Green Component</key>
+		<real>${fg_main.g}</real>
+		<key>Red Component</key>
+		<real>${fg_main.r}</real>
+	</dict>
+	<key>Ansi 8 Color</key>
+	<dict>
+		<key>Alpha Component</key>
+		<real>1</real>
+		<key>Blue Component</key>
 		<real>${bg_dim.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
@@ -207,19 +220,6 @@ function M.generate(colors)
 		<real>${bg_dim.g}</real>
 		<key>Red Component</key>
 		<real>${bg_dim.r}</real>
-	</dict>
-	<key>Ansi 8 Color</key>
-	<dict>
-		<key>Alpha Component</key>
-		<real>1</real>
-		<key>Blue Component</key>
-		<real>${fg_dim.b}</real>
-		<key>Color Space</key>
-		<string>sRGB</string>
-		<key>Green Component</key>
-		<real>${fg_dim.g}</real>
-		<key>Red Component</key>
-		<real>${fg_dim.r}</real>
 	</dict>
 	<key>Ansi 9 Color</key>
 	<dict>

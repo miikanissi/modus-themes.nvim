@@ -44,11 +44,11 @@ end
 
 ---@param colors ColorScheme
 function M.terminal(colors)
-	vim.g.terminal_color_0 = colors.fg_main
-	vim.g.terminal_color_8 = colors.fg_dim
+	vim.g.terminal_color_0 = colors.bg_main
+	vim.g.terminal_color_8 = colors.bg_dim
 
-	vim.g.terminal_color_7 = colors.bg_dim
-	vim.g.terminal_color_15 = colors.bg_main
+	vim.g.terminal_color_7 = colors.fg_main
+	vim.g.terminal_color_15 = colors.fg_dim
 
 	vim.g.terminal_color_1 = colors.red
 	vim.g.terminal_color_9 = colors.red_intense
