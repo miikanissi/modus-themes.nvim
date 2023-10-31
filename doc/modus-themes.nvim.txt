@@ -151,6 +151,7 @@ EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 - Lua Table for testing <https://www.lua.org> (lua <extras/lua>)
 - PrismJS <https://prismjs.com> (prismjs <extras/prismjs>)
 - Terminator <https://gnome-terminator.readthedocs.io/en/latest/config.html> (terminator <extras/terminator>)
+- Tilix <https://github.com/gnunn1/tilix> (tilix <extras/tilix>)
 
 
 CONTRIBUTING                     *modus-themes.nvim-modus-themes-contributing*
