@@ -18,6 +18,7 @@ M.extras = {
 	lua = { ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing" },
 	prismjs = { ext = "js", url = "https://prismjs.com", label = "PrismJS" },
 	terminator = { ext = "conf", url = "https://gnome-terminator.readthedocs.io/en/latest/config.html", label = "Terminator" },
+	tilix = { ext = "json", url = "https://github.com/gnunn1/tilix", label = "Tilix" },
 }
 
 local function write(str, fileName)
