@@ -12,6 +12,12 @@ M.extras = {
 	dunst = { ext = "dunstrc", url = "https://dunst-project.org/", label = "Dunst" },
 	fish = { ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish" },
 	foot = { ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot" },
+	gitui = { ext = "ron", url = "https://github.com/extrawurst/gitui", label = "GitUI" },
+	iterm = { ext = "itermcolors", url = "https://iterm2.com/", label = "iTerm" },
+	kitty = { ext = "conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty" },
+	lua = { ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing" },
+	prismjs = { ext = "js", url = "https://prismjs.com", label = "PrismJS" },
+	terminator = { ext = "conf", url = "https://gnome-terminator.readthedocs.io/en/latest/config.html", label = "Terminator" },
 }
 
 local function write(str, fileName)
