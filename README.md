@@ -124,6 +124,12 @@ require("modus-themes").setup({
 - [Dunst](https://dunst-project.org/) ([dunst](extras/dunst))
 - [Fish](https://fishshell.com/docs/current/index.html) ([fish](extras/fish))
 - [Foot](https://codeberg.org/dnkl/foot) ([foot](extras/foot))
+- [GitUI](https://github.com/extrawurst/gitui) ([gitui](extras/gitui))
+- [iTerm](https://iterm2.com/) ([iterm](extras/iterm))
+- [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](extras/kitty))
+- [Lua Table for testing](https://www.lua.org) ([lua](extras/lua))
+- [PrismJS](https://prismjs.com) ([prismjs](extras/prismjs))
+- [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](extras/terminator))
 
 <!-- extras:end -->
 <!-- prettier-ignore-end -->

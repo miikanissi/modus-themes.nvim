@@ -1,0 +1,25 @@
+# Modus Themes for GitUI 
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/gitui.lua
+(
+  selected_tab: Rgb(254,172,208), // magenta #feacd0
+  command_fg: Rgb(152,152,152), // comment #989898
+  selection_bg: Rgb(112,48,175), // bg_magenta_intense #7030af
+  selection_fg: Rgb(255,255,255), // fg_main #ffffff
+  cmdbar_bg: Rgb(0,0,0), // bg_main #000000
+  cmdbar_extra_lines_bg: Rgb(0,0,0), // bg_main #000000
+  disabled_fg: Rgb(152,152,152), // comment #989898
+  diff_line_add: Rgb(160,224,160), // fg_added #a0e0a0
+  diff_line_delete: Rgb(255,191,191), // fg_removed #ffbfbf
+  diff_file_added: Rgb(160,224,160), // fg_added #a0e0a0
+  diff_file_removed: Rgb(255,191,191), // fg_removed #ffbfbf
+  diff_file_moved: Rgb(202,166,223), // magenta_faint #caa6df
+  diff_file_modified: Rgb(239,239,128), // fg_changed #efef80
+  commit_hash: Rgb(202,166,223), // magenta_faint #caa6df
+  commit_time: Rgb(106,228,185), // cyan_cooler #6ae4b9
+  commit_author: Rgb(68,188,68), // green #44bc44
+  danger_fg: Rgb(255,95,89), // red #ff5f59
+  push_gauge_bg: Rgb(0,0,0), // bg_main #000000
+  push_gauge_fg: Rgb(255,255,255), // fg_main #ffffff
+  tag_fg: Rgb(247,143,231), // magenta_warmer #f78fe7
+  branch_fg: Rgb(208,188,0), // yellow #d0bc00
+)
