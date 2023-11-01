@@ -1,0 +1,36 @@
+# Modus Themes for Zathura 
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/zathura.lua
+#
+set notification-error-bg "#9d1f1f"
+set notification-error-fg "#ffffff"
+set notification-warning-bg "#7a6100"
+set notification-warning-fg "#ffffff"
+set notification-bg "#000000"
+set notification-fg "#ffffff"
+set completion-bg "#000000"
+set completion-fg "#989898"
+set completion-group-bg "#000000"
+set completion-group-fg "#989898"
+set completion-highlight-bg "#000000"
+set completion-highlight-fg "#ffffff"
+set index-bg "#000000"
+set index-fg "#ffffff"
+set index-active-bg "#000000"
+set index-active-fg "#ffffff"
+set inputbar-bg "#000000"
+set inputbar-fg "#ffffff"
+set statusbar-bg "#505050"
+set statusbar-fg "#f0f0f0"
+set highlight-color "#d0bc00"
+set highlight-active-color "#44bc44"
+set default-bg "#000000"
+set default-fg "#ffffff"
+set render-loading true
+set render-loading-fg "#000000"
+set render-loading-bg "#ffffff"
+#
+# Recolor mode settings
+# <C-r> to switch modes
+#
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#ffffff"

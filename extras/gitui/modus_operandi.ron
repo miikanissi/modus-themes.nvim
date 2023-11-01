@@ -3,7 +3,7 @@
 (
   selected_tab: Rgb(114,16,69), // magenta #721045
   command_fg: Rgb(89,89,89), // comment #595959
-  selection_bg: Rgb(223,160,240), // bg_magenta_intense #dfa0f0
+  selection_bg: Rgb(223,160,240), // visual #dfa0f0
   selection_fg: Rgb(0,0,0), // fg_main #000000
   cmdbar_bg: Rgb(255,255,255), // bg_main #ffffff
   cmdbar_extra_lines_bg: Rgb(255,255,255), // bg_main #ffffff

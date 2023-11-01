@@ -181,6 +181,7 @@ local colors = {
   tritanopia_yellow = "#cabf00",
   tritanopia_yellow_cooler = "#d8af7a",
   tritanopia_yellow_warmer = "#ffa00f",
+  visual = "#7030af",
   warning = "#dfaf7a",
   yellow = "#d0bc00",
   yellow_cooler = "#dfaf7a",

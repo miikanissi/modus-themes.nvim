@@ -137,6 +137,11 @@ require("modus-themes").setup({
 - [PrismJS](https://prismjs.com) ([prismjs](extras/prismjs))
 - [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](extras/terminator))
 - [Tilix](https://github.com/gnunn1/tilix) ([tilix](extras/tilix))
+- [WezTerm](https://wezfurlong.org/wezterm/config/files.html) ([wezterm](extras/wezterm))
+- [Windows Terminal](https://aka.ms/terminal-documentation) ([windows_terminal](extras/windows_terminal))
+- [Xfce Terminal](https://docs.xfce.org/apps/terminal/advanced) ([xfceterm](extras/xfceterm))
+- [Xresources](https://wiki.archlinux.org/title/X_resources) ([xresources](extras/xresources))
+- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
 
 <!-- extras:end -->
 <!-- prettier-ignore-end -->
