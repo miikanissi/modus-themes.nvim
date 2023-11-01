@@ -19,6 +19,11 @@ M.extras = {
 	prismjs = { ext = "js", url = "https://prismjs.com", label = "PrismJS" },
 	terminator = { ext = "conf", url = "https://gnome-terminator.readthedocs.io/en/latest/config.html", label = "Terminator" },
 	tilix = { ext = "json", url = "https://github.com/gnunn1/tilix", label = "Tilix" },
+	wezterm = { ext = "toml", url = "https://wezfurlong.org/wezterm/config/files.html", label = "WezTerm" },
+	windows_terminal = { ext = "json", url = "https://aka.ms/terminal-documentation", label = "Windows Terminal" },
+	xfceterm = { ext = "theme", url = "https://docs.xfce.org/apps/terminal/advanced", label = "Xfce Terminal" },
+	xresources = { ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources" },
+	zathura = { ext = "zathurarc", url = "https://pwmt.org/projects/zathura/", label = "Zathura" },
 }
 
 local function write(str, fileName)

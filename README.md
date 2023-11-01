@@ -1,5 +1,10 @@
 # Modus Themes
 
+![GitHub Release](https://img.shields.io/github/v/release/miikanissi/modus-themes.nvim?link=https%3A%2F%2Fgithub.com%2Fmiikanissi%2Fmodus-themes.nvim%2Freleases%2Flatest)
+[![CI](https://github.com/miikanissi/modus-themes.nvim/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/miikanissi/modus-themes.nvim/actions/workflows/ci.yml)
+![License](https://img.shields.io/github/license/miikanissi/modus-themes.nvim?link=https%3A%2F%2Fgithub.com%2Fmiikanissi%2Fmodus-themes.nvim%2Fblob%2Fmaster%2FLICENSE)
+![WCAG AAA](https://img.shields.io/badge/WCAG%20AAA-2.1-blue?link=https%3A%2F%2Fwww.w3.org%2FWAI%2FWCAG21%2FUnderstanding%2Fcontrast-enhanced.html)
+
 Highly accessible themes for [Neovim](https://github.com/neovim/neovim), conforming with
 the highest standard for color contrast between background and foreground values
 ([WCAG AAA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)). This
@@ -11,6 +16,8 @@ is a Neovim port of the original
 
 ## Features
 
+- Highly accessible — prioritizes color contrast and contains tinted, deuteranopia, and
+  tritanopia theme variants
 - Extensive `TreeSitter` syntax highlighting and `LSP` integration
 - Supports most popular plugins
 - Switch between light (`modus_operandi`) and dark (`modus_vivendi`) mode automatically
@@ -102,10 +109,9 @@ require("modus-themes").setup({
 ```lua
 require("modus-themes").setup({
   style = "modus_operandi", -- Always use modus_operandi regardless of `vim.o.background`
-  variant = "tinted", -- Use tinted variant
+  variant = "deuteranopia", -- Use deuteranopia variant
   styles = {
-    -- Enable italics for functions
-    functions = { italic = true },
+    functions = { italic = true }, -- Enable italics for functions
   },
 
   on_colors = function(colors)
@@ -143,12 +149,11 @@ missing plugins, or to report an issue.
 Please ensure the WCAG AAA contrast requirements are met. You can use this
 [contrast checker](https://webaim.org/resources/contrastchecker/) for reference.
 
-For the [extras](#extras), we use a simple template system that generates the extra
-files.
+[Extras](#extras) are generated using a template system.
 
-How to add a new extra template:
+How to create a new extra template:
 
-1. Create a file like `lua/modus-themes/extras/extra-app.lua`.
+1. Create a file such as `lua/modus-themes/extras/extra-app.lua`.
 2. Add the name and output file extension to the `extras` table in
    `lua/modus-themes/extras/init.lua`.
 3. Run the following command to generate new [extras](#extras) from the Modus Themes
@@ -158,8 +163,8 @@ How to add a new extra template:
    nvim --headless "+lua require('modus-themes.extras').setup()" +qa
    ```
 
-4. Check the newly created themes in the `extras/` directory. Please **DO NOT** commit
-   them, as they are already automatically built by the CI.
+4. Ensure the newly created themes in the `extras/` directory are correct. Please **DO
+   NOT** commit them, as they are already automatically built by the CI.
 
 ## Acknowledgements
 
