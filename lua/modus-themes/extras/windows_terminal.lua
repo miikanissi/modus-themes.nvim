@@ -16,7 +16,7 @@ function M.generate(colors)
     "background": "${bg_main}",
     "foreground": "${fg_main}",
     "cursorColor": "${fg_main}",
-    "selectionBackground": "${bg_magenta_intense}",
+    "selectionBackground": "${visual}",
     "black": "${bg_main}",
     "red": "${red}",
     "green": "${green}",

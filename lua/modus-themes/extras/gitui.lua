@@ -28,7 +28,7 @@ function M.generate(colors)
 (
   selected_tab: ${magenta}
   command_fg: ${comment}
-  selection_bg: ${bg_magenta_intense}
+  selection_bg: ${visual}
   selection_fg: ${fg_main}
   cmdbar_bg: ${bg_main}
   cmdbar_extra_lines_bg: ${bg_main}

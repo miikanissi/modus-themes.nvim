@@ -443,6 +443,7 @@ function M.setup(opts)
 	colors.warning = colors.yellow_cooler
 	colors.info = colors.blue_cooler
 	colors.hint = colors.cyan_cooler
+	colors.visual = colors.bg_magenta_intense
 
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main

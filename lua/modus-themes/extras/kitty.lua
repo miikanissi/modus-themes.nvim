@@ -14,7 +14,7 @@ function M.generate(colors)
 
 background ${bg_main}
 foreground ${fg_main}
-selection_background ${bg_magenta_intense}
+selection_background ${visual}
 selection_foreground ${fg_main}
 url_color ${fg_alt}
 cursor ${fg_main}

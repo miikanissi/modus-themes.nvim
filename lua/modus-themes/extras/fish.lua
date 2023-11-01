@@ -17,7 +17,7 @@ function M.generate(colors)
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/fish.lua
 
 set -l foreground ${fg_main}
-set -l selection ${bg_magenta_intense}
+set -l selection ${visual}
 set -l comment ${comment}
 set -l red ${red}
 set -l orange ${yellow_warmer}

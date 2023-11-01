@@ -356,13 +356,13 @@ function M.generate(colors)
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${bg_magenta_intense.b}</real>
+		<real>${visual.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${bg_magenta_intense.g}</real>
+		<real>${visual.g}</real>
 		<key>Red Component</key>
-		<real>${bg_magenta_intense.r}</real>
+		<real>${visual.r}</real>
 	</dict>
 </dict>
 </plist>]],

@@ -17,13 +17,13 @@ function M.generate(colors)
 ; Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/foot.lua
 
 [cursor]
-color=${fg_main} ${bg_magenta_intense}
+color=${fg_main} ${visual}
 
 [colors]
 foreground=${fg_main}
 background=${bg_main}
 selection-foreground=${fg_main}
-selection-background=${bg_magenta_intense}
+selection-background=${visual}
 urls=${fg_alt}
 
 regular0=${bg_main}
