@@ -1,9 +1,9 @@
 # Modus Themes
 
-![GitHub Release](https://img.shields.io/github/v/release/miikanissi/modus-themes.nvim?link=https%3A%2F%2Fgithub.com%2Fmiikanissi%2Fmodus-themes.nvim%2Freleases%2Flatest)
+[![GitHub Release](https://img.shields.io/github/v/release/miikanissi/modus-themes.nvim)](https://github.com/miikanissi/modus-themes.nvim/releases/latest)
 [![CI](https://github.com/miikanissi/modus-themes.nvim/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/miikanissi/modus-themes.nvim/actions/workflows/ci.yml)
-![License](https://img.shields.io/github/license/miikanissi/modus-themes.nvim?link=https%3A%2F%2Fgithub.com%2Fmiikanissi%2Fmodus-themes.nvim%2Fblob%2Fmaster%2FLICENSE)
-![WCAG AAA](https://img.shields.io/badge/WCAG%20AAA-2.1-blue?link=https%3A%2F%2Fwww.w3.org%2FWAI%2FWCAG21%2FUnderstanding%2Fcontrast-enhanced.html)
+[![License](https://img.shields.io/github/license/miikanissi/modus-themes.nvim)](https://github.com/miikanissi/modus-themes.nvim/blob/master/LICENSE)
+[![WCAG AAA](https://img.shields.io/badge/WCAG%20AAA-2.1-blue)](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html)
 
 Highly accessible themes for [Neovim](https://github.com/neovim/neovim), conforming with
 the highest standard for color contrast between background and foreground values
