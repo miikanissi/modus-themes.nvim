@@ -1,9 +1,10 @@
-*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 01
+*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 02
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
 
 1. Modus Themes                               |modus-themes.nvim-modus-themes|
+  - Overview                         |modus-themes.nvim-modus-themes-overview|
   - Features                         |modus-themes.nvim-modus-themes-features|
   - Requirements                 |modus-themes.nvim-modus-themes-requirements|
   - Installation                 |modus-themes.nvim-modus-themes-installation|
@@ -30,14 +31,36 @@ a Neovim port of the original Modus Themes
 <https://www.gnu.org/software/emacs/>.
 
 
+OVERVIEW                             *modus-themes.nvim-modus-themes-overview*
+
+The Modus Themes are designed for accessible readability. They conform with the
+highest standard for color contrast between background and foreground values.
+For small sized text, this corresponds to the WCAG AAA standard
+<https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html>, which
+specifies a minimum contrast ratio of at least 7:1, while large sized and bold
+text have a contrast ratio of at least 4.5:1. Incidental text that is part of
+an inactive user interface component, or that are for pure decoration, have no
+contrast requirement.
+
+This is a Neovim port of the original Modus Themes
+<https://protesilaos.com/emacs/modus-themes> for GNU Emacs, and follows the
+design philosophy. It is not intended to be an exact 1:1 correspondence with
+GNU Emacs, but rather follows the spirit of the design and ensures conformity
+to the WCAG AAA guidelines.
+
+This project is hosted on GitHub
+<https://github.com/miikanissi/modus-themes.nvim/>. Any issues and
+contributions should be directed there.
+
+
 FEATURES                             *modus-themes.nvim-modus-themes-features*
 
 - Highly accessible — prioritizes color contrast and contains tinted, deuteranopia, and
     tritanopia theme variants
 - Extensive `TreeSitter` syntax highlighting and `LSP` integration
-- Supports most popular plugins
+- Supports most popular Neovim plugins
 - Switch between light (`modus_operandi`) and dark (`modus_vivendi`) mode automatically
-    based on `vim.o.background`
+    based on the background value set with `vim.o.background`
 - Provides |modus-themes.nvim-extras| to use Modus Themes with numerous other applications
 
 
@@ -146,29 +169,31 @@ EXAMPLE SETTINGS AND COLOR OVERRIDES ~
 
 EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 
-- Alacritty <https://github.com/alacritty/alacritty> (alacritty <extras/alacritty>)
-- Delta <https://github.com/dandavison/delta> (delta <extras/delta>)
-- Dunst <https://dunst-project.org/> (dunst <extras/dunst>)
-- Fish <https://fishshell.com/docs/current/index.html> (fish <extras/fish>)
-- Foot <https://codeberg.org/dnkl/foot> (foot <extras/foot>)
-- GitUI <https://github.com/extrawurst/gitui> (gitui <extras/gitui>)
-- iTerm <https://iterm2.com/> (iterm <extras/iterm>)
-- Kitty <https://sw.kovidgoyal.net/kitty/conf.html> (kitty <extras/kitty>)
-- Lua Table for testing <https://www.lua.org> (lua <extras/lua>)
-- PrismJS <https://prismjs.com> (prismjs <extras/prismjs>)
-- Terminator <https://gnome-terminator.readthedocs.io/en/latest/config.html> (terminator <extras/terminator>)
-- Tilix <https://github.com/gnunn1/tilix> (tilix <extras/tilix>)
-- WezTerm <https://wezfurlong.org/wezterm/config/files.html> (wezterm <extras/wezterm>)
-- Windows Terminal <https://aka.ms/terminal-documentation> (windows_terminal <extras/windows_terminal>)
-- Xfce Terminal <https://docs.xfce.org/apps/terminal/advanced> (xfceterm <extras/xfceterm>)
-- Xresources <https://wiki.archlinux.org/title/X_resources> (xresources <extras/xresources>)
-- Zathura <https://pwmt.org/projects/zathura/> (zathura <extras/zathura>)
+- Alacritty <https://github.com/alacritty/alacritty> (alacritty <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty>)
+- Delta <https://github.com/dandavison/delta> (delta <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta>)
+- Dunst <https://dunst-project.org/> (dunst <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst>)
+- Fish <https://fishshell.com/docs/current/index.html> (fish <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish>)
+- Foot <https://codeberg.org/dnkl/foot> (foot <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/foot>)
+- GitUI <https://github.com/extrawurst/gitui> (gitui <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/gitui>)
+- iTerm <https://iterm2.com/> (iterm <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/iterm>)
+- Kitty <https://sw.kovidgoyal.net/kitty/conf.html> (kitty <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/kitty>)
+- Lua Table for testing <https://www.lua.org> (lua <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua>)
+- PrismJS <https://prismjs.com> (prismjs <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs>)
+- Terminator <https://gnome-terminator.readthedocs.io/en/latest/config.html> (terminator <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator>)
+- Tilix <https://github.com/gnunn1/tilix> (tilix <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix>)
+- WezTerm <https://wezfurlong.org/wezterm/config/files.html> (wezterm <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/wezterm>)
+- Windows Terminal <https://aka.ms/terminal-documentation> (windows_terminal <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/windows_terminal>)
+- Xfce Terminal <https://docs.xfce.org/apps/terminal/advanced> (xfceterm <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xfceterm>)
+- Xresources <https://wiki.archlinux.org/title/X_resources> (xresources <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xresources>)
+- Zathura <https://pwmt.org/projects/zathura/> (zathura <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zathura>)
 
 
 CONTRIBUTING                     *modus-themes.nvim-modus-themes-contributing*
 
-Contributions are welcome. Feel free to create a pull request to add support
-for any missing plugins, or to report an issue.
+Contributions are welcome. Feel free to create a pull request on GitHub
+<https://github.com/miikanissi/modus-themes.nvim/pulls> to add support for any
+missing plugins, or report an issue
+<https://github.com/miikanissi/modus-themes.nvim/issues>.
 
 Please ensure the WCAG AAA contrast requirements are met. You can use this
 contrast checker <https://webaim.org/resources/contrastchecker/> for reference.
