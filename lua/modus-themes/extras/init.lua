@@ -59,7 +59,18 @@ function M.docs()
 	table.insert(lines, "")
 	for _, name in ipairs(names) do
 		local info = M.extras[name]
-		table.insert(lines, "- [" .. info.label .. "](" .. info.url .. ") ([" .. name .. "](extras/" .. name .. "))")
+		table.insert(
+			lines,
+			"- ["
+				.. info.label
+				.. "]("
+				.. info.url
+				.. ") (["
+				.. name
+				.. "](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/"
+				.. name
+				.. "))"
+		)
 	end
 	table.insert(lines, "")
 	readme = readme:gsub(pattern, "%1\n" .. table.concat(lines, "\n") .. "\n%2")

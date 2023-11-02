@@ -14,14 +14,34 @@ is a Neovim port of the original
 
 ![Modus Themes Preview](https://raw.githubusercontent.com/miikanissi/modus-themes.nvim/master/assets/modus-themes-preview.png)
 
+## Overview
+
+The Modus Themes are designed for accessible readability. They conform with the highest
+standard for color contrast between background and foreground values. For small sized
+text, this corresponds to the
+[WCAG AAA standard](https://www.w3.org/WAI/WCAG21/Understanding/contrast-enhanced.html),
+which specifies a minimum contrast ratio of at least 7:1, while large sized and bold
+text have a contrast ratio of at least 4.5:1. Incidental text that is part of an
+inactive user interface component, or that are for pure decoration, have no contrast
+requirement.
+
+This is a Neovim port of the
+[original Modus Themes](https://protesilaos.com/emacs/modus-themes) for GNU Emacs, and
+follows the design philosophy. It is not intended to be an exact 1:1 correspondence with
+GNU Emacs, but rather follows the spirit of the design and ensures conformity to the
+WCAG AAA guidelines.
+
+This project is hosted on [GitHub](https://github.com/miikanissi/modus-themes.nvim/).
+Any issues and contributions should be directed there.
+
 ## Features
 
 - Highly accessible — prioritizes color contrast and contains tinted, deuteranopia, and
   tritanopia theme variants
 - Extensive `TreeSitter` syntax highlighting and `LSP` integration
-- Supports most popular plugins
+- Supports most popular Neovim plugins
 - Switch between light (`modus_operandi`) and dark (`modus_vivendi`) mode automatically
-  based on `vim.o.background`
+  based on the background value set with `vim.o.background`
 - Provides [extras](#extras) to use Modus Themes with numerous other applications
 
 ## Requirements
@@ -148,8 +168,10 @@ require("modus-themes").setup({
 
 ## Contributing
 
-Contributions are welcome. Feel free to create a pull request to add support for any
-missing plugins, or to report an issue.
+Contributions are welcome. Feel free to create a
+[pull request on GitHub](https://github.com/miikanissi/modus-themes.nvim/pulls) to add
+support for any missing plugins, or
+[report an issue](https://github.com/miikanissi/modus-themes.nvim/issues).
 
 Please ensure the WCAG AAA contrast requirements are met. You can use this
 [contrast checker](https://webaim.org/resources/contrastchecker/) for reference.
