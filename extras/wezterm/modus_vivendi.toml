@@ -6,7 +6,7 @@ cursor_border = "#ffffff"
 cursor_fg = "#000000"
 selection_bg = "#7030af"
 selection_fg = "#ffffff"
-split = "#2fafff"
+split = "#79a8ff"
 compose_cursor = "#fec43f"
 
 ansi = ["#000000", "#ff5f59", "#44bc44", "#d0bc00", "#2fafff", "#feacd0", "#00d3d0", "#ffffff"]

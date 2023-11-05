@@ -1,5 +1,9 @@
 local colors = {
   _name = "modus_operandi",
+  accent = "#3548cf",
+  accent_dark = "#0000ff",
+  accent_darker = "#0031a9",
+  accent_light = "#003497",
   bg_active = "#c4c4c4",
   bg_added = "#c1f2d1",
   bg_added_faint = "#d8f8e1",

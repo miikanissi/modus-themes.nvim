@@ -1,5 +1,9 @@
 local colors = {
   _name = "modus_vivendi",
+  accent = "#79a8ff",
+  accent_dark = "#338fff",
+  accent_darker = "#2fafff",
+  accent_light = "#82b0ec",
   bg_active = "#535353",
   bg_added = "#00381f",
   bg_added_faint = "#002910",

@@ -154,6 +154,7 @@ require("modus-themes").setup({
 - [iTerm](https://iterm2.com/) ([iterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/iterm))
 - [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/kitty))
 - [Lua Table for testing](https://www.lua.org) ([lua](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua))
+- [Oomox/Themix](https://github.com/themix-project/themix-gui) ([oomox](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/oomox))
 - [PrismJS](https://prismjs.com) ([prismjs](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs))
 - [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator))
 - [Tilix](https://github.com/gnunn1/tilix) ([tilix](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix))
