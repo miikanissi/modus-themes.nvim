@@ -444,6 +444,10 @@ function M.setup(opts)
 	colors.info = colors.blue_cooler
 	colors.hint = colors.cyan_cooler
 	colors.visual = colors.bg_magenta_intense
+	colors.accent_light = colors.blue_faint
+	colors.accent = colors.blue_warmer
+	colors.accent_darker = colors.blue
+	colors.accent_dark = colors.blue_intense
 
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main

@@ -28,7 +28,7 @@ inactive_tab_foreground ${fg_main}
 #tab_bar_background ${bg_tab_bar}
 
 # Windows
-active_border_color ${blue}
+active_border_color ${accent}
 inactive_border_color ${border}
 
 # normal

@@ -11,6 +11,10 @@ function M.generate(colors)
 
 *background: ${bg_main}
 *foreground: ${fg_main}
+*accent_light: ${accent_light}
+*accent: ${accent}
+*accent_darker: ${accent_darker}
+*accent_dark: ${accent_dark}
 
 *color0: ${bg_main}
 *color1: ${red}

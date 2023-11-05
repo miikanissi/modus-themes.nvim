@@ -14,7 +14,7 @@ cursor_border = "${fg_main}"
 cursor_fg = "${bg_main}"
 selection_bg = "${visual}"
 selection_fg = "${fg_main}"
-split = "${blue}"
+split = "${accent}"
 compose_cursor = "${yellow_warmer}"
 
 ansi = ["${bg_main}", "${red}", "${green}", "${yellow}", "${blue}", "${magenta}", "${cyan}", "${fg_main}"]
