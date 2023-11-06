@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 05
+*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 06
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -182,6 +182,7 @@ EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 - PrismJS <https://prismjs.com> (prismjs <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs>)
 - Terminator <https://gnome-terminator.readthedocs.io/en/latest/config.html> (terminator <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator>)
 - Tilix <https://github.com/gnunn1/tilix> (tilix <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix>)
+- Tmux <https://github.com/tmux/tmux/wiki> (tmux <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tmux>)
 - WezTerm <https://wezfurlong.org/wezterm/config/files.html> (wezterm <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/wezterm>)
 - Windows Terminal <https://aka.ms/terminal-documentation> (windows_terminal <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/windows_terminal>)
 - Xfce Terminal <https://docs.xfce.org/apps/terminal/advanced> (xfceterm <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xfceterm>)
