@@ -158,6 +158,7 @@ require("modus-themes").setup({
 - [PrismJS](https://prismjs.com) ([prismjs](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs))
 - [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator))
 - [Tilix](https://github.com/gnunn1/tilix) ([tilix](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix))
+- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tmux))
 - [WezTerm](https://wezfurlong.org/wezterm/config/files.html) ([wezterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/wezterm))
 - [Windows Terminal](https://aka.ms/terminal-documentation) ([windows_terminal](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/windows_terminal))
 - [Xfce Terminal](https://docs.xfce.org/apps/terminal/advanced) ([xfceterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xfceterm))
