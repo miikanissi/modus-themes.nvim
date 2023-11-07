@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 06
+*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 November 07
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -180,6 +180,7 @@ EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 - Lua Table for testing <https://www.lua.org> (lua <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua>)
 - Oomox/Themix <https://github.com/themix-project/themix-gui> (oomox <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/oomox>)
 - PrismJS <https://prismjs.com> (prismjs <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs>)
+- qt5ct <https://sourceforge.net/projects/qt5ct/> (qt5ct <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/qt5ct>)
 - Terminator <https://gnome-terminator.readthedocs.io/en/latest/config.html> (terminator <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator>)
 - Tilix <https://github.com/gnunn1/tilix> (tilix <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix>)
 - Tmux <https://github.com/tmux/tmux/wiki> (tmux <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tmux>)
