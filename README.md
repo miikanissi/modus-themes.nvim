@@ -156,6 +156,7 @@ require("modus-themes").setup({
 - [Lua Table for testing](https://www.lua.org) ([lua](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua))
 - [Oomox/Themix](https://github.com/themix-project/themix-gui) ([oomox](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/oomox))
 - [PrismJS](https://prismjs.com) ([prismjs](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs))
+- [qt5ct](https://sourceforge.net/projects/qt5ct/) ([qt5ct](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/qt5ct))
 - [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/terminator))
 - [Tilix](https://github.com/gnunn1/tilix) ([tilix](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tilix))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/tmux))
