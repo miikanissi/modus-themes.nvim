@@ -18,6 +18,7 @@ M.extras = {
 	lua = { ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing" },
 	oomox = { ext = "oomox", url = "https://github.com/themix-project/themix-gui", label = "Oomox/Themix" },
 	prismjs = { ext = "js", url = "https://prismjs.com", label = "PrismJS" },
+	qt5ct = { ext = "conf", url = "https://sourceforge.net/projects/qt5ct/", label = "qt5ct" },
 	terminator = { ext = "conf", url = "https://gnome-terminator.readthedocs.io/en/latest/config.html", label = "Terminator" },
 	tilix = { ext = "json", url = "https://github.com/gnunn1/tilix", label = "Tilix" },
     tmux = {ext = "tmux", url = "https://github.com/tmux/tmux/wiki", label = "Tmux"},
