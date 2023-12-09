@@ -100,7 +100,7 @@ function M.setup()
 		StorageClass = { fg = c.magenta_cooler }, -- static, register, volatile, etc.
 		Structure = { fg = c.magenta_cooler }, -- struct, union, enum, etc.
 		Constant = { fg = c.blue_cooler }, -- (preferred) any constant
-		Function = { fg = c.magenta, style = options.styles.variables }, -- Function name (also: methods for classes)
+		Function = { fg = c.magenta, style = options.styles.functions }, -- Function name (also: methods for classes)
 		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name
 		Include = { fg = c.red_cooler }, -- preprocessor #include
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic Preprocessor
