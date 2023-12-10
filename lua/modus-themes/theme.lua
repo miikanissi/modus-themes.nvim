@@ -99,22 +99,22 @@ function M.setup()
 		Exception = { fg = c.magenta_cooler }, -- try, catch, throw
 		StorageClass = { fg = c.magenta_cooler }, -- static, register, volatile, etc.
 		Structure = { fg = c.magenta_cooler }, -- struct, union, enum, etc.
-		Constant = { fg = c.blue_cooler }, -- (preferred) any constant
+		Constant = { fg = c.fg_main }, -- (preferred) any constant
 		Function = { fg = c.magenta, style = options.styles.functions }, -- Function name (also: methods for classes)
 		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name
-		Include = { fg = c.red_cooler }, -- preprocessor #include
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic Preprocessor
+		Include = { fg = c.red_cooler }, -- preprocessor #include
 		Define = { fg = c.red_cooler }, -- preprocessor #define
 		Macro = { fg = c.red_cooler }, -- Same as Define
 		PreCondit = { fg = c.red_cooler }, -- preprocessor #if, #else, #endif, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type = { fg = c.magenta_cooler }, -- (preferred) int, long, char, etc.
-		TypeDef = { fg = c.magenta_cooler }, -- A typedef
+		Type = { fg = c.cyan_cooler }, -- (preferred) int, long, char, etc.
+		TypeDef = { fg = c.cyan_cooler }, -- A typedef
 		Number = { fg = c.blue_faint }, -- Number constant: 234, 0xff
 		Float = { link = "Number" }, -- Floating point constant: 2.3e10
-		Operator = { fg = c.magenta_cooler }, -- "sizeof", "+", "*", etc.
+		Operator = { fg = c.fg_main }, -- "sizeof", "+", "*", etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this
-		Delimiter = { fg = c.magenta_cooler }, -- Character that needs attention ie "."
+		Delimiter = { fg = c.fg_main }, -- Character that needs attention ie "."
 		Special = { link = "Type" },
 		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out, HTML links
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct
@@ -157,13 +157,13 @@ function M.setup()
 		["@punctuation.special"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the categories before.
 
 		--- Literals
-		["@string.documentation"] = { link = "String" },
-		["@string.regex"] = { fg = c.red_faint }, -- For regexes.
+		["@string.documentation"] = { fg = c.green_faint },
+		["@string.regex"] = { fg = c.green_cooler }, -- For regexes.
 		["@string.escape"] = { fg = c.yellow_faint }, -- For escape characters within a string.
 
 		--- Functions
 		["@constructor"] = { fg = c.yellow_cooler }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@parameter"] = { fg = c.yellow }, -- For parameters of a function.
+		["@parameter"] = { fg = c.cyan }, -- For parameters of a function.
 
 		--- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
