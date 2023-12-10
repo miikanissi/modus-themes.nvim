@@ -336,7 +336,7 @@ local highlights = {
     link = "Operator"
   },
   ["@parameter"] = {
-    fg = "#6f5500"
+    fg = "#005e8b"
   },
   ["@property"] = {
     link = "@field"
@@ -351,13 +351,13 @@ local highlights = {
     fg = "#000000"
   },
   ["@string.documentation"] = {
-    link = "String"
+    fg = "#2a5045"
   },
   ["@string.escape"] = {
     fg = "#624416"
   },
   ["@string.regex"] = {
-    fg = "#7f0000"
+    fg = "#00663f"
   },
   ["@tag.tsx"] = {
     fg = "#a60000"
@@ -881,7 +881,7 @@ local highlights = {
     fg = "#531ab6"
   },
   Constant = {
-    fg = "#0000b0"
+    fg = "#000000"
   },
   CurSearch = {
     link = "IncSearch"
@@ -934,7 +934,7 @@ local highlights = {
     fg = "#0031a9"
   },
   Delimiter = {
-    fg = "#531ab6"
+    fg = "#000000"
   },
   DiagnosticError = {
     bold = true,
@@ -1875,7 +1875,7 @@ local highlights = {
     fg = "#9f9f9f"
   },
   Operator = {
-    fg = "#531ab6"
+    fg = "#000000"
   },
   Pmenu = {
     bg = "#c4c4c4",
@@ -2118,10 +2118,10 @@ local highlights = {
     fg = "#0a0a0a"
   },
   Type = {
-    fg = "#531ab6"
+    fg = "#005f5f"
   },
   TypeDef = {
-    fg = "#531ab6"
+    fg = "#005f5f"
   },
   Underlined = {
     fg = "#193668",
