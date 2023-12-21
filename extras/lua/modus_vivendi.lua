@@ -1749,8 +1749,8 @@ local highlights = {
     fg = "#f4f4f4"
   },
   NormalNC = {
-    bg = "#303030",
-    fg = "#bfc0c4"
+    bg = "#000000",
+    fg = "#ffffff"
   },
   NotifyBackground = {
     bg = "#000000",
