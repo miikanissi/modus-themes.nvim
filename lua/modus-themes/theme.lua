@@ -28,7 +28,10 @@ function M.setup()
 	theme.highlights = {
 		-- UI
 		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text
-		NormalNC = { fg = c.fg_inactive, bg = c.bg_inactive }, -- Normal text in non-current windows
+		NormalNC = {
+			fg = options.dim_inactive and c.fg_inactive or c.fg_main,
+			bg = options.dim_inactive and c.bg_inactive or c.bg_main,
+		}, -- Normal text in non-current windows
 		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window
 		FloatBorder = { fg = c.border, bg = c.bg_active }, -- Float Border
 		FloatTitle = { fg = c.border, bg = c.bg_active }, -- Float Title
