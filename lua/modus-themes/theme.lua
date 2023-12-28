@@ -25,12 +25,16 @@ function M.setup()
 
 	local c = theme.colors
 
+	local bg_main = options.transparent and c.none or c.bg_main
+	local bg_inactive = options.dim_inactive and c.bg_inactive or bg_main
+	local fg_inactive = options.dim_inactive and c.fg_inactive or c.fg_main
+
 	theme.highlights = {
 		-- UI
-		Normal = { fg = c.fg_main, bg = c.bg_main }, -- Normal text
+		Normal = { fg = c.fg_main, bg = bg_main }, -- Normal text
 		NormalNC = {
-			fg = options.dim_inactive and c.fg_inactive or c.fg_main,
-			bg = options.dim_inactive and c.bg_inactive or c.bg_main,
+			fg = fg_inactive,
+			bg = bg_inactive,
 		}, -- Normal text in non-current windows
 		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window
 		FloatBorder = { fg = c.border, bg = c.bg_active }, -- Float Border
@@ -38,7 +42,7 @@ function M.setup()
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
 		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		SignColumn = { fg = c.fg_dim, bg = c.bg_main }, -- Column where |signs| are displayed
+		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		NonText = { fg = c.fg_dim }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line
@@ -327,8 +331,8 @@ function M.setup()
 		GitSignsDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
-		TelescopeBorder = { fg = c.border, bg = c.bg_main },
-		TelescopeNormal = { fg = c.fg_main, bg = c.bg_main },
+		TelescopeBorder = { fg = c.border, bg = bg_main },
+		TelescopeNormal = { fg = c.fg_main, bg = bg_main },
 
 		-- NvimTree
 		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
@@ -416,15 +420,15 @@ function M.setup()
 		BufferLineIndicatorSelected = { fg = c.fg_changed },
 
 		-- Barbar
-		BufferCurrent = { bg = c.bg_main, fg = c.fg_main },
-		BufferCurrentERROR = { bg = c.bg_main, fg = c.error },
-		BufferCurrentHINT = { bg = c.bg_main, fg = c.hint },
-		BufferCurrentINFO = { bg = c.bg_main, fg = c.info },
-		BufferCurrentWARN = { bg = c.bg_main, fg = c.warning },
-		BufferCurrentIndex = { bg = c.bg_main, fg = c.blue_cooler },
-		BufferCurrentMod = { bg = c.bg_main, fg = c.yellow_cooler },
-		BufferCurrentSign = { bg = c.bg_main, fg = c.bg_main },
-		BufferCurrentTarget = { bg = c.bg_main, fg = c.red },
+		BufferCurrent = { bg = bg_main, fg = c.fg_main },
+		BufferCurrentERROR = { bg = bg_main, fg = c.error },
+		BufferCurrentHINT = { bg = bg_main, fg = c.hint },
+		BufferCurrentINFO = { bg = bg_main, fg = c.info },
+		BufferCurrentWARN = { bg = bg_main, fg = c.warning },
+		BufferCurrentIndex = { bg = bg_main, fg = c.blue_cooler },
+		BufferCurrentMod = { bg = bg_main, fg = c.yellow_cooler },
+		BufferCurrentSign = { bg = bg_main, fg = c.bg_main },
+		BufferCurrentTarget = { bg = bg_main, fg = c.red },
 		BufferAlternate = { bg = c.fg_dim, fg = c.fg_main },
 		BufferAlternateERROR = { bg = c.fg_dim, fg = c.error },
 		BufferAlternateHINT = { bg = c.fg_dim, fg = c.hint },
@@ -489,8 +493,8 @@ function M.setup()
 		LightspeedUnlabeledMatch = { fg = c.blue_warmer, bold = true },
 
 		-- Cmp
-		CmpDocumentation = { fg = c.fg_main, bg = c.bg_main },
-		CmpDocumentationBorder = { fg = c.border, bg = c.bg_main },
+		CmpDocumentation = { fg = c.fg_main, bg = bg_main },
+		CmpDocumentationBorder = { fg = c.border, bg = bg_main },
 		CmpGhostText = { fg = c.fg_dim },
 		CmpItemAbbr = { fg = c.fg_main, bg = c.none },
 		CmpItemAbbrDeprecated = { fg = c.fg_dim, bg = c.none, strikethrough = true },
@@ -620,12 +624,12 @@ function M.setup()
 		LazyProgressTodo = { bold = true, fg = c.fg_dim },
 
 		-- nvim-notify
-		NotifyBackground = { fg = c.fg_main, bg = c.bg_main },
-		NotifyERRORBorder = { fg = c.red_faint, bg = c.bg_main },
-		NotifyWARNBorder = { fg = c.yellow_faint, bg = c.bg_main },
-		NotifyINFOBorder = { fg = c.blue_faint, bg = c.bg_main },
-		NotifyDEBUGBorder = { fg = c.fg_alt, bg = c.bg_main },
-		NotifyTRACEBorder = { fg = c.magenta_faint, bg = c.bg_main },
+		NotifyBackground = { fg = c.fg_main, bg = bg_main },
+		NotifyERRORBorder = { fg = c.red_faint, bg = bg_main },
+		NotifyWARNBorder = { fg = c.yellow_faint, bg = bg_main },
+		NotifyINFOBorder = { fg = c.blue_faint, bg = bg_main },
+		NotifyDEBUGBorder = { fg = c.fg_alt, bg = bg_main },
+		NotifyTRACEBorder = { fg = c.magenta_faint, bg = bg_main },
 		NotifyERRORIcon = { fg = c.error },
 		NotifyWARNIcon = { fg = c.warning },
 		NotifyINFOIcon = { fg = c.info },
@@ -636,11 +640,11 @@ function M.setup()
 		NotifyINFOTitle = { fg = c.info },
 		NotifyDEBUGTitle = { fg = c.fg_alt },
 		NotifyTRACETitle = { fg = c.magenta_cooler },
-		NotifyERRORBody = { fg = c.fg_main, bg = c.bg_main },
-		NotifyWARNBody = { fg = c.fg_main, bg = c.bg_main },
-		NotifyINFOBody = { fg = c.fg_main, bg = c.bg_main },
-		NotifyDEBUGBody = { fg = c.fg_main, bg = c.bg_main },
-		NotifyTRACEBody = { fg = c.fg_main, bg = c.bg_main },
+		NotifyERRORBody = { fg = c.fg_main, bg = bg_main },
+		NotifyWARNBody = { fg = c.fg_main, bg = bg_main },
+		NotifyINFOBody = { fg = c.fg_main, bg = bg_main },
+		NotifyDEBUGBody = { fg = c.fg_main, bg = bg_main },
+		NotifyTRACEBody = { fg = c.fg_main, bg = bg_main },
 
 		-- Mini
 		MiniCompletionActiveParameter = { underline = true },
@@ -654,7 +658,7 @@ function M.setup()
 		MiniStarterFooter = { fg = c.yellow, italic = true },
 		MiniStarterHeader = { fg = c.blue },
 		MiniStarterInactive = { fg = c.comment, style = options.styles.comments },
-		MiniStarterItem = { fg = c.fg_main, bg = c.bg_main },
+		MiniStarterItem = { fg = c.fg_main, bg = bg_main },
 		MiniStarterItemBullet = { fg = c.border },
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
 		MiniStarterSection = { fg = c.blue_warmer },

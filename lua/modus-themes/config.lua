@@ -8,6 +8,7 @@ local defaults = {
 	-- `auto` will automatically set style based on background set with vim.o.background
 	style = "auto",
 	variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+	transparent = false, -- Transparent background (as supported by the terminal)
 	dim_inactive = false, -- "non-current" windows are dimmed
 	styles = {
 		-- Style to be applied to different syntax groups
