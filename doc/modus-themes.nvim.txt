@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 December 21
+*modus-themes.nvim.txt*    For Neovim >= 0.8.0   Last change: 2023 December 28
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -127,6 +127,7 @@ If using the default options, there is no need to explicitly call `setup`.
         -- `auto` will automatically set style based on background set with vim.o.background
         style = "auto",
         variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+        transparent = false, -- Transparent background (as supported by the terminal)
         dim_inactive = false, -- "non-current" windows are dimmed
         styles = {
             -- Style to be applied to different syntax groups
