@@ -712,11 +712,18 @@ function M.setup()
 		NoiceCompletionItemKindSnippet = { fg = c.fg_dim, bg = c.none },
 	}
 
-	local markdown_rainbow = { c.blue, c.yellow, c.yellow_warmer, c.cyan_cooler, c.magenta, c.magenta_cooler }
+	local markdown_rainbow = {
+		{ c.blue, c.bg_blue_nuanced },
+		{ c.cyan_cooler, c.bg_cyan_cooler_nuanced },
+		{ c.yellow, c.bg_yellow_nuanced },
+		{ c.yellow_warmer, c.bg_yellow_warmer_nuanced },
+		{ c.magenta, c.bg_magenta_nuanced },
+		{ c.magenta_cooler, c.bg_magenta_cooler_nuanced },
+	}
 
-	for i, color in ipairs(markdown_rainbow) do
-		theme.highlights["@text.title." .. i .. ".markdown"] = { fg = color, bold = true }
-		theme.highlights["Headline" .. i] = { bg = color }
+	for i, color_table in ipairs(markdown_rainbow) do
+		theme.highlights["@text.title." .. i .. ".markdown"] = { fg = color_table[1], bold = true }
+		theme.highlights["Headline" .. i] = { bg = color_table[2] }
 	end
 	theme.highlights["Headline"] = { link = "Headline1" }
 

@@ -80,9 +80,12 @@ M.modus_operandi = {
 	bg_red_nuanced = "#fff1f0",
 	bg_green_nuanced = "#ecf7ed",
 	bg_yellow_nuanced = "#fff3da",
+	bg_yellow_warmer_nuanced = "#fff1db",
 	bg_blue_nuanced = "#f3f3ff",
 	bg_magenta_nuanced = "#fdf0ff",
+	bg_magenta_cooler_nuanced = "#f0e8fd",
 	bg_cyan_nuanced = "#ebf6fa",
+	bg_cyan_cooler_nuanced = "#f0ffff",
 
 	-- Special purpose
 	bg_completion = "#c0deff",
@@ -290,9 +293,12 @@ M.modus_vivendi = {
 	bg_red_nuanced = "#2c0614",
 	bg_green_nuanced = "#001904",
 	bg_yellow_nuanced = "#221000",
+	bg_yellow_warmer_nuanced = "#281C01",
 	bg_blue_nuanced = "#0f0e39",
 	bg_magenta_nuanced = "#230631",
+	bg_magenta_cooler_nuanced = "#0C0033",
 	bg_cyan_nuanced = "#041529",
+	bg_cyan_cooler_nuanced = "#041B14",
 
 	-- Special purpose
 	bg_completion = "#2f447f",
