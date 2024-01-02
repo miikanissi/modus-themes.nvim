@@ -21,6 +21,7 @@ local colors = {
   bg_char_1 = "#7f1f7f",
   bg_char_2 = "#625a00",
   bg_completion = "#2f447f",
+  bg_cyan_cooler_nuanced = "#041B14",
   bg_cyan_intense = "#2266ae",
   bg_cyan_nuanced = "#041529",
   bg_cyan_subtle = "#004065",
@@ -31,6 +32,7 @@ local colors = {
   bg_green_subtle = "#00422a",
   bg_hl_line = "#2f3849",
   bg_inactive = "#303030",
+  bg_magenta_cooler_nuanced = "#0C0033",
   bg_magenta_intense = "#7030af",
   bg_magenta_nuanced = "#230631",
   bg_magenta_subtle = "#552f5f",
@@ -52,6 +54,7 @@ local colors = {
   bg_yellow_intense = "#7a6100",
   bg_yellow_nuanced = "#221000",
   bg_yellow_subtle = "#4a4000",
+  bg_yellow_warmer_nuanced = "#281C01",
   blue = "#2fafff",
   blue_cooler = "#00bcff",
   blue_faint = "#82b0ec",
@@ -381,15 +384,15 @@ local highlights = {
   },
   ["@text.title.2.markdown"] = {
     bold = true,
-    fg = "#d0bc00"
+    fg = "#6ae4b9"
   },
   ["@text.title.3.markdown"] = {
     bold = true,
-    fg = "#fec43f"
+    fg = "#d0bc00"
   },
   ["@text.title.4.markdown"] = {
     bold = true,
-    fg = "#6ae4b9"
+    fg = "#fec43f"
   },
   ["@text.title.5.markdown"] = {
     bold = true,
@@ -1112,22 +1115,22 @@ local highlights = {
     link = "Headline1"
   },
   Headline1 = {
-    bg = "#2fafff"
+    bg = "#0f0e39"
   },
   Headline2 = {
-    bg = "#d0bc00"
+    bg = "#041B14"
   },
   Headline3 = {
-    bg = "#fec43f"
+    bg = "#221000"
   },
   Headline4 = {
-    bg = "#6ae4b9"
+    bg = "#281C01"
   },
   Headline5 = {
-    bg = "#feacd0"
+    bg = "#230631"
   },
   Headline6 = {
-    bg = "#b6a0ff"
+    bg = "#0C0033"
   },
   HopNextKey = {
     bold = true,
