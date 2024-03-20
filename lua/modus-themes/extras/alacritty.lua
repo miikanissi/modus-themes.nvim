@@ -16,37 +16,40 @@ function M.generate(colors)
 # Modus Themes for Alacritty 
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/alacritty.lua
 
-colors:
-  # Default colors
-  primary:
-    background: '${bg_main}'
-    foreground: '${fg_main}'
+# Default colors
+[colors.primary]
+background   = '${bg_main}'
+foreground   = '${fg_main}'
 
-  # Normal colors
-  normal:
-    black:   '${bg_main}'
-    red:     '${red}'
-    green:   '${green}'
-    yellow:  '${yellow}'
-    blue:    '${blue}'
-    magenta: '${magenta}'
-    cyan:    '${cyan}'
-    white:   '${fg_main}'
+# Normal colors
+[colors.normal]
+black     = '${bg_main}'
+red       = '${red}'
+green     = '${green}'
+yellow    = '${yellow}'
+blue      = '${blue}'
+magenta   = '${magenta}'
+cyan      = '${cyan}'
+white     = '${fg_main}'
 
-  # Bright colors
-  bright:
-    black:   '${bg_dim}'
-    red:     '${red_intense}'
-    green:   '${green_intense}'
-    yellow:  '${yellow_intense}'
-    blue:    '${blue_intense}'
-    magenta: '${magenta_intense}'
-    cyan:    '${cyan_intense}'
-    white:   '${fg_dim}'
+# Bright colors
+[colors.bright]
+black     = '${bg_dim}'
+red       = '${red_intense}'
+green     = '${green_intense}'
+yellow    = '${yellow_intense}'
+blue      = '${blue_intense}'
+magenta   = '${magenta_intense}'
+cyan      = '${cyan_intense}'
+white     = '${fg_dim}'
 
-  indexed_colors:
-    - { index: 16, color: '${yellow_warmer}' }
-    - { index: 17, color: '${red_faint}' }
+[[color.indexed_colors]]
+index     = 16
+color     = '${yellow_warmer}'
+		
+[[color.indexed_colors]]
+index     = 17
+color     = '${red_faint}'
 ]],
 		alacrittyColors
 	)
