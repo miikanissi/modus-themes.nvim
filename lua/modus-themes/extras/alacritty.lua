@@ -4,16 +4,16 @@ local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-	local alacrittyColors = {}
-	for k, v in pairs(colors) do
-		if type(v) == "string" then
-			alacrittyColors[k] = v:gsub("^#", "0x")
-		end
-	end
+  local alacrittyColors = {}
+  for k, v in pairs(colors) do
+    if type(v) == "string" then
+      alacrittyColors[k] = v:gsub("^#", "0x")
+    end
+  end
 
-	local alacritty = util.template(
-		[[
-# Modus Themes for Alacritty 
+  local alacritty = util.template(
+    [=[
+# Modus Themes for Alacritty
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/alacritty.lua
 
 # Default colors
@@ -43,18 +43,18 @@ magenta   = '${magenta_intense}'
 cyan      = '${cyan_intense}'
 white     = '${fg_dim}'
 
-[[color.indexed_colors]]
+[[colors.indexed_colors]]
 index     = 16
 color     = '${yellow_warmer}'
-		
-[[color.indexed_colors]]
+
+[[colors.indexed_colors]]
 index     = 17
 color     = '${red_faint}'
-]],
-		alacrittyColors
-	)
+]=],
+    alacrittyColors
+  )
 
-	return alacritty
+  return alacritty
 end
 
 return M
