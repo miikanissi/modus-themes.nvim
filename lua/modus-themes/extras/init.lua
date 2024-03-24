@@ -7,7 +7,7 @@ local M = {}
 --- @type table<string, {ext:string, url:string, label:string}>
 -- stylua: ignore
 M.extras = {
-	alacritty = { ext = "yml", url = "https://github.com/alacritty/alacritty", label = "Alacritty" },
+	alacritty = { ext = "toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty" },
 	delta = { ext = "gitconfig", url = "https://github.com/dandavison/delta", label = "Delta" },
 	dunst = { ext = "dunstrc", url = "https://dunst-project.org/", label = "Dunst" },
 	fish = { ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish" },
