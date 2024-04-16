@@ -1595,6 +1595,24 @@ local highlights = {
   NeoTreeDimText = {
     fg = "#595959"
   },
+  NeoTreeDotfile = {
+    fg = "#595959"
+  },
+  NeoTreeFadeText1 = {
+    fg = "#595959"
+  },
+  NeoTreeFadeText2 = {
+    fg = "#595959"
+  },
+  NeoTreeGitAdded = {
+    fg = "#005000"
+  },
+  NeoTreeGitDeleted = {
+    fg = "#8f1313"
+  },
+  NeoTreeGitModified = {
+    fg = "#553d00"
+  },
   NeoTreeNormal = {
     bg = "#c4c4c4",
     fg = "#0a0a0a"
