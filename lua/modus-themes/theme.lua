@@ -353,6 +353,12 @@ function M.setup()
 		NeoTreeNormal = { fg = c.fg_active, bg = c.bg_active },
 		NeoTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
 		NeoTreeDimText = { fg = c.fg_dim },
+		NeoTreeFadeText1 = { fg = c.fg_dim },
+		NeoTreeFadeText2 = { fg = c.fg_dim },
+		NeoTreeDotfile = { fg = c.fg_dim },
+		NeoTreeGitAdded = { fg = c.fg_added }, -- Diff mode: Added line |diff.txt|
+		NeoTreeGitModified = { fg = c.fg_changed }, -- Diff mode: Changed line |diff.txt|
+		NeoTreeGitDeleted = { fg = c.fg_removed }, -- Diff mode: Deleted line |diff.txt|
 
 		-- Fern
 		FernBranchText = { fg = c.blue },
