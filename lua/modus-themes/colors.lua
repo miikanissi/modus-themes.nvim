@@ -96,14 +96,14 @@ M.modus_operandi = {
 	bg_char_1 = "#ffaaff",
 	bg_char_2 = "#dff000",
 	-- Common active/inactive colors
-	bg_active = "#c4c4c4",
-	bg_inactive = "#e0e0e0",
+	bg_active = "#e0e0e0",
 	fg_active = "#0a0a0a",
+	bg_inactive = "#e9e9e9",
 	fg_inactive = "#404148",
 	-- Status line specific colors
-	bg_status_line_active = "#c8c8c8",
+	bg_status_line_active = "#e6e6e6",
 	fg_status_line_active = "#0a0a0a",
-	bg_status_line_inactive = "#e6e6e6",
+	bg_status_line_inactive = "#eeeeee",
 	fg_status_line_inactive = "#585858",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#dfdfdf",
@@ -309,14 +309,14 @@ M.modus_vivendi = {
 	bg_char_1 = "#7f1f7f",
 	bg_char_2 = "#625a00",
 	-- Common active/inactive colors
-	bg_active = "#535353",
-	bg_inactive = "#303030",
+	bg_active = "#303030",
 	fg_active = "#f4f4f4",
+	bg_inactive = "#282828",
 	fg_inactive = "#bfc0c4",
 	-- Status line specific colors
-	bg_status_line_active = "#505050",
+	bg_status_line_active = "#2d2d2d",
 	fg_status_line_active = "#f0f0f0",
-	bg_status_line_inactive = "#2d2d2d",
+	bg_status_line_inactive = "#1d1d1d",
 	fg_status_line_inactive = "#969696",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#313131",

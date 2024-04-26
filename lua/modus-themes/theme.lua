@@ -129,9 +129,9 @@ function M.setup()
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText = { bg = c.fg_alt }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = c.fg_alt }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = c.fg_alt }, -- used for highlighting "write" references
+		LspReferenceText = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references
+		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references
 
 		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
@@ -669,16 +669,16 @@ function M.setup()
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
 		MiniStarterSection = { fg = c.blue_warmer },
 		MiniStarterQuery = { fg = c.blue_cooler },
-		MiniStatuslineDevinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
-		MiniStatuslineFileinfo = { fg = c.fg_dim, bg = c.bg_hl_line },
-		MiniStatuslineFilename = { fg = c.fg_dim, bg = c.fg_dim },
-		MiniStatuslineInactive = { fg = c.blue, bg = c.bg_active },
-		MiniStatuslineModeCommand = { fg = c.fg_main, bg = c.yellow, bold = true },
-		MiniStatuslineModeInsert = { fg = c.fg_main, bg = c.green, bold = true },
-		MiniStatuslineModeNormal = { fg = c.fg_main, bg = c.blue, bold = true },
-		MiniStatuslineModeOther = { fg = c.fg_main, bg = c.cyan_cooler, bold = true },
-		MiniStatuslineModeReplace = { fg = c.fg_main, bg = c.red, bold = true },
-		MiniStatuslineModeVisual = { fg = c.fg_main, bg = c.magenta, bold = true },
+		MiniStatuslineDevinfo = { fg = c.blue_faint, bg = c.bg_status_line_active },
+		MiniStatuslineFileinfo = { fg = c.fg_status_line_active, bg = c.bg_status_line_active },
+		MiniStatuslineFilename = { fg = c.fg_status_line_active, bg = c.bg_status_line_active },
+		MiniStatuslineInactive = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive, bold = true },
+		MiniStatuslineModeCommand = { fg = c.bg_dim, bg = c.yellow_faint, bold = true },
+		MiniStatuslineModeInsert = { fg = c.bg_dim, bg = c.green_faint, bold = true },
+		MiniStatuslineModeNormal = { fg = c.bg_dim, bg = c.blue_faint, bold = true },
+		MiniStatuslineModeOther = { fg = c.bg_dim, bg = c.cyan_faint, bold = true },
+		MiniStatuslineModeReplace = { fg = c.bg_dim, bg = c.red_faint, bold = true },
+		MiniStatuslineModeVisual = { fg = c.bg_dim, bg = c.magenta_faint, bold = true },
 		MiniSurround = { bg = c.yellow_warmer, fg = c.fg_main },
 		MiniTablineCurrent = { fg = c.fg_main, bg = c.fg_dim },
 		MiniTablineFill = { bg = c.fg_main },

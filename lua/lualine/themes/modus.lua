@@ -34,9 +34,9 @@ modus.terminal = {
 }
 
 modus.inactive = {
-	a = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive, gui = "bold" },
-	b = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive, gui = "bold" },
-	c = { bg = colors.bg_status_line_active, fg = colors.fg_status_line_inactive },
+	a = { bg = colors.bg_status_line_inactive, fg = colors.fg_status_line_inactive, gui = "bold" },
+	b = { bg = colors.bg_status_line_inactive, fg = colors.fg_status_line_inactive, gui = "bold" },
+	c = { bg = colors.bg_status_line_inactive, fg = colors.fg_status_line_inactive },
 }
 
 return modus
