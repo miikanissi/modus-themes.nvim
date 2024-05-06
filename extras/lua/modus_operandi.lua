@@ -46,8 +46,9 @@ local colors = {
   bg_removed_faint = "#ffe9e9",
   bg_removed_fringe = "#d84a4f",
   bg_removed_refine = "#f3b5af",
-  bg_status_line_active = "#e6e6e6",
-  bg_status_line_inactive = "#eeeeee",
+  bg_status_line_active = "#c8c8c8",
+  bg_status_line_inactive = "#e6e6e6",
+  bg_tab_alternate = "#c2c2e8",
   bg_tab_bar = "#dfdfdf",
   bg_tab_current = "#ffffff",
   bg_tab_other = "#c2c2c2",
@@ -105,6 +106,7 @@ local colors = {
   fg_removed_intense = "#aa2222",
   fg_status_line_active = "#0a0a0a",
   fg_status_line_inactive = "#585858",
+  fg_tab_other = "#333333",
   gold = "#80601f",
   green = "#006800",
   green_cooler = "#00663f",
@@ -154,6 +156,7 @@ local colors = {
   tinted_bg_removed_refine = "#f3b5a7",
   tinted_bg_status_line_active = "#cab9b2",
   tinted_bg_status_line_inactive = "#dfd9cf",
+  tinted_bg_tab_alternate = "#c8b8ca",
   tinted_bg_tab_bar = "#e0d4ce",
   tinted_bg_tab_current = "#fbf7f0",
   tinted_bg_tab_other = "#c8b8b2",
@@ -567,44 +570,43 @@ local highlights = {
     fg = "#0031a9"
   },
   BufferAlternate = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#000000"
   },
   BufferAlternateERROR = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#a0132f"
   },
   BufferAlternateHINT = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#005f5f"
   },
   BufferAlternateINFO = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#0000b0"
   },
   BufferAlternateIndex = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#0000b0"
   },
   BufferAlternateMod = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#7a4f2f"
   },
   BufferAlternateSign = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#0000b0"
   },
   BufferAlternateTarget = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#a60000"
   },
   BufferAlternateWARN = {
-    bg = "#595959",
+    bg = "#c2c2e8",
     fg = "#7a4f2f"
   },
   BufferCurrent = {
-    bg = "#ffffff",
-    fg = "#000000"
+    link = "TabLineSel"
   },
   BufferCurrentERROR = {
     bg = "#ffffff",
@@ -639,90 +641,88 @@ local highlights = {
     fg = "#7a4f2f"
   },
   BufferInactive = {
-    bg = "#e9e9e9",
-    fg = "#595959"
+    link = "TabLine"
   },
   BufferInactiveERROR = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#7f0000"
   },
   BufferInactiveHINT = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#005077"
   },
   BufferInactiveINFO = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#003497"
   },
   BufferInactiveIndex = {
-    bg = "#e9e9e9",
-    fg = "#595959"
+    bg = "#c2c2c2",
+    fg = "#003497"
   },
   BufferInactiveMod = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#624416"
   },
   BufferInactiveSign = {
-    bg = "#e9e9e9",
-    fg = "#ffffff"
+    bg = "#c2c2c2",
+    fg = "#003497"
   },
   BufferInactiveTarget = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#a60000"
   },
   BufferInactiveWARN = {
-    bg = "#e9e9e9",
+    bg = "#c2c2c2",
     fg = "#624416"
   },
   BufferLineIndicatorSelected = {
     fg = "#553d00"
   },
   BufferOffset = {
-    bg = "#e0e0e0",
-    fg = "#595959"
+    bg = "#f0f0f0",
+    fg = "#193668"
   },
   BufferTabpageFill = {
-    bg = "#e9e9e9",
-    fg = "#595959"
+    link = "TabLineFill"
   },
   BufferTabpages = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "NONE"
   },
   BufferVisible = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#000000"
   },
   BufferVisibleERROR = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#a0132f"
   },
   BufferVisibleHINT = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#005f5f"
   },
   BufferVisibleINFO = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#0000b0"
   },
   BufferVisibleIndex = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#0000b0"
   },
   BufferVisibleMod = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#7a4f2f"
   },
   BufferVisibleSign = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#0000b0"
   },
   BufferVisibleTarget = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#a60000"
   },
   BufferVisibleWARN = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#7a4f2f"
   },
   Character = {
@@ -1375,19 +1375,19 @@ local highlights = {
     fg = "#3548cf"
   },
   MiniStatuslineDevinfo = {
-    bg = "#e6e6e6",
+    bg = "#c8c8c8",
     fg = "#003497"
   },
   MiniStatuslineFileinfo = {
-    bg = "#e6e6e6",
+    bg = "#c8c8c8",
     fg = "#0a0a0a"
   },
   MiniStatuslineFilename = {
-    bg = "#e6e6e6",
+    bg = "#c8c8c8",
     fg = "#0a0a0a"
   },
   MiniStatuslineInactive = {
-    bg = "#eeeeee",
+    bg = "#e6e6e6",
     bold = true,
     fg = "#585858"
   },
@@ -1426,34 +1426,32 @@ local highlights = {
     fg = "#000000"
   },
   MiniTablineCurrent = {
-    bg = "#595959",
-    fg = "#000000"
+    link = "TabLineSel"
   },
   MiniTablineFill = {
-    bg = "#000000"
+    link = "TabLineFill"
   },
   MiniTablineHidden = {
-    bg = "#e0e0e0",
-    fg = "#595959"
+    link = "TabLine"
   },
   MiniTablineModifiedCurrent = {
-    bg = "#595959",
+    bg = "#ffffff",
     fg = "#7a4f2f"
   },
   MiniTablineModifiedHidden = {
-    bg = "#e0e0e0",
+    bg = "#c2c2c2",
     fg = "#624416"
   },
   MiniTablineModifiedVisible = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#7a4f2f"
   },
   MiniTablineTabpagesection = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "NONE"
   },
   MiniTablineVisible = {
-    bg = "#e0e0e0",
+    bg = "#f0f0f0",
     fg = "#000000"
   },
   MiniTestEmphasis = {
@@ -1669,7 +1667,7 @@ local highlights = {
     fg = "#0031a9"
   },
   NeotestTest = {
-    fg = "#dfdfdf"
+    fg = "#f2f2f2"
   },
   NeotestWinSelect = {
     fg = "#0031a9"
@@ -2056,12 +2054,12 @@ local highlights = {
     fg = "#531ab6"
   },
   StatusLine = {
-    bg = "#e0e0e0",
+    bg = "#c8c8c8",
     fg = "#0a0a0a"
   },
   StatusLineNC = {
-    bg = "#e9e9e9",
-    fg = "#404148"
+    bg = "#e6e6e6",
+    fg = "#585858"
   },
   StorageClass = {
     fg = "#531ab6"
@@ -2099,7 +2097,7 @@ local highlights = {
   },
   TabLine = {
     bg = "#c2c2c2",
-    fg = "#000000"
+    fg = "#333333"
   },
   TabLineFill = {
     bg = "#dfdfdf",
@@ -2107,7 +2105,8 @@ local highlights = {
   },
   TabLineSel = {
     bg = "#ffffff",
-    fg = "#193668"
+    bold = true,
+    fg = "#000000"
   },
   Tag = {
     fg = "#721045"
@@ -2192,6 +2191,12 @@ local highlights = {
   WildMenu = {
     bg = "#dfa0f0",
     fg = "#000000"
+  },
+  WinBar = {
+    link = "TabLineSel"
+  },
+  WinBarNC = {
+    link = "TabLine"
   },
   WinSeparator = {
     bold = true,
