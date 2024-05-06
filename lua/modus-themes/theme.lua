@@ -69,16 +69,18 @@ function M.setup()
 		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection"
 		WildMenu = { fg = c.fg_main, bg = c.visual }, -- current match in 'wildmenu' completion
 		Whitespace = { link = "NonText" }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		TabLine = { fg = c.fg_main, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label
-		TabLineSel = { fg = c.fg_alt, bg = c.bg_tab_current }, -- Tab pages line, active tab page label
+		StatusLine = { fg = c.fg_status_line_active, bg = c.bg_status_line_active }, -- Status line of current window
+		StatusLineNC = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+		TabLine = { fg = c.fg_tab_other, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label
+		TabLineSel = { fg = c.fg_main, bg = c.bg_tab_current, bold = true }, -- Tab pages line, active tab page label
 		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels
+		WinBar = { link = "TabLineSel" }, -- window bar
+		WinBarNC = { link = "TabLine" }, -- window bar in inactive windows
 		EndOfBuffer = { fg = c.fg_inactive }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		MatchParen = { fg = c.fg_main, bg = c.bg_paren_match }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg = { fg = c.fg_dim, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MsgArea = { fg = c.fg_main }, -- Area for messages and cmdline
 		MoreMsg = { fg = c.blue }, -- |more-prompt|
-		StatusLine = { fg = c.fg_active, bg = c.bg_active }, -- Status line of current window
-		StatusLineNC = { fg = c.fg_inactive, bg = c.bg_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		VertSplit = { fg = c.border }, -- The column separating vertically split windows
 		WinSeparator = { fg = c.border, bold = true }, -- The column separating vertically split windows
 		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|
@@ -304,7 +306,7 @@ function M.setup()
 		NeotestRunning = { fg = c.yellow },
 		NeotestFailed = { fg = c.red },
 		NeotestSkipped = { fg = c.blue },
-		NeotestTest = { fg = c.bg_tab_bar },
+		NeotestTest = { fg = c.bg_dim },
 		NeotestNamespace = { fg = c.green_warmer },
 		NeotestFocused = { fg = c.yellow },
 		NeotestFile = { fg = c.cyan_cooler },
@@ -426,45 +428,45 @@ function M.setup()
 		BufferLineIndicatorSelected = { fg = c.fg_changed },
 
 		-- Barbar
-		BufferCurrent = { bg = bg_main, fg = c.fg_main },
-		BufferCurrentERROR = { bg = bg_main, fg = c.error },
-		BufferCurrentHINT = { bg = bg_main, fg = c.hint },
-		BufferCurrentINFO = { bg = bg_main, fg = c.info },
-		BufferCurrentWARN = { bg = bg_main, fg = c.warning },
-		BufferCurrentIndex = { bg = bg_main, fg = c.blue_cooler },
-		BufferCurrentMod = { bg = bg_main, fg = c.yellow_cooler },
-		BufferCurrentSign = { bg = bg_main, fg = c.bg_main },
-		BufferCurrentTarget = { bg = bg_main, fg = c.red },
-		BufferAlternate = { bg = c.fg_dim, fg = c.fg_main },
-		BufferAlternateERROR = { bg = c.fg_dim, fg = c.error },
-		BufferAlternateHINT = { bg = c.fg_dim, fg = c.hint },
-		BufferAlternateIndex = { bg = c.fg_dim, fg = c.blue_cooler },
-		BufferAlternateINFO = { bg = c.fg_dim, fg = c.info },
-		BufferAlternateMod = { bg = c.fg_dim, fg = c.yellow_cooler },
-		BufferAlternateSign = { bg = c.fg_dim, fg = c.blue_cooler },
-		BufferAlternateTarget = { bg = c.fg_dim, fg = c.red },
-		BufferAlternateWARN = { bg = c.fg_dim, fg = c.warning },
-		BufferVisible = { bg = c.bg_active, fg = c.fg_main },
-		BufferVisibleERROR = { bg = c.bg_active, fg = c.error },
-		BufferVisibleHINT = { bg = c.bg_active, fg = c.hint },
-		BufferVisibleINFO = { bg = c.bg_active, fg = c.info },
-		BufferVisibleWARN = { bg = c.bg_active, fg = c.warning },
-		BufferVisibleIndex = { bg = c.bg_active, fg = c.blue_cooler },
-		BufferVisibleMod = { bg = c.bg_active, fg = c.yellow_cooler },
-		BufferVisibleSign = { bg = c.bg_active, fg = c.blue_cooler },
-		BufferVisibleTarget = { bg = c.bg_active, fg = c.red },
-		BufferInactive = { bg = c.bg_inactive, fg = c.fg_dim },
-		BufferInactiveERROR = { bg = c.bg_inactive, fg = c.red_faint },
-		BufferInactiveHINT = { bg = c.bg_inactive, fg = c.cyan_faint },
-		BufferInactiveINFO = { bg = c.bg_inactive, fg = c.blue_faint },
-		BufferInactiveWARN = { bg = c.bg_inactive, fg = c.yellow_faint },
-		BufferInactiveIndex = { bg = c.bg_inactive, fg = c.fg_dim },
-		BufferInactiveMod = { bg = c.bg_inactive, fg = c.yellow_faint },
-		BufferInactiveSign = { bg = c.bg_inactive, fg = c.bg_main },
-		BufferInactiveTarget = { bg = c.bg_inactive, fg = c.red },
-		BufferOffset = { bg = c.bg_active, fg = c.fg_dim },
-		BufferTabpageFill = { bg = c.bg_inactive, fg = c.fg_dim },
-		BufferTabpages = { bg = c.bg_active, fg = c.none },
+		BufferCurrent = { link = "TabLineSel" },
+		BufferCurrentERROR = { bg = c.bg_tab_current, fg = c.error },
+		BufferCurrentHINT = { bg = c.bg_tab_current, fg = c.hint },
+		BufferCurrentINFO = { bg = c.bg_tab_current, fg = c.info },
+		BufferCurrentWARN = { bg = c.bg_tab_current, fg = c.warning },
+		BufferCurrentIndex = { bg = c.bg_tab_current, fg = c.blue_cooler },
+		BufferCurrentMod = { bg = c.bg_tab_current, fg = c.yellow_cooler },
+		BufferCurrentSign = { bg = c.bg_tab_current, fg = c.bg_main },
+		BufferCurrentTarget = { bg = c.bg_tab_current, fg = c.red },
+		BufferAlternate = { bg = c.bg_tab_alternate, fg = c.fg_main },
+		BufferAlternateERROR = { bg = c.bg_tab_alternate, fg = c.error },
+		BufferAlternateHINT = { bg = c.bg_tab_alternate, fg = c.hint },
+		BufferAlternateIndex = { bg = c.bg_tab_alternate, fg = c.blue_cooler },
+		BufferAlternateINFO = { bg = c.bg_tab_alternate, fg = c.info },
+		BufferAlternateMod = { bg = c.bg_tab_alternate, fg = c.yellow_cooler },
+		BufferAlternateSign = { bg = c.bg_tab_alternate, fg = c.blue_cooler },
+		BufferAlternateTarget = { bg = c.bg_tab_alternate, fg = c.red },
+		BufferAlternateWARN = { bg = c.bg_tab_alternate, fg = c.warning },
+		BufferVisible = { bg = c.bg_alt, fg = c.fg_main },
+		BufferVisibleERROR = { bg = c.bg_alt, fg = c.error },
+		BufferVisibleHINT = { bg = c.bg_alt, fg = c.hint },
+		BufferVisibleINFO = { bg = c.bg_alt, fg = c.info },
+		BufferVisibleWARN = { bg = c.bg_alt, fg = c.warning },
+		BufferVisibleIndex = { bg = c.bg_alt, fg = c.blue_cooler },
+		BufferVisibleMod = { bg = c.bg_alt, fg = c.yellow_cooler },
+		BufferVisibleSign = { bg = c.bg_alt, fg = c.blue_cooler },
+		BufferVisibleTarget = { bg = c.bg_alt, fg = c.red },
+		BufferInactive = { link = "TabLine" },
+		BufferInactiveERROR = { bg = c.bg_tab_other, fg = c.red_faint },
+		BufferInactiveHINT = { bg = c.bg_tab_other, fg = c.cyan_faint },
+		BufferInactiveINFO = { bg = c.bg_tab_other, fg = c.blue_faint },
+		BufferInactiveWARN = { bg = c.bg_tab_other, fg = c.yellow_faint },
+		BufferInactiveIndex = { bg = c.bg_tab_other, fg = c.blue_faint },
+		BufferInactiveMod = { bg = c.bg_tab_other, fg = c.yellow_faint },
+		BufferInactiveSign = { bg = c.bg_tab_other, fg = c.blue_faint },
+		BufferInactiveTarget = { bg = c.bg_tab_other, fg = c.red },
+		BufferOffset = { bg = c.bg_alt, fg = c.fg_alt },
+		BufferTabpageFill = { link = "TabLineFill" },
+		BufferTabpages = { bg = c.bg_alt, fg = c.none },
 
 		-- Sneak
 		Sneak = { fg = c.bg_hl_line, bg = c.magenta },
@@ -680,14 +682,14 @@ function M.setup()
 		MiniStatuslineModeReplace = { fg = c.bg_dim, bg = c.red_faint, bold = true },
 		MiniStatuslineModeVisual = { fg = c.bg_dim, bg = c.magenta_faint, bold = true },
 		MiniSurround = { bg = c.yellow_warmer, fg = c.fg_main },
-		MiniTablineCurrent = { fg = c.fg_main, bg = c.fg_dim },
-		MiniTablineFill = { bg = c.fg_main },
-		MiniTablineHidden = { fg = c.fg_dim, bg = c.bg_active },
-		MiniTablineModifiedCurrent = { fg = c.yellow_cooler, bg = c.fg_dim },
-		MiniTablineModifiedHidden = { bg = c.bg_active, fg = c.yellow_faint },
-		MiniTablineModifiedVisible = { fg = c.yellow_cooler, bg = c.bg_active },
-		MiniTablineTabpagesection = { bg = c.bg_active, fg = c.none },
-		MiniTablineVisible = { fg = c.fg_main, bg = c.bg_active },
+		MiniTablineCurrent = { link = "TabLineSel" },
+		MiniTablineFill = { link = "TabLineFill" },
+		MiniTablineHidden = { link = "TabLine" },
+		MiniTablineModifiedCurrent = { fg = c.yellow_cooler, bg = c.bg_tab_current },
+		MiniTablineModifiedHidden = { bg = c.bg_tab_other, fg = c.yellow_faint },
+		MiniTablineModifiedVisible = { fg = c.yellow_cooler, bg = c.bg_alt },
+		MiniTablineTabpagesection = { bg = c.bg_alt, fg = c.none },
+		MiniTablineVisible = { fg = c.fg_main, bg = c.bg_alt },
 		MiniTestEmphasis = { bold = true },
 		MiniTestFail = { fg = c.red, bold = true },
 		MiniTestPass = { fg = c.green, bold = true },

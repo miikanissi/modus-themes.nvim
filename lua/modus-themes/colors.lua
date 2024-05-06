@@ -101,14 +101,16 @@ M.modus_operandi = {
 	bg_inactive = "#e9e9e9",
 	fg_inactive = "#404148",
 	-- Status line specific colors
-	bg_status_line_active = "#e6e6e6",
+	bg_status_line_active = "#c8c8c8",
 	fg_status_line_active = "#0a0a0a",
-	bg_status_line_inactive = "#eeeeee",
+	bg_status_line_inactive = "#e6e6e6",
 	fg_status_line_inactive = "#585858",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#dfdfdf",
 	bg_tab_current = "#ffffff",
 	bg_tab_other = "#c2c2c2",
+	fg_tab_other = "#333333",
+	bg_tab_alternate = "#c2c2e8",
 	-- git diffs
 	bg_added = "#c1f2d1",
 	bg_added_faint = "#d8f8e1",
@@ -151,6 +153,7 @@ M.modus_operandi = {
 	tinted_bg_tab_bar = "#e0d4ce",
 	tinted_bg_tab_current = "#fbf7f0",
 	tinted_bg_tab_other = "#c8b8b2",
+	tinted_bg_tab_alternate = "#c8b8ca",
 	tinted_bg_added = "#c3ebc1",
 	tinted_bg_added_faint = "#dcf8d1",
 	tinted_bg_added_refine = "#acd6a5",
@@ -314,14 +317,16 @@ M.modus_vivendi = {
 	bg_inactive = "#282828",
 	fg_inactive = "#bfc0c4",
 	-- Status line specific colors
-	bg_status_line_active = "#2d2d2d",
+	bg_status_line_active = "#505050",
 	fg_status_line_active = "#f0f0f0",
-	bg_status_line_inactive = "#1d1d1d",
+	bg_status_line_inactive = "#2d2d2d",
 	fg_status_line_inactive = "#969696",
 	-- tab bar colors for tab pages
 	bg_tab_bar = "#313131",
 	bg_tab_current = "#000000",
 	bg_tab_other = "#545454",
+	fg_tab_other = "#f7f7f7",
+	bg_tab_alternate = "#545490",
 	-- git diffs
 	bg_added = "#00381f",
 	bg_added_faint = "#002910",
@@ -364,6 +369,7 @@ M.modus_vivendi = {
 	tinted_bg_tab_bar = "#2c3045",
 	tinted_bg_tab_current = "#0d0e1c",
 	tinted_bg_tab_other = "#4a4f6a",
+	tinted_bg_tab_alternate = "#4a4f94",
 	tinted_bg_added = "#003a2f",
 	tinted_bg_added_faint = "#002922",
 	tinted_bg_added_refine = "#035542",
@@ -475,6 +481,7 @@ function M.setup(opts)
 		colors.bg_tab_bar = colors.tinted_bg_tab_bar
 		colors.bg_tab_current = colors.tinted_bg_tab_current
 		colors.bg_tab_other = colors.tinted_bg_tab_other
+		colors.bg_tab_alternate = colors.tinted_bg_tab_alternate
 		colors.bg_added = colors.tinted_bg_added
 		colors.bg_added_faint = colors.tinted_bg_added_faint
 		colors.bg_added_refine = colors.tinted_bg_added_refine
