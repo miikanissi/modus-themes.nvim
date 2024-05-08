@@ -149,6 +149,18 @@ M.defaults = {
 		default = true,
 		link = "Define",
 	},
+	["@diff.delta"] = {
+		default = true,
+		link = "DiffChange",
+	},
+	["@diff.minus"] = {
+		default = true,
+		link = "DiffDelete",
+	},
+	["@diff.plus"] = {
+		default = true,
+		link = "DiffAdd",
+	},
 	["@exception"] = {
 		default = true,
 		link = "Exception",
