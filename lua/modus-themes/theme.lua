@@ -671,7 +671,7 @@ function M.setup()
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
 		MiniStarterSection = { fg = c.blue_warmer },
 		MiniStarterQuery = { fg = c.blue_cooler },
-		MiniStatuslineDevinfo = { fg = c.blue_faint, bg = c.bg_status_line_active },
+		MiniStatuslineDevinfo = { fg = c.blue_faint, bg = c.bg_status_line_active, bold = true },
 		MiniStatuslineFileinfo = { fg = c.fg_status_line_active, bg = c.bg_status_line_active },
 		MiniStatuslineFilename = { fg = c.fg_status_line_active, bg = c.bg_status_line_active },
 		MiniStatuslineInactive = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive, bold = true },
