@@ -317,7 +317,7 @@ M.modus_vivendi = {
 	bg_inactive = "#282828",
 	fg_inactive = "#bfc0c4",
 	-- Status line specific colors
-	bg_status_line_active = "#505050",
+	bg_status_line_active = "#404040",
 	fg_status_line_active = "#f0f0f0",
 	bg_status_line_inactive = "#2d2d2d",
 	fg_status_line_inactive = "#969696",
@@ -364,7 +364,7 @@ M.modus_vivendi = {
 	tinted_bg_completion = "#483d8a",
 	tinted_bg_hl_line = "#303a6f",
 	tinted_bg_paren_match = "#2f7f9f",
-	tinted_bg_status_line_active = "#484d67",
+	tinted_bg_status_line_active = "#393F51",
 	tinted_bg_status_line_inactive = "#292d48",
 	tinted_bg_tab_bar = "#2c3045",
 	tinted_bg_tab_current = "#0d0e1c",
