@@ -1376,6 +1376,7 @@ local highlights = {
   },
   MiniStatuslineDevinfo = {
     bg = "#c8c8c8",
+    bold = true,
     fg = "#003497"
   },
   MiniStatuslineFileinfo = {

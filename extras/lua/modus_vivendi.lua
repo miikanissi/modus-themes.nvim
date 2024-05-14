@@ -46,7 +46,7 @@ local colors = {
   bg_removed_faint = "#380a0f",
   bg_removed_fringe = "#b81a1f",
   bg_removed_refine = "#781a1f",
-  bg_status_line_active = "#505050",
+  bg_status_line_active = "#404040",
   bg_status_line_inactive = "#2d2d2d",
   bg_tab_alternate = "#545490",
   bg_tab_bar = "#313131",
@@ -154,7 +154,7 @@ local colors = {
   tinted_bg_removed_faint = "#380a19",
   tinted_bg_removed_fringe = "#b81a26",
   tinted_bg_removed_refine = "#781a3a",
-  tinted_bg_status_line_active = "#484d67",
+  tinted_bg_status_line_active = "#393F51",
   tinted_bg_status_line_inactive = "#292d48",
   tinted_bg_tab_alternate = "#4a4f94",
   tinted_bg_tab_bar = "#2c3045",
@@ -1375,15 +1375,16 @@ local highlights = {
     fg = "#79a8ff"
   },
   MiniStatuslineDevinfo = {
-    bg = "#505050",
+    bg = "#404040",
+    bold = true,
     fg = "#82b0ec"
   },
   MiniStatuslineFileinfo = {
-    bg = "#505050",
+    bg = "#404040",
     fg = "#f0f0f0"
   },
   MiniStatuslineFilename = {
-    bg = "#505050",
+    bg = "#404040",
     fg = "#f0f0f0"
   },
   MiniStatuslineInactive = {
@@ -2054,7 +2055,7 @@ local highlights = {
     fg = "#b6a0ff"
   },
   StatusLine = {
-    bg = "#505050",
+    bg = "#404040",
     fg = "#f0f0f0"
   },
   StatusLineNC = {
