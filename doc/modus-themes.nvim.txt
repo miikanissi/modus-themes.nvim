@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*      For Neovim >= 0.8.0      Last change: 2024 May 10
+*modus-themes.nvim.txt*      For Neovim >= 0.8.0      Last change: 2024 May 14
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
