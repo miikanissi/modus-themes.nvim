@@ -8,7 +8,7 @@ function M.generate(colors)
 		[[
 # vim:ft=kitty
 
-# Modus Themes for Kitty 
+# Modus Themes for Kitty
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/kitty.lua
 
 

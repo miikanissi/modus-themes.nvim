@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
 	local windows_terminal = util.template(
 		[[
-# Modus Themes for Alacritty 
+# Modus Themes for Alacritty
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/windows_terminal.lua
 # Learn more at
 # https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme

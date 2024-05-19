@@ -13,7 +13,7 @@ function M.generate(colors)
 
 	local qt5ct = util.template(
 		[[
-# Modus Themes for qt5ct 
+# Modus Themes for qt5ct
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/qt5ct.lua
 [ColorScheme]
 active_colors=#${fg_main}, #${bg_main}, #${bg_main}, #${bg_main}, #${bg_alt}, #${bg_alt}, #${fg_main}, #${fg_main}, #${fg_main}, #${bg_dim}, #${bg_main}, #${bg_alt}, #${accent}, #${bg_main}, #${accent}, #${fg_main}, #${bg_main}, #${fg_main}, ${bg_alt}, #${fg_main}
