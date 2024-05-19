@@ -26,6 +26,7 @@ function M.setup()
 	local c = theme.colors
 
 	local bg_main = options.transparent and c.none or c.bg_main
+	local bg_sidebar = options.transparent and c.none or c.bg_sidebar
 	local bg_inactive = options.dim_inactive and c.bg_inactive or bg_main
 	local fg_inactive = options.dim_inactive and c.fg_inactive or c.fg_main
 
@@ -36,13 +37,17 @@ function M.setup()
 			fg = fg_inactive,
 			bg = bg_inactive,
 		}, -- Normal text in non-current windows
+		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar
 		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window
-		FloatBorder = { fg = c.border, bg = c.bg_active }, -- Float Border
-		FloatTitle = { fg = c.border, bg = c.bg_active }, -- Float Title
+		FloatBorder = { fg = c.border_highlight, bg = c.bg_active }, -- Float Border
+		FloatTitle = { fg = c.border_highlight, bg = c.bg_active }, -- Float Title
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
 		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
+		LineNrAbove = { fg = c.fg_dim, bg = c.bg_dim },
+		LineNrBelow = { fg = c.fg_dim, bg = c.bg_dim },
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed
+		SignColumnSB = { fg = c.fg_dim, bg = bg_sidebar }, -- Column where |signs| are displayed
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		NonText = { fg = c.fg_dim }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line
@@ -128,6 +133,24 @@ function M.setup()
 		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out, HTML links
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct
 
+		-- Miscelaneous Syntax related non-standard highlights
+		qfLineNr = { fg = c.fg_dim },
+		qfFileName = { fg = c.blue },
+
+		htmlH1 = { fg = c.magenta, bold = true },
+		htmlH2 = { fg = c.blue, bold = true },
+
+		mkdCodeDelimiter = { bg = c.bg_alt, fg = c.fg_main },
+		mkdCodeStart = { fg = c.cyan_cooler, bold = true },
+		mkdCodeEnd = { fg = c.cyan_cooler, bold = true },
+
+		markdownHeadingDelimiter = { fg = c.rust, bold = true },
+		markdownCode = { fg = c.cyan_cooler },
+		markdownCodeBlock = { fg = c.cyan_cooler },
+		markdownH1 = { fg = c.blue, bold = true },
+		markdownH2 = { fg = c.cyan_cooler, bold = true },
+		markdownLinkText = { fg = c.blue, underline = true },
+
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
@@ -151,11 +174,72 @@ function M.setup()
 		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
 		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
 
+		LspSignatureActiveParameter = { bg = c.bg_magenta_nuanced, bold = true },
+		LspCodeLens = { fg = c.comment },
+		LspInlayHint = { bg = c.cyan_warmer, fg = c.bg_alt },
+
+		LspInfoBorder = { fg = c.border_highlight, bg = c.bg_active },
+
 		ALEErrorSign = { fg = c.error, bold = true },
 		ALEWarningSign = { fg = c.warning, bold = true },
 
-		-- These groups are for the Neovim tree-sitter highlights.
-		-- As of writing, tree-sitter support is a WIP, group names may change.
+		-- Neovim tree-sitter highlights
+		["@annotation"] = { link = "PreProc" },
+		["@attribute"] = { link = "PreProc" },
+		["@boolean"] = { link = "Boolean" },
+		["@character"] = { link = "Character" },
+		["@character.special"] = { link = "SpecialChar" },
+		["@comment"] = { link = "Comment" },
+		["@keyword.conditional"] = { link = "Conditional" },
+		["@constant"] = { link = "Constant" },
+		["@constant.builtin"] = { link = "Special" },
+		["@constant.macro"] = { link = "Define" },
+		["@keyword.debug"] = { link = "Debug" },
+		["@keyword.directive.define"] = { link = "Define" },
+		["@keyword.exception"] = { link = "Exception" },
+		["@number.float"] = { link = "Float" },
+		["@function"] = { link = "Function" },
+		["@function.builtin"] = { link = "Special" },
+		["@function.call"] = { link = "@function" },
+		["@function.macro"] = { link = "Macro" },
+		["@keyword.import"] = { link = "Include" },
+		["@keyword.coroutine"] = { link = "@keyword" },
+		["@keyword.operator"] = { link = "@operator" },
+		["@keyword.return"] = { link = "@keyword" },
+		["@function.method"] = { link = "Function" },
+		["@function.method.call"] = { link = "@function.method" },
+		["@namespace.builtin"] = { link = "@variable.builtin" },
+		["@none"] = {},
+		["@number"] = { link = "Number" },
+		["@keyword.directive"] = { link = "PreProc" },
+		["@keyword.repeat"] = { link = "Repeat" },
+		["@keyword.storage"] = { link = "StorageClass" },
+		["@string"] = { link = "String" },
+		["@markup.link.label"] = { link = "SpecialChar" },
+		["@markup.link.label.symbol"] = { link = "Identifier" },
+		["@tag"] = { link = "Label" },
+		["@tag.attribute"] = { link = "@property" },
+		["@tag.delimiter"] = { link = "Delimiter" },
+		["@markup"] = { link = "@none" },
+		["@markup.environment"] = { link = "Macro" },
+		["@markup.environment.name"] = { link = "Type" },
+		["@markup.raw"] = { link = "String" },
+		["@markup.math"] = { link = "Special" },
+		["@markup.strong"] = { bold = true },
+		["@markup.emphasis"] = { italic = true },
+		["@markup.strikethrough"] = { strikethrough = true },
+		["@markup.underline"] = { underline = true },
+		["@markup.heading"] = { link = "Title" },
+		["@comment.note"] = { fg = c.hint },
+		["@comment.error"] = { fg = c.error },
+		["@comment.hint"] = { fg = c.hint },
+		["@comment.info"] = { fg = c.info },
+		["@comment.warning"] = { fg = c.warning },
+		["@comment.todo"] = { link = "Todo" },
+		["@markup.link.url"] = { link = "Underlined" },
+		["@type"] = { link = "Type" },
+		["@type.definition"] = { link = "Typedef" },
+		["@type.qualifier"] = { link = "@keyword" },
 
 		--- Misc
 		["@operator"] = { link = "Operator" }, -- For any operator: `+`, but also `->` and `*` in C.
@@ -164,6 +248,8 @@ function M.setup()
 		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters ie: `.`
 		["@punctuation.bracket"] = { fg = c.fg_main }, -- For brackets and parens.
 		["@punctuation.special"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the categories before.
+		["@markup.list"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the catagories before.
+		["@markup.list.markdown"] = { fg = c.rust, bold = true },
 
 		--- Literals
 		["@string.documentation"] = { fg = c.green_faint },
@@ -172,42 +258,45 @@ function M.setup()
 
 		--- Functions
 		["@constructor"] = { fg = c.yellow_cooler }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@parameter"] = { fg = c.cyan }, -- For parameters of a function.
+		["@variable.parameter"] = { fg = c.cyan }, -- For parameters of a function.
+		["@variable.parameter.builtin"] = { fg = c.cyan_faint }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
 
 		--- Keywords
 		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		-- TODO:
-		-- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
 		["@keyword.function"] = { link = "Function" }, -- For keywords used to define a function.
 
 		["@label"] = { link = "Label" }, -- For labels: `label:` in C and `:label:` in Lua.
 
 		--- Types
 		["@type.builtin"] = { link = "Type" },
-		["@field"] = { link = "Identifier" }, -- For fields.
+		["@variable.member"] = { link = "Identifier" }, -- For fields.
 		["@property"] = { link = "@field" },
 
 		--- Identifiers
 		["@variable"] = { link = "Identifier" }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
-		["@namespace.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@module.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
 
 		--- Text
-		["@text.reference"] = { fg = c.cyan_cooler },
+		["@markup.raw.markdown_inline"] = { fg = c.blue },
+		["@markup.link"] = { fg = c.cyan_cooler },
 
-		["@text.todo.unchecked"] = { fg = c.blue }, -- For brackets and parens.
-		["@text.todo.checked"] = { fg = c.green }, -- For brackets and parens.
-		["@text.warning"] = { fg = c.bg_main, bg = c.warning },
-		["@text.danger"] = { fg = c.bg_main, bg = c.error },
+		["@markup.list.unchecked"] = { fg = c.blue }, -- For brackets and parens.
+		["@markup.list.checked"] = { fg = c.green }, -- For brackets and parens.
 
-		["@text.diff.add"] = { link = "DiffAdd" },
-		["@text.diff.delete"] = { link = "DiffDelete" },
+		["@diff.plus"] = { link = "DiffAdd" },
+		["@diff.minus"] = { link = "DiffDelete" },
+		["@diff.delta"] = { link = "DiffChange" },
 
-		["@namespace"] = { link = "Include" },
+		["@module"] = { link = "Include" },
 
 		-- tsx
 		["@tag.tsx"] = { fg = c.red },
 		["@constructor.tsx"] = { fg = c.blue },
+		["@tag.delimiter.tsx"] = { fg = c.blue_cooler },
+
+		-- Python
+		["@lsp.type.namespace.python"] = { link = "@variable" },
 
 		-- LSP Semantic Token Groups
 		["@lsp.type.boolean"] = { link = "@boolean" },
@@ -218,14 +307,15 @@ function M.setup()
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.enumMember"] = { link = "@constant" },
 		["@lsp.type.escapeSequence"] = { link = "@string.escape" },
-		["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
+		["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
 		["@lsp.type.generic"] = { link = "@variable" },
+		["@lsp.type.interface"] = { fg = c.blue_warmer },
 		["@lsp.type.keyword"] = { link = "@keyword" },
-		["@lsp.type.lifetime"] = { link = "@storageclass" },
-		["@lsp.type.namespace"] = { link = "@namespace" },
+		["@lsp.type.lifetime"] = { link = "@keyword.storage" },
+		["@lsp.type.namespace"] = { link = "@module" },
 		["@lsp.type.number"] = { link = "@number" },
 		["@lsp.type.operator"] = { link = "@operator" },
-		["@lsp.type.parameter"] = { link = "@parameter" },
+		["@lsp.type.parameter"] = { link = "@variable.parameter" },
 		["@lsp.type.property"] = { link = "@property" },
 		["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
 		["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
@@ -244,6 +334,8 @@ function M.setup()
 		["@lsp.typemod.operator.injected"] = { link = "@operator" },
 		["@lsp.typemod.string.injected"] = { link = "@string" },
 		["@lsp.typemod.struct.defaultLibrary"] = { link = "@type.builtin" },
+		["@lsp.typemod.type.defaultLibrary"] = { fg = c.blue_cooler },
+		["@lsp.typemod.typeAlias.defaultLibrary"] = { fg = c.blue_cooler },
 		["@lsp.typemod.variable.callable"] = { link = "@function" },
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
@@ -332,9 +424,17 @@ function M.setup()
 		GitSignsChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
 		GitSignsDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
 
+		-- mini.diff
+		MiniDiffSignAdd = { link = "DiffAdd" }, -- diff mode: Added line |diff.txt|
+		MiniDiffSignChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
+		MiniDiffSignDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
+
 		-- Telescope
 		TelescopeBorder = { fg = c.border, bg = bg_main },
 		TelescopeNormal = { link = "Normal" },
+		TelescopePromptBorder = { fg = c.rust, bg = c.bg_active },
+		TelescopePromptTitle = { fg = c.rust, bg = c.bg_active },
+		TelescopeResultsComment = { fg = c.fg_dim },
 
 		-- Fzf Lua
 		FzfLuaBorder = { fg = c.border, bg = bg_main },
@@ -526,97 +626,164 @@ function M.setup()
 		CmpItemAbbrMatchFuzzy = { fg = c.blue_warmer, bg = c.none },
 		CmpItemMenu = { fg = c.fg_alt, bg = c.none },
 		CmpItemKindDefault = { fg = c.fg_dim, bg = c.none },
-		CmpItemKindKeyword = { fg = c.cyan, bg = c.none },
-		CmpItemKindVariable = { fg = c.magenta, bg = c.none },
-		CmpItemKindConstant = { fg = c.magenta, bg = c.none },
-		CmpItemKindReference = { fg = c.magenta, bg = c.none },
-		CmpItemKindValue = { fg = c.magenta, bg = c.none },
 		CmpItemKindCopilot = { fg = c.cyan_cooler, bg = c.none },
 		CmpItemKindCodeium = { fg = c.cyan_cooler, bg = c.none },
 		CmpItemKindTabNine = { fg = c.cyan_cooler, bg = c.none },
-		CmpItemKindFunction = { fg = c.blue, bg = c.none },
-		CmpItemKindMethod = { fg = c.blue, bg = c.none },
-		CmpItemKindConstructor = { fg = c.blue, bg = c.none },
-		CmpItemKindClass = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
-		CmpItemKindModule = { fg = c.yellow, bg = c.none },
-		CmpItemKindPackage = { fg = c.yellow, bg = c.none },
-		CmpItemKindProperty = { fg = c.green_warmer, bg = c.none },
-		CmpItemKindField = { fg = c.green_warmer, bg = c.none },
-		CmpItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
-		CmpItemKindEnumMember = { fg = c.green_warmer, bg = c.none },
-		CmpItemKindOperator = { fg = c.green_warmer, bg = c.none },
-		CmpItemKindSnippet = { fg = c.fg_dim, bg = c.none },
+		-- Cmp LSP
+		CmpItemKindArray = { link = "@punctuation.bracket" },
+		CmpItemKindBoolean = { link = "@lsp.type.boolean" },
+		CmpItemKindClass = { link = "@type" },
+		CmpItemKindColor = { link = "Special" },
+		CmpItemKindConstant = { link = "@constant" },
+		CmpItemKindConstructor = { link = "@constructor" },
+		CmpItemKindEnum = { link = "@lsp.type.enum" },
+		CmpItemKindEnumMember = { link = "@lsp.type.enumMember" },
+		CmpItemKindEvent = { link = "Special" },
+		CmpItemKindField = { link = "@variable.member" },
+		CmpItemKindFile = { link = "Normal" },
+		CmpItemKindFolder = { link = "Directory" },
+		CmpItemKindFunction = { link = "@function" },
+		CmpItemKindInterface = { link = "@lsp.type.interface" },
+		CmpItemKindKey = { link = "@variable.member" },
+		CmpItemKindKeyword = { link = "@lsp.type.keyword" },
+		CmpItemKindMethod = { link = "@function.method" },
+		CmpItemKindModule = { link = "@module" },
+		CmpItemKindNamespace = { link = "@module" },
+		CmpItemKindNull = { link = "@constant.builtin" },
+		CmpItemKindNumber = { link = "@number" },
+		CmpItemKindObject = { link = "@constant" },
+		CmpItemKindOperator = { link = "@operator" },
+		CmpItemKindPackage = { link = "@module" },
+		CmpItemKindProperty = { link = "@property" },
+		CmpItemKindReference = { link = "@markup.link" },
+		CmpItemKindSnippet = { link = "Conceal" },
+		CmpItemKindString = { link = "@string" },
+		CmpItemKindStruct = { link = "@lsp.type.struct" },
+		CmpItemKindUnit = { link = "@lsp.type.struct" },
+		CmpItemKindText = { link = "@markup" },
+		CmpItemKindTypeParameter = { link = "@lsp.type.typeParameter" },
+		CmpItemKindVariable = { link = "@variable" },
+		CmpItemKindValue = { link = "@string" },
 
 		-- headlines.nvim
 		CodeBlock = { bg = c.bg_dim },
 
 		-- navic
-		NavicIconsFile = { fg = c.fg_main, bg = c.none },
-		NavicIconsModule = { fg = c.yellow, bg = c.none },
-		NavicIconsNamespace = { fg = c.fg_main, bg = c.none },
-		NavicIconsPackage = { fg = c.fg_main, bg = c.none },
-		NavicIconsClass = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsMethod = { fg = c.blue, bg = c.none },
-		NavicIconsProperty = { fg = c.green_warmer, bg = c.none },
-		NavicIconsField = { fg = c.green_warmer, bg = c.none },
-		NavicIconsConstructor = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsEnum = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsInterface = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsFunction = { fg = c.blue, bg = c.none },
-		NavicIconsVariable = { fg = c.magenta, bg = c.none },
-		NavicIconsConstant = { fg = c.magenta, bg = c.none },
-		NavicIconsString = { fg = c.green, bg = c.none },
-		NavicIconsNumber = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsBoolean = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsArray = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsObject = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsKey = { fg = c.magenta_cooler, bg = c.none },
-		NavicIconsKeyword = { fg = c.magenta_cooler, bg = c.none },
-		NavicIconsNull = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsEnumMember = { fg = c.green_warmer, bg = c.none },
-		NavicIconsStruct = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsEvent = { fg = c.yellow_warmer, bg = c.none },
-		NavicIconsOperator = { fg = c.fg_main, bg = c.none },
-		NavicIconsTypeParameter = { fg = c.green_warmer, bg = c.none },
 		NavicText = { fg = c.fg_main, bg = c.none },
 		NavicSeparator = { fg = c.fg_main, bg = c.none },
+		-- navic LSP
+		NavicIconsArray = { link = "@punctuation.bracket" },
+		NavicIconsBoolean = { link = "@lsp.type.boolean" },
+		NavicIconsClass = { link = "@type" },
+		NavicIconsColor = { link = "Special" },
+		NavicIconsConstant = { link = "@constant" },
+		NavicIconsConstructor = { link = "@constructor" },
+		NavicIconsEnum = { link = "@lsp.type.enum" },
+		NavicIconsEnumMember = { link = "@lsp.type.enumMember" },
+		NavicIconsEvent = { link = "Special" },
+		NavicIconsField = { link = "@variable.member" },
+		NavicIconsFile = { link = "Normal" },
+		NavicIconsFolder = { link = "Directory" },
+		NavicIconsFunction = { link = "@function" },
+		NavicIconsInterface = { link = "@lsp.type.interface" },
+		NavicIconsKey = { link = "@variable.member" },
+		NavicIconsKeyword = { link = "@lsp.type.keyword" },
+		NavicIconsMethod = { link = "@function.method" },
+		NavicIconsModule = { link = "@module" },
+		NavicIconsNamespace = { link = "@module" },
+		NavicIconsNull = { link = "@constant.builtin" },
+		NavicIconsNumber = { link = "@number" },
+		NavicIconsObject = { link = "@constant" },
+		NavicIconsOperator = { link = "@operator" },
+		NavicIconsPackage = { link = "@module" },
+		NavicIconsProperty = { link = "@property" },
+		NavicIconsReference = { link = "@markup.link" },
+		NavicIconsSnippet = { link = "Conceal" },
+		NavicIconsString = { link = "@string" },
+		NavicIconsStruct = { link = "@lsp.type.struct" },
+		NavicIconsUnit = { link = "@lsp.type.struct" },
+		NavicIconsText = { link = "@markup" },
+		NavicIconsTypeParameter = { link = "@lsp.type.typeParameter" },
+		NavicIconsVariable = { link = "@variable" },
+		NavicIconsValue = { link = "@string" },
 
 		-- aerial
-		AerialFileIcon = { fg = c.fg_main, bg = c.none },
-		AerialModuleIcon = { fg = c.yellow, bg = c.none },
-		AerialNamespaceIcon = { fg = c.cyan, bg = c.none },
-		AerialPackageIcon = { fg = c.cyan, bg = c.none },
-		AerialClassIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialMethodIcon = { fg = c.blue, bg = c.none },
-		AerialPropertyIcon = { fg = c.green_warmer, bg = c.none },
-		AerialFieldIcon = { fg = c.green_warmer, bg = c.none },
-		AerialConstructorIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialEnumIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialInterfaceIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialFunctionIcon = { fg = c.blue, bg = c.none },
-		AerialVariableIcon = { fg = c.magenta, bg = c.none },
-		AerialConstantIcon = { fg = c.magenta, bg = c.none },
-		AerialStringIcon = { fg = c.green, bg = c.none },
-		AerialNumberIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialBooleanIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialArrayIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialObjectIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialKeyIcon = { fg = c.magenta_cooler, bg = c.none },
-		AerialKeywordIcon = { fg = c.magenta_cooler, bg = c.none },
-		AerialNullIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialEnumMemberIcon = { fg = c.green_warmer, bg = c.none },
-		AerialStructIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialEventIcon = { fg = c.yellow_warmer, bg = c.none },
-		AerialOperatorIcon = { fg = c.blue_intense, bg = c.none },
-		AerialTypeParameterIcon = { fg = c.green_warmer, bg = c.none },
 		AerialNormal = { fg = c.fg_main, bg = c.none },
 		AerialGuide = { fg = c.fg_dim },
 		AerialLine = { link = "LspInlayHint" },
+		-- aerial LSP
+		AerialArrayIcon = { link = "@punctuation.bracket" },
+		AerialBooleanIcon = { link = "@lsp.type.boolean" },
+		AerialClassIcon = { link = "@type" },
+		AerialColorIcon = { link = "Special" },
+		AerialConstantIcon = { link = "@constant" },
+		AerialConstructorIcon = { link = "@constructor" },
+		AerialEnumIcon = { link = "@lsp.type.enum" },
+		AerialEnumMemberIcon = { link = "@lsp.type.enumMember" },
+		AerialEventIcon = { link = "Special" },
+		AerialFieldIcon = { link = "@variable.member" },
+		AerialFileIcon = { link = "Normal" },
+		AerialFolderIcon = { link = "Directory" },
+		AerialFunctionIcon = { link = "@function" },
+		AerialInterfaceIcon = { link = "@lsp.type.interface" },
+		AerialKeyIcon = { link = "@variable.member" },
+		AerialKeywordIcon = { link = "@lsp.type.keyword" },
+		AerialMethodIcon = { link = "@function.method" },
+		AerialModuleIcon = { link = "@module" },
+		AerialNamespaceIcon = { link = "@module" },
+		AerialNullIcon = { link = "@constant.builtin" },
+		AerialNumberIcon = { link = "@number" },
+		AerialObjectIcon = { link = "@constant" },
+		AerialOperatorIcon = { link = "@operator" },
+		AerialPackageIcon = { link = "@module" },
+		AerialPropertyIcon = { link = "@property" },
+		AerialReferenceIcon = { link = "@markup.link" },
+		AerialSnippetIcon = { link = "Conceal" },
+		AerialStringIcon = { link = "@string" },
+		AerialStructIcon = { link = "@lsp.type.struct" },
+		AerialUnitIcon = { link = "@lsp.type.struct" },
+		AerialTextIcon = { link = "@markup" },
+		AerialTypeParameterIcon = { link = "@lsp.type.typeParameter" },
+		AerialVariableIcon = { link = "@variable" },
+		AerialValueIcon = { link = "@string" },
+
+		-- Noice
+		NoiceCompletionItemKindDefault = { fg = c.fg_dim, bg = c.none },
+		-- Noice LSP
+		NoiceCompletionItemKindArray = { link = "@punctuation.bracket" },
+		NoiceCompletionItemKindBoolean = { link = "@lsp.type.boolean" },
+		NoiceCompletionItemKindClass = { link = "@type" },
+		NoiceCompletionItemKindColor = { link = "Special" },
+		NoiceCompletionItemKindConstant = { link = "@constant" },
+		NoiceCompletionItemKindConstructor = { link = "@constructor" },
+		NoiceCompletionItemKindEnum = { link = "@lsp.type.enum" },
+		NoiceCompletionItemKindEnumMember = { link = "@lsp.type.enumMember" },
+		NoiceCompletionItemKindEvent = { link = "Special" },
+		NoiceCompletionItemKindField = { link = "@variable.member" },
+		NoiceCompletionItemKindFile = { link = "Normal" },
+		NoiceCompletionItemKindFolder = { link = "Directory" },
+		NoiceCompletionItemKindFunction = { link = "@function" },
+		NoiceCompletionItemKindInterface = { link = "@lsp.type.interface" },
+		NoiceCompletionItemKindKey = { link = "@variable.member" },
+		NoiceCompletionItemKindKeyword = { link = "@lsp.type.keyword" },
+		NoiceCompletionItemKindMethod = { link = "@function.method" },
+		NoiceCompletionItemKindModule = { link = "@module" },
+		NoiceCompletionItemKindNamespace = { link = "@module" },
+		NoiceCompletionItemKindNull = { link = "@constant.builtin" },
+		NoiceCompletionItemKindNumber = { link = "@number" },
+		NoiceCompletionItemKindObject = { link = "@constant" },
+		NoiceCompletionItemKindOperator = { link = "@operator" },
+		NoiceCompletionItemKindPackage = { link = "@module" },
+		NoiceCompletionItemKindProperty = { link = "@property" },
+		NoiceCompletionItemKindReference = { link = "@markup.link" },
+		NoiceCompletionItemKindSnippet = { link = "Conceal" },
+		NoiceCompletionItemKindString = { link = "@string" },
+		NoiceCompletionItemKindStruct = { link = "@lsp.type.struct" },
+		NoiceCompletionItemKindUnit = { link = "@lsp.type.struct" },
+		NoiceCompletionItemKindText = { link = "@markup" },
+		NoiceCompletionItemKindTypeParameter = { link = "@lsp.type.typeParameter" },
+		NoiceCompletionItemKindVariable = { link = "@variable" },
+		NoiceCompletionItemKindValue = { link = "@string" },
 
 		-- indent-blankline.nvim
 		IndentBlanklineChar = { fg = c.fg_dim, nocombine = true },
@@ -710,43 +877,19 @@ function M.setup()
 		MiniTestFail = { fg = c.red, bold = true },
 		MiniTestPass = { fg = c.green, bold = true },
 		MiniTrailspace = { bg = c.red },
-
-		-- Noice
-		NoiceCompletionItemKindDefault = { fg = c.fg_dim, bg = c.none },
-		NoiceCompletionItemKindKeyword = { fg = c.cyan, bg = c.none },
-		NoiceCompletionItemKindVariable = { fg = c.magenta, bg = c.none },
-		NoiceCompletionItemKindConstant = { fg = c.magenta, bg = c.none },
-		NoiceCompletionItemKindReference = { fg = c.magenta, bg = c.none },
-		NoiceCompletionItemKindValue = { fg = c.magenta, bg = c.none },
-		NoiceCompletionItemKindFunction = { fg = c.blue, bg = c.none },
-		NoiceCompletionItemKindMethod = { fg = c.blue, bg = c.none },
-		NoiceCompletionItemKindConstructor = { fg = c.blue, bg = c.none },
-		NoiceCompletionItemKindClass = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindInterface = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindStruct = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindEvent = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindEnum = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindUnit = { fg = c.yellow_warmer, bg = c.none },
-		NoiceCompletionItemKindModule = { fg = c.yellow, bg = c.none },
-		NoiceCompletionItemKindProperty = { fg = c.green_warmer, bg = c.none },
-		NoiceCompletionItemKindField = { fg = c.green_warmer, bg = c.none },
-		NoiceCompletionItemKindTypeParameter = { fg = c.green_warmer, bg = c.none },
-		NoiceCompletionItemKindEnumMember = { fg = c.green_warmer, bg = c.none },
-		NoiceCompletionItemKindOperator = { fg = c.green_warmer, bg = c.none },
-		NoiceCompletionItemKindSnippet = { fg = c.fg_dim, bg = c.none },
 	}
 
 	local markdown_rainbow = {
 		{ c.blue, c.bg_blue_nuanced },
-		{ c.cyan_cooler, c.bg_cyan_cooler_nuanced },
 		{ c.yellow, c.bg_yellow_nuanced },
-		{ c.yellow_warmer, c.bg_yellow_warmer_nuanced },
 		{ c.magenta, c.bg_magenta_nuanced },
-		{ c.magenta_cooler, c.bg_magenta_cooler_nuanced },
+		{ c.green, c.bg_green_nuanced },
+		{ c.red, c.bg_red_nuanced },
+		{ c.cyan_warmer, c.bg_cyan_nuanced },
 	}
 
 	for i, color_table in ipairs(markdown_rainbow) do
-		theme.highlights["@text.title." .. i .. ".markdown"] = { fg = color_table[1], bold = true }
+		theme.highlights["@markup.heading." .. i .. ".markdown"] = { fg = color_table[1], bold = true }
 		theme.highlights["Headline" .. i] = { bg = color_table[2] }
 	end
 	theme.highlights["Headline"] = { link = "Headline1" }

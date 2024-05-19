@@ -1,13 +1,7 @@
-local ts = require("modus-themes.treesitter")
-
 local M = {}
 
 ---@param group string
 function M.highlight(group, hl)
-	group = ts.get(group)
-	if not group then
-		return
-	end
 	if hl.style then
 		if type(hl.style) == "table" then
 			hl = vim.tbl_extend("force", hl, hl.style)
@@ -78,14 +72,6 @@ function M.load(theme)
 
 	vim.o.termguicolors = true
 	vim.g.colors_name = "modus"
-
-	if ts.new_style() then
-		for group, colors in pairs(ts.defaults) do
-			if not theme.highlights[group] then
-				M.highlight(group, colors)
-			end
-		end
-	end
 
 	M.syntax(theme.highlights)
 
