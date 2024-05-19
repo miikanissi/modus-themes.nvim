@@ -17,6 +17,7 @@ M.modus_operandi = {
 	fg_dim = "#595959",
 	fg_alt = "#193668",
 	border = "#9f9f9f",
+	border_highlight = "#899bc8",
 
 	-- Common foreground values
 	red = "#a60000",
@@ -80,12 +81,9 @@ M.modus_operandi = {
 	bg_red_nuanced = "#fff1f0",
 	bg_green_nuanced = "#ecf7ed",
 	bg_yellow_nuanced = "#fff3da",
-	bg_yellow_warmer_nuanced = "#fff1db",
 	bg_blue_nuanced = "#f3f3ff",
 	bg_magenta_nuanced = "#fdf0ff",
-	bg_magenta_cooler_nuanced = "#f0e8fd",
 	bg_cyan_nuanced = "#ebf6fa",
-	bg_cyan_cooler_nuanced = "#f0ffff",
 
 	-- Special purpose
 	bg_completion = "#c0deff",
@@ -136,6 +134,7 @@ M.modus_operandi = {
 	tinted_bg_main = "#fbf7f0",
 	tinted_bg_dim = "#efe9dd",
 	tinted_border = "#9f9690",
+	tinted_border_highlight = "#b1938c",
 	tinted_bg_active = "#c9b9b0",
 	tinted_bg_inactive = "#dfd5cf",
 	tinted_red_faint = "#7f0000",
@@ -233,6 +232,7 @@ M.modus_vivendi = {
 	fg_dim = "#989898",
 	fg_alt = "#c6daff",
 	border = "#646464",
+	border_highlight = "#4362B6",
 
 	-- Common foreground values
 	red = "#ff5f59",
@@ -296,12 +296,9 @@ M.modus_vivendi = {
 	bg_red_nuanced = "#2c0614",
 	bg_green_nuanced = "#001904",
 	bg_yellow_nuanced = "#221000",
-	bg_yellow_warmer_nuanced = "#281C01",
 	bg_blue_nuanced = "#0f0e39",
 	bg_magenta_nuanced = "#230631",
-	bg_magenta_cooler_nuanced = "#0C0033",
 	bg_cyan_nuanced = "#041529",
-	bg_cyan_cooler_nuanced = "#041B14",
 
 	-- Special purpose
 	bg_completion = "#2f447f",
@@ -352,6 +349,7 @@ M.modus_vivendi = {
 	tinted_bg_main = "#0d0e1c",
 	tinted_bg_dim = "#1d2235",
 	tinted_border = "#61647a",
+	tinted_border_highlight = "#815a7d",
 	tinted_bg_active = "#4a4f69",
 	tinted_bg_inactive = "#2b3045",
 	tinted_red_faint = "#ff9f80",
@@ -449,6 +447,9 @@ function M.setup(opts)
 	---@class ColorScheme: Palette
 	local colors = M[style]
 
+	colors.bg_sidebar = colors.bg_dim
+	colors.fg_sidebar = colors.fg_main
+
 	colors.cursor = colors.fg_main
 	colors.comment = colors.fg_dim
 	colors.error = colors.red_cooler
@@ -467,6 +468,7 @@ function M.setup(opts)
 		colors.bg_active = colors.tinted_bg_active
 		colors.bg_inactive = colors.tinted_bg_inactive
 		colors.border = colors.tinted_border
+		colors.border_highlight = colors.tinted_border_highlight
 		colors.red_faint = colors.tinted_red_faint
 		colors.bg_red_nuanced = colors.tinted_bg_red_nuanced
 		colors.bg_green_nuanced = colors.tinted_bg_green_nuanced
