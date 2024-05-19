@@ -334,7 +334,23 @@ function M.setup()
 
 		-- Telescope
 		TelescopeBorder = { fg = c.border, bg = bg_main },
-		TelescopeNormal = { fg = c.fg_main, bg = bg_main },
+		TelescopeNormal = { link = "Normal" },
+
+		-- Fzf Lua
+		FzfLuaBorder = { fg = c.border, bg = bg_main },
+		FzfLuaNormal = { link = "Normal" },
+
+		FzfLuaHeaderBind = { fg = c.gold },
+		FzfLuaHeaderText = { fg = c.yellow_cooler },
+		FzfLuaPathColNr = { fg = c.cyan_cooler },
+		FzfLuaPathLineNr = { fg = c.green_cooler },
+		FzfLuaBufName = { fg = c.magenta_warmer },
+		FzfLuaBufNr = { fg = c.gold },
+		FzfLuaBufFlagCur = { fg = c.yellow_cooler },
+		FzfLuaBufFlagAlt = { fg = c.cyan_cooler },
+		FzfLuaTabTitle = { fg = c.blue_warmer },
+		FzfLuaTabMarker = { fg = c.gold },
+		FzfLuaLiveSym = { fg = c.gold },
 
 		-- NvimTree
 		NvimTreeNormal = { fg = c.fg_active, bg = c.bg_active },
@@ -501,7 +517,7 @@ function M.setup()
 		LightspeedUnlabeledMatch = { fg = c.blue_warmer, bold = true },
 
 		-- Cmp
-		CmpDocumentation = { fg = c.fg_main, bg = bg_main },
+		CmpDocumentation = { link = "Normal" },
 		CmpDocumentationBorder = { fg = c.border, bg = bg_main },
 		CmpGhostText = { fg = c.fg_dim },
 		CmpItemAbbr = { fg = c.fg_main, bg = c.none },
@@ -666,7 +682,7 @@ function M.setup()
 		MiniStarterFooter = { fg = c.yellow, italic = true },
 		MiniStarterHeader = { fg = c.blue },
 		MiniStarterInactive = { fg = c.comment, style = options.styles.comments },
-		MiniStarterItem = { fg = c.fg_main, bg = bg_main },
+		MiniStarterItem = { link = "Normal" },
 		MiniStarterItemBullet = { fg = c.border },
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
 		MiniStarterSection = { fg = c.blue_warmer },
