@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
 	local zathura = util.template(
 		[[
-# Modus Themes for Zathura 
+# Modus Themes for Zathura
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/zathura.lua
 #
 set notification-error-bg "${bg_red_intense}"

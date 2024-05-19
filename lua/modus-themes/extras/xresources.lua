@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
 	local xr = util.template(
 		[[
-!! Modus Themes for Xresources 
+!! Modus Themes for Xresources
 !! Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/xresources.lua
 
 *background: ${bg_main}
@@ -33,7 +33,7 @@ function M.generate(colors)
 *color13: ${magenta_intense}
 *color14: ${cyan_intense}
 *color15: ${fg_dim}
- 
+
 ]],
 		colors
 	)

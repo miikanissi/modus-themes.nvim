@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
 	local tmux = util.template(
 		[[
-# Modus Themes for Tmux 
+# Modus Themes for Tmux
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/tmux.lua
 
 set-option -g status-position "bottom"

@@ -23,7 +23,7 @@ function M.generate(colors)
 
 	local gitui = util.template(
 		[[
-# Modus Themes for GitUI 
+# Modus Themes for GitUI
 # Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/gitui.lua
 (
   selected_tab: ${magenta}
