@@ -209,7 +209,7 @@ function M.setup()
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
-		["@string.documentation"] = { fg = c.green_faint }, -- String documening code (e.g. Python docstrings).
+		["@string.documentation"] = { fg = c.green_faint, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
 		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
 		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
 		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
@@ -883,7 +883,7 @@ function M.setup()
 		MiniStarterCurrent = { nocombine = true },
 		MiniStarterFooter = { fg = c.yellow, italic = true },
 		MiniStarterHeader = { fg = c.blue },
-		MiniStarterInactive = { fg = c.comment, style = options.styles.comments },
+		MiniStarterInactive = { fg = c.fg_dim },
 		MiniStarterItem = { link = "Normal" },
 		MiniStarterItemBullet = { fg = c.border },
 		MiniStarterItemPrefix = { fg = c.yellow_cooler },
