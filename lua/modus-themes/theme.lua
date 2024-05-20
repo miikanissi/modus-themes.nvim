@@ -25,120 +25,125 @@ function M.setup()
 
 	local c = theme.colors
 
-	local bg_main = options.transparent and c.none or c.bg_main
-	local bg_sidebar = options.transparent and c.none or c.bg_sidebar
-	local bg_inactive = options.dim_inactive and c.bg_inactive or bg_main
-	local fg_inactive = options.dim_inactive and c.fg_inactive or c.fg_main
+	local bg_main = options.transparent and c.none or c.bg_main -- Main background color (can be transparent).
+	local bg_sidebar = options.transparent and c.none or c.bg_sidebar -- Sidebar background color (can be transparent).
+	local bg_inactive = options.dim_inactive and c.bg_inactive or bg_main -- Inactive window background color (can be dimmed).
+	local fg_inactive = options.dim_inactive and c.fg_inactive or c.fg_main -- Inactive window foreground color (can be dimmed).
 
 	theme.highlights = {
 		-- UI
-		Normal = { fg = c.fg_main, bg = bg_main }, -- Normal text
+		Normal = { fg = c.fg_main, bg = bg_main }, -- Normal text.
 		NormalNC = {
 			fg = fg_inactive,
 			bg = bg_inactive,
-		}, -- Normal text in non-current windows
-		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar
-		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window
-		FloatBorder = { fg = c.border_highlight, bg = c.bg_active }, -- Float Border
-		FloatTitle = { fg = c.border_highlight, bg = c.bg_active }, -- Float Title
-		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds
-		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for ":number" and ":#" commands, and when 'number', or 'relativenumber' is set for the cursor line
-		LineNrAbove = { fg = c.fg_dim, bg = c.bg_dim },
-		LineNrBelow = { fg = c.fg_dim, bg = c.bg_dim },
-		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
-		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed
-		SignColumnSB = { fg = c.fg_dim, bg = bg_sidebar }, -- Column where |signs| are displayed
-		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		NonText = { fg = c.fg_dim }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line
-		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = c.bg_main, bg = c.cursor }, -- Character under the cursor
-		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|
-		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with 'colorcolumn'
-		FoldColumn = { fg = c.fg_inactive, bg = c.bg_inactive }, -- 'foldcolumn'
-		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		}, -- Normal text in non-current windows.
+		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar.
+		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window.
+		FloatBorder = { fg = c.border_highlight, bg = c.bg_active }, -- Float Border.
+		FloatTitle = { fg = c.border_highlight, bg = c.bg_active }, -- Float Title.
+		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
+		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNrAbove = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number above the cursor line.
+		LineNrBelow = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number below the cursor line.
+		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
+		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
+		SignColumnSB = { fg = c.fg_dim, bg = bg_sidebar }, -- Column where |signs| are displayed in the sidebar.
+		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		NonText = { fg = c.fg_dim }, -- `@` at the end of the window, characters from `showbreak` and other characters that do not really exist in the text (e.g., `>` displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
+		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line.
+		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see `conceallevel`).
+		Cursor = { fg = c.bg_main, bg = c.cursor }, -- Character under the cursor.
+		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see `guicursor`).
+		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|.
+		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with `colorcolumn`.
+		FoldColumn = { fg = c.fg_inactive, bg = c.bg_inactive }, -- See `foldcolumn`.
+		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see `hlsearch`).  Also used for similar items that need to stand out.
+		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- `incsearch` highlighting; also used for the text replaced with `:s///c`.
 		CurSearch = { link = "IncSearch" },
-		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting
+		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting.
 		QuickFixLine = { fg = c.fg_main, bg = c.visual }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item
-		PmenuSel = { fg = c.fg_main, bg = c.bg_dim }, -- Popup menu: selected item
-		PmenuSbar = { fg = c.bg_main, bg = c.fg_dim }, -- Popup menu: scrollbar
-		PmenuThumb = { link = "Cursor" }, -- Popup menu: Thumb of the scrollbar
-		Menu = { link = "Pmenu" }, -- Menu
-		Scrollbar = { link = "PmenuSbar" }, -- Scrollbar
-		Directory = { fg = c.blue }, -- Directory names (and other special names in listings)
-		Title = { fg = c.fg_alt, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
-		Visual = { fg = c.fg_main, bg = c.visual }, -- Visual mode selection
-		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection"
-		WildMenu = { fg = c.fg_main, bg = c.visual }, -- current match in 'wildmenu' completion
-		Whitespace = { link = "NonText" }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-		StatusLine = { fg = c.fg_status_line_active, bg = c.bg_status_line_active }, -- Status line of current window
-		StatusLineNC = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLine = { fg = c.fg_tab_other, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label
-		TabLineSel = { fg = c.fg_main, bg = c.bg_tab_current, bold = true }, -- Tab pages line, active tab page label
-		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels
-		WinBar = { link = "TabLineSel" }, -- window bar
-		WinBarNC = { link = "TabLine" }, -- window bar in inactive windows
-		EndOfBuffer = { fg = c.fg_inactive }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item.
+		PmenuSel = { fg = c.fg_main, bg = c.bg_dim }, -- Popup menu: selected item.
+		PmenuSbar = { fg = c.bg_main, bg = c.fg_dim }, -- Popup menu: scrollbar.
+		PmenuThumb = { link = "Cursor" }, -- Popup menu: Thumb of the scrollbar.
+		Menu = { link = "Pmenu" }, -- Menu.
+		Scrollbar = { link = "PmenuSbar" }, -- Scrollbar.
+		Directory = { fg = c.blue }, -- Directory names (and other special names in listings).
+		Title = { fg = c.fg_alt, bold = true }, -- titles for output from `:set all`, `:autocmd` etc.
+		Visual = { fg = c.fg_main, bg = c.visual }, -- Visual mode selection.
+		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
+		WildMenu = { fg = c.fg_main, bg = c.visual }, -- current match in `wildmenu` completion.
+		Whitespace = { link = "NonText" }, -- `nbsp`, `space`, `tab` and `trail` in `listchars`.
+		StatusLine = { fg = c.fg_status_line_active, bg = c.bg_status_line_active }, -- Status line of current window.
+		StatusLineNC = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use `^^^` in the status line of the current window.
+		TabLine = { fg = c.fg_tab_other, bg = c.bg_tab_other }, -- Tab pages line, not active tab page label.
+		TabLineSel = { fg = c.fg_main, bg = c.bg_tab_current, bold = true }, -- Tab pages line, active tab page label.
+		TabLineFill = { fg = c.fg_dim, bg = c.bg_tab_bar }, -- Tab pages line, where there are no labels.
+		WinBar = { link = "TabLineSel" }, -- Window bar.
+		WinBarNC = { link = "TabLine" }, -- Window bar in inactive windows.
+		EndOfBuffer = { fg = c.fg_inactive }, -- Filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
 		MatchParen = { fg = c.fg_main, bg = c.bg_paren_match }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-		ModeMsg = { fg = c.fg_dim, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-		MsgArea = { fg = c.fg_main }, -- Area for messages and cmdline
-		MoreMsg = { fg = c.blue }, -- |more-prompt|
-		VertSplit = { fg = c.border }, -- The column separating vertically split windows
-		WinSeparator = { fg = c.border, bold = true }, -- The column separating vertically split windows
-		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|
-		DiffChange = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed line |diff.txt|
-		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|
-		DiffText = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed text within a changed line |diff.txt|
-		SpecialKey = { fg = c.fg_dim }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
+		ModeMsg = { fg = c.fg_dim, bold = true }, -- `showmode` message (e.g., `-- INSERT -- `).
+		MsgArea = { fg = c.fg_main }, -- Area for messages and cmdline.
+		MoreMsg = { fg = c.blue }, -- The |more-prompt|.
+		VertSplit = { fg = c.border }, -- The column separating vertically split windows.
+		WinSeparator = { fg = c.border, bold = true }, -- The column separating vertically split windows.
+		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|.
+		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|.
+		DiffChange = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed line |diff.txt|.
+		DiffText = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed text within a changed line |diff.txt|.
+		SpecialKey = { fg = c.fg_dim }, -- Unprintable characters: text displayed differently from what it really is.  But not `listchars` whitespace. |hl-Whitespace|.
 		SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
 		SpellLocal = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-		WarningMsg = { fg = c.warning },
-		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
+		SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
+		WarningMsg = { fg = c.warning }, -- Warning messages.
+		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions.
 
 		-- Syntax
-		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment
-		String = { fg = c.blue_warmer }, -- String constant: "this is a string"
-		Character = { fg = c.blue_warmer }, -- Character constant: 'c', '\n'
-		Boolean = { fg = c.blue, bold = true }, -- Boolean constant: TRUE, false
-		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement
-		Conditional = { fg = c.magenta_cooler }, -- if, then, else, endif, switch, etc.
-		Repeat = { fg = c.magenta_cooler }, -- for, do, while, etc.
-		Label = { fg = c.cyan }, -- case, default, etc.
-		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword
-		Exception = { fg = c.magenta_cooler }, -- try, catch, throw
-		StorageClass = { fg = c.magenta_cooler }, -- static, register, volatile, etc.
-		Structure = { fg = c.magenta_cooler }, -- struct, union, enum, etc.
-		Constant = { fg = c.fg_main }, -- (preferred) any constant
-		Function = { fg = c.magenta, style = options.styles.functions }, -- Function name (also: methods for classes)
-		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name
-		PreProc = { fg = c.red_cooler }, -- (preferred) generic Preprocessor
-		Include = { fg = c.red_cooler }, -- preprocessor #include
-		Define = { fg = c.red_cooler }, -- preprocessor #define
-		Macro = { fg = c.red_cooler }, -- Same as Define
-		PreCondit = { fg = c.red_cooler }, -- preprocessor #if, #else, #endif, etc.
-		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-		Type = { fg = c.cyan_cooler }, -- (preferred) int, long, char, etc.
-		TypeDef = { fg = c.cyan_cooler }, -- A typedef
-		Number = { fg = c.blue_faint }, -- Number constant: 234, 0xff
-		Float = { link = "Number" }, -- Floating point constant: 2.3e10
-		Operator = { fg = c.fg_main }, -- "sizeof", "+", "*", etc.
-		Tag = { fg = c.magenta }, -- You can use CTRL-] on this
-		Delimiter = { fg = c.fg_main }, -- Character that needs attention ie "."
+		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment.
+		String = { fg = c.blue_warmer }, -- String constant (e.g. `"this is a string"`).
+		Character = { fg = c.blue_warmer }, -- Character constant (e.g. `c`, `\n`).
+		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
+		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement.
+		Conditional = { fg = c.magenta_cooler }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
+		Repeat = { fg = c.magenta_cooler }, -- `for`, `do`, `while`, etc.
+		Label = { fg = c.cyan }, -- `case`, `default`, etc.
+		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword.
+		Exception = { fg = c.magenta_cooler }, -- `try`, `catch`, `throw`, etc.
+		StorageClass = { fg = c.magenta_cooler }, -- `static`, `register`, `volatile`, etc.
+		Structure = { fg = c.magenta_cooler }, -- `struct`, `union`, `enum`, etc.
+		Constant = { fg = c.fg_main }, -- (preferred) any constant.
+		Function = { fg = c.magenta, style = options.styles.functions }, -- Function names.
+		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name.
+		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
+		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
+		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
+		Macro = { fg = c.red_cooler }, -- Same as Define.
+		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
+		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
+		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
+		TypeDef = { fg = c.cyan_cooler }, -- A typedef.
+		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
+		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
+		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
+		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
+		Delimiter = { fg = c.fg_main }, -- Character that needs attention (e.g. `.`).
 		Special = { link = "Type" },
-		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out, HTML links
-		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct
+		SpecialChar = { fg = c.cyan_faint },
+		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out (e.g. URIs).
+		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct.
 
-		-- Miscelaneous Syntax related non-standard highlights
+		-- Miscelaneous Syntax related non-standard highlights.
 		qfLineNr = { fg = c.fg_dim },
 		qfFileName = { fg = c.blue },
 
-		htmlH1 = { fg = c.magenta, bold = true },
-		htmlH2 = { fg = c.blue, bold = true },
+		htmlH1 = { fg = c.blue, bold = true },
+		htmlH2 = { fg = c.yellow, bold = true },
+		htmlH3 = { fg = c.magenta, bold = true },
+		htmlH4 = { fg = c.green, bold = true },
+		htmlH5 = { fg = c.red, bold = true },
+		htmlH6 = { fg = c.cyan_warmer, bold = true },
 
 		mkdCodeDelimiter = { bg = c.bg_alt, fg = c.fg_main },
 		mkdCodeStart = { fg = c.cyan_cooler, bold = true },
@@ -147,148 +152,170 @@ function M.setup()
 		markdownHeadingDelimiter = { fg = c.rust, bold = true },
 		markdownCode = { fg = c.cyan_cooler },
 		markdownCodeBlock = { fg = c.cyan_cooler },
-		markdownH1 = { fg = c.blue, bold = true },
-		markdownH2 = { fg = c.cyan_cooler, bold = true },
 		markdownLinkText = { fg = c.blue, underline = true },
+		markdownH1 = { fg = c.blue, bold = true },
+		markdownH2 = { fg = c.yellow, bold = true },
+		markdownH3 = { fg = c.magenta, bold = true },
+		markdownH4 = { fg = c.green, bold = true },
+		markdownH5 = { fg = c.red, bold = true },
+		markdownH6 = { fg = c.cyan_warmer, bold = true },
 
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
-		LspReferenceText = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "text" references
-		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references
-		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references
-
-		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-
-		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text
-		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text
-		DiagnosticVirtualTextInfo = { fg = c.info, bold = true }, -- Used for "Information" diagnostic virtual text
-		DiagnosticVirtualTextHint = { fg = c.hint, bold = true }, -- Used for "Hint" diagnostic virtual text
-
-		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
-		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
-		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
-		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
-
-		LspSignatureActiveParameter = { bg = c.bg_magenta_nuanced, bold = true },
 		LspCodeLens = { fg = c.comment },
 		LspInlayHint = { bg = c.cyan_warmer, fg = c.bg_alt },
-
+		LspReferenceText = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "text" references.
+		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references.
+		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references.
+		LspSignatureActiveParameter = { link = "Visual" },
 		LspInfoBorder = { fg = c.border_highlight, bg = c.bg_active },
+
+		-- These are used by the native diagnostics.
+		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+
+		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text.
+		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text.
+		DiagnosticVirtualTextInfo = { fg = c.info, bold = true }, -- Used for "Information" diagnostic virtual text.
+		DiagnosticVirtualTextHint = { fg = c.hint, bold = true }, -- Used for "Hint" diagnostic virtual text.
+
+		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics.
+		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics.
+		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics.
+		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics.
 
 		ALEErrorSign = { fg = c.error, bold = true },
 		ALEWarningSign = { fg = c.warning, bold = true },
 
 		-- Neovim tree-sitter highlights
-		["@annotation"] = { link = "PreProc" },
-		["@attribute"] = { link = "PreProc" },
-		["@boolean"] = { link = "Boolean" },
-		["@character"] = { link = "Character" },
-		["@character.special"] = { link = "SpecialChar" },
-		["@comment"] = { link = "Comment" },
-		["@keyword.conditional"] = { link = "Conditional" },
-		["@constant"] = { link = "Constant" },
-		["@constant.builtin"] = { link = "Special" },
-		["@constant.macro"] = { link = "Define" },
-		["@keyword.debug"] = { link = "Debug" },
-		["@keyword.directive.define"] = { link = "Define" },
-		["@keyword.exception"] = { link = "Exception" },
-		["@number.float"] = { link = "Float" },
-		["@function"] = { link = "Function" },
-		["@function.builtin"] = { link = "Special" },
-		["@function.call"] = { link = "@function" },
-		["@function.macro"] = { link = "Macro" },
-		["@keyword.import"] = { link = "Include" },
-		["@keyword.coroutine"] = { link = "@keyword" },
-		["@keyword.operator"] = { link = "@operator" },
-		["@keyword.return"] = { link = "@keyword" },
-		["@function.method"] = { link = "Function" },
-		["@function.method.call"] = { link = "@function.method" },
-		["@namespace.builtin"] = { link = "@variable.builtin" },
-		["@none"] = {},
-		["@number"] = { link = "Number" },
-		["@keyword.directive"] = { link = "PreProc" },
-		["@keyword.repeat"] = { link = "Repeat" },
-		["@keyword.storage"] = { link = "StorageClass" },
-		["@string"] = { link = "String" },
-		["@markup.link.label"] = { link = "SpecialChar" },
-		["@markup.link.label.symbol"] = { link = "Identifier" },
-		["@tag"] = { link = "Label" },
-		["@tag.attribute"] = { link = "@property" },
-		["@tag.delimiter"] = { link = "Delimiter" },
-		["@markup"] = { link = "@none" },
-		["@markup.environment"] = { link = "Macro" },
-		["@markup.environment.name"] = { link = "Type" },
-		["@markup.raw"] = { link = "String" },
-		["@markup.math"] = { link = "Special" },
-		["@markup.strong"] = { bold = true },
-		["@markup.emphasis"] = { italic = true },
-		["@markup.strikethrough"] = { strikethrough = true },
-		["@markup.underline"] = { underline = true },
-		["@markup.heading"] = { link = "Title" },
-		["@comment.note"] = { fg = c.hint },
-		["@comment.error"] = { fg = c.error },
-		["@comment.hint"] = { fg = c.hint },
-		["@comment.info"] = { fg = c.info },
-		["@comment.warning"] = { fg = c.warning },
-		["@comment.todo"] = { link = "Todo" },
-		["@markup.link.url"] = { link = "Underlined" },
-		["@type"] = { link = "Type" },
-		["@type.definition"] = { link = "Typedef" },
-		["@type.qualifier"] = { link = "@keyword" },
-
-		--- Misc
-		["@operator"] = { link = "Operator" }, -- For any operator: `+`, but also `->` and `*` in C.
-
-		--- Punctuation
-		["@punctuation.delimiter"] = { link = "Delimiter" }, -- For delimiters ie: `.`
-		["@punctuation.bracket"] = { fg = c.fg_main }, -- For brackets and parens.
-		["@punctuation.special"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the categories before.
-		["@markup.list"] = { fg = c.fg_main }, -- For special punctutation that does not fall in the catagories before.
-		["@markup.list.markdown"] = { fg = c.rust, bold = true },
-
-		--- Literals
-		["@string.documentation"] = { fg = c.green_faint },
-		["@string.regex"] = { fg = c.green_cooler }, -- For regexes.
-		["@string.escape"] = { fg = c.yellow_faint }, -- For escape characters within a string.
-
-		--- Functions
-		["@constructor"] = { fg = c.yellow_cooler }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		["@variable.parameter"] = { fg = c.cyan }, -- For parameters of a function.
-		["@variable.parameter.builtin"] = { fg = c.cyan_faint }, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
-
-		--- Keywords
-		["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { link = "Function" }, -- For keywords used to define a function.
-
-		["@label"] = { link = "Label" }, -- For labels: `label:` in C and `:label:` in Lua.
-
-		--- Types
-		["@type.builtin"] = { link = "Type" },
-		["@variable.member"] = { link = "Identifier" }, -- For fields.
-		["@property"] = { link = "@field" },
-
-		--- Identifiers
+		-- Identifiers
 		["@variable"] = { link = "Identifier" }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
-		["@module.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
+		["@variable.parameter"] = { fg = c.cyan }, -- Parameters of a function.
+		["@variable.parameter.builtin"] = { fg = c.cyan_faint }, -- Built-in parameters of a function (e.g. `...` or `_`).
+		["@variable.member"] = { link = "Identifier" }, -- Object and struct fields.
 
-		--- Text
-		["@markup.raw.markdown_inline"] = { fg = c.blue },
-		["@markup.link"] = { fg = c.cyan_cooler },
+		["@constant"] = { link = "Constant" }, -- Constant identifier.
+		["@constant.builtin"] = { link = "Special" }, -- Built-in constant values.
+		["@constant.macro"] = { link = "Define" }, -- Constants defined by the preprocessor.
 
-		["@markup.list.unchecked"] = { fg = c.blue }, -- For brackets and parens.
-		["@markup.list.checked"] = { fg = c.green }, -- For brackets and parens.
+		["@module"] = { link = "Include" }, -- Modules or namespaces.
+		["@module.builtin"] = { link = "Conditional" }, -- Built-in modules or namespaces.
+		["@label"] = { link = "Label" }, -- GOTO and other labels (e.g. `label:` in C and `:label:` in Lua).
 
-		["@diff.plus"] = { link = "DiffAdd" },
-		["@diff.minus"] = { link = "DiffDelete" },
-		["@diff.delta"] = { link = "DiffChange" },
+		-- Literals
+		["@string"] = { link = "String" }, -- String literals.
+		["@string.documentation"] = { fg = c.green_faint }, -- String documening code (e.g. Python docstrings).
+		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
+		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
+		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
+		["@string.special.symbol"] = { link = "Identifier" }, -- Symbols or atoms.
+		["@string.special.path"] = { fg = c.blue }, -- Filenames.
+		["@string.special.url"] = { fg = c.cyan_cooler }, -- URIs (e.g. hyperlinks).
 
-		["@module"] = { link = "Include" },
+		["@character"] = { link = "Character" }, -- Character literals.
+		["@character.special"] = { link = "SpecialChar" }, -- Special characters (e.g. wildcards).
+
+		["@boolean"] = { link = "Boolean" }, -- Boolean literals.
+		["@number"] = { link = "Number" }, -- Numeric literals.
+		["@number.float"] = { link = "Float" }, -- Floating-point number literals.
+
+		-- Types
+		["@type"] = { link = "Type" }, -- Type or class definitions and annotations.
+		["@type.builtin"] = { link = "Type" }, -- Built-in types.
+		["@type.definition"] = { link = "Typedef" }, -- Identifiers in type definitions (e.g. `typedef <type> <identifier>` in C).
+
+		["@attribute"] = { link = "PreProc" }, -- Attribute annotations (e.g. Python decorators).
+		["@attribute.builtin"] = { link = "PreProc" }, -- Built-in annotations (e.g. `property` in Python).
+		["@property"] = { link = "@field" }, -- The key in key-value pairs.
+
+		-- Functions
+		["@function"] = { link = "Function" }, -- Function definitions.
+		["@function.builtin"] = { link = "Special" }, -- Built-in functions.
+		["@function.call"] = { link = "@function" }, -- Function calls.
+		["@function.macro"] = { link = "Macro" }, -- Preprocessor calls.
+
+		["@function.method"] = { link = "Function" }, -- Method definitions.
+		["@function.method.call"] = { link = "@function.method" }, -- Method calls.
+
+		["@constructor"] = { fg = c.yellow_cooler }, -- Constructor calls and definitions (e.g. `= { }` in Lua, and Java constructors).
+		["@operator"] = { link = "Operator" }, -- Symbolic operators (e.g. `+`, but also `->` and `*` in C).
+
+		-- Keywords
+		["@keyword"] = { link = "Keyword" }, -- Keywords that don't fall in specific categories.
+		["@keyword.coroutine"] = { link = "@keyword" }, -- Keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+		["@keyword.function"] = { link = "Function" }, -- Keywords that define a function (e.g. `func` in Go, `def` in Python).
+		["@keyword.operator"] = { link = "@operator" }, -- Operators that are words (e.g. `and`, `or`).
+		["@keyword.import"] = { link = "Include" }, -- Keywords for including imports (e.g. `import`, `from` in Python).
+		["@keyword.type"] = { link = "@type" }, -- Keywords defining composite types (e.g. `struct`, `enum` in C).
+		["@keyword.modifier"] = { link = "@keyword" }, -- Keywords defining type modifiers (e.g. `const`, `static`, `public`).
+		["@keyword.repeat"] = { link = "Repeat" }, -- Keywords related to loops (e.g. `for`, `while`).
+		["@keyword.return"] = { link = "@keyword" }, -- Keywords like `return` and `yield`.
+		["@keyword.debug"] = { link = "Debug" }, -- Keywords related to debugging (e.g. `assert`).
+		["@keyword.exception"] = { link = "Exception" }, -- Keywords related to exceptions (e.g. `throw`, `catch`).
+
+		["@keyword.conditional"] = { link = "Conditional" }, -- Conditionals (e.g. `if`, `else`).
+		["@keyword.conditional.ternary"] = { link = "Conditional" }, -- Ternary operators (e.g. `?`, `:`).
+
+		["@keyword.directive"] = { link = "PreProc" }, -- Preprocessor directives and shebangs.
+		["@keyword.directive.define"] = { link = "Define" }, -- Preprocessor definition directives.
+
+		-- Punctuation
+		["@punctuation.delimiter"] = { link = "Delimiter" }, -- Delimiters (e.g. `.`, `,` `:`).
+		["@punctuation.bracket"] = { fg = c.fg_main }, -- Brackets and parens (e.g. `()`, `{}`, `[]`).
+		["@punctuation.special"] = { fg = c.fg_main }, -- Special symbols (e.g. `{}` in string interpolation).
+
+		-- Comments
+		["@comment"] = { link = "Comment" }, -- Line and block comments.
+		["@comment.documentation"] = { link = "@string.documentation" }, -- Comments documenting code.
+
+		["@comment.error"] = { fg = c.error }, -- Error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED`).
+		["@comment.warning"] = { fg = c.warning }, -- Warning-type comments (e.g. `WARNING`, `HACK`, `FIX`).
+		["@comment.todo"] = { link = "Todo" }, -- Todo-type comments (e.g. `TODO`, `WIP`).
+		["@comment.note"] = { fg = c.hint }, -- Note-type comments (e.g. `NOTE`, `INFO`, `XXX`).
+
+		-- Markup
+		["@markup.strong"] = { bold = true }, -- Bold text.
+		["@markup.italic"] = { italic = true }, -- Italic text.
+		["@markup.strikethrough"] = { strikethrough = true }, -- Struck-through text.
+		["@markup.underline"] = { underline = true }, -- Underlined text.
+
+		["@markup.heading"] = { link = "Title" }, -- Headings and titles.
+		["@markup.heading.1"] = { fg = c.blue, bold = true }, -- Top-level heading.
+		["@markup.heading.2"] = { fg = c.yellow, bold = true }, -- Section heading.
+		["@markup.heading.3"] = { fg = c.magenta, bold = true }, -- Subsection heading.
+		["@markup.heading.4"] = { fg = c.green, bold = true }, -- And so on ...
+		["@markup.heading.5"] = { fg = c.red, bold = true }, -- And so forth ...
+		["@markup.heading.6"] = { fg = c.cyan_warmer, bold = true }, -- Last highlighted level.
+
+		["@markup.quote"] = { italic = true }, -- Block quotes.
+		["@markup.math"] = { link = "Special" }, -- Math environments (e.g. `$ ... $` in LaTeX).
+
+		["@markup.link"] = { fg = c.cyan_cooler }, -- Text references, footnotes, citations.
+		["@markup.link.label"] = { link = "SpecialChar" }, -- Link, reference descriptions.
+		["@markup.link.label.symbol"] = { link = "Identifier" }, -- Symbols within a link description.
+		["@markup.link.url"] = { link = "Underlined" }, -- URL-style links.
+
+		["@markup.raw"] = { link = "String" }, -- Literal or verbatim text (e.g. inline code).
+		["@markup.raw.block"] = { link = "String" }, -- Literal or verbatim text as standalone text.
+
+		["@markup.list"] = { fg = c.fg_main }, -- List markers.
+		["@markup.list.checked"] = { fg = c.green }, -- Checked todo list markers.
+		["@markup.list.unchecked"] = { fg = c.yellow }, -- Unchecked todo list markers.
+
+		["@diff.plus"] = { link = "DiffAdd" }, -- Added lines in a diff.
+		["@diff.minus"] = { link = "DiffDelete" }, -- Removed lines in a diff.
+		["@diff.delta"] = { link = "DiffChange" }, -- Changed lines in a diff.
+
+		["@tag"] = { link = "Label" }, -- XML-style tag names (e.g. in XML, HTML).
+		["@tag.attribute"] = { link = "@property" }, -- XML-style tag attributes.
+		["@tag.delimiter"] = { link = "Delimiter" }, -- XML-style tag delimiters.
+
+		["@none"] = {},
 
 		-- tsx
 		["@tag.tsx"] = { fg = c.red },
@@ -342,7 +369,8 @@ function M.setup()
 		["@lsp.typemod.variable.static"] = { link = "@constant" },
 
 		-- Plugins
-		-- Plugins taken and modified from https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/theme.lua
+		-- Plugins originally taken and modified from
+		-- https://github.com/folke/tokyonight.nvim/blob/main/lua/tokyonight/theme.lua
 
 		-- ts-rainbow
 		rainbowcol1 = { fg = c.red },
@@ -667,6 +695,13 @@ function M.setup()
 
 		-- headlines.nvim
 		CodeBlock = { bg = c.bg_dim },
+		Headline = { bg = c.bg_blue_nuanced },
+		Headline1 = { bg = c.bg_blue_nuanced },
+		Headline2 = { bg = c.bg_yellow_nuanced },
+		Headline3 = { bg = c.bg_magenta_nuanced },
+		Headline4 = { bg = c.bg_green_nuanced },
+		Headline5 = { bg = c.bg_red_nuanced },
+		Headline6 = { bg = c.bg_cyan_nuanced },
 
 		-- navic
 		NavicText = { fg = c.fg_main, bg = c.none },
@@ -878,21 +913,6 @@ function M.setup()
 		MiniTestPass = { fg = c.green, bold = true },
 		MiniTrailspace = { bg = c.red },
 	}
-
-	local markdown_rainbow = {
-		{ c.blue, c.bg_blue_nuanced },
-		{ c.yellow, c.bg_yellow_nuanced },
-		{ c.magenta, c.bg_magenta_nuanced },
-		{ c.green, c.bg_green_nuanced },
-		{ c.red, c.bg_red_nuanced },
-		{ c.cyan_warmer, c.bg_cyan_nuanced },
-	}
-
-	for i, color_table in ipairs(markdown_rainbow) do
-		theme.highlights["@markup.heading." .. i .. ".markdown"] = { fg = color_table[1], bold = true }
-		theme.highlights["Headline" .. i] = { bg = color_table[2] }
-	end
-	theme.highlights["Headline"] = { link = "Headline1" }
 
 	if not vim.diagnostic then
 		local severity_map = {
