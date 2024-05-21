@@ -160,7 +160,7 @@ require("modus-themes").setup({
 - [GitUI](https://github.com/extrawurst/gitui) ([gitui](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/gitui))
 - [iTerm](https://iterm2.com/) ([iterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/iterm))
 - [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/kitty))
-- [Lua Table for testing](https://www.lua.org) ([lua](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua))
+- [Lua Table for testing and reference](https://www.lua.org) ([lua](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/lua))
 - [Oomox/Themix](https://github.com/themix-project/themix-gui) ([oomox](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/oomox))
 - [PrismJS](https://prismjs.com) ([prismjs](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/prismjs))
 - [qt5ct](https://sourceforge.net/projects/qt5ct/) ([qt5ct](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/qt5ct))

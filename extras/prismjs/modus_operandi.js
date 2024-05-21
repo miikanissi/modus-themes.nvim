@@ -1,4 +1,4 @@
-// Modus Themes for PrismJS 
+// Modus Themes for PrismJS
 // Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/prismjs.lua
 module.exports =  {
   plain: {

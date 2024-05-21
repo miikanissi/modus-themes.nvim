@@ -1,4 +1,4 @@
-!! Modus Themes for Xresources 
+!! Modus Themes for Xresources
 !! Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/xresources.lua
 
 *background: #000000
@@ -25,4 +25,4 @@
 *color13: #ff66ff
 *color14: #00eff0
 *color15: #989898
- 
+

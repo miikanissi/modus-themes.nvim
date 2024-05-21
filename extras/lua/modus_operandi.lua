@@ -21,7 +21,6 @@ local colors = {
   bg_char_1 = "#ffaaff",
   bg_char_2 = "#dff000",
   bg_completion = "#c0deff",
-  bg_cyan_cooler_nuanced = "#f0ffff",
   bg_cyan_intense = "#a4d5f9",
   bg_cyan_nuanced = "#ebf6fa",
   bg_cyan_subtle = "#bfefff",
@@ -32,7 +31,6 @@ local colors = {
   bg_green_subtle = "#b3fabf",
   bg_hl_line = "#d0d6ec",
   bg_inactive = "#e9e9e9",
-  bg_magenta_cooler_nuanced = "#f0e8fd",
   bg_magenta_intense = "#dfa0f0",
   bg_magenta_nuanced = "#fdf0ff",
   bg_magenta_subtle = "#ffddff",
@@ -46,6 +44,7 @@ local colors = {
   bg_removed_faint = "#ffe9e9",
   bg_removed_fringe = "#d84a4f",
   bg_removed_refine = "#f3b5af",
+  bg_sidebar = "#f2f2f2",
   bg_status_line_active = "#c8c8c8",
   bg_status_line_inactive = "#e6e6e6",
   bg_tab_alternate = "#c2c2e8",
@@ -55,13 +54,13 @@ local colors = {
   bg_yellow_intense = "#f3d000",
   bg_yellow_nuanced = "#fff3da",
   bg_yellow_subtle = "#fff576",
-  bg_yellow_warmer_nuanced = "#fff1db",
   blue = "#0031a9",
   blue_cooler = "#0000b0",
   blue_faint = "#003497",
   blue_intense = "#0000ff",
   blue_warmer = "#3548cf",
   border = "#9f9f9f",
+  border_highlight = "#899bc8",
   comment = "#595959",
   cursor = "#000000",
   cyan = "#005e8b",
@@ -104,6 +103,7 @@ local colors = {
   fg_main = "#000000",
   fg_removed = "#8f1313",
   fg_removed_intense = "#aa2222",
+  fg_sidebar = "#000000",
   fg_status_line_active = "#0a0a0a",
   fg_status_line_inactive = "#585858",
   fg_tab_other = "#333333",
@@ -162,6 +162,7 @@ local colors = {
   tinted_bg_tab_other = "#c8b8b2",
   tinted_bg_yellow_nuanced = "#f9ead0",
   tinted_border = "#9f9690",
+  tinted_border_highlight = "#b1938c",
   tinted_red_faint = "#7f0000",
   tritanopia_bg_added = "#b5e7ff",
   tritanopia_bg_added_faint = "#c6f6ff",
@@ -201,20 +202,125 @@ local colors = {
 }
 
 local highlights = {
+  ["@attribute"] = {
+    link = "PreProc"
+  },
+  ["@attribute.builtin"] = {
+    link = "PreProc"
+  },
+  ["@boolean"] = {
+    link = "Boolean"
+  },
+  ["@character"] = {
+    link = "Character"
+  },
+  ["@character.special"] = {
+    link = "SpecialChar"
+  },
+  ["@comment"] = {
+    link = "Comment"
+  },
+  ["@comment.documentation"] = {
+    link = "@string.documentation"
+  },
+  ["@comment.error"] = {
+    fg = "#a0132f"
+  },
+  ["@comment.note"] = {
+    fg = "#005f5f"
+  },
+  ["@comment.todo"] = {
+    link = "Todo"
+  },
+  ["@comment.warning"] = {
+    fg = "#7a4f2f"
+  },
+  ["@constant"] = {
+    link = "Constant"
+  },
+  ["@constant.builtin"] = {
+    link = "Special"
+  },
+  ["@constant.macro"] = {
+    link = "Define"
+  },
   ["@constructor"] = {
     fg = "#7a4f2f"
   },
   ["@constructor.tsx"] = {
     fg = "#0031a9"
   },
-  ["@field"] = {
-    link = "Identifier"
+  ["@diff.delta"] = {
+    link = "DiffChange"
+  },
+  ["@diff.minus"] = {
+    link = "DiffDelete"
+  },
+  ["@diff.plus"] = {
+    link = "DiffAdd"
+  },
+  ["@function"] = {
+    link = "Function"
+  },
+  ["@function.builtin"] = {
+    link = "Special"
+  },
+  ["@function.call"] = {
+    link = "@function"
+  },
+  ["@function.macro"] = {
+    link = "Macro"
+  },
+  ["@function.method"] = {
+    link = "Function"
+  },
+  ["@function.method.call"] = {
+    link = "@function.method"
   },
   ["@keyword"] = {
     link = "Keyword"
   },
+  ["@keyword.conditional"] = {
+    link = "Conditional"
+  },
+  ["@keyword.conditional.ternary"] = {
+    link = "Conditional"
+  },
+  ["@keyword.coroutine"] = {
+    link = "@keyword"
+  },
+  ["@keyword.debug"] = {
+    link = "Debug"
+  },
+  ["@keyword.directive"] = {
+    link = "PreProc"
+  },
+  ["@keyword.directive.define"] = {
+    link = "Define"
+  },
+  ["@keyword.exception"] = {
+    link = "Exception"
+  },
   ["@keyword.function"] = {
     link = "Function"
+  },
+  ["@keyword.import"] = {
+    link = "Include"
+  },
+  ["@keyword.modifier"] = {
+    link = "@keyword"
+  },
+  ["@keyword.operator"] = {
+    link = "@operator"
+  },
+  ["@keyword.repeat"] = {
+    link = "Repeat"
+  },
+  ["@keyword.return"] = {
+    link = "@keyword"
+  },
+  ["@keyword.type"] = {
+    link = "@type"
   },
   ["@label"] = {
     link = "Label"
@@ -244,19 +350,25 @@ local highlights = {
     link = "@string.escape"
   },
   ["@lsp.type.formatSpecifier"] = {
-    link = "@punctuation.special"
+    link = "@markup.list"
   },
   ["@lsp.type.generic"] = {
     link = "@variable"
+  },
+  ["@lsp.type.interface"] = {
+    fg = "#3548cf"
   },
   ["@lsp.type.keyword"] = {
     link = "@keyword"
   },
   ["@lsp.type.lifetime"] = {
-    link = "@storageclass"
+    link = "@keyword.storage"
   },
   ["@lsp.type.namespace"] = {
-    link = "@namespace"
+    link = "@module"
+  },
+  ["@lsp.type.namespace.python"] = {
+    link = "@variable"
   },
   ["@lsp.type.number"] = {
     link = "@number"
@@ -265,7 +377,7 @@ local highlights = {
     link = "@operator"
   },
   ["@lsp.type.parameter"] = {
-    link = "@parameter"
+    link = "@variable.parameter"
   },
   ["@lsp.type.property"] = {
     link = "@property"
@@ -320,6 +432,12 @@ local highlights = {
   ["@lsp.typemod.struct.defaultLibrary"] = {
     link = "@type.builtin"
   },
+  ["@lsp.typemod.type.defaultLibrary"] = {
+    fg = "#0000b0"
+  },
+  ["@lsp.typemod.typeAlias.defaultLibrary"] = {
+    fg = "#0000b0"
+  },
   ["@lsp.typemod.variable.callable"] = {
     link = "@function"
   },
@@ -332,17 +450,93 @@ local highlights = {
   ["@lsp.typemod.variable.static"] = {
     link = "@constant"
   },
-  ["@namespace"] = {
+  ["@markup.heading"] = {
+    link = "Title"
+  },
+  ["@markup.heading.1"] = {
+    bold = true,
+    fg = "#0031a9"
+  },
+  ["@markup.heading.2"] = {
+    bold = true,
+    fg = "#6f5500"
+  },
+  ["@markup.heading.3"] = {
+    bold = true,
+    fg = "#721045"
+  },
+  ["@markup.heading.4"] = {
+    bold = true,
+    fg = "#006800"
+  },
+  ["@markup.heading.5"] = {
+    bold = true,
+    fg = "#a60000"
+  },
+  ["@markup.heading.6"] = {
+    bold = true,
+    fg = "#3f578f"
+  },
+  ["@markup.italic"] = {
+    italic = true
+  },
+  ["@markup.link"] = {
+    fg = "#005f5f"
+  },
+  ["@markup.link.label"] = {
+    link = "SpecialChar"
+  },
+  ["@markup.link.label.symbol"] = {
+    link = "Identifier"
+  },
+  ["@markup.link.url"] = {
+    link = "Underlined"
+  },
+  ["@markup.list"] = {
+    fg = "#000000"
+  },
+  ["@markup.list.checked"] = {
+    fg = "#006800"
+  },
+  ["@markup.list.unchecked"] = {
+    fg = "#6f5500"
+  },
+  ["@markup.math"] = {
+    link = "Special"
+  },
+  ["@markup.quote"] = {
+    italic = true
+  },
+  ["@markup.raw"] = {
+    link = "String"
+  },
+  ["@markup.raw.block"] = {
+    link = "String"
+  },
+  ["@markup.strikethrough"] = {
+    strikethrough = true
+  },
+  ["@markup.strong"] = {
+    bold = true
+  },
+  ["@markup.underline"] = {
+    underline = true
+  },
+  ["@module"] = {
     link = "Include"
   },
-  ["@namespace.builtin"] = {
+  ["@module.builtin"] = {
     link = "Conditional"
+  },
+  ["@none"] = {},
+  ["@number"] = {
+    link = "Number"
+  },
+  ["@number.float"] = {
+    link = "Float"
   },
   ["@operator"] = {
     link = "Operator"
-  },
-  ["@parameter"] = {
-    fg = "#005e8b"
   },
   ["@property"] = {
     link = "@field"
@@ -356,8 +550,14 @@ local highlights = {
   ["@punctuation.special"] = {
     fg = "#000000"
   },
+  ["@string"] = {
+    link = "String"
+  },
   ["@string.documentation"] = {
-    fg = "#2a5045"
+    fg = "#2a5045",
+    style = {
+      italic = true
+    }
   },
   ["@string.escape"] = {
     fg = "#624416"
@@ -365,64 +565,56 @@ local highlights = {
   ["@string.regex"] = {
     fg = "#00663f"
   },
+  ["@string.special"] = {
+    fg = "#7f0000"
+  },
+  ["@string.special.path"] = {
+    fg = "#0031a9"
+  },
+  ["@string.special.symbol"] = {
+    link = "Identifier"
+  },
+  ["@string.special.url"] = {
+    fg = "#005f5f"
+  },
+  ["@tag"] = {
+    link = "Label"
+  },
+  ["@tag.attribute"] = {
+    link = "@property"
+  },
+  ["@tag.delimiter"] = {
+    link = "Delimiter"
+  },
+  ["@tag.delimiter.tsx"] = {
+    fg = "#0000b0"
+  },
   ["@tag.tsx"] = {
     fg = "#a60000"
   },
-  ["@text.danger"] = {
-    bg = "#a0132f",
-    fg = "#ffffff"
-  },
-  ["@text.diff.add"] = {
-    link = "DiffAdd"
-  },
-  ["@text.diff.delete"] = {
-    link = "DiffDelete"
-  },
-  ["@text.reference"] = {
-    fg = "#005f5f"
-  },
-  ["@text.title.1.markdown"] = {
-    bold = true,
-    fg = "#0031a9"
-  },
-  ["@text.title.2.markdown"] = {
-    bold = true,
-    fg = "#005f5f"
-  },
-  ["@text.title.3.markdown"] = {
-    bold = true,
-    fg = "#6f5500"
-  },
-  ["@text.title.4.markdown"] = {
-    bold = true,
-    fg = "#884900"
-  },
-  ["@text.title.5.markdown"] = {
-    bold = true,
-    fg = "#721045"
-  },
-  ["@text.title.6.markdown"] = {
-    bold = true,
-    fg = "#531ab6"
-  },
-  ["@text.todo.checked"] = {
-    fg = "#006800"
-  },
-  ["@text.todo.unchecked"] = {
-    fg = "#0031a9"
-  },
-  ["@text.warning"] = {
-    bg = "#7a4f2f",
-    fg = "#ffffff"
+  ["@type"] = {
+    link = "Type"
   },
   ["@type.builtin"] = {
     link = "Type"
+  },
+  ["@type.definition"] = {
+    link = "Typedef"
   },
   ["@variable"] = {
     link = "Identifier"
   },
   ["@variable.builtin"] = {
     link = "Conditional"
+  },
+  ["@variable.member"] = {
+    link = "Identifier"
+  },
+  ["@variable.parameter"] = {
+    fg = "#005e8b"
+  },
+  ["@variable.parameter.builtin"] = {
+    fg = "#005077"
   },
   ALEErrorSign = {
     bold = true,
@@ -433,122 +625,116 @@ local highlights = {
     fg = "#7a4f2f"
   },
   AerialArrayIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@punctuation.bracket"
   },
   AerialBooleanIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.boolean"
   },
   AerialClassIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@type"
+  },
+  AerialColorIcon = {
+    link = "Special"
   },
   AerialConstantIcon = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@constant"
   },
   AerialConstructorIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constructor"
   },
   AerialEnumIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.enum"
   },
   AerialEnumMemberIcon = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.enumMember"
   },
   AerialEventIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "Special"
   },
   AerialFieldIcon = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@variable.member"
   },
   AerialFileIcon = {
-    bg = "NONE",
-    fg = "#000000"
+    link = "Normal"
+  },
+  AerialFolderIcon = {
+    link = "Directory"
   },
   AerialFunctionIcon = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function"
   },
   AerialGuide = {
     fg = "#595959"
   },
   AerialInterfaceIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.interface"
   },
   AerialKeyIcon = {
-    bg = "NONE",
-    fg = "#531ab6"
+    link = "@variable.member"
   },
   AerialKeywordIcon = {
-    bg = "NONE",
-    fg = "#531ab6"
+    link = "@lsp.type.keyword"
   },
   AerialLine = {
     link = "LspInlayHint"
   },
   AerialMethodIcon = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function.method"
   },
   AerialModuleIcon = {
-    bg = "NONE",
-    fg = "#6f5500"
+    link = "@module"
   },
   AerialNamespaceIcon = {
-    bg = "NONE",
-    fg = "#005e8b"
+    link = "@module"
   },
   AerialNormal = {
     bg = "NONE",
     fg = "#000000"
   },
   AerialNullIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constant.builtin"
   },
   AerialNumberIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@number"
   },
   AerialObjectIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constant"
   },
   AerialOperatorIcon = {
-    bg = "NONE",
-    fg = "#0000ff"
+    link = "@operator"
   },
   AerialPackageIcon = {
-    bg = "NONE",
-    fg = "#005e8b"
+    link = "@module"
   },
   AerialPropertyIcon = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@property"
+  },
+  AerialReferenceIcon = {
+    link = "@markup.link"
+  },
+  AerialSnippetIcon = {
+    link = "Conceal"
   },
   AerialStringIcon = {
-    bg = "NONE",
-    fg = "#006800"
+    link = "@string"
   },
   AerialStructIcon = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
+  },
+  AerialTextIcon = {
+    link = "@markup"
   },
   AerialTypeParameterIcon = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.typeParameter"
+  },
+  AerialUnitIcon = {
+    link = "@lsp.type.struct"
+  },
+  AerialValueIcon = {
+    link = "@string"
   },
   AerialVariableIcon = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@variable"
   },
   AlphaButtons = {
     fg = "#005e8b"
@@ -729,8 +915,7 @@ local highlights = {
     fg = "#3548cf"
   },
   CmpDocumentation = {
-    bg = "#ffffff",
-    fg = "#000000"
+    link = "Normal"
   },
   CmpDocumentationBorder = {
     bg = "#ffffff",
@@ -756,21 +941,27 @@ local highlights = {
     bg = "NONE",
     fg = "#3548cf"
   },
+  CmpItemKindArray = {
+    link = "@punctuation.bracket"
+  },
+  CmpItemKindBoolean = {
+    link = "@lsp.type.boolean"
+  },
   CmpItemKindClass = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@type"
   },
   CmpItemKindCodeium = {
     bg = "NONE",
     fg = "#005f5f"
   },
+  CmpItemKindColor = {
+    link = "Special"
+  },
   CmpItemKindConstant = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@constant"
   },
   CmpItemKindConstructor = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@constructor"
   },
   CmpItemKindCopilot = {
     bg = "NONE",
@@ -781,84 +972,92 @@ local highlights = {
     fg = "#595959"
   },
   CmpItemKindEnum = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.enum"
   },
   CmpItemKindEnumMember = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.enumMember"
   },
   CmpItemKindEvent = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "Special"
   },
   CmpItemKindField = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@variable.member"
+  },
+  CmpItemKindFile = {
+    link = "Normal"
+  },
+  CmpItemKindFolder = {
+    link = "Directory"
   },
   CmpItemKindFunction = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function"
   },
   CmpItemKindInterface = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.interface"
+  },
+  CmpItemKindKey = {
+    link = "@variable.member"
   },
   CmpItemKindKeyword = {
-    bg = "NONE",
-    fg = "#005e8b"
+    link = "@lsp.type.keyword"
   },
   CmpItemKindMethod = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function.method"
   },
   CmpItemKindModule = {
-    bg = "NONE",
-    fg = "#6f5500"
+    link = "@module"
+  },
+  CmpItemKindNamespace = {
+    link = "@module"
+  },
+  CmpItemKindNull = {
+    link = "@constant.builtin"
+  },
+  CmpItemKindNumber = {
+    link = "@number"
+  },
+  CmpItemKindObject = {
+    link = "@constant"
   },
   CmpItemKindOperator = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@operator"
   },
   CmpItemKindPackage = {
-    bg = "NONE",
-    fg = "#6f5500"
+    link = "@module"
   },
   CmpItemKindProperty = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@property"
   },
   CmpItemKindReference = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@markup.link"
   },
   CmpItemKindSnippet = {
-    bg = "NONE",
-    fg = "#595959"
+    link = "Conceal"
+  },
+  CmpItemKindString = {
+    link = "@string"
   },
   CmpItemKindStruct = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
   },
   CmpItemKindTabNine = {
     bg = "NONE",
     fg = "#005f5f"
   },
+  CmpItemKindText = {
+    link = "@markup"
+  },
   CmpItemKindTypeParameter = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.typeParameter"
   },
   CmpItemKindUnit = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
   },
   CmpItemKindValue = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@string"
   },
   CmpItemKindVariable = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@variable"
   },
   CmpItemMenu = {
     bg = "NONE",
@@ -1045,11 +1244,11 @@ local highlights = {
   },
   FloatBorder = {
     bg = "#e0e0e0",
-    fg = "#9f9f9f"
+    fg = "#899bc8"
   },
   FloatTitle = {
     bg = "#e0e0e0",
-    fg = "#9f9f9f"
+    fg = "#899bc8"
   },
   FoldColumn = {
     bg = "#e9e9e9",
@@ -1062,6 +1261,46 @@ local highlights = {
   Function = {
     fg = "#721045",
     style = {}
+  },
+  FzfLuaBorder = {
+    bg = "#ffffff",
+    fg = "#9f9f9f"
+  },
+  FzfLuaBufFlagAlt = {
+    fg = "#005f5f"
+  },
+  FzfLuaBufFlagCur = {
+    fg = "#7a4f2f"
+  },
+  FzfLuaBufName = {
+    fg = "#8f0075"
+  },
+  FzfLuaBufNr = {
+    fg = "#80601f"
+  },
+  FzfLuaHeaderBind = {
+    fg = "#80601f"
+  },
+  FzfLuaHeaderText = {
+    fg = "#7a4f2f"
+  },
+  FzfLuaLiveSym = {
+    fg = "#80601f"
+  },
+  FzfLuaNormal = {
+    link = "Normal"
+  },
+  FzfLuaPathColNr = {
+    fg = "#005f5f"
+  },
+  FzfLuaPathLineNr = {
+    fg = "#00663f"
+  },
+  FzfLuaTabMarker = {
+    fg = "#80601f"
+  },
+  FzfLuaTabTitle = {
+    fg = "#3548cf"
   },
   GitGutterAdd = {
     link = "DiffAdd"
@@ -1112,25 +1351,25 @@ local highlights = {
     fg = "#a60000"
   },
   Headline = {
-    link = "Headline1"
+    bg = "#f3f3ff"
   },
   Headline1 = {
     bg = "#f3f3ff"
   },
   Headline2 = {
-    bg = "#f0ffff"
-  },
-  Headline3 = {
     bg = "#fff3da"
   },
-  Headline4 = {
-    bg = "#fff1db"
-  },
-  Headline5 = {
+  Headline3 = {
     bg = "#fdf0ff"
   },
+  Headline4 = {
+    bg = "#ecf7ed"
+  },
+  Headline5 = {
+    bg = "#fff1f0"
+  },
   Headline6 = {
-    bg = "#f0e8fd"
+    bg = "#ebf6fa"
   },
   HopNextKey = {
     bold = true,
@@ -1262,11 +1501,30 @@ local highlights = {
     bg = "#f2f2f2",
     fg = "#595959"
   },
+  LineNrAbove = {
+    bg = "#f2f2f2",
+    fg = "#595959"
+  },
+  LineNrBelow = {
+    bg = "#f2f2f2",
+    fg = "#595959"
+  },
+  LspCodeLens = {
+    fg = "#595959"
+  },
   LspFloatWinBorder = {
     fg = "#9f9f9f"
   },
   LspFloatWinNormal = {
     bg = "#e0e0e0"
+  },
+  LspInfoBorder = {
+    bg = "#e0e0e0",
+    fg = "#899bc8"
+  },
+  LspInlayHint = {
+    bg = "#3f578f",
+    fg = "#f0f0f0"
   },
   LspReferenceRead = {
     bg = "#bfc9ff",
@@ -1307,6 +1565,9 @@ local highlights = {
   LspSagaSignatureHelpBorder = {
     fg = "#a60000"
   },
+  LspSignatureActiveParameter = {
+    link = "Visual"
+  },
   Macro = {
     fg = "#a0132f"
   },
@@ -1325,6 +1586,15 @@ local highlights = {
   },
   MiniCursorwordCurrent = {
     bg = "#595959"
+  },
+  MiniDiffSignAdd = {
+    link = "DiffAdd"
+  },
+  MiniDiffSignChange = {
+    link = "DiffChange"
+  },
+  MiniDiffSignDelete = {
+    link = "DiffDelete"
   },
   MiniIndentscopePrefix = {
     nocombine = true
@@ -1353,14 +1623,10 @@ local highlights = {
     fg = "#0031a9"
   },
   MiniStarterInactive = {
-    fg = "#595959",
-    style = {
-      italic = true
-    }
+    fg = "#595959"
   },
   MiniStarterItem = {
-    bg = "#ffffff",
-    fg = "#000000"
+    link = "Normal"
   },
   MiniStarterItemBullet = {
     fg = "#9f9f9f"
@@ -1480,112 +1746,106 @@ local highlights = {
     fg = "#000000"
   },
   NavicIconsArray = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@punctuation.bracket"
   },
   NavicIconsBoolean = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.boolean"
   },
   NavicIconsClass = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@type"
+  },
+  NavicIconsColor = {
+    link = "Special"
   },
   NavicIconsConstant = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@constant"
   },
   NavicIconsConstructor = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constructor"
   },
   NavicIconsEnum = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.enum"
   },
   NavicIconsEnumMember = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.enumMember"
   },
   NavicIconsEvent = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "Special"
   },
   NavicIconsField = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@variable.member"
   },
   NavicIconsFile = {
-    bg = "NONE",
-    fg = "#000000"
+    link = "Normal"
+  },
+  NavicIconsFolder = {
+    link = "Directory"
   },
   NavicIconsFunction = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function"
   },
   NavicIconsInterface = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.interface"
   },
   NavicIconsKey = {
-    bg = "NONE",
-    fg = "#531ab6"
+    link = "@variable.member"
   },
   NavicIconsKeyword = {
-    bg = "NONE",
-    fg = "#531ab6"
+    link = "@lsp.type.keyword"
   },
   NavicIconsMethod = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function.method"
   },
   NavicIconsModule = {
-    bg = "NONE",
-    fg = "#6f5500"
+    link = "@module"
   },
   NavicIconsNamespace = {
-    bg = "NONE",
-    fg = "#000000"
+    link = "@module"
   },
   NavicIconsNull = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constant.builtin"
   },
   NavicIconsNumber = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@number"
   },
   NavicIconsObject = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@constant"
   },
   NavicIconsOperator = {
-    bg = "NONE",
-    fg = "#000000"
+    link = "@operator"
   },
   NavicIconsPackage = {
-    bg = "NONE",
-    fg = "#000000"
+    link = "@module"
   },
   NavicIconsProperty = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@property"
+  },
+  NavicIconsReference = {
+    link = "@markup.link"
+  },
+  NavicIconsSnippet = {
+    link = "Conceal"
   },
   NavicIconsString = {
-    bg = "NONE",
-    fg = "#006800"
+    link = "@string"
   },
   NavicIconsStruct = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
+  },
+  NavicIconsText = {
+    link = "@markup"
   },
   NavicIconsTypeParameter = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.typeParameter"
+  },
+  NavicIconsUnit = {
+    link = "@lsp.type.struct"
+  },
+  NavicIconsValue = {
+    link = "@string"
   },
   NavicIconsVariable = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@variable"
   },
   NavicSeparator = {
     bg = "NONE",
@@ -1673,93 +1933,111 @@ local highlights = {
   NeotestWinSelect = {
     fg = "#0031a9"
   },
+  NoiceCompletionItemKindArray = {
+    link = "@punctuation.bracket"
+  },
+  NoiceCompletionItemKindBoolean = {
+    link = "@lsp.type.boolean"
+  },
   NoiceCompletionItemKindClass = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@type"
+  },
+  NoiceCompletionItemKindColor = {
+    link = "Special"
   },
   NoiceCompletionItemKindConstant = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@constant"
   },
   NoiceCompletionItemKindConstructor = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@constructor"
   },
   NoiceCompletionItemKindDefault = {
     bg = "NONE",
     fg = "#595959"
   },
   NoiceCompletionItemKindEnum = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.enum"
   },
   NoiceCompletionItemKindEnumMember = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.enumMember"
   },
   NoiceCompletionItemKindEvent = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "Special"
   },
   NoiceCompletionItemKindField = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@variable.member"
+  },
+  NoiceCompletionItemKindFile = {
+    link = "Normal"
+  },
+  NoiceCompletionItemKindFolder = {
+    link = "Directory"
   },
   NoiceCompletionItemKindFunction = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function"
   },
   NoiceCompletionItemKindInterface = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.interface"
+  },
+  NoiceCompletionItemKindKey = {
+    link = "@variable.member"
   },
   NoiceCompletionItemKindKeyword = {
-    bg = "NONE",
-    fg = "#005e8b"
+    link = "@lsp.type.keyword"
   },
   NoiceCompletionItemKindMethod = {
-    bg = "NONE",
-    fg = "#0031a9"
+    link = "@function.method"
   },
   NoiceCompletionItemKindModule = {
-    bg = "NONE",
-    fg = "#6f5500"
+    link = "@module"
+  },
+  NoiceCompletionItemKindNamespace = {
+    link = "@module"
+  },
+  NoiceCompletionItemKindNull = {
+    link = "@constant.builtin"
+  },
+  NoiceCompletionItemKindNumber = {
+    link = "@number"
+  },
+  NoiceCompletionItemKindObject = {
+    link = "@constant"
   },
   NoiceCompletionItemKindOperator = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@operator"
+  },
+  NoiceCompletionItemKindPackage = {
+    link = "@module"
   },
   NoiceCompletionItemKindProperty = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@property"
   },
   NoiceCompletionItemKindReference = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@markup.link"
   },
   NoiceCompletionItemKindSnippet = {
-    bg = "NONE",
-    fg = "#595959"
+    link = "Conceal"
+  },
+  NoiceCompletionItemKindString = {
+    link = "@string"
   },
   NoiceCompletionItemKindStruct = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
+  },
+  NoiceCompletionItemKindText = {
+    link = "@markup"
   },
   NoiceCompletionItemKindTypeParameter = {
-    bg = "NONE",
-    fg = "#316500"
+    link = "@lsp.type.typeParameter"
   },
   NoiceCompletionItemKindUnit = {
-    bg = "NONE",
-    fg = "#884900"
+    link = "@lsp.type.struct"
   },
   NoiceCompletionItemKindValue = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@string"
   },
   NoiceCompletionItemKindVariable = {
-    bg = "NONE",
-    fg = "#721045"
+    link = "@variable"
   },
   NonText = {
     fg = "#595959"
@@ -1774,6 +2052,10 @@ local highlights = {
   },
   NormalNC = {
     bg = "#ffffff",
+    fg = "#000000"
+  },
+  NormalSB = {
+    bg = "#f2f2f2",
     fg = "#000000"
   },
   NotifyBackground = {
@@ -2022,6 +2304,10 @@ local highlights = {
     bg = "#ffffff",
     fg = "#595959"
   },
+  SignColumnSB = {
+    bg = "#f2f2f2",
+    fg = "#595959"
+  },
   Sneak = {
     bg = "#721045",
     fg = "#d0d6ec"
@@ -2031,6 +2317,9 @@ local highlights = {
   },
   Special = {
     link = "Type"
+  },
+  SpecialChar = {
+    fg = "#005077"
   },
   SpecialKey = {
     fg = "#595959"
@@ -2120,8 +2409,18 @@ local highlights = {
     fg = "#9f9f9f"
   },
   TelescopeNormal = {
-    bg = "#ffffff",
-    fg = "#000000"
+    link = "Normal"
+  },
+  TelescopePromptBorder = {
+    bg = "#e0e0e0",
+    fg = "#8a290f"
+  },
+  TelescopePromptTitle = {
+    bg = "#e0e0e0",
+    fg = "#8a290f"
+  },
+  TelescopeResultsComment = {
+    fg = "#595959"
   },
   Title = {
     bold = true,
@@ -2242,6 +2541,30 @@ local highlights = {
   healthWarning = {
     fg = "#7a4f2f"
   },
+  htmlH1 = {
+    bold = true,
+    fg = "#0031a9"
+  },
+  htmlH2 = {
+    bold = true,
+    fg = "#6f5500"
+  },
+  htmlH3 = {
+    bold = true,
+    fg = "#721045"
+  },
+  htmlH4 = {
+    bold = true,
+    fg = "#006800"
+  },
+  htmlH5 = {
+    bold = true,
+    fg = "#a60000"
+  },
+  htmlH6 = {
+    bold = true,
+    fg = "#3f578f"
+  },
   illuminatedCurWord = {
     bg = "#f2f2f2"
   },
@@ -2250,6 +2573,62 @@ local highlights = {
   },
   lCursor = {
     link = "Cursor"
+  },
+  markdownCode = {
+    fg = "#005f5f"
+  },
+  markdownCodeBlock = {
+    fg = "#005f5f"
+  },
+  markdownH1 = {
+    bold = true,
+    fg = "#0031a9"
+  },
+  markdownH2 = {
+    bold = true,
+    fg = "#6f5500"
+  },
+  markdownH3 = {
+    bold = true,
+    fg = "#721045"
+  },
+  markdownH4 = {
+    bold = true,
+    fg = "#006800"
+  },
+  markdownH5 = {
+    bold = true,
+    fg = "#a60000"
+  },
+  markdownH6 = {
+    bold = true,
+    fg = "#3f578f"
+  },
+  markdownHeadingDelimiter = {
+    bold = true,
+    fg = "#8a290f"
+  },
+  markdownLinkText = {
+    fg = "#0031a9",
+    underline = true
+  },
+  mkdCodeDelimiter = {
+    bg = "#f0f0f0",
+    fg = "#000000"
+  },
+  mkdCodeEnd = {
+    bold = true,
+    fg = "#005f5f"
+  },
+  mkdCodeStart = {
+    bold = true,
+    fg = "#005f5f"
+  },
+  qfFileName = {
+    fg = "#0031a9"
+  },
+  qfLineNr = {
+    fg = "#595959"
   },
   rainbowcol1 = {
     fg = "#a60000"
