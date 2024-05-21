@@ -15,7 +15,7 @@ M.extras = {
 	gitui = { ext = "ron", url = "https://github.com/extrawurst/gitui", label = "GitUI" },
 	iterm = { ext = "itermcolors", url = "https://iterm2.com/", label = "iTerm" },
 	kitty = { ext = "conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty" },
-	lua = { ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing" },
+	lua = { ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing and reference" },
 	oomox = { ext = "oomox", url = "https://github.com/themix-project/themix-gui", label = "Oomox/Themix" },
 	prismjs = { ext = "js", url = "https://prismjs.com", label = "PrismJS" },
 	qt5ct = { ext = "conf", url = "https://sourceforge.net/projects/qt5ct/", label = "qt5ct" },
