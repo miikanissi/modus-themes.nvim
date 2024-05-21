@@ -114,19 +114,21 @@ require("modus-themes").setup({
 	},
 
 	--- You can override specific color groups to use other groups or a hex color
-	--- function will be called with a ColorScheme table
+	--- Function will be called with a ColorScheme table
+	--- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the ColorScheme table
 	---@param colors ColorScheme
 	on_colors = function(colors) end,
 
 	--- You can override specific highlights to use other groups or a hex color
-	--- function will be called with a Highlights and ColorScheme table
+	--- Function will be called with a Highlights and ColorScheme table
+	--- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the Highlights and ColorScheme table
 	---@param highlights Highlights
 	---@param colors ColorScheme
 	on_highlights = function(highlights, colors) end,
 })
 ```
 
-### Example Settings and Color Overrides
+### Example Settings with Color and Highlight Overrides
 
 ```lua
 require("modus-themes").setup({
@@ -138,6 +140,9 @@ require("modus-themes").setup({
 
 	on_colors = function(colors)
 		colors.error = colors.red_faint -- Change error color to the "faint" variant
+	end,
+	on_highlights = function(highlight, color)
+		highlight.Boolean = { fg = color.green } -- Change Boolean highlight to use the green color
 	end,
 })
 ```
