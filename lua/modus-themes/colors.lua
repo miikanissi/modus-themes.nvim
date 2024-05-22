@@ -17,7 +17,7 @@ M.modus_operandi = {
 	fg_dim = "#595959",
 	fg_alt = "#193668",
 	border = "#9f9f9f",
-	border_highlight = "#899bc8",
+	border_highlight = "#3b3b3b",
 
 	-- Common foreground values
 	red = "#a60000",
@@ -61,7 +61,7 @@ M.modus_operandi = {
 	magenta_intense = "#dd22dd",
 	cyan_intense = "#008899",
 
-	-- Intense should be combined with fg_main for text
+	-- Intense should only be combined with fg_main for text
 	bg_red_intense = "#ff8f88",
 	bg_green_intense = "#8adf80",
 	bg_yellow_intense = "#f3d000",
@@ -69,7 +69,7 @@ M.modus_operandi = {
 	bg_magenta_intense = "#dfa0f0",
 	bg_cyan_intense = "#a4d5f9",
 
-	-- Subtle should be combined with fg_dim, fg_alt, fg_main
+	-- Subtle should be combined with fg_alt, fg_main
 	bg_red_subtle = "#ffcfbf",
 	bg_green_subtle = "#b3fabf",
 	bg_yellow_subtle = "#fff576",
@@ -134,7 +134,7 @@ M.modus_operandi = {
 	tinted_bg_main = "#fbf7f0",
 	tinted_bg_dim = "#efe9dd",
 	tinted_border = "#9f9690",
-	tinted_border_highlight = "#b1938c",
+	tinted_border_highlight = "#5c3f3d",
 	tinted_bg_active = "#c9b9b0",
 	tinted_bg_inactive = "#dfd5cf",
 	tinted_red_faint = "#7f0000",
@@ -232,7 +232,7 @@ M.modus_vivendi = {
 	fg_dim = "#989898",
 	fg_alt = "#c6daff",
 	border = "#646464",
-	border_highlight = "#4362B6",
+	border_highlight = "#C4C4C4",
 
 	-- Common foreground values
 	red = "#ff5f59",
@@ -276,7 +276,7 @@ M.modus_vivendi = {
 	magenta_intense = "#ff66ff",
 	cyan_intense = "#00eff0",
 
-	-- Intense should be combined with fg_main for text
+	-- Intense should only be combined with fg_main for text
 	bg_red_intense = "#9d1f1f",
 	bg_green_intense = "#2f822f",
 	bg_yellow_intense = "#7a6100",
@@ -284,7 +284,7 @@ M.modus_vivendi = {
 	bg_magenta_intense = "#7030af",
 	bg_cyan_intense = "#2266ae",
 
-	-- Subtle should be combined with fg_dim, fg_alt, fg_main
+	-- Subtle should be combined with fg_alt, fg_main
 	bg_red_subtle = "#620f2a",
 	bg_green_subtle = "#00422a",
 	bg_yellow_subtle = "#4a4000",
@@ -349,7 +349,7 @@ M.modus_vivendi = {
 	tinted_bg_main = "#0d0e1c",
 	tinted_bg_dim = "#1d2235",
 	tinted_border = "#61647a",
-	tinted_border_highlight = "#815a7d",
+	tinted_border_highlight = "#b290b0",
 	tinted_bg_active = "#4a4f69",
 	tinted_bg_inactive = "#2b3045",
 	tinted_red_faint = "#ff9f80",

@@ -39,10 +39,10 @@ function M.setup()
 		}, -- Normal text in non-current windows.
 		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar.
 		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window.
-		FloatBorder = { fg = c.border_highlight, bg = c.bg_active }, -- Float Border.
-		FloatTitle = { fg = c.border_highlight, bg = c.bg_active }, -- Float Title.
+		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
+		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
-		LineNr = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNr = { fg = c.fg_main, bg = c.bg_dim }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
 		LineNrAbove = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number above the cursor line.
 		LineNrBelow = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number below the cursor line.
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
@@ -123,7 +123,7 @@ function M.setup()
 		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
-		TypeDef = { fg = c.cyan_cooler }, -- A typedef.
+		TypeDef = { fg = c.cyan_warmer }, -- A typedef.
 		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
@@ -169,7 +169,7 @@ function M.setup()
 		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references.
 		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references.
 		LspSignatureActiveParameter = { link = "Visual" },
-		LspInfoBorder = { fg = c.border_highlight, bg = c.bg_active },
+		LspInfoBorder = { fg = c.border_highlight, bg = bg_main },
 
 		-- These are used by the native diagnostics.
 		DiagnosticError = { fg = c.error, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
@@ -458,15 +458,18 @@ function M.setup()
 		MiniDiffSignDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
-		TelescopeBorder = { fg = c.border, bg = bg_main },
 		TelescopeNormal = { link = "Normal" },
-		TelescopePromptBorder = { fg = c.rust, bg = c.bg_active },
-		TelescopePromptTitle = { fg = c.rust, bg = c.bg_active },
+		TelescopeBorder = { fg = c.border, bg = bg_main },
+		TelescopeTitle = { fg = c.fg_dim, bg = bg_main },
+		TelescopeSelection = { link = "CursorLine" },
+		TelescopePromptBorder = { fg = c.border_highlight, bg = bg_main },
+		TelescopePromptTitle = { fg = c.border_highlight, bg = bg_main },
 		TelescopeResultsComment = { fg = c.fg_dim },
 
 		-- Fzf Lua
-		FzfLuaBorder = { fg = c.border, bg = bg_main },
 		FzfLuaNormal = { link = "Normal" },
+		FzfLuaBorder = { fg = c.border, bg = bg_main },
+		FzfLuaTitle = { fg = c.fg_dim, bg = bg_main },
 
 		FzfLuaHeaderBind = { fg = c.gold },
 		FzfLuaHeaderText = { fg = c.yellow_cooler },
