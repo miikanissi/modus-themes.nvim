@@ -60,7 +60,7 @@ local colors = {
   blue_intense = "#338fff",
   blue_warmer = "#79a8ff",
   border = "#646464",
-  border_highlight = "#4362B6",
+  border_highlight = "#C4C4C4",
   comment = "#989898",
   cursor = "#ffffff",
   cyan = "#00d3d0",
@@ -162,7 +162,7 @@ local colors = {
   tinted_bg_tab_other = "#4a4f6a",
   tinted_bg_yellow_nuanced = "#2c1f00",
   tinted_border = "#61647a",
-  tinted_border_highlight = "#815a7d",
+  tinted_border_highlight = "#b290b0",
   tinted_red_faint = "#ff9f80",
   tritanopia_bg_added = "#004254",
   tritanopia_bg_added_faint = "#003042",
@@ -1243,12 +1243,12 @@ local highlights = {
     link = "Number"
   },
   FloatBorder = {
-    bg = "#303030",
-    fg = "#4362B6"
+    bg = "#000000",
+    fg = "#C4C4C4"
   },
   FloatTitle = {
-    bg = "#303030",
-    fg = "#4362B6"
+    bg = "#000000",
+    fg = "#C4C4C4"
   },
   FoldColumn = {
     bg = "#282828",
@@ -1301,6 +1301,10 @@ local highlights = {
   },
   FzfLuaTabTitle = {
     fg = "#79a8ff"
+  },
+  FzfLuaTitle = {
+    bg = "#000000",
+    fg = "#989898"
   },
   GitGutterAdd = {
     link = "DiffAdd"
@@ -1499,7 +1503,7 @@ local highlights = {
   },
   LineNr = {
     bg = "#1e1e1e",
-    fg = "#989898"
+    fg = "#ffffff"
   },
   LineNrAbove = {
     bg = "#1e1e1e",
@@ -1519,8 +1523,8 @@ local highlights = {
     bg = "#303030"
   },
   LspInfoBorder = {
-    bg = "#303030",
-    fg = "#4362B6"
+    bg = "#000000",
+    fg = "#C4C4C4"
   },
   LspInlayHint = {
     bg = "#4ae2f0",
@@ -2412,14 +2416,21 @@ local highlights = {
     link = "Normal"
   },
   TelescopePromptBorder = {
-    bg = "#303030",
-    fg = "#db7b5f"
+    bg = "#000000",
+    fg = "#C4C4C4"
   },
   TelescopePromptTitle = {
-    bg = "#303030",
-    fg = "#db7b5f"
+    bg = "#000000",
+    fg = "#C4C4C4"
   },
   TelescopeResultsComment = {
+    fg = "#989898"
+  },
+  TelescopeSelection = {
+    link = "CursorLine"
+  },
+  TelescopeTitle = {
+    bg = "#000000",
     fg = "#989898"
   },
   Title = {
@@ -2445,7 +2456,7 @@ local highlights = {
     fg = "#6ae4b9"
   },
   TypeDef = {
-    fg = "#6ae4b9"
+    fg = "#4ae2f0"
   },
   Underlined = {
     fg = "#c6daff",
