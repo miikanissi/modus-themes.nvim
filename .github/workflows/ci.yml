@@ -6,15 +6,14 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
-    if: always()
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
       - name: Get python version
         run: echo "PY=$(python -VV | sha256sum | cut -d' ' -f1)" >> $GITHUB_ENV
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         with:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}
@@ -35,9 +34,8 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     needs: pre-commit
-    if: always()
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Neovim
         shell: bash
         run: |
@@ -68,14 +66,14 @@ jobs:
           chmod a+x ./nvim.appimage
           ./nvim.appimage --appimage-extract
           echo "/tmp/nvim/squashfs-root/usr/bin/" >> $GITHUB_PATH
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Build Extras
         run: |
           nvim -u NONE -E -R --headless --cmd "set rtp^=." --cmd "packloadall" --cmd "lua require('modus-themes.extras').setup()" --cmd qa
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "[BOT] auto-generate extras"
+          commit_message: "chore(build): auto-generate extras"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           commit_author:
@@ -87,20 +85,24 @@ jobs:
       - tests
       - extras
     if: ${{ github.ref == 'refs/heads/master' }}
+    permissions:
+      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: git pull
       - name: panvimdoc
-        uses: kdheepak/panvimdoc@main
+        uses: kdheepak/panvimdoc@v4.0.1
         with:
           vimdoc: modus-themes.nvim
           version: "Neovim >= 0.8.0"
+          toc: true
           demojify: true
           treesitter: true
       - name: Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "[BOT] auto-generate vimdoc"
+          commit_message: "chore(build): auto-generate vimdoc"
+          commit_options: "--no-verify --signoff"
           commit_user_name: "github-actions[bot]"
           commit_user_email: "github-actions[bot]@users.noreply.github.com"
           commit_author:
