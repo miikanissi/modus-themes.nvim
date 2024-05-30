@@ -1527,8 +1527,9 @@ local highlights = {
     fg = "#C4C4C4"
   },
   LspInlayHint = {
-    bg = "#4ae2f0",
-    fg = "#0f0f0f"
+    bg = "#000000",
+    fg = "#989898",
+    italic = true
   },
   LspReferenceRead = {
     bg = "#1640b0",
