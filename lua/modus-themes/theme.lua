@@ -164,7 +164,7 @@ function M.setup()
 		-- use these groups, or use their own. Consult your LSP client's
 		-- documentation.
 		LspCodeLens = { fg = c.comment },
-		LspInlayHint = { bg = c.cyan_warmer, fg = c.bg_alt },
+		LspInlayHint = { bg = bg_main, fg = c.comment, italic = true },
 		LspReferenceText = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "text" references.
 		LspReferenceRead = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "read" references.
 		LspReferenceWrite = { bg = c.bg_blue_intense, fg = c.fg_main }, -- used for highlighting "write" references.
