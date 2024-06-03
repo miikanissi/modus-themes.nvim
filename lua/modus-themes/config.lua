@@ -10,6 +10,7 @@ local defaults = {
 	variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
 	transparent = false, -- Transparent background (as supported by the terminal)
 	dim_inactive = false, -- "non-current" windows are dimmed
+	hide_inactive_statusline = false, -- Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
 	styles = {
 		-- Style to be applied to different syntax groups
 		-- Value is any valid attr-list value for `:help nvim_set_hl`

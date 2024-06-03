@@ -937,6 +937,21 @@ function M.setup()
 	---@type table<string, table>
 	theme.defer = {}
 
+	if options.hide_inactive_statusline then
+		local inactive = { underline = true, bg = c.none, fg = bg_main, sp = c.border }
+
+		-- StatusLineNC
+		theme.highlights.StatusLineNC = inactive
+
+		-- LuaLine
+		for _, section in ipairs({ "a", "b", "c" }) do
+			theme.defer["lualine_" .. section .. "_inactive"] = inactive
+		end
+
+		-- mini.statusline
+		theme.highlights.MiniStatuslineInactive = inactive
+	end
+
 	options.on_highlights(theme.highlights, theme.colors)
 
 	return theme
