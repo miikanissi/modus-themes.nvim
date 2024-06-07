@@ -154,6 +154,7 @@ require("modus-themes").setup({
 <!-- extras:start -->
 
 - [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty))
+- [Bat](https://github.com/sharkdp/bat) ([bat](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat))
 - [Delta](https://github.com/dandavison/delta) ([delta](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta))
 - [Dunst](https://dunst-project.org/) ([dunst](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst))
 - [Fish](https://fishshell.com/docs/current/index.html) ([fish](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish))
