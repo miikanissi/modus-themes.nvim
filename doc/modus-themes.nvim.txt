@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*      For Neovim >= 0.8.0     Last change: 2024 June 03
+*modus-themes.nvim.txt*      For Neovim >= 0.8.0     Last change: 2024 June 08
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -179,6 +179,7 @@ EXAMPLE SETTINGS WITH COLOR AND HIGHLIGHT OVERRIDES ~
 EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 
 - Alacritty <https://github.com/alacritty/alacritty> (alacritty <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty>)
+- Bat <https://github.com/sharkdp/bat> (bat <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat>)
 - Delta <https://github.com/dandavison/delta> (delta <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta>)
 - Dunst <https://dunst-project.org/> (dunst <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst>)
 - Fish <https://fishshell.com/docs/current/index.html> (fish <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish>)
