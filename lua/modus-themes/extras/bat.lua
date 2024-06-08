@@ -4,8 +4,8 @@ local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-    local bat = util.template(
-        [[
+	local bat = util.template(
+		[[
 <!-- Modus Themes for Bat -->
 <!-- Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/bat.lua -->
 
@@ -37,7 +37,7 @@ function M.generate(colors)
           <key>selectionBorder</key>
           <string>${border}</string>
           <key>gutterForeground</key>
-          <string>${bg_sidebar}</string>
+          <string>${fg_dim}</string>
         </dict>
       </dict>
       <dict>
@@ -446,9 +446,9 @@ function M.generate(colors)
   </dict>
 </plist>
 ]],
-        colors
-    )
-    return bat
+		colors
+	)
+	return bat
 end
 
 return M
