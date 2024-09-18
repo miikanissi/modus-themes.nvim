@@ -633,7 +633,7 @@ function M.setup()
 
 		-- flash.nvim
 		FlashBackdrop = { fg = c.fg_dim },
-		FlashLabel = { bg = c.magenta_cooler, bold = true, fg = c.fg_main },
+		FlashLabel = { bg = c.bg_magenta_intense, bold = true, fg = c.fg_main },
 
 		-- lightspeed.nvim
 		LightspeedGreyWash = { fg = c.fg_dim },
