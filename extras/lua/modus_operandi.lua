@@ -1235,7 +1235,7 @@ local highlights = {
     fg = "#595959"
   },
   FlashLabel = {
-    bg = "#531ab6",
+    bg = "#dfa0f0",
     bold = true,
     fg = "#000000"
   },
