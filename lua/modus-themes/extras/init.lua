@@ -4,9 +4,10 @@
 local M = {}
 
 -- map of plugin name to plugin extension
---- @type table<string, {ext:string, url:string, label:string}>
+--- @type table<string, {ext:string?, url:string, label:string}>
 -- stylua: ignore
 M.extras = {
+	aerc = { url = "https://git.sr.ht/~rjarry/aerc", label = "Aerc" },
 	alacritty = { ext = "toml", url = "https://github.com/alacritty/alacritty", label = "Alacritty" },
 	bat = { ext = "tmTheme", url = "https://github.com/sharkdp/bat", label = "Bat" },
 	delta = { ext = "gitconfig", url = "https://github.com/dandavison/delta", label = "Delta" },
@@ -99,7 +100,10 @@ function M.setup()
 			modus.load({ style = style })
 			vim.cmd.colorscheme(style)
 			local colors = require("modus-themes.colors").setup()
-			local fname = extra .. "/" .. style .. "." .. info.ext
+			local fname = extra .. "/" .. style
+			if info.ext then
+				fname = fname .. "." .. info.ext
+			end
 			colors["_upstream_url"] = "https://github.com/miikanissi/modus-themes.nvim/raw/master/extras/" .. fname
 			colors["_style_name"] = style_name
 			colors["_name"] = style

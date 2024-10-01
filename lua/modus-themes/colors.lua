@@ -456,6 +456,7 @@ function M.setup(opts)
 	colors.warning = colors.yellow_cooler
 	colors.info = colors.blue_cooler
 	colors.hint = colors.cyan_cooler
+	colors.success = colors.fg_added
 	colors.visual = colors.bg_magenta_intense
 	colors.accent_light = colors.blue_faint
 	colors.accent = colors.blue_warmer
@@ -535,6 +536,7 @@ function M.setup(opts)
 		colors.error = colors.deuteranopia_yellow_warmer
 		colors.warning = colors.deuteranopia_yellow
 		colors.info = colors.blue
+		colors.success = colors.deuteranopia_fg_added
 
 		if style == "modus_operandi" then
 			colors.cursor = colors.blue_intense
@@ -578,6 +580,7 @@ function M.setup(opts)
 		colors.error = colors.red_warmer
 		colors.warning = colors.magenta
 		colors.info = colors.cyan
+		colors.success = colors.tritanopia_fg_added
 
 		colors.cursor = colors.red_intense
 	end
