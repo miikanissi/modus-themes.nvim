@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*   For Neovim >= 0.8.0   Last change: 2024 September 18
+*modus-themes.nvim.txt*    For Neovim >= 0.8.0    Last change: 2024 October 01
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -178,6 +178,7 @@ EXAMPLE SETTINGS WITH COLOR AND HIGHLIGHT OVERRIDES ~
 
 EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 
+- Aerc <https://git.sr.ht/~rjarry/aerc> (aerc <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/aerc>)
 - Alacritty <https://github.com/alacritty/alacritty> (alacritty <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty>)
 - Bat <https://github.com/sharkdp/bat> (bat <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat>)
 - Delta <https://github.com/dandavison/delta> (delta <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta>)
