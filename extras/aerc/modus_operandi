@@ -1,0 +1,79 @@
+# Modus Themes for Aerc
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/aerc.lua
+
+*.default=true
+*.normal=true
+
+*.bg = #ffffff
+*.fg = #000000
+*.selected.bg = #ffffff
+*.selected.fg = #000000
+
+title.bg=#ccdfff
+title.fg=#000000
+title.bold=true
+
+header.bold=true
+header.fg=#3548cf
+header.bg=#ffffff
+
+border.bg=#9f9f9f
+border.fg=#9f9f9f
+
+tab.selected.fg=#000000
+tab.selected.bg=#bfc9ff
+tab.selected.bold=false
+dirlist*.selected.bg=#d0d6ec
+dirlist*.selected.fg=#000000
+dirlist*.selected.bold=false
+
+*error.bold=true
+*error.fg=#a0132f
+*warning.fg=#7a4f2f
+*success.fg=#005000
+
+statusline_*.bg=#c8c8c8
+statusline_*.fg=#0a0a0a
+statusline_error.fg=#a0132f
+
+msglist_unread.fg=#000000
+msglist_unread.bold=true
+msglist_read.fg=#595959
+msglist_deleted.fg=#8f1313
+msglist_*.selected.bg=#d0d6ec
+msglist_marked.fg=#000000
+msglist_marked.selected.fg=#000000
+msglist_marked.bg=#ccdfff
+msglist_marked.selected.bg=#bfc9ff
+
+completion_pill.reverse=false
+selector_focused.bold=false
+selector_focused.bg=#d0d6ec
+selector_focused.fg=#000000
+selector_chooser.bold=false
+selector_chooser.bg=#d0d6ec
+selector_chooser.fg=#000000
+default.selected.bold=false
+default.selected.bg=#d0d6ec
+default.selected.fg=#000000
+
+completion_default.selected.bg=#c0deff
+
+[viewer]
+*.default=true
+*.normal=true
+
+url.fg = #193668
+header.fg = #3548cf
+
+signature.fg = #7c318f
+diff_chunk.fg = #553d00
+diff_chunk_func.fg = #553d00
+diff_add.fg = #005000
+diff_del.fg = #8f1313
+
+quote_1.fg = #3548cf
+quote_2.fg = #3f578f
+quote_3.fg = #2f3f83
+quote_4.fg = #4a3a8a
+quote_x.fg = #624416

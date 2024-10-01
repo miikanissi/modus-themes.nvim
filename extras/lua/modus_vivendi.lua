@@ -132,6 +132,7 @@ local colors = {
   red_warmer = "#ff6b55",
   rust = "#db7b5f",
   slate = "#76afbf",
+  success = "#a0e0a0",
   tinted_bg_active = "#4a4f69",
   tinted_bg_added = "#003a2f",
   tinted_bg_added_faint = "#002922",

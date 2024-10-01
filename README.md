@@ -153,6 +153,7 @@ require("modus-themes").setup({
 <!-- prettier-ignore-start -->
 <!-- extras:start -->
 
+- [Aerc](https://git.sr.ht/~rjarry/aerc) ([aerc](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/aerc))
 - [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/alacritty))
 - [Bat](https://github.com/sharkdp/bat) ([bat](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat))
 - [Delta](https://github.com/dandavison/delta) ([delta](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta))
