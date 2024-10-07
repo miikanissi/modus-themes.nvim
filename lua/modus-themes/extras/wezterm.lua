@@ -16,6 +16,7 @@ selection_bg = "${visual}"
 selection_fg = "${fg_main}"
 split = "${accent}"
 compose_cursor = "${yellow_warmer}"
+scrollbar_thumb = "${border}"
 
 ansi = ["${bg_main}", "${red}", "${green}", "${yellow}", "${blue}", "${magenta}", "${cyan}", "${fg_main}"]
 brights = ["${bg_dim}", "${red_intense}", "${green_intense}", "${yellow_intense}", "${blue_intense}", "${magenta_intense}", "${cyan_intense}", "${fg_dim}"]
