@@ -8,6 +8,7 @@ selection_bg = "#7030af"
 selection_fg = "#ffffff"
 split = "#79a8ff"
 compose_cursor = "#fec43f"
+scrollbar_thumb = "#646464"
 
 ansi = ["#000000", "#ff5f59", "#44bc44", "#d0bc00", "#2fafff", "#feacd0", "#00d3d0", "#ffffff"]
 brights = ["#1e1e1e", "#ff5f5f", "#44df44", "#efef00", "#338fff", "#ff66ff", "#00eff0", "#989898"]
