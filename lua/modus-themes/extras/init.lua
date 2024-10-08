@@ -29,6 +29,7 @@ M.extras = {
 	xfceterm = { ext = "theme", url = "https://docs.xfce.org/apps/terminal/advanced", label = "Xfce Terminal" },
 	xresources = { ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources" },
 	zathura = { ext = "zathurarc", url = "https://pwmt.org/projects/zathura/", label = "Zathura" },
+	zellij = { ext = "kdl", url = "https://github.com/zellij-org/zellij", label = "Zellij" },
 }
 
 local function write(str, fileName)
