@@ -30,6 +30,7 @@ M.extras = {
 	xresources = { ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources" },
 	yazi = { ext = "toml", url = "https://github.com/sxyazi/yazi", label = "Yazi" },
 	zathura = { ext = "zathurarc", url = "https://pwmt.org/projects/zathura/", label = "Zathura" },
+	zellij = { ext = "kdl", url = "https://github.com/zellij-org/zellij", label = "Zellij" },
 }
 
 local function write(str, fileName)
