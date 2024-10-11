@@ -6,3 +6,4 @@ debug
 .vscode
 .settings
 .idea
+.tests/

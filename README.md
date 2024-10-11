@@ -202,7 +202,7 @@ How to create a new extra template:
    plugin directory:
 
    ```sh
-   nvim --headless "+lua require('modus-themes.extras').setup()" +qa
+   ./scripts/extras.sh
    ```
 
 4. Ensure the newly created themes in the `extras/` directory are correct. Please **DO
