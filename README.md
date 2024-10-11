@@ -174,6 +174,7 @@ require("modus-themes").setup({
 - [Windows Terminal](https://aka.ms/terminal-documentation) ([windows_terminal](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/windows_terminal))
 - [Xfce Terminal](https://docs.xfce.org/apps/terminal/advanced) ([xfceterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xfceterm))
 - [Xresources](https://wiki.archlinux.org/title/X_resources) ([xresources](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xresources))
+- [Yazi](https://github.com/sxyazi/yazi) ([yazi](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/yazi))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zathura))
 
 <!-- extras:end -->
