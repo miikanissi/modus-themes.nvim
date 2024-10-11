@@ -1,0 +1,20 @@
+// Modus Themes for Zellij
+// Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/zellij.lua
+
+themes {
+    modus_operandi {
+        fg "#000000"
+        bg "#ffffff"
+        // Black should match the terminal background color
+        // This ensures the top and bottom bars are transparent
+        black "#ffffff"
+        red "#a60000"
+        green "#006800"
+        yellow "#6f5500"
+        blue "#0031a9"
+        magenta "#721045"
+        cyan "#005e8b"
+        white "#000000"
+        orange "#884900"
+    }
+}
