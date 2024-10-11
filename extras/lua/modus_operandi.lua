@@ -1890,6 +1890,30 @@ local highlights = {
     bg = "#e9e9e9",
     fg = "#404148"
   },
+  NeogitBranch = {
+    fg = "#721045"
+  },
+  NeogitDiffAddHighlight = {
+    link = "DiffAdd"
+  },
+  NeogitDiffContextHighlight = {
+    bg = "#f2f2f2",
+    fg = "#595959"
+  },
+  NeogitDiffDeleteHighlight = {
+    link = "DiffDelete"
+  },
+  NeogitHunkHeader = {
+    bg = "#f2f2f2",
+    fg = "#000000"
+  },
+  NeogitHunkHeaderHighlight = {
+    bg = "#f3f3ff",
+    fg = "#0031a9"
+  },
+  NeogitRemote = {
+    fg = "#531ab6"
+  },
   NeotestAdapterName = {
     bold = true,
     fg = "#531ab6"
