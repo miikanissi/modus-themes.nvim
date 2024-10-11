@@ -12,7 +12,7 @@ function M.generate(colors)
 themes {
     ${_name} {
         fg "${fg_main}"
-        bg "${bg_dim}"
+        bg "${bg_main}"
         // Black should match the terminal background color
         // This ensures the top and bottom bars are transparent
         black "${bg_main}"
@@ -23,10 +23,9 @@ themes {
         magenta "${magenta}"
         cyan "${cyan}"
         white "${fg_main}"
-        orange "${red_warmer}"
+        orange "${yellow_warmer}"
     }
 }
-
 ]=],
 		colors
 	)
