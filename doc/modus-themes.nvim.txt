@@ -201,6 +201,7 @@ EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 - Xresources <https://wiki.archlinux.org/title/X_resources> (xresources <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/xresources>)
 - Yazi <https://github.com/sxyazi/yazi> (yazi <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/yazi>)
 - Zathura <https://pwmt.org/projects/zathura/> (zathura <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zathura>)
+- Zellij <https://github.com/zellij-org/zellij> (zellij <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zellij>)
 
 
 CONTRIBUTING                     *modus-themes.nvim-modus-themes-contributing*
