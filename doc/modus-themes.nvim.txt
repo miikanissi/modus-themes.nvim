@@ -229,7 +229,7 @@ How to create a new extra template:
 Modus Themes plugin directory:
 
 >sh
-    nvim --headless "+lua require('modus-themes.extras').setup()" +qa
+    ./scripts/extras.sh
 <
 
 
