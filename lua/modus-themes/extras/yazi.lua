@@ -6,6 +6,9 @@ local M = {}
 function M.generate(colors)
 	local yazi = util.template(
 		[[
+# Modus Themes for Yazi
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/yazi.lua
+
 [manager]
 # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
 # highlight = "path/to/tmTheme"
