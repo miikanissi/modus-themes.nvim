@@ -509,6 +509,15 @@ function M.setup()
 		NeoTreeGitModified = { fg = c.fg_changed }, -- Diff mode: Changed line |diff.txt|
 		NeoTreeGitDeleted = { fg = c.fg_removed }, -- Diff mode: Deleted line |diff.txt|
 
+		-- Neogit
+		NeogitBranch = { fg = c.magenta },
+		NeogitRemote = { fg = c.magenta_cooler },
+		NeogitHunkHeader = { fg = c.fg_main, bg = c.bg_dim },
+		NeogitHunkHeaderHighlight = { fg = c.blue, bg = c.bg_blue_nuanced },
+		NeogitDiffContextHighlight = { fg = c.fg_dim, bg = c.bg_dim },
+		NeogitDiffDeleteHighlight = { link = "DiffDelete" },
+		NeogitDiffAddHighlight = { link = "DiffAdd" },
+
 		-- Fern
 		FernBranchText = { fg = c.blue },
 
