@@ -4,7 +4,7 @@
 themes {
     modus_operandi {
         fg "#000000"
-        bg "#ffffff"
+        bg "#d0d6ec"
         // Black should match the terminal background color
         // This ensures the top and bottom bars are transparent
         black "#ffffff"
