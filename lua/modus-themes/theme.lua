@@ -716,6 +716,8 @@ function M.setup()
 		Headline6 = { bg = c.bg_cyan_nuanced },
 
 		-- navic
+		-- Known issue with navic highlighting is it doesn't support inactive winbar
+		-- background, refer to https://github.com/miikanissi/modus-themes.nvim/issues/41
 		NavicText = { fg = c.fg_main, bg = c.none },
 		NavicSeparator = { fg = c.fg_main, bg = c.none },
 		-- navic LSP
