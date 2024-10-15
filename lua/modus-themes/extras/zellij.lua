@@ -12,6 +12,7 @@ function M.generate(colors)
 themes {
     ${_name} {
         fg "${fg_main}"
+        // The background color is used for text highlighting and should be different from the black value
         bg "${bg_hl_line}"
         // Black should match the terminal background color
         // This ensures the top and bottom bars are transparent
