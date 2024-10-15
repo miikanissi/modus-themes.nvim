@@ -4,6 +4,7 @@
 themes {
     modus_vivendi {
         fg "#ffffff"
+        // The background color is used for text highlighting and should be different from the black value
         bg "#2f3849"
         // Black should match the terminal background color
         // This ensures the top and bottom bars are transparent
