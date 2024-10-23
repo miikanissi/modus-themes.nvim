@@ -2218,12 +2218,12 @@ local highlights = {
     fg = "#0a0a0a"
   },
   PmenuSbar = {
-    bg = "#595959",
-    fg = "#ffffff"
+    bg = "#f2f2f2",
+    fg = "#0a0a0a"
   },
   PmenuSel = {
-    bg = "#f2f2f2",
-    fg = "#000000"
+    bg = "#0a0a0a",
+    fg = "#e0e0e0"
   },
   PmenuThumb = {
     link = "Cursor"
