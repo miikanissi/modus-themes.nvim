@@ -8,7 +8,7 @@ function M.generate(colors)
 		[[
 {
     "name": "${_style_name}",
-    "comment": "Highly accessible theme, conforming with the highest standard for color contrast between background and foreground values (WCAG AAA)."
+    "comment": "Highly accessible theme, conforming with the highest standard for color contrast between background and foreground values (WCAG AAA).",
     "use-theme-colors": false,
     "foreground-color": "${fg_main}",
     "background-color": "${bg_main}",
