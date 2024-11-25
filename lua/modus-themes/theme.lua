@@ -635,9 +635,8 @@ function M.setup()
 		HopUnmatched = { fg = c.fg_dim },
 
 		-- Leap
-		LeapMatch = { bg = c.magenta_cooler, fg = c.fg_main, bold = true },
-		LeapLabelPrimary = { fg = c.magenta_cooler, bold = true },
-		LeapLabelSecondary = { fg = c.green_warmer, bold = true },
+		LeapMatch = { bg = c.blue_intense, fg = c.fg_main, bold = true },
+		LeapLabel = { fg = c.blue_intense, bold = true },
 		LeapBackdrop = { fg = c.fg_dim },
 
 		-- flash.nvim
