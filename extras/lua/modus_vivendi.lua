@@ -1308,31 +1308,31 @@ local highlights = {
     fg = "#989898"
   },
   GitGutterAdd = {
-    link = "DiffAdd"
+    fg = "#80e080"
   },
   GitGutterAddLineNr = {
-    link = "DiffAdd"
+    fg = "#80e080"
   },
   GitGutterChange = {
-    link = "DiffChange"
+    fg = "#c0b05f"
   },
   GitGutterChangeLineNr = {
-    link = "DiffChange"
+    fg = "#c0b05f"
   },
   GitGutterDelete = {
-    link = "DiffDelete"
+    fg = "#ff9095"
   },
   GitGutterDeleteLineNr = {
-    link = "DiffDelete"
+    fg = "#ff9095"
   },
   GitSignsAdd = {
-    link = "DiffAdd"
+    fg = "#80e080"
   },
   GitSignsChange = {
-    link = "DiffChange"
+    fg = "#c0b05f"
   },
   GitSignsDelete = {
-    link = "DiffDelete"
+    fg = "#ff9095"
   },
   GlyphPalette1 = {
     fg = "#ff6b55"
@@ -1499,15 +1499,12 @@ local highlights = {
     fg = "#79a8ff"
   },
   LineNr = {
-    bg = "#1e1e1e",
     fg = "#ffffff"
   },
   LineNrAbove = {
-    bg = "#1e1e1e",
     fg = "#989898"
   },
   LineNrBelow = {
-    bg = "#1e1e1e",
     fg = "#989898"
   },
   LspCodeLens = {
@@ -1590,13 +1587,13 @@ local highlights = {
     bg = "#989898"
   },
   MiniDiffSignAdd = {
-    link = "DiffAdd"
+    fg = "#80e080"
   },
   MiniDiffSignChange = {
-    link = "DiffChange"
+    fg = "#c0b05f"
   },
   MiniDiffSignDelete = {
-    link = "DiffDelete"
+    fg = "#ff9095"
   },
   MiniIndentscopePrefix = {
     nocombine = true
@@ -1870,13 +1867,13 @@ local highlights = {
     fg = "#989898"
   },
   NeoTreeGitAdded = {
-    fg = "#a0e0a0"
+    fg = "#80e080"
   },
   NeoTreeGitDeleted = {
-    fg = "#ffbfbf"
+    fg = "#ff9095"
   },
   NeoTreeGitModified = {
-    fg = "#efef80"
+    fg = "#c0b05f"
   },
   NeoTreeNormal = {
     bg = "#303030",
@@ -2166,13 +2163,13 @@ local highlights = {
     fg = "#2fafff"
   },
   NvimTreeGitDeleted = {
-    fg = "#ffbfbf"
+    fg = "#ff9095"
   },
   NvimTreeGitDirty = {
-    fg = "#efef80"
+    fg = "#c0b05f"
   },
   NvimTreeGitNew = {
-    fg = "#a0e0a0"
+    fg = "#80e080"
   },
   NvimTreeImageFile = {
     fg = "#f4f4f4"

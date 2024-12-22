@@ -1308,31 +1308,31 @@ local highlights = {
     fg = "#595959"
   },
   GitGutterAdd = {
-    link = "DiffAdd"
+    fg = "#006700"
   },
   GitGutterAddLineNr = {
-    link = "DiffAdd"
+    fg = "#006700"
   },
   GitGutterChange = {
-    link = "DiffChange"
+    fg = "#655000"
   },
   GitGutterChangeLineNr = {
-    link = "DiffChange"
+    fg = "#655000"
   },
   GitGutterDelete = {
-    link = "DiffDelete"
+    fg = "#aa2222"
   },
   GitGutterDeleteLineNr = {
-    link = "DiffDelete"
+    fg = "#aa2222"
   },
   GitSignsAdd = {
-    link = "DiffAdd"
+    fg = "#006700"
   },
   GitSignsChange = {
-    link = "DiffChange"
+    fg = "#655000"
   },
   GitSignsDelete = {
-    link = "DiffDelete"
+    fg = "#aa2222"
   },
   GlyphPalette1 = {
     fg = "#972500"
@@ -1499,15 +1499,12 @@ local highlights = {
     fg = "#3548cf"
   },
   LineNr = {
-    bg = "#f2f2f2",
     fg = "#000000"
   },
   LineNrAbove = {
-    bg = "#f2f2f2",
     fg = "#595959"
   },
   LineNrBelow = {
-    bg = "#f2f2f2",
     fg = "#595959"
   },
   LspCodeLens = {
@@ -1590,13 +1587,13 @@ local highlights = {
     bg = "#595959"
   },
   MiniDiffSignAdd = {
-    link = "DiffAdd"
+    fg = "#006700"
   },
   MiniDiffSignChange = {
-    link = "DiffChange"
+    fg = "#655000"
   },
   MiniDiffSignDelete = {
-    link = "DiffDelete"
+    fg = "#aa2222"
   },
   MiniIndentscopePrefix = {
     nocombine = true
@@ -1870,13 +1867,13 @@ local highlights = {
     fg = "#595959"
   },
   NeoTreeGitAdded = {
-    fg = "#005000"
+    fg = "#006700"
   },
   NeoTreeGitDeleted = {
-    fg = "#8f1313"
+    fg = "#aa2222"
   },
   NeoTreeGitModified = {
-    fg = "#553d00"
+    fg = "#655000"
   },
   NeoTreeNormal = {
     bg = "#e0e0e0",
@@ -2166,13 +2163,13 @@ local highlights = {
     fg = "#0031a9"
   },
   NvimTreeGitDeleted = {
-    fg = "#8f1313"
+    fg = "#aa2222"
   },
   NvimTreeGitDirty = {
-    fg = "#553d00"
+    fg = "#655000"
   },
   NvimTreeGitNew = {
-    fg = "#005000"
+    fg = "#006700"
   },
   NvimTreeImageFile = {
     fg = "#0a0a0a"
