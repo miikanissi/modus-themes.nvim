@@ -42,9 +42,9 @@ function M.setup()
 		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
 		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
-		LineNr = { fg = c.fg_main, bg = c.bg_dim }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
-		LineNrAbove = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number above the cursor line.
-		LineNrBelow = { fg = c.fg_dim, bg = c.bg_dim }, -- Line number below the cursor line.
+		LineNr = { fg = c.fg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNrAbove = { fg = c.fg_dim }, -- Line number above the cursor line.
+		LineNrBelow = { fg = c.fg_dim }, -- Line number below the cursor line.
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
 		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
 		SignColumnSB = { fg = c.fg_dim, bg = bg_sidebar }, -- Column where |signs| are displayed in the sidebar.
@@ -56,7 +56,7 @@ function M.setup()
 		lCursor = { link = "Cursor" }, -- Character under the cursor when |language-mapping| is used (see `guicursor`).
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|.
 		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with `colorcolumn`.
-		FoldColumn = { fg = c.fg_inactive, bg = c.bg_inactive }, -- See `foldcolumn`.
+		FoldColumn = { fg = c.fg_inactive, bg = options.transparent and c.none or c.bg_inactive }, -- See `foldcolumn`.
 		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see `hlsearch`).  Also used for similar items that need to stand out.
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- `incsearch` highlighting; also used for the text replaced with `:s///c`.
 		CurSearch = { link = "IncSearch" },
@@ -440,22 +440,22 @@ function M.setup()
 		NeotestTarget = { fg = c.blue },
 
 		-- GitGutter
-		GitGutterAdd = { link = "DiffAdd" }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
-		GitGutterAddLineNr = { link = "DiffAdd" },
-		GitGutterChangeLineNr = { link = "DiffChange" },
-		GitGutterDeleteLineNr = { link = "DiffDelete" },
+		GitGutterAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
+		GitGutterChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
+		GitGutterDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
+		GitGutterAddLineNr = { fg = c.fg_added_intense },
+		GitGutterChangeLineNr = { fg = c.fg_changed_intense },
+		GitGutterDeleteLineNr = { fg = c.fg_removed_intense },
 
 		-- GitSigns
-		GitSignsAdd = { link = "DiffAdd" }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
 
 		-- mini.diff
-		MiniDiffSignAdd = { link = "DiffAdd" }, -- diff mode: Added line |diff.txt|
-		MiniDiffSignChange = { link = "DiffChange" }, -- diff mode: Changed line |diff.txt|
-		MiniDiffSignDelete = { link = "DiffDelete" }, -- diff mode: Deleted line |diff.txt|
+		MiniDiffSignAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
+		MiniDiffSignChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
+		MiniDiffSignDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
 		TelescopeNormal = { link = "Normal" },
@@ -488,9 +488,9 @@ function M.setup()
 		NvimTreeWinSeparator = { fg = c.border, bg = c.border },
 		NvimTreeNormalNC = { fg = c.fg_inactive, bg = c.bg_inactive },
 		NvimTreeRootFolder = { fg = c.blue, bold = true },
-		NvimTreeGitDirty = { fg = c.fg_changed },
-		NvimTreeGitNew = { fg = c.fg_added },
-		NvimTreeGitDeleted = { fg = c.fg_removed },
+		NvimTreeGitDirty = { fg = c.fg_changed_intense },
+		NvimTreeGitNew = { fg = c.fg_added_intense },
+		NvimTreeGitDeleted = { fg = c.fg_removed_intense },
 		NvimTreeOpenedFile = { bg = c.bg_hl_line },
 		NvimTreeSpecialFile = { fg = c.magenta_cooler, underline = true },
 		NvimTreeIndentMarker = { fg = c.fg_dim },
@@ -505,9 +505,9 @@ function M.setup()
 		NeoTreeFadeText1 = { fg = c.fg_dim },
 		NeoTreeFadeText2 = { fg = c.fg_dim },
 		NeoTreeDotfile = { fg = c.fg_dim },
-		NeoTreeGitAdded = { fg = c.fg_added }, -- Diff mode: Added line |diff.txt|
-		NeoTreeGitModified = { fg = c.fg_changed }, -- Diff mode: Changed line |diff.txt|
-		NeoTreeGitDeleted = { fg = c.fg_removed }, -- Diff mode: Deleted line |diff.txt|
+		NeoTreeGitAdded = { fg = c.fg_added_intense }, -- Diff mode: Added line |diff.txt|
+		NeoTreeGitModified = { fg = c.fg_changed_intense }, -- Diff mode: Changed line |diff.txt|
+		NeoTreeGitDeleted = { fg = c.fg_removed_intense }, -- Diff mode: Deleted line |diff.txt|
 
 		-- Neogit
 		NeogitBranch = { fg = c.magenta },
