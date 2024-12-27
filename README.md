@@ -160,6 +160,7 @@ require("modus-themes").setup({
 - [Dunst](https://dunst-project.org/) ([dunst](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst))
 - [Fish](https://fishshell.com/docs/current/index.html) ([fish](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish))
 - [Foot](https://codeberg.org/dnkl/foot) ([foot](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/foot))
+- [Ghostty](https://ghostty.org/docs/features/theme) ([ghostty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/ghostty))
 - [GitUI](https://github.com/extrawurst/gitui) ([gitui](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/gitui))
 - [iTerm](https://iterm2.com/) ([iterm](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/iterm))
 - [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/kitty))

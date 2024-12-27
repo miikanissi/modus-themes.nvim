@@ -14,6 +14,7 @@ M.extras = {
 	dunst = { ext = "dunstrc", url = "https://dunst-project.org/", label = "Dunst" },
 	fish = { ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish" },
 	foot = { ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot" },
+	ghostty = { url = "https://ghostty.org/docs/features/theme", label = "Ghostty" },
 	gitui = { ext = "ron", url = "https://github.com/extrawurst/gitui", label = "GitUI" },
 	iterm = { ext = "itermcolors", url = "https://iterm2.com/", label = "iTerm" },
 	kitty = { ext = "conf", url = "https://sw.kovidgoyal.net/kitty/conf.html", label = "Kitty" },
