@@ -32,11 +32,11 @@ palette = 12=#${blue_intense}
 palette = 13=#${magenta_intense}
 palette = 14=#${cyan_intense}
 palette = 15=#${fg_dim}
-background = ${bg_main}
-foreground = ${fg_main}
-cursor-color = ${fg_main}
-selection-background = ${visual}
-selection-foreground = ${fg_main}
+background = #${bg_main}
+foreground = #${fg_main}
+cursor-color = #${fg_main}
+selection-background = #${visual}
+selection-foreground = #${fg_main}
 ]],
 		ghosttyColors
 	)
