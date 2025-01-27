@@ -1308,30 +1308,39 @@ local highlights = {
     fg = "#595959"
   },
   GitGutterAdd = {
+    bg = "#c1f2d1",
     fg = "#006700"
   },
   GitGutterAddLineNr = {
+    bg = "#c1f2d1",
     fg = "#006700"
   },
   GitGutterChange = {
+    bg = "#ffdfa9",
     fg = "#655000"
   },
   GitGutterChangeLineNr = {
+    bg = "#ffdfa9",
     fg = "#655000"
   },
   GitGutterDelete = {
+    bg = "#ffd8d5",
     fg = "#aa2222"
   },
   GitGutterDeleteLineNr = {
+    bg = "#ffd8d5",
     fg = "#aa2222"
   },
   GitSignsAdd = {
+    bg = "#c1f2d1",
     fg = "#006700"
   },
   GitSignsChange = {
+    bg = "#ffdfa9",
     fg = "#655000"
   },
   GitSignsDelete = {
+    bg = "#ffd8d5",
     fg = "#aa2222"
   },
   GlyphPalette1 = {
@@ -1499,12 +1508,15 @@ local highlights = {
     fg = "#3548cf"
   },
   LineNr = {
+    bg = "#f2f2f2",
     fg = "#000000"
   },
   LineNrAbove = {
+    bg = "#f2f2f2",
     fg = "#595959"
   },
   LineNrBelow = {
+    bg = "#f2f2f2",
     fg = "#595959"
   },
   LspCodeLens = {
@@ -1587,12 +1599,15 @@ local highlights = {
     bg = "#595959"
   },
   MiniDiffSignAdd = {
+    bg = "#c1f2d1",
     fg = "#006700"
   },
   MiniDiffSignChange = {
+    bg = "#ffdfa9",
     fg = "#655000"
   },
   MiniDiffSignDelete = {
+    bg = "#ffd8d5",
     fg = "#aa2222"
   },
   MiniIndentscopePrefix = {
