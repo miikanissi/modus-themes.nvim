@@ -42,12 +42,12 @@ function M.setup()
 		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
 		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
-		LineNr = { fg = c.fg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
-		LineNrAbove = { fg = c.fg_dim }, -- Line number above the cursor line.
-		LineNrBelow = { fg = c.fg_dim }, -- Line number below the cursor line.
+		LineNr = { fg = c.fg_main, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNrAbove = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number above the cursor line.
+		LineNrBelow = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number below the cursor line.
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
 		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
-		SignColumnSB = { fg = c.fg_dim, bg = bg_sidebar }, -- Column where |signs| are displayed in the sidebar.
+		SignColumnSB = { fg = c.fg_dim, bg = options.sign_column_background and bg_sidebar or bg_main }, -- Column where |signs| are displayed in the sidebar.
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		NonText = { fg = c.fg_dim }, -- `@` at the end of the window, characters from `showbreak` and other characters that do not really exist in the text (e.g., `>` displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line.
@@ -440,22 +440,34 @@ function M.setup()
 		NeotestTarget = { fg = c.blue },
 
 		-- GitGutter
-		GitGutterAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
-		GitGutterDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
-		GitGutterAddLineNr = { fg = c.fg_added_intense },
-		GitGutterChangeLineNr = { fg = c.fg_changed_intense },
-		GitGutterDeleteLineNr = { fg = c.fg_removed_intense },
+		GitGutterAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
+		GitGutterChange = { fg = c.fg_changed_intense, bg = options.sign_column_background and c.bg_changed or bg_main }, -- diff mode: Changed line |diff.txt|
+		GitGutterDelete = { fg = c.fg_removed_intense, bg = options.sign_column_background and c.bg_removed or bg_main }, -- diff mode: Deleted line |diff.txt|
+		GitGutterAddLineNr = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main },
+		GitGutterChangeLineNr = {
+			fg = c.fg_changed_intense,
+			bg = options.sign_column_background and c.bg_changed or bg_main,
+		},
+		GitGutterDeleteLineNr = {
+			fg = c.fg_removed_intense,
+			bg = options.sign_column_background and c.bg_removed or bg_main,
+		},
 
 		-- GitSigns
-		GitSignsAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = c.fg_changed_intense, bg = options.sign_column_background and c.bg_changed or bg_main }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = c.fg_removed_intense, bg = options.sign_column_background and c.bg_removed or bg_main }, -- diff mode: Deleted line |diff.txt|
 
 		-- mini.diff
-		MiniDiffSignAdd = { fg = c.fg_added_intense }, -- diff mode: Added line |diff.txt|
-		MiniDiffSignChange = { fg = c.fg_changed_intense }, -- diff mode: Changed line |diff.txt|
-		MiniDiffSignDelete = { fg = c.fg_removed_intense }, -- diff mode: Deleted line |diff.txt|
+		MiniDiffSignAdd = { fg = c.fg_added_intense, bg = options.sign_column_background and c.bg_added or bg_main }, -- diff mode: Added line |diff.txt|
+		MiniDiffSignChange = {
+			fg = c.fg_changed_intense,
+			bg = options.sign_column_background and c.bg_changed or bg_main,
+		}, -- diff mode: Changed line |diff.txt|
+		MiniDiffSignDelete = {
+			fg = c.fg_removed_intense,
+			bg = options.sign_column_background and c.bg_removed or bg_main,
+		}, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
 		TelescopeNormal = { link = "Normal" },
