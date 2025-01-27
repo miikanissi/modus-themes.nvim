@@ -11,6 +11,8 @@ local defaults = {
 	transparent = false, -- Transparent background (as supported by the terminal)
 	dim_inactive = false, -- "non-current" windows are dimmed
 	hide_inactive_statusline = false, -- Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
+	line_nr_column_background = true, -- Distinct background colors in line number column. `false` will disable background color and fallback to Normal background
+	sign_column_background = true, -- Distinct background colors in sign column. `false` will disable background color and fallback to Normal background
 	styles = {
 		-- Style to be applied to different syntax groups
 		-- Value is any valid attr-list value for `:help nvim_set_hl`
