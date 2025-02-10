@@ -49,6 +49,7 @@ function M.setup()
 		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
 		SignColumnSB = { fg = c.fg_dim, bg = options.sign_column_background and bg_sidebar or bg_main }, -- Column where |signs| are displayed in the sidebar.
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorColumn = { fg = c.none, bg = c.bg_hl_line }, -- Screen-column at the cursor, when `cursorcolumn` is set.
 		NonText = { fg = c.fg_dim }, -- `@` at the end of the window, characters from `showbreak` and other characters that do not really exist in the text (e.g., `>` displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
 		ErrorMsg = { fg = c.fg_main, bg = c.bg_red_intense }, -- Error messages on the command line.
 		Conceal = { fg = c.yellow_faint }, -- Placeholder characters substituted for concealed text (see `conceallevel`).
