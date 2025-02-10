@@ -1093,6 +1093,10 @@ local highlights = {
     bg = "#000000",
     fg = "#ffffff"
   },
+  CursorColumn = {
+    bg = "#d0d6ec",
+    fg = "NONE"
+  },
   CursorIM = {
     link = "Cursor"
   },
