@@ -445,7 +445,7 @@ function M.setup(opts)
 
 	-- Color Palette
 	---@class ColorScheme: Palette
-	local colors = M[style]
+	local colors = vim.deepcopy(M[style])
 
 	colors.bg_sidebar = colors.bg_dim
 	colors.fg_sidebar = colors.fg_main
