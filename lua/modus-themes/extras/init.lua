@@ -94,23 +94,39 @@ function M.setup()
 		modus_vivendi = "Modus Vivendi",
 	}
 
+	local variants = {
+		default = "Default",
+		tinted = "Tinted",
+		deuteranopia = "Deuteranopia",
+		tritanopia = "Tritanopia",
+	}
+
 	for extra, info in pairs(M.extras) do
 		package.loaded["modus-themes.extras." .. extra] = nil
 		local plugin = require("modus-themes.extras." .. extra)
 
 		for style, style_name in pairs(styles) do
-			modus.setup({ style = style })
-			modus.load({ style = style })
-			vim.cmd.colorscheme(style)
-			local colors = require("modus-themes.colors").setup()
-			local fname = extra .. "/" .. style
-			if info.ext then
-				fname = fname .. "." .. info.ext
+			for variant, variant_name in pairs(variants) do
+				modus.setup({ style = style, variant = variant })
+				modus.load({ style = style, variant = variant })
+				vim.cmd.colorscheme(style)
+				local colors = require("modus-themes.colors").setup({ variant = variant })
+				local fname = extra .. "/" .. style
+				if variant ~= "default" then
+					fname = fname .. "_" .. variant
+				end
+				if info.ext then
+					fname = fname .. "." .. info.ext
+				end
+				colors["_upstream_url"] = "https://github.com/miikanissi/modus-themes.nvim/raw/master/extras/" .. fname
+				colors["_style_name"] = style_name
+				if variant ~= "default" then
+					colors["_name"] = style .. "_" .. variant_name
+				else
+					colors["_name"] = style
+				end
+				write(plugin.generate(colors), fname)
 			end
-			colors["_upstream_url"] = "https://github.com/miikanissi/modus-themes.nvim/raw/master/extras/" .. fname
-			colors["_style_name"] = style_name
-			colors["_name"] = style
-			write(plugin.generate(colors), fname)
 		end
 	end
 end
