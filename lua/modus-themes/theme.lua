@@ -852,6 +852,12 @@ function M.setup()
 		IblIndent = { fg = c.fg_dim, nocombine = true },
 		IblScope = { fg = c.magenta_cooler, nocombine = true },
 
+		-- snacks.nvim
+		SnacksPicker = { link = "Normal" },
+		SnacksPickerListCursorLine = { link = "CursorLine" },
+		SnacksPickerMatch = { link = "CurSearch" },
+		SnacksPickerPreviewCursorLine = { link = "CursorLine" },
+
 		-- Scrollbar
 		ScrollbarHandle = { fg = c.none, bg = c.bg_hl_line },
 		ScrollbarSearchHandle = { fg = c.yellow_warmer, bg = c.bg_hl_line },
