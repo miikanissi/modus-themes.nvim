@@ -24,7 +24,7 @@ palette = 4=#${blue}
 palette = 5=#${magenta}
 palette = 6=#${cyan}
 palette = 7=#${fg_main}
-palette = 8=#${bg_dim}
+palette = 8=#${bg_active}
 palette = 9=#${red_intense}
 palette = 10=#${green_intense}
 palette = 11=#${yellow_intense}
