@@ -2350,6 +2350,18 @@ local highlights = {
     bg = "#1e1e1e",
     fg = "#989898"
   },
+  SnacksPicker = {
+    link = "Normal"
+  },
+  SnacksPickerListCursorLine = {
+    link = "CursorLine"
+  },
+  SnacksPickerMatch = {
+    link = "CurSearch"
+  },
+  SnacksPickerPreviewCursorLine = {
+    link = "CursorLine"
+  },
   Sneak = {
     bg = "#feacd0",
     fg = "#2f3849"
