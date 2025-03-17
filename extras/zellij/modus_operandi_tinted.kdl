@@ -1,0 +1,21 @@
+// Modus Themes for Zellij
+// Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/zellij.lua
+
+themes {
+    modus_operandi_Tinted {
+        fg "#000000"
+        // The background color is used for text highlighting and should be different from the black value
+        bg "#f1d5d0"
+        // Black should match the terminal background color
+        // This ensures the top and bottom bars are transparent
+        black "#fbf7f0"
+        red "#a60000"
+        green "#006800"
+        yellow "#6f5500"
+        blue "#0031a9"
+        magenta "#721045"
+        cyan "#005e8b"
+        white "#000000"
+        orange "#884900"
+    }
+}

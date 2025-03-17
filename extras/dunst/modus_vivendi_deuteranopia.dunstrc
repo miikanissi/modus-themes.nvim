@@ -1,0 +1,17 @@
+# Modus Themes for Dunst
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/dunst.lua
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#79a8ff"
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#79a8ff"
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffa00f"
+    frame_color = "#ffa00f"

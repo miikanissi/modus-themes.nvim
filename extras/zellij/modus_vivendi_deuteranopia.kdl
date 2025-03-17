@@ -1,0 +1,21 @@
+// Modus Themes for Zellij
+// Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/zellij.lua
+
+themes {
+    modus_vivendi_Deuteranopia {
+        fg "#ffffff"
+        // The background color is used for text highlighting and should be different from the black value
+        bg "#2f3849"
+        // Black should match the terminal background color
+        // This ensures the top and bottom bars are transparent
+        black "#000000"
+        red "#ff5f59"
+        green "#44bc44"
+        yellow "#cabf00"
+        blue "#2fafff"
+        magenta "#feacd0"
+        cyan "#00d3d0"
+        white "#ffffff"
+        orange "#ffa00f"
+    }
+}

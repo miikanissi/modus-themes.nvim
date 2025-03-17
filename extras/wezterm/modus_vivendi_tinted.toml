@@ -1,0 +1,44 @@
+[colors]
+foreground = "#ffffff"
+background = "#0d0e1c"
+cursor_bg = "#ffffff"
+cursor_border = "#ffffff"
+cursor_fg = "#0d0e1c"
+selection_bg = "#7030af"
+selection_fg = "#ffffff"
+split = "#79a8ff"
+compose_cursor = "#fec43f"
+scrollbar_thumb = "#61647a"
+
+ansi = ["#0d0e1c", "#ff5f59", "#44bc44", "#d0bc00", "#2fafff", "#feacd0", "#00d3d0", "#ffffff"]
+brights = ["#1d2235", "#ff5f5f", "#44df44", "#efef00", "#338fff", "#ff66ff", "#00eff0", "#989898"]
+
+[colors.tab_bar]
+inactive_tab_edge = "#4a4f6a"
+background = "#2c3045"
+
+[colors.tab_bar.active_tab]
+fg_color = "#c6daff"
+bg_color = "#0d0e1c"
+
+[colors.tab_bar.inactive_tab]
+fg_color = "#ffffff"
+bg_color = "#4a4f6a"
+
+[colors.tab_bar.inactive_tab_hover]
+fg_color = "#c6daff"
+bg_color = "#4a4f6a"
+
+[colors.tab_bar.new_tab_hover]
+fg_color = "#c6daff"
+bg_color = "#0d0e1c"
+intensity = "Bold"
+
+[colors.tab_bar.new_tab]
+fg_color = "#ffffff"
+bg_color = "#2c3045"
+
+[metadata]
+aliases = []
+author = "miikanissi"
+name = "Modus Vivendi"

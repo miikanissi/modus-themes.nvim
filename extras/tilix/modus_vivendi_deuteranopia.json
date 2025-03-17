@@ -1,0 +1,25 @@
+{
+    "name": "Modus Vivendi",
+    "comment": "Highly accessible theme, conforming with the highest standard for color contrast between background and foreground values (WCAG AAA).",
+    "use-theme-colors": false,
+    "foreground-color": "#ffffff",
+    "background-color": "#000000",
+    "palette": [
+        "#000000",
+        "#ff5f59",
+        "#44bc44",
+        "#cabf00",
+        "#2fafff",
+        "#feacd0",
+        "#00d3d0",
+        "#ffffff",
+        "#1e1e1e",
+        "#ff5f5f",
+        "#44df44",
+        "#efef00",
+        "#338fff",
+        "#ff66ff",
+        "#00eff0",
+        "#989898"
+    ]
+}

@@ -1,0 +1,28 @@
+# Modus Themes for Alacritty
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/windows_terminal.lua
+# Learn more at
+# https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#creating-your-own-color-scheme
+
+{
+    "name": "Modus Operandi",
+    "background": "#ffffff",
+    "foreground": "#000000",
+    "cursorColor": "#000000",
+    "selectionBackground": "#dfa0f0",
+    "black": "#ffffff",
+    "red": "#a60000",
+    "green": "#006800",
+    "yellow": "#695500",
+    "blue": "#0031a9",
+    "purple": "#721045",
+    "cyan": "#005e8b",
+    "white": "#000000",
+    "brightBlack": "#f2f2f2",
+    "brightRed": "#d00000",
+    "brightGreen": "#008900",
+    "brightYellow": "#808000",
+    "brightBlue": "#0000ff",
+    "brightPurple": "#cd22bd",
+    "brightCyan": "#008899",
+    "brightWhite": "#595959"
+}

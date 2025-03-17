@@ -1,0 +1,25 @@
+{
+    "name": "Modus Operandi",
+    "comment": "Highly accessible theme, conforming with the highest standard for color contrast between background and foreground values (WCAG AAA).",
+    "use-theme-colors": false,
+    "foreground-color": "#000000",
+    "background-color": "#fbf7f0",
+    "palette": [
+        "#fbf7f0",
+        "#a60000",
+        "#006800",
+        "#6f5500",
+        "#0031a9",
+        "#721045",
+        "#005e8b",
+        "#000000",
+        "#efe9dd",
+        "#d00000",
+        "#008900",
+        "#808000",
+        "#0000ff",
+        "#dd22dd",
+        "#008899",
+        "#595959"
+    ]
+}

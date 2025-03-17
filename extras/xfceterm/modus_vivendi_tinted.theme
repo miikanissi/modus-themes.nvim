@@ -1,0 +1,9 @@
+[Scheme]
+Name=Modus Vivendi
+ColorBackground=#0d0e1c
+ColorForeground=#ffffff
+
+ColorSelectionBackground=#7030af
+ColorSelection=#ffffff
+
+ColorPalette=#0d0e1c;#ff5f59;#44bc44;#d0bc00;#2fafff;#feacd0;#00d3d0;#ffffff;#1d2235;#ff5f5f;#44df44;#efef00;#338fff;#ff66ff;#00eff0;#989898

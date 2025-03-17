@@ -1,0 +1,28 @@
+!! Modus Themes for Xresources
+!! Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/xresources.lua
+
+*background: #000000
+*foreground: #ffffff
+*accent_light: #82b0ec
+*accent: #79a8ff
+*accent_darker: #2fafff
+*accent_dark: #338fff
+
+*color0: #000000
+*color1: #ff5f59
+*color2: #44bc44
+*color3: #cabf00
+*color4: #2fafff
+*color5: #feacd0
+*color6: #00d3d0
+*color7: #ffffff
+
+*color8: #1e1e1e
+*color9: #ff5f5f
+*color10: #44df44
+*color11: #efef00
+*color12: #338fff
+*color13: #ff66ff
+*color14: #00eff0
+*color15: #989898
+

@@ -1,0 +1,24 @@
+# Modus Themes for Ghostty
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/ghostty.lua
+
+palette = 0=#fbf7f0
+palette = 1=#a60000
+palette = 2=#006800
+palette = 3=#6f5500
+palette = 4=#0031a9
+palette = 5=#721045
+palette = 6=#005e8b
+palette = 7=#000000
+palette = 8=#c9b9b0
+palette = 9=#d00000
+palette = 10=#008900
+palette = 11=#808000
+palette = 12=#0000ff
+palette = 13=#dd22dd
+palette = 14=#008899
+palette = 15=#595959
+background = #fbf7f0
+foreground = #000000
+cursor-color = #000000
+selection-background = #dfa0f0
+selection-foreground = #000000
