@@ -113,7 +113,7 @@ local colors = {
   green_faint = "#2a5045",
   green_intense = "#008900",
   green_warmer = "#316500",
-  hint = "#005f5f",
+  hint = "#005077",
   indigo = "#4a3a8a",
   info = "#005e8b",
   magenta = "#721045",
@@ -123,6 +123,7 @@ local colors = {
   magenta_warmer = "#8f0075",
   maroon = "#731c52",
   none = "NONE",
+  ok = "#00663f",
   olive = "#56692d",
   pink = "#7b435c",
   red = "#a60000",
@@ -228,7 +229,7 @@ local highlights = {
     fg = "#b21100"
   },
   ["@comment.note"] = {
-    fg = "#005f5f"
+    fg = "#005077"
   },
   ["@comment.todo"] = {
     link = "Todo"
@@ -766,7 +767,7 @@ local highlights = {
   },
   BufferAlternateHINT = {
     bg = "#c2c2e8",
-    fg = "#005f5f"
+    fg = "#005077"
   },
   BufferAlternateINFO = {
     bg = "#c2c2e8",
@@ -801,7 +802,7 @@ local highlights = {
   },
   BufferCurrentHINT = {
     bg = "#ffffff",
-    fg = "#005f5f"
+    fg = "#005077"
   },
   BufferCurrentINFO = {
     bg = "#ffffff",
@@ -886,7 +887,7 @@ local highlights = {
   },
   BufferVisibleHINT = {
     bg = "#f0f0f0",
-    fg = "#005f5f"
+    fg = "#005077"
   },
   BufferVisibleINFO = {
     bg = "#f0f0f0",
@@ -1149,7 +1150,7 @@ local highlights = {
   },
   DiagnosticHint = {
     bold = true,
-    fg = "#005f5f"
+    fg = "#005077"
   },
   DiagnosticInfo = {
     bold = true,
@@ -1158,16 +1159,24 @@ local highlights = {
   DiagnosticInformation = {
     link = "DiagnosticInfo"
   },
+  DiagnosticOk = {
+    bold = true,
+    fg = "#00663f"
+  },
   DiagnosticUnderlineError = {
     sp = "#b21100",
     undercurl = true
   },
   DiagnosticUnderlineHint = {
-    sp = "#005f5f",
+    sp = "#005077",
     undercurl = true
   },
   DiagnosticUnderlineInfo = {
     sp = "#005e8b",
+    undercurl = true
+  },
+  DiagnosticUnderlineOk = {
+    sp = "#00663f",
     undercurl = true
   },
   DiagnosticUnderlineWarn = {
@@ -1183,11 +1192,15 @@ local highlights = {
   },
   DiagnosticVirtualTextHint = {
     bold = true,
-    fg = "#005f5f"
+    fg = "#005077"
   },
   DiagnosticVirtualTextInfo = {
     bold = true,
     fg = "#005e8b"
+  },
+  DiagnosticVirtualTextOk = {
+    bold = true,
+    fg = "#00663f"
   },
   DiagnosticVirtualTextWarn = {
     bold = true,
@@ -2280,6 +2293,54 @@ local highlights = {
   ReferencesIcon = {
     fg = "#0031a9"
   },
+  RenderMarkdownCode = {
+    link = "markdownCodeBlock"
+  },
+  RenderMarkdownCodeInline = {
+    link = "markdownCode"
+  },
+  RenderMarkdownH1 = {
+    link = "@markup.heading.1"
+  },
+  RenderMarkdownH1Bg = {
+    bg = "#f3f3ff",
+    fg = "#0031a9"
+  },
+  RenderMarkdownH2 = {
+    link = "@markup.heading.2"
+  },
+  RenderMarkdownH2Bg = {
+    bg = "#fff3da",
+    fg = "#695500"
+  },
+  RenderMarkdownH3 = {
+    link = "@markup.heading.3"
+  },
+  RenderMarkdownH3Bg = {
+    bg = "#fdf0ff",
+    fg = "#721045"
+  },
+  RenderMarkdownH4 = {
+    link = "@markup.heading.4"
+  },
+  RenderMarkdownH4Bg = {
+    bg = "#ecf7ed",
+    fg = "#006800"
+  },
+  RenderMarkdownH5 = {
+    link = "@markup.heading.5"
+  },
+  RenderMarkdownH5Bg = {
+    bg = "#fff1f0",
+    fg = "#a60000"
+  },
+  RenderMarkdownH6 = {
+    link = "@markup.heading.6"
+  },
+  RenderMarkdownH6Bg = {
+    bg = "#ebf6fa",
+    fg = "#3f578f"
+  },
   Repeat = {
     fg = "#531ab6"
   },
@@ -2300,11 +2361,11 @@ local highlights = {
   },
   ScrollbarHint = {
     bg = "NONE",
-    fg = "#005f5f"
+    fg = "#005077"
   },
   ScrollbarHintHandle = {
     bg = "#dfeaec",
-    fg = "#005f5f"
+    fg = "#005077"
   },
   ScrollbarInfo = {
     bg = "NONE",
@@ -2391,7 +2452,7 @@ local highlights = {
     undercurl = true
   },
   SpellRare = {
-    sp = "#005f5f",
+    sp = "#005077",
     undercurl = true
   },
   Statement = {
@@ -2642,28 +2703,22 @@ local highlights = {
     fg = "#005f5f"
   },
   markdownH1 = {
-    bold = true,
-    fg = "#0031a9"
+    link = "@markup.heading.1"
   },
   markdownH2 = {
-    bold = true,
-    fg = "#695500"
+    link = "@markup.heading.2"
   },
   markdownH3 = {
-    bold = true,
-    fg = "#721045"
+    link = "@markup.heading.3"
   },
   markdownH4 = {
-    bold = true,
-    fg = "#006800"
+    link = "@markup.heading.4"
   },
   markdownH5 = {
-    bold = true,
-    fg = "#a60000"
+    link = "@markup.heading.5"
   },
   markdownH6 = {
-    bold = true,
-    fg = "#3f578f"
+    link = "@markup.heading.6"
   },
   markdownHeadingDelimiter = {
     bold = true,

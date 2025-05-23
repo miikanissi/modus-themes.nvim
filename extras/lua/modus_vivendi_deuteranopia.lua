@@ -52,7 +52,7 @@ local colors = {
   bg_tab_current = "#000000",
   bg_tab_other = "#545454",
   bg_yellow_intense = "#7a6100",
-  bg_yellow_nuanced = "#221000",
+  bg_yellow_nuanced = "#222000",
   bg_yellow_subtle = "#4a4000",
   blue = "#2fafff",
   blue_cooler = "#00bcff",
@@ -113,7 +113,7 @@ local colors = {
   green_faint = "#88ca9f",
   green_intense = "#44df44",
   green_warmer = "#70b900",
-  hint = "#6ae4b9",
+  hint = "#9ac8e0",
   indigo = "#9099d9",
   info = "#2fafff",
   magenta = "#feacd0",
@@ -123,6 +123,7 @@ local colors = {
   magenta_warmer = "#f78fe7",
   maroon = "#cf7fa7",
   none = "NONE",
+  ok = "#00c06f",
   olive = "#9cbd6f",
   pink = "#d09dc0",
   red = "#ff5f59",
@@ -228,7 +229,7 @@ local highlights = {
     fg = "#ffa00f"
   },
   ["@comment.note"] = {
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   ["@comment.todo"] = {
     link = "Todo"
@@ -766,7 +767,7 @@ local highlights = {
   },
   BufferAlternateHINT = {
     bg = "#545490",
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   BufferAlternateINFO = {
     bg = "#545490",
@@ -801,7 +802,7 @@ local highlights = {
   },
   BufferCurrentHINT = {
     bg = "#000000",
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   BufferCurrentINFO = {
     bg = "#000000",
@@ -886,7 +887,7 @@ local highlights = {
   },
   BufferVisibleHINT = {
     bg = "#0f0f0f",
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   BufferVisibleINFO = {
     bg = "#0f0f0f",
@@ -1149,7 +1150,7 @@ local highlights = {
   },
   DiagnosticHint = {
     bold = true,
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   DiagnosticInfo = {
     bold = true,
@@ -1158,16 +1159,24 @@ local highlights = {
   DiagnosticInformation = {
     link = "DiagnosticInfo"
   },
+  DiagnosticOk = {
+    bold = true,
+    fg = "#00c06f"
+  },
   DiagnosticUnderlineError = {
     sp = "#ffa00f",
     undercurl = true
   },
   DiagnosticUnderlineHint = {
-    sp = "#6ae4b9",
+    sp = "#9ac8e0",
     undercurl = true
   },
   DiagnosticUnderlineInfo = {
     sp = "#2fafff",
+    undercurl = true
+  },
+  DiagnosticUnderlineOk = {
+    sp = "#00c06f",
     undercurl = true
   },
   DiagnosticUnderlineWarn = {
@@ -1183,11 +1192,15 @@ local highlights = {
   },
   DiagnosticVirtualTextHint = {
     bold = true,
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   DiagnosticVirtualTextInfo = {
     bold = true,
     fg = "#2fafff"
+  },
+  DiagnosticVirtualTextOk = {
+    bold = true,
+    fg = "#00c06f"
   },
   DiagnosticVirtualTextWarn = {
     bold = true,
@@ -1375,7 +1388,7 @@ local highlights = {
     bg = "#0f0e39"
   },
   Headline2 = {
-    bg = "#221000"
+    bg = "#222000"
   },
   Headline3 = {
     bg = "#230631"
@@ -2280,6 +2293,54 @@ local highlights = {
   ReferencesIcon = {
     fg = "#2fafff"
   },
+  RenderMarkdownCode = {
+    link = "markdownCodeBlock"
+  },
+  RenderMarkdownCodeInline = {
+    link = "markdownCode"
+  },
+  RenderMarkdownH1 = {
+    link = "@markup.heading.1"
+  },
+  RenderMarkdownH1Bg = {
+    bg = "#0f0e39",
+    fg = "#2fafff"
+  },
+  RenderMarkdownH2 = {
+    link = "@markup.heading.2"
+  },
+  RenderMarkdownH2Bg = {
+    bg = "#222000",
+    fg = "#cabf00"
+  },
+  RenderMarkdownH3 = {
+    link = "@markup.heading.3"
+  },
+  RenderMarkdownH3Bg = {
+    bg = "#230631",
+    fg = "#feacd0"
+  },
+  RenderMarkdownH4 = {
+    link = "@markup.heading.4"
+  },
+  RenderMarkdownH4Bg = {
+    bg = "#001904",
+    fg = "#44bc44"
+  },
+  RenderMarkdownH5 = {
+    link = "@markup.heading.5"
+  },
+  RenderMarkdownH5Bg = {
+    bg = "#2c0614",
+    fg = "#ff5f59"
+  },
+  RenderMarkdownH6 = {
+    link = "@markup.heading.6"
+  },
+  RenderMarkdownH6Bg = {
+    bg = "#041529",
+    fg = "#4ae2f0"
+  },
   Repeat = {
     fg = "#b6a0ff"
   },
@@ -2300,11 +2361,11 @@ local highlights = {
   },
   ScrollbarHint = {
     bg = "NONE",
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   ScrollbarHintHandle = {
     bg = "#2f3849",
-    fg = "#6ae4b9"
+    fg = "#9ac8e0"
   },
   ScrollbarInfo = {
     bg = "NONE",
@@ -2391,7 +2452,7 @@ local highlights = {
     undercurl = true
   },
   SpellRare = {
-    sp = "#6ae4b9",
+    sp = "#9ac8e0",
     undercurl = true
   },
   Statement = {
@@ -2642,28 +2703,22 @@ local highlights = {
     fg = "#6ae4b9"
   },
   markdownH1 = {
-    bold = true,
-    fg = "#2fafff"
+    link = "@markup.heading.1"
   },
   markdownH2 = {
-    bold = true,
-    fg = "#cabf00"
+    link = "@markup.heading.2"
   },
   markdownH3 = {
-    bold = true,
-    fg = "#feacd0"
+    link = "@markup.heading.3"
   },
   markdownH4 = {
-    bold = true,
-    fg = "#44bc44"
+    link = "@markup.heading.4"
   },
   markdownH5 = {
-    bold = true,
-    fg = "#ff5f59"
+    link = "@markup.heading.5"
   },
   markdownH6 = {
-    bold = true,
-    fg = "#4ae2f0"
+    link = "@markup.heading.6"
   },
   markdownHeadingDelimiter = {
     bold = true,
