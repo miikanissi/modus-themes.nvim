@@ -154,12 +154,12 @@ function M.setup()
 		markdownCode = { fg = c.cyan_cooler },
 		markdownCodeBlock = { fg = c.cyan_cooler },
 		markdownLinkText = { fg = c.blue, underline = true },
-		markdownH1 = { fg = c.blue, bold = true },
-		markdownH2 = { fg = c.yellow, bold = true },
-		markdownH3 = { fg = c.magenta, bold = true },
-		markdownH4 = { fg = c.green, bold = true },
-		markdownH5 = { fg = c.red, bold = true },
-		markdownH6 = { fg = c.cyan_warmer, bold = true },
+		markdownH1 = { link = "@markup.heading.1" },
+		markdownH2 = { link = "@markup.heading.2" },
+		markdownH3 = { link = "@markup.heading.3" },
+		markdownH4 = { link = "@markup.heading.4" },
+		markdownH5 = { link = "@markup.heading.5" },
+		markdownH6 = { link = "@markup.heading.6" },
 
 		-- These groups are for the native LSP client. Some other LSP clients may
 		-- use these groups, or use their own. Consult your LSP client's
@@ -177,17 +177,20 @@ function M.setup()
 		DiagnosticWarn = { fg = c.warning, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 		DiagnosticInfo = { fg = c.info, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 		DiagnosticHint = { fg = c.hint, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
+		DiagnosticOk = { fg = c.ok, bold = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 		DiagnosticUnnecessary = { fg = c.fg_dim }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default.
 
 		DiagnosticVirtualTextError = { fg = c.error, bold = true }, -- Used for "Error" diagnostic virtual text.
 		DiagnosticVirtualTextWarn = { fg = c.warning, bold = true }, -- Used for "Warning" diagnostic virtual text.
 		DiagnosticVirtualTextInfo = { fg = c.info, bold = true }, -- Used for "Information" diagnostic virtual text.
 		DiagnosticVirtualTextHint = { fg = c.hint, bold = true }, -- Used for "Hint" diagnostic virtual text.
+		DiagnosticVirtualTextOk = { fg = c.ok, bold = true }, -- Used for "Ok" diagnostic virtual text.
 
 		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics.
 		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics.
 		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics.
 		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics.
+		DiagnosticUnderlineOk = { undercurl = true, sp = c.ok }, -- Used to underline "Ok" diagnostics.
 
 		ALEErrorSign = { fg = c.error, bold = true },
 		ALEWarningSign = { fg = c.warning, bold = true },
@@ -851,6 +854,22 @@ function M.setup()
 		IndentBlanklineContextChar = { fg = c.magenta_cooler, nocombine = true },
 		IblIndent = { fg = c.fg_dim, nocombine = true },
 		IblScope = { fg = c.magenta_cooler, nocombine = true },
+
+		-- render-markdown.nvim
+		RenderMarkdownCodeInline = { link = "markdownCode" },
+		RenderMarkdownCode = { link = "markdownCodeBlock" },
+		RenderMarkdownH1 = { link = "@markup.heading.1" },
+		RenderMarkdownH2 = { link = "@markup.heading.2" },
+		RenderMarkdownH3 = { link = "@markup.heading.3" },
+		RenderMarkdownH4 = { link = "@markup.heading.4" },
+		RenderMarkdownH5 = { link = "@markup.heading.5" },
+		RenderMarkdownH6 = { link = "@markup.heading.6" },
+		RenderMarkdownH1Bg = { fg = c.blue, bg = c.bg_blue_nuanced },
+		RenderMarkdownH2Bg = { fg = c.yellow, bg = c.bg_yellow_nuanced },
+		RenderMarkdownH3Bg = { fg = c.magenta, bg = c.bg_magenta_nuanced },
+		RenderMarkdownH4Bg = { fg = c.green, bg = c.bg_green_nuanced },
+		RenderMarkdownH5Bg = { fg = c.red, bg = c.bg_red_nuanced },
+		RenderMarkdownH6Bg = { fg = c.cyan_warmer, bg = c.bg_cyan_nuanced },
 
 		-- snacks.nvim
 		SnacksPicker = { link = "Normal" },

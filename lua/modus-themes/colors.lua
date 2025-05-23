@@ -295,7 +295,7 @@ M.modus_vivendi = {
 	-- Nuanced can be combined with corresponding foreground ie. bg_red_nuanced with red
 	bg_red_nuanced = "#2c0614",
 	bg_green_nuanced = "#001904",
-	bg_yellow_nuanced = "#221000",
+	bg_yellow_nuanced = "#222000",
 	bg_blue_nuanced = "#0f0e39",
 	bg_magenta_nuanced = "#230631",
 	bg_cyan_nuanced = "#041529",
@@ -455,7 +455,8 @@ function M.setup(opts)
 	colors.error = colors.red_cooler
 	colors.warning = colors.yellow_cooler
 	colors.info = colors.blue_cooler
-	colors.hint = colors.cyan_cooler
+	colors.hint = colors.cyan_faint
+	colors.ok = colors.green_cooler
 	colors.success = colors.fg_added
 	colors.visual = colors.bg_magenta_intense
 	colors.accent_light = colors.blue_faint
