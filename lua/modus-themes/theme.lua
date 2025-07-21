@@ -46,7 +46,7 @@ function M.setup()
 		LineNrAbove = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number above the cursor line.
 		LineNrBelow = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number below the cursor line.
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
-		SignColumn = { fg = c.fg_dim, bg = bg_main }, -- Column where |signs| are displayed.
+		SignColumn = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Column where |signs| are displayed.
 		SignColumnSB = { fg = c.fg_dim, bg = options.sign_column_background and bg_sidebar or bg_main }, -- Column where |signs| are displayed in the sidebar.
 		CursorLine = { fg = c.none, bg = c.bg_hl_line }, -- Screen-line at the cursor, when `cursorline` is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		CursorColumn = { fg = c.none, bg = c.bg_hl_line }, -- Screen-column at the cursor, when `cursorcolumn` is set.
