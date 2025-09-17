@@ -12,6 +12,7 @@ M.extras = {
 	bat = { ext = "tmTheme", url = "https://github.com/sharkdp/bat", label = "Bat" },
 	delta = { ext = "gitconfig", url = "https://github.com/dandavison/delta", label = "Delta" },
 	dunst = { ext = "dunstrc", url = "https://dunst-project.org/", label = "Dunst" },
+	eza = { ext = "yml", url = "https://eza.rocks/", label = "eza"},
 	fish = { ext = "fish", url = "https://fishshell.com/docs/current/index.html", label = "Fish" },
 	foot = { ext = "ini", url = "https://codeberg.org/dnkl/foot", label = "Foot" },
 	ghostty = { url = "https://ghostty.org/docs/features/theme", label = "Ghostty" },
