@@ -2404,7 +2404,7 @@ local highlights = {
     fg = "#000000"
   },
   SignColumn = {
-    bg = "#fbf7f0",
+    bg = "#efe9dd",
     fg = "#595959"
   },
   SignColumnSB = {
