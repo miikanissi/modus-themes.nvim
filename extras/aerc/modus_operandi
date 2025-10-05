@@ -23,7 +23,7 @@ border.fg=#9f9f9f
 tab.selected.fg=#000000
 tab.selected.bg=#bfc9ff
 tab.selected.bold=false
-dirlist*.selected.bg=#d0d6ec
+dirlist*.selected.bg=#dae5ec
 dirlist*.selected.fg=#000000
 dirlist*.selected.bold=false
 
@@ -40,7 +40,7 @@ msglist_unread.fg=#000000
 msglist_unread.bold=true
 msglist_read.fg=#595959
 msglist_deleted.fg=#8f1313
-msglist_*.selected.bg=#d0d6ec
+msglist_*.selected.bg=#dae5ec
 msglist_marked.fg=#000000
 msglist_marked.selected.fg=#000000
 msglist_marked.bg=#ccdfff
@@ -48,13 +48,13 @@ msglist_marked.selected.bg=#bfc9ff
 
 completion_pill.reverse=false
 selector_focused.bold=false
-selector_focused.bg=#d0d6ec
+selector_focused.bg=#dae5ec
 selector_focused.fg=#000000
 selector_chooser.bold=false
-selector_chooser.bg=#d0d6ec
+selector_chooser.bg=#dae5ec
 selector_chooser.fg=#000000
 default.selected.bold=false
-default.selected.bg=#d0d6ec
+default.selected.bg=#dae5ec
 default.selected.fg=#000000
 
 completion_default.selected.bg=#c0deff

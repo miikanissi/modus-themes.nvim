@@ -29,7 +29,7 @@ local colors = {
   bg_green_intense = "#8adf80",
   bg_green_nuanced = "#ecf7ed",
   bg_green_subtle = "#b3fabf",
-  bg_hl_line = "#d0d6ec",
+  bg_hl_line = "#dae5ec",
   bg_inactive = "#e9e9e9",
   bg_magenta_intense = "#dfa0f0",
   bg_magenta_nuanced = "#fdf0ff",
@@ -1095,14 +1095,14 @@ local highlights = {
     fg = "#ffffff"
   },
   CursorColumn = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "NONE"
   },
   CursorIM = {
     link = "Cursor"
   },
   CursorLine = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "NONE"
   },
   CursorLineNr = {
@@ -2218,7 +2218,7 @@ local highlights = {
     fg = "#404148"
   },
   NvimTreeOpenedFile = {
-    bg = "#d0d6ec"
+    bg = "#dae5ec"
   },
   NvimTreeRootFolder = {
     bold = true,
@@ -2352,11 +2352,11 @@ local highlights = {
     fg = "#a0132f"
   },
   ScrollbarErrorHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#a0132f"
   },
   ScrollbarHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "NONE"
   },
   ScrollbarHint = {
@@ -2364,7 +2364,7 @@ local highlights = {
     fg = "#005077"
   },
   ScrollbarHintHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#005077"
   },
   ScrollbarInfo = {
@@ -2372,7 +2372,7 @@ local highlights = {
     fg = "#0000b0"
   },
   ScrollbarInfoHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#0000b0"
   },
   ScrollbarMisc = {
@@ -2380,7 +2380,7 @@ local highlights = {
     fg = "#531ab6"
   },
   ScrollbarMiscHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#531ab6"
   },
   ScrollbarSearch = {
@@ -2388,7 +2388,7 @@ local highlights = {
     fg = "#884900"
   },
   ScrollbarSearchHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#884900"
   },
   ScrollbarWarn = {
@@ -2396,7 +2396,7 @@ local highlights = {
     fg = "#7a4f2f"
   },
   ScrollbarWarnHandle = {
-    bg = "#d0d6ec",
+    bg = "#dae5ec",
     fg = "#7a4f2f"
   },
   Search = {
@@ -2425,7 +2425,7 @@ local highlights = {
   },
   Sneak = {
     bg = "#721045",
-    fg = "#d0d6ec"
+    fg = "#dae5ec"
   },
   SneakScope = {
     bg = "#dfa0f0"

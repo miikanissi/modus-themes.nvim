@@ -5,7 +5,7 @@ themes {
     modus_operandi_Deuteranopia {
         fg "#000000"
         // The background color is used for text highlighting and should be different from the black value
-        bg "#d0d6ec"
+        bg "#dae5ec"
         // Black should match the terminal background color
         // This ensures the top and bottom bars are transparent
         black "#ffffff"

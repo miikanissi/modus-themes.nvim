@@ -8,8 +8,8 @@
 cwd = { fg = "#005e8b", italic = true }
 
 # Hovered
-hovered         = { bg = "#d0d6ec" }
-preview_hovered = { bg = "#d0d6ec" }
+hovered         = { bg = "#dae5ec" }
+preview_hovered = { bg = "#dae5ec" }
 
 # Find
 find_keyword  = { fg = "#000000", bg = "#dfa0f0", bold = true }

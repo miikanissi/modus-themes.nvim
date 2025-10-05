@@ -21,7 +21,7 @@
           <key>invisibles</key>
           <string>#595959</string>
           <key>lineHighlight</key>
-          <string>#d0d6ec</string>
+          <string>#dae5ec</string>
           <key>selection</key>
           <string>#dfa0f0</string>
           <key>findHighlight</key>
