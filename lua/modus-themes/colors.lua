@@ -87,7 +87,7 @@ M.modus_operandi = {
 
 	-- Special purpose
 	bg_completion = "#c0deff",
-	bg_hl_line = "#d0d6ec",
+	bg_hl_line = "#dae5ec",
 	bg_paren_match = "#5fcfff",
 	bg_paren_expression = "#efd3f5",
 	bg_char_0 = "#7feaff",
