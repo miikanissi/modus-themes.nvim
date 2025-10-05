@@ -1,0 +1,148 @@
+# Modus Themes for eza
+# Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/eza.lua
+colourful: true
+
+# base colors
+define: &bg_main "#fbf7f0"
+define: &bg_dim = "#efe9dd"
+define: &bg_alt = "#f0f0f0"
+define: &fg_main = "#000000"
+define: &fg_dim = "#595959"
+define: &fg_alt = "#193668"
+define: &border = "#9f9690"
+define: &border_highlight = "#5c3f3d"
+
+# foreground colors
+define: &red "#a60000"
+define: &red_warmer "#972500"
+define: &red_cooler "#a0132f"
+define: &red_faint "#7f0000"
+define: &green "#006800"
+define: &green_warmer "#316500"
+define: &green_cooler "#00663f"
+define: &green_faint "#2a5045"
+define: &yellow "#6f5500"
+define: &yellow_warmer "#884900"
+define: &yellow_cooler "#7a4f2f"
+define: &yellow_faint "#624416"
+define: &blue "#0031a9"
+define: &blue_warmer "#3548cf"
+define: &blue_cooler "#0000b0"
+define: &blue_faint "#003497"
+define: &magenta "#721045"
+define: &magenta_warmer "#8f0075"
+define: &magenta_cooler "#531ab6"
+define: &magenta_faint "#7c318f"
+define: &cyan "#005e8b"
+define: &cyan_warmer "#3f578f"
+define: &cyan_cooler "#005f5f"
+define: &cyan_faint "#005077"
+define: &rust "#8a290f"
+define: &gold "#80601f"
+define: &olive "#56692d"
+define: &slate "#2f3f83"
+define: &indigo "#4a3a8a"
+define: &maroon "#731c52"
+define: &pink "#7b435c"
+
+filekinds:
+  normal: {foreground: *fg_main}
+  directory: {foreground: *blue_warmer}
+  symlink: {foreground: *blue}
+  pipe: {foreground: *fg_dim}
+  block_device: {foreground: *magenta_cooler}
+  char_device: {foreground: *yellow_warmer}
+  socket: {foreground: *magenta}
+  special: {foreground: *pink}
+  executable: {foreground: *green}
+  mount_point: {foreground: *cyan}
+
+perms:
+  user_read: {foreground: *fg_dim}
+  user_write: {foreground: *red}
+  user_execute_file: {foreground: *green}
+  user_execute_other: {foreground: *green}
+  group_read: {foreground: *fg_dim}
+  group_write: {foreground: *red}
+  group_execute: {foreground: *green}
+  other_read: {foreground: *fg_dim}
+  other_write: {foreground: *red}
+  other_execute: {foreground: *green}
+  special_user_file: {foreground: *magenta_cooler}
+  special_other: {foreground: *red}
+  attribute: {foreground: *pink}
+
+size:
+  major: {foreground: *fg_dim}
+  minor: {foreground: *blue_warmer}
+  number_byte: {foreground: *pink}
+  number_kilo: {foreground: *rust}
+  number_mega: {foreground: *blue_warmer}
+  number_giga: {foreground: *magenta_cooler}
+  number_huge: {foreground: *magenta}
+  unit_byte: {foreground: *pink}
+  unit_kilo: {foreground: *rust}
+  unit_mega: {foreground: *blue_warmer}
+  unit_giga: {foreground: *magenta_cooler}
+  unit_huge: {foreground: *magenta}
+
+users:
+  user_you: {foreground: *yellow_warmer}
+  user_root: {foreground: *red}
+  user_other: {foreground: *magenta_cooler}
+  group_yours: {foreground: *pink}
+  group_other: {foreground: *fg_dim}
+  group_root: {foreground: *red}
+
+links:
+  normal: {foreground: *blue}
+  multi_link_file: {foreground: *cyan}
+
+git:
+  new: {foreground: *green}
+  modified: {foreground: *yellow_warmer}
+  deleted: {foreground: *red}
+  renamed: {foreground: *cyan}
+  typechange: {foreground: *magenta_cooler}
+  ignored: {foreground: *pink}
+  conflicted: {foreground: *magenta}
+
+git_repo:
+  branch_main: {foreground: *fg_dim}
+  branch_other: {foreground: *magenta_cooler}
+  git_clean: {foreground: *green}
+  git_dirty: {foreground: *red}
+
+security_context:
+  colon: {foreground: *fg_dim}
+  user: {foreground: *blue_warmer}
+  role: {foreground: *magenta_cooler}
+  typ: {foreground: *pink}
+  range: {foreground: *magenta_cooler}
+
+file_type:
+  image: {foreground: *yellow_warmer}
+  video: {foreground: *magenta}
+  music: {foreground: *blue_warmer}
+  lossless: {foreground: *cyan}
+  crypto: {foreground: *pink}
+  document: {foreground: *fg_dim}
+  compressed: {foreground: *magenta_cooler}
+  temp: {foreground: *yellow_warmer}
+  compiled: {foreground: *cyan}
+  build: {foreground: *pink}
+  source: {foreground: *green}
+
+punctuation: {foreground: *pink}
+date: {foreground: *cyan}
+inode: {foreground: *fg_dim}
+blocks: {foreground: *pink}
+header: {foreground: *fg_dim}
+octal: {foreground: *blue_warmer}
+flags: {foreground: *magenta_cooler}
+
+symlink_path: {foreground: *blue}
+control_char: {foreground: *cyan}
+broken_symlink: {foreground: *red}
+broken_path_overlay: {foreground: *pink}
+

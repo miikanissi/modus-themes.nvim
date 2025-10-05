@@ -160,6 +160,7 @@ require("modus-themes").setup({
 - [Bat](https://github.com/sharkdp/bat) ([bat](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/bat))
 - [Delta](https://github.com/dandavison/delta) ([delta](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/delta))
 - [Dunst](https://dunst-project.org/) ([dunst](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/dunst))
+- [eza](https://eza.rocks/) ([eza](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/eza))
 - [Fish](https://fishshell.com/docs/current/index.html) ([fish](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/fish))
 - [Foot](https://codeberg.org/dnkl/foot) ([foot](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/foot))
 - [Ghostty](https://ghostty.org/docs/features/theme) ([ghostty](https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/ghostty))
