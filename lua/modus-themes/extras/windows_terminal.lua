@@ -25,14 +25,14 @@ function M.generate(colors)
     "purple": "${magenta}",
     "cyan": "${cyan}",
     "white": "${fg_main}",
-    "brightBlack": "${bg_dim}",
+    "brightBlack": "${fg_dim}",
     "brightRed": "${red_intense}",
     "brightGreen": "${green_intense}",
     "brightYellow": "${yellow_intense}",
     "brightBlue": "${blue_intense}",
     "brightPurple": "${magenta_intense}",
     "brightCyan": "${cyan_intense}",
-    "brightWhite": "${fg_dim}"
+    "brightWhite": "${bg_dim}"
 }
 ]],
 		colors
