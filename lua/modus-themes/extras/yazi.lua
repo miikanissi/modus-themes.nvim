@@ -11,7 +11,7 @@ function M.generate(colors)
 
 [manager]
 # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
-# highlight = "path/to/tmTheme"
+# syntect_theme = "path/to/tmTheme"
 
 cwd = { fg = "${cyan}", italic = true }
 
