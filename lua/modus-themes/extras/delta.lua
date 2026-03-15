@@ -9,15 +9,13 @@ function M.generate(colors)
 ; Modus Themes for Delta
 ; Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/delta.lua
 [delta]
-  minus-style                   = syntax "${fg_removed}"
-  minus-non-emph-style          = syntax "${fg_removed}"
-  minus-emph-style              = syntax "${fg_removed}"
-  minus-empty-line-marker-style = syntax "${fg_removed}"
+  minus-style                   = syntax "${bg_removed}"
+  minus-non-emph-style          = syntax "${bg_removed_faint}"
+  minus-emph-style              = syntax "${bg_removed_refine}"
   line-numbers-minus-style      = "${fg_removed}"
-  plus-style                    = syntax "${fg_added}"
-  plus-non-emph-style           = syntax "${fg_added}"
-  plus-emph-style               = syntax "${fg_added}"
-  plus-empty-line-marker-style  = syntax "${fg_added}"
+  plus-style                    = syntax "${bg_added}"
+  plus-non-emph-style           = syntax "${bg_added_faint}"
+  plus-emph-style               = syntax "${bg_added_refine}"
   line-numbers-plus-style       = "${fg_added}"
   line-numbers-zero-style       = "${fg_dim}"
 ]],
