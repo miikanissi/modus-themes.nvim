@@ -101,7 +101,11 @@ require("modus-themes").setup({
 	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
 	-- `auto` will automatically set style based on background set with vim.o.background
 	style = "auto",
-	variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+	-- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+	variants = {
+		modus_operandi = "default", -- Set variant for `modus_operandi` style
+		modus_vivendi = "default", -- Set variant for `modus_vivendi` style
+	},
 	transparent = false, -- Transparent background (as supported by the terminal)
 	dim_inactive = false, -- "non-current" windows are dimmed
 	hide_inactive_statusline = false, -- Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
@@ -136,7 +140,10 @@ require("modus-themes").setup({
 ```lua
 require("modus-themes").setup({
 	style = "modus_operandi", -- Always use modus_operandi regardless of `vim.o.background`
-	variant = "deuteranopia", -- Use deuteranopia variant
+	variants = {
+		modus_operandi = "deuteranopia", -- Use deuteranopia variant for `modus_operandi`
+		modus_vivendi = "tinted", -- Use tinted variant for `modus_vivendi`
+	},
 	styles = {
 		functions = { italic = true }, -- Enable italics for functions
 	},
