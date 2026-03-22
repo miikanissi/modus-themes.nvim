@@ -23,25 +23,25 @@ foreground   = '${fg_main}'
 
 # Normal colors
 [colors.normal]
-black     = '${bg_main}'
-red       = '${red}'
-green     = '${green}'
-yellow    = '${yellow}'
-blue      = '${blue}'
-magenta   = '${magenta}'
-cyan      = '${cyan}'
-white     = '${fg_main}'
+black     = '${bg_term_black}'
+red       = '${bg_term_red}'
+green     = '${bg_term_green}'
+yellow    = '${bg_term_yellow}'
+blue      = '${bg_term_blue}'
+magenta   = '${bg_term_magenta}'
+cyan      = '${bg_term_cyan}'
+white     = '${bg_term_white}'
 
 # Bright colors
 [colors.bright]
-black     = '${bg_dim}'
-red       = '${red_intense}'
-green     = '${green_intense}'
-yellow    = '${yellow_intense}'
-blue      = '${blue_intense}'
-magenta   = '${magenta_intense}'
-cyan      = '${cyan_intense}'
-white     = '${fg_dim}'
+black     = '${bg_term_black_bright}'
+red       = '${bg_term_red_bright}'
+green     = '${bg_term_green_bright}'
+yellow    = '${bg_term_yellow_bright}'
+blue      = '${bg_term_blue_bright}'
+magenta   = '${bg_term_magenta_bright}'
+cyan      = '${bg_term_cyan_bright}'
+white     = '${bg_term_white_bright}'
 
 [[colors.indexed_colors]]
 index     = 16

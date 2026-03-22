@@ -130,6 +130,16 @@ M.modus_operandi = {
 	fg_removed_intense = "#aa2222",
 	bg_diff_context = "#f3f3f3",
 
+	-- terminal
+	bg_term_black = "#000000",
+	fg_term_black = "#000000",
+	bg_term_black_bright = "#595959",
+	fg_term_black_bright = "#595959",
+	bg_term_white = "#a6a6a6",
+	fg_term_white = "#a6a6a6",
+	bg_term_white_bright = "#ffffff",
+	fg_term_white_bright = "#ffffff",
+
 	-- Tinted variant
 	tinted_bg_main = "#fbf7f0",
 	tinted_bg_dim = "#efe9dd",
@@ -345,6 +355,16 @@ M.modus_vivendi = {
 	fg_removed_intense = "#ff9095",
 	bg_diff_context = "#1a1a1a",
 
+	-- terminal
+	bg_term_black = "#000000",
+	fg_term_black = "#000000",
+	bg_term_black_bright = "#595959",
+	fg_term_black_bright = "#595959",
+	bg_term_white = "#a6a6a6",
+	fg_term_white = "#a6a6a6",
+	bg_term_white_bright = "#ffffff",
+	fg_term_white_bright = "#ffffff",
+
 	-- Tinted Variant
 	tinted_bg_main = "#0d0e1c",
 	tinted_bg_dim = "#1d2235",
@@ -481,6 +501,32 @@ function M.setup(opts)
 	colors.string = colors.blue_warmer
 	colors.type = colors.cyan_cooler
 
+	-- terminal
+	colors.bg_term_red = colors.red
+	colors.fg_term_red = colors.red
+	colors.bg_term_red_bright = colors.red_warmer
+	colors.fg_term_red_bright = colors.red_warmer
+	colors.bg_term_green = colors.green
+	colors.fg_term_green = colors.green
+	colors.bg_term_green_bright = colors.green_cooler
+	colors.fg_term_green_bright = colors.green_cooler
+	colors.bg_term_yellow = colors.yellow
+	colors.fg_term_yellow = colors.yellow
+	colors.bg_term_yellow_bright = colors.yellow_warmer
+	colors.fg_term_yellow_bright = colors.yellow_warmer
+	colors.bg_term_blue = colors.blue
+	colors.fg_term_blue = colors.blue
+	colors.bg_term_blue_bright = colors.blue_warmer
+	colors.fg_term_blue_bright = colors.blue_warmer
+	colors.bg_term_magenta = colors.magenta
+	colors.fg_term_magenta = colors.magenta
+	colors.bg_term_magenta_bright = colors.magenta_warmer
+	colors.fg_term_magenta_bright = colors.magenta_warmer
+	colors.bg_term_cyan = colors.cyan
+	colors.fg_term_cyan = colors.cyan
+	colors.bg_term_cyan_bright = colors.cyan_cooler
+	colors.fg_term_cyan_bright = colors.cyan_cooler
+
 	if style == "modus_operandi" then
 		colors.docstring = colors.green_faint
 	end
@@ -570,6 +616,11 @@ function M.setup(opts)
 		colors.fg_removed = colors.deuteranopia_fg_removed
 		colors.fg_removed_intense = colors.deuteranopia_fg_removed_intense
 
+		colors.bg_term_yellow = colors.deuteranopia_yellow
+		colors.fg_term_yellow = colors.deuteranopia_yellow
+		colors.bg_term_yellow_bright = colors.deuteranopia_yellow_warmer
+		colors.fg_term_yellow_bright = colors.deuteranopia_yellow_warmer
+
 		colors.error = colors.deuteranopia_yellow_warmer
 		colors.warning = colors.deuteranopia_yellow
 		colors.info = colors.blue
@@ -619,6 +670,13 @@ function M.setup(opts)
 		colors.bg_changed_fringe = colors.tritanopia_bg_changed_fringe
 		colors.fg_changed = colors.tritanopia_fg_changed
 		colors.fg_changed_intense = colors.tritanopia_fg_changed_intense
+
+		colors.bg_term_red_bright = colors.tritanopia_red_warmer
+		colors.fg_term_red_bright = colors.tritanopia_red_warmer
+		colors.bg_term_yellow = colors.tritanopia_yellow
+		colors.fg_term_yellow = colors.tritanopia_yellow
+		colors.bg_term_yellow_bright = colors.tritanopia_yellow_warmer
+		colors.fg_term_yellow_bright = colors.tritanopia_yellow_warmer
 
 		colors.error = colors.red_warmer
 		colors.warning = colors.magenta

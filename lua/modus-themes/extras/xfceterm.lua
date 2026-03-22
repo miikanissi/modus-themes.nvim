@@ -14,7 +14,7 @@ ColorForeground=${fg_main}
 ColorSelectionBackground=${visual}
 ColorSelection=${fg_main}
 
-ColorPalette=${bg_main};${red};${green};${yellow};${blue};${magenta};${cyan};${fg_main};${bg_dim};${red_intense};${green_intense};${yellow_intense};${blue_intense};${magenta_intense};${cyan_intense};${fg_dim}
+ColorPalette=${bg_term_black};${bg_term_red};${bg_term_green};${bg_term_yellow};${bg_term_blue};${bg_term_magenta};${bg_term_cyan};${bg_term_white};${bg_term_black_bright};${bg_term_red_bright};${bg_term_green_bright};${bg_term_yellow_bright};${bg_term_blue_bright};${bg_term_magenta_bright};${bg_term_cyan_bright};${bg_term_white_bright}
 ]],
 		colors
 	)

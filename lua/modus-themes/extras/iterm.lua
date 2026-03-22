@@ -31,208 +31,208 @@ function M.generate(colors)
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${bg_main.b}</real>
+		<real>${bg_term_black.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${bg_main.g}</real>
+		<real>${bg_term_black.g}</real>
 		<key>Red Component</key>
-		<real>${bg_main.r}</real>
+		<real>${bg_term_black.r}</real>
 	</dict>
 	<key>Ansi 1 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${red.b}</real>
+		<real>${bg_term_red.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${red.g}</real>
+		<real>${bg_term_red.g}</real>
 		<key>Red Component</key>
-		<real>${red.r}</real>
+		<real>${bg_term_red.r}</real>
 	</dict>
 	<key>Ansi 10 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${green.b}</real>
+		<real>${bg_term_green_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${green.g}</real>
+		<real>${bg_term_green_bright.g}</real>
 		<key>Red Component</key>
-		<real>${green.r}</real>
+		<real>${bg_term_green_bright.r}</real>
 	</dict>
 	<key>Ansi 11 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${yellow.b}</real>
+		<real>${bg_term_yellow_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${yellow.g}</real>
+		<real>${bg_term_yellow_bright.g}</real>
 		<key>Red Component</key>
-		<real>${yellow.r}</real>
+		<real>${bg_term_yellow_bright.r}</real>
 	</dict>
 	<key>Ansi 12 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${blue.b}</real>
+		<real>${bg_term_blue_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${blue.g}</real>
+		<real>${bg_term_blue_bright.g}</real>
 		<key>Red Component</key>
-		<real>${blue.r}</real>
+		<real>${bg_term_blue_bright.r}</real>
 	</dict>
 	<key>Ansi 13 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${magenta.b}</real>
+		<real>${bg_term_magenta_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${magenta.g}</real>
+		<real>${bg_term_magenta_bright.g}</real>
 		<key>Red Component</key>
-		<real>${magenta.r}</real>
+		<real>${bg_term_magenta_bright.r}</real>
 	</dict>
 	<key>Ansi 14 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${cyan.b}</real>
+		<real>${bg_term_cyan_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${cyan.g}</real>
+		<real>${bg_term_cyan_bright.g}</real>
 		<key>Red Component</key>
-		<real>${cyan.r}</real>
+		<real>${bg_term_cyan_bright.r}</real>
 	</dict>
 	<key>Ansi 15 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${fg_dim.b}</real>
+		<real>${bg_term_white_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${fg_dim.g}</real>
+		<real>${bg_term_white_bright.g}</real>
 		<key>Red Component</key>
-		<real>${fg_dim.r}</real>
+		<real>${bg_term_white_bright.r}</real>
 	</dict>
 	<key>Ansi 2 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${green.b}</real>
+		<real>${bg_term_green.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${green.g}</real>
+		<real>${bg_term_green.g}</real>
 		<key>Red Component</key>
-		<real>${green.r}</real>
+		<real>${bg_term_green.r}</real>
 	</dict>
 	<key>Ansi 3 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${yellow.b}</real>
+		<real>${bg_term_yellow.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${yellow.g}</real>
+		<real>${bg_term_yellow.g}</real>
 		<key>Red Component</key>
-		<real>${yellow.r}</real>
+		<real>${bg_term_yellow.r}</real>
 	</dict>
 	<key>Ansi 4 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${blue.b}</real>
+		<real>${bg_term_blue.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${blue.g}</real>
+		<real>${bg_term_blue.g}</real>
 		<key>Red Component</key>
-		<real>${blue.r}</real>
+		<real>${bg_term_blue.r}</real>
 	</dict>
 	<key>Ansi 5 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${magenta.b}</real>
+		<real>${bg_term_magenta.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${magenta.g}</real>
+		<real>${bg_term_magenta.g}</real>
 		<key>Red Component</key>
-		<real>${magenta.r}</real>
+		<real>${bg_term_magenta.r}</real>
 	</dict>
 	<key>Ansi 6 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${cyan.b}</real>
+		<real>${bg_term_cyan.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${cyan.g}</real>
+		<real>${bg_term_cyan.g}</real>
 		<key>Red Component</key>
-		<real>${cyan.r}</real>
+		<real>${bg_term_cyan.r}</real>
 	</dict>
 	<key>Ansi 7 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${fg_main.b}</real>
+		<real>${bg_term_white.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${fg_main.g}</real>
+		<real>${bg_term_white.g}</real>
 		<key>Red Component</key>
-		<real>${fg_main.r}</real>
+		<real>${bg_term_white.r}</real>
 	</dict>
 	<key>Ansi 8 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${bg_dim.b}</real>
+		<real>${bg_term_black_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${bg_dim.g}</real>
+		<real>${bg_term_black_bright.g}</real>
 		<key>Red Component</key>
-		<real>${bg_dim.r}</real>
+		<real>${bg_term_black_bright.r}</real>
 	</dict>
 	<key>Ansi 9 Color</key>
 	<dict>
 		<key>Alpha Component</key>
 		<real>1</real>
 		<key>Blue Component</key>
-		<real>${red.b}</real>
+		<real>${bg_term_red_bright.b}</real>
 		<key>Color Space</key>
 		<string>sRGB</string>
 		<key>Green Component</key>
-		<real>${red.g}</real>
+		<real>${bg_term_red_bright.g}</real>
 		<key>Red Component</key>
-		<real>${red.r}</real>
+		<real>${bg_term_red_bright.r}</real>
 	</dict>
 	<key>Background Color</key>
 	<dict>
