@@ -103,34 +103,34 @@ function M.setup()
 
 		-- Syntax
 		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment.
-		String = { fg = c.blue_warmer }, -- String constant (e.g. `"this is a string"`).
-		Character = { fg = c.blue_warmer }, -- Character constant (e.g. `c`, `\n`).
+		String = { fg = c.string }, -- String constant (e.g. `"this is a string"`).
+		Character = { fg = c.string }, -- Character constant (e.g. `c`, `\n`).
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
 		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement.
 		Conditional = { fg = c.magenta_cooler }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
 		Repeat = { fg = c.magenta_cooler }, -- `for`, `do`, `while`, etc.
 		Label = { fg = c.cyan }, -- `case`, `default`, etc.
-		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword.
+		Keyword = { fg = c.keyword, style = options.styles.keywords }, -- Any other keyword.
 		Exception = { fg = c.magenta_cooler }, -- `try`, `catch`, `throw`, etc.
 		StorageClass = { fg = c.magenta_cooler }, -- `static`, `register`, `volatile`, etc.
 		Structure = { fg = c.magenta_cooler }, -- `struct`, `union`, `enum`, etc.
 		Constant = { fg = c.fg_main }, -- (preferred) any constant.
-		Function = { fg = c.magenta, style = options.styles.functions }, -- Function names.
-		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name.
-		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
-		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
-		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
-		Macro = { fg = c.magenta }, -- Same as Define.
-		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
-		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
-		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
+		Function = { fg = c.fn, style = options.styles.functions }, -- Function names.
+		Identifier = { fg = c.identifier, style = options.styles.variables }, -- (preferred) any variable name.
+		PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor.
+		Include = { fg = c.preproc }, -- preprocessor `#include`.
+		Define = { fg = c.preproc }, -- preprocessor `#define`.
+		Macro = { fg = c.fn }, -- Same as Define.
+		PreCondit = { fg = c.preproc }, -- preprocessor `#if`, `#else`, `#endif`, etc.
+		Todo = { fg = c.fn, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
+		Type = { fg = c.type }, -- (preferred) `int`, `long`, `char`, etc.
 		TypeDef = { fg = c.cyan_warmer }, -- A typedef.
 		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
-		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
+		Tag = { fg = c.fn }, -- You can use CTRL-] on this.
 		Delimiter = { fg = c.fg_main }, -- Character that needs attention (e.g. `.`).
-		Special = { fg = c.magenta_warmer },
+		Special = { fg = c.builtin },
 		SpecialChar = { fg = c.cyan_faint },
 		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out (e.g. URIs).
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct.
@@ -213,7 +213,7 @@ function M.setup()
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
-		["@string.documentation"] = { fg = c.green_faint, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
+		["@string.documentation"] = { fg = c.docsting, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
 		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
 		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
 		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
@@ -340,7 +340,7 @@ function M.setup()
 		["@lsp.type.escapeSequence"] = { link = "@string.escape" },
 		["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
 		["@lsp.type.generic"] = { link = "@variable" },
-		["@lsp.type.interface"] = { fg = c.blue_warmer },
+		["@lsp.type.interface"] = { fg = c.string },
 		["@lsp.type.keyword"] = { link = "@keyword" },
 		["@lsp.type.lifetime"] = { link = "@keyword.storage" },
 		["@lsp.type.namespace"] = { link = "@module" },
