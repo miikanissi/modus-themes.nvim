@@ -244,7 +244,7 @@ local highlights = {
     link = "Special"
   },
   ["@constant.macro"] = {
-    link = "Define"
+    link = "Constant"
   },
   ["@constructor"] = {
     fg = "#7a4f2f"
@@ -322,7 +322,7 @@ local highlights = {
     link = "@keyword"
   },
   ["@keyword.type"] = {
-    link = "@type"
+    link = "@keyword"
   },
   ["@label"] = {
     link = "Label"
@@ -1597,7 +1597,7 @@ local highlights = {
     link = "Visual"
   },
   Macro = {
-    fg = "#a0132f"
+    fg = "#721045"
   },
   MatchParen = {
     bg = "#7fdfcf",
@@ -2431,7 +2431,7 @@ local highlights = {
     bg = "#dfa0f0"
   },
   Special = {
-    link = "Type"
+    fg = "#8f0075"
   },
   SpecialChar = {
     fg = "#005077"
