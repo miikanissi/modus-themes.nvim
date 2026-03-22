@@ -1,14 +1,12 @@
 ; Modus Themes for Delta
 ; Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/delta.lua
 [delta]
-  minus-style                   = syntax "#d4d48f"
-  minus-non-emph-style          = syntax "#d4d48f"
-  minus-emph-style              = syntax "#d4d48f"
-  minus-empty-line-marker-style = syntax "#d4d48f"
+  minus-style                   = syntax "#3d3d00"
+  minus-non-emph-style          = syntax "#281f00"
+  minus-emph-style              = syntax "#555500"
   line-numbers-minus-style      = "#d4d48f"
-  plus-style                    = syntax "#c4d5ff"
-  plus-non-emph-style           = syntax "#c4d5ff"
-  plus-emph-style               = syntax "#c4d5ff"
-  plus-empty-line-marker-style  = syntax "#c4d5ff"
+  plus-style                    = syntax "#003066"
+  plus-non-emph-style           = syntax "#001a4f"
+  plus-emph-style               = syntax "#0f4a77"
   line-numbers-plus-style       = "#c4d5ff"
   line-numbers-zero-style       = "#989898"
