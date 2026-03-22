@@ -101,6 +101,8 @@ require("modus-themes").setup({
 	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
 	-- `auto` will automatically set style based on background set with vim.o.background
 	style = "auto",
+
+	variant = "default", -- DEPRECATED: Use `variants` instead
 	-- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
 	variants = {
 		modus_operandi = "default", -- Set variant for `modus_operandi` style
