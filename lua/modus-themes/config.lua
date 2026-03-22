@@ -7,6 +7,8 @@ local defaults = {
 	-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
 	-- `auto` will automatically set style based on background set with vim.o.background
 	style = "auto",
+
+	variant = "default", -- DEPRECATED: Use `variants` instead
 	-- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
 	variants = {
 		modus_operandi = "default", -- Set variant for `modus_operandi` style
@@ -42,10 +44,25 @@ local defaults = {
 
 ---@type Config
 M.options = {}
+local user_options = {}
 
 ---@param options Config|nil
 function M.setup(options)
-	M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
+	user_options = options or {}
+	M.options = vim.tbl_deep_extend("force", {}, defaults, user_options)
+	if user_options and user_options.variant ~= nil then
+		vim.schedule(function()
+			vim.notify("[modus-themes] 'variant' option is deprecated, use 'variants' instead.", vim.log.levels.WARN)
+		end)
+	end
+end
+
+function M.user_supplied_variant()
+	return user_options and user_options.variant ~= nil
+end
+
+function M.user_supplied_variants()
+	return user_options and user_options.variants ~= nil
 end
 
 ---@param options Config|nil
