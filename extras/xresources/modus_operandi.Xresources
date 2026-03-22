@@ -8,21 +8,21 @@
 *accent_darker: #0031a9
 *accent_dark: #0000ff
 
-*color0: #ffffff
+*color0: #000000
 *color1: #a60000
 *color2: #006800
 *color3: #6f5500
 *color4: #0031a9
 *color5: #721045
 *color6: #005e8b
-*color7: #000000
+*color7: #a6a6a6
 
-*color8: #f2f2f2
-*color9: #d00000
-*color10: #008900
-*color11: #808000
-*color12: #0000ff
-*color13: #dd22dd
-*color14: #008899
-*color15: #595959
+*color8: #595959
+*color9: #972500
+*color10: #00663f
+*color11: #884900
+*color12: #3548cf
+*color13: #8f0075
+*color14: #005f5f
+*color15: #ffffff
 

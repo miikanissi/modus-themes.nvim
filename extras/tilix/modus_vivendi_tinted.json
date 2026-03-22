@@ -5,21 +5,21 @@
     "foreground-color": "#ffffff",
     "background-color": "#0d0e1c",
     "palette": [
-        "#0d0e1c",
+        "#000000",
         "#ff5f59",
         "#44bc44",
         "#d0bc00",
         "#2fafff",
         "#feacd0",
         "#00d3d0",
-        "#ffffff",
-        "#1d2235",
-        "#ff5f5f",
-        "#44df44",
-        "#efef00",
-        "#338fff",
-        "#ff66ff",
-        "#00eff0",
-        "#989898"
+        "#a6a6a6",
+        "#595959",
+        "#ff6b55",
+        "#00c06f",
+        "#fec43f",
+        "#79a8ff",
+        "#f78fe7",
+        "#6ae4b9",
+        "#ffffff"
     ]
 }

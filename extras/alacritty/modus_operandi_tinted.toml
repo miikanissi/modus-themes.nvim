@@ -8,25 +8,25 @@ foreground   = '0x000000'
 
 # Normal colors
 [colors.normal]
-black     = '0xfbf7f0'
+black     = '0x000000'
 red       = '0xa60000'
 green     = '0x006800'
 yellow    = '0x6f5500'
 blue      = '0x0031a9'
 magenta   = '0x721045'
 cyan      = '0x005e8b'
-white     = '0x000000'
+white     = '0xa6a6a6'
 
 # Bright colors
 [colors.bright]
-black     = '0xefe9dd'
-red       = '0xd00000'
-green     = '0x008900'
-yellow    = '0x808000'
-blue      = '0x0000ff'
-magenta   = '0xdd22dd'
-cyan      = '0x008899'
-white     = '0x595959'
+black     = '0x595959'
+red       = '0x972500'
+green     = '0x00663f'
+yellow    = '0x884900'
+blue      = '0x3548cf'
+magenta   = '0x8f0075'
+cyan      = '0x005f5f'
+white     = '0xffffff'
 
 [[colors.indexed_colors]]
 index     = 16
