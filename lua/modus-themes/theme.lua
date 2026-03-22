@@ -850,10 +850,10 @@ function M.setup()
 		NoiceCompletionItemKindValue = { link = "@string" },
 
 		-- indent-blankline.nvim
-		IndentBlanklineChar = { fg = c.fg_dim, nocombine = true },
-		IndentBlanklineContextChar = { fg = c.magenta_cooler, nocombine = true },
-		IblIndent = { fg = c.fg_dim, nocombine = true },
-		IblScope = { fg = c.magenta_cooler, nocombine = true },
+		IndentBlanklineChar = { fg = c.bg_dim, nocombine = true },
+		IndentBlanklineContextChar = { fg = c.fg_dim, nocombine = true },
+		IblIndent = { fg = c.bg_dim, nocombine = true },
+		IblScope = { fg = c.fg_dim, nocombine = true },
 
 		-- render-markdown.nvim
 		RenderMarkdownCodeInline = { link = "markdownCode" },
@@ -927,7 +927,7 @@ function M.setup()
 		MiniCompletionActiveParameter = { underline = true },
 		MiniCursorword = { bg = c.fg_dim },
 		MiniCursorwordCurrent = { bg = c.fg_dim },
-		MiniIndentscopeSymbol = { fg = c.blue_warmer, nocombine = true },
+		MiniIndentscopeSymbol = { fg = c.fg_dim, nocombine = true },
 		MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
 		MiniJump = { bg = c.magenta_cooler, fg = c.fg_main },
 		MiniJump2dSpot = { fg = c.magenta_cooler, bold = true, nocombine = true },
