@@ -16,23 +16,23 @@ function M.generate(colors)
 *accent_darker: ${accent_darker}
 *accent_dark: ${accent_dark}
 
-*color0: ${bg_main}
-*color1: ${red}
-*color2: ${green}
-*color3: ${yellow}
-*color4: ${blue}
-*color5: ${magenta}
-*color6: ${cyan}
-*color7: ${fg_main}
+*color0: ${bg_term_black}
+*color1: ${bg_term_red}
+*color2: ${bg_term_green}
+*color3: ${bg_term_yellow}
+*color4: ${bg_term_blue}
+*color5: ${bg_term_magenta}
+*color6: ${bg_term_cyan}
+*color7: ${bg_term_white}
 
-*color8: ${bg_dim}
-*color9: ${red_intense}
-*color10: ${green_intense}
-*color11: ${yellow_intense}
-*color12: ${blue_intense}
-*color13: ${magenta_intense}
-*color14: ${cyan_intense}
-*color15: ${fg_dim}
+*color8: ${bg_term_black_bright}
+*color9: ${bg_term_red_bright}
+*color10: ${bg_term_green_bright}
+*color11: ${bg_term_yellow_bright}
+*color12: ${bg_term_blue_bright}
+*color13: ${bg_term_magenta_bright}
+*color14: ${bg_term_cyan_bright}
+*color15: ${bg_term_white_bright}
 
 ]],
 		colors
