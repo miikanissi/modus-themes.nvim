@@ -61,6 +61,7 @@ local colors = {
   blue_warmer = "#79a8ff",
   border = "#646464",
   border_highlight = "#C4C4C4",
+  builtin = "#cabf00",
   comment = "#d8af7a",
   cursor = "#efef00",
   cyan = "#00d3d0",
@@ -91,6 +92,7 @@ local colors = {
   deuteranopia_yellow = "#cabf00",
   deuteranopia_yellow_cooler = "#d8af7a",
   deuteranopia_yellow_warmer = "#ffa00f",
+  docstring = "#9ac8e0",
   error = "#ffa00f",
   fg_active = "#f4f4f4",
   fg_added = "#c4d5ff",
@@ -107,6 +109,7 @@ local colors = {
   fg_status_line_active = "#f0f0f0",
   fg_status_line_inactive = "#969696",
   fg_tab_other = "#f7f7f7",
+  fn = "#ffa00f",
   gold = "#c0965b",
   green = "#44bc44",
   green_cooler = "#00c06f",
@@ -114,8 +117,10 @@ local colors = {
   green_intense = "#44df44",
   green_warmer = "#70b900",
   hint = "#9ac8e0",
+  identifier = "#00d3d0",
   indigo = "#9099d9",
   info = "#2fafff",
+  keyword = "#00bcff",
   magenta = "#feacd0",
   magenta_cooler = "#b6a0ff",
   magenta_faint = "#caa6df",
@@ -126,6 +131,7 @@ local colors = {
   ok = "#00c06f",
   olive = "#9cbd6f",
   pink = "#d09dc0",
+  preproc = "#b6a0ff",
   red = "#ff5f59",
   red_cooler = "#ff7f9f",
   red_faint = "#ff9580",
@@ -133,6 +139,7 @@ local colors = {
   red_warmer = "#ff6b55",
   rust = "#db7b5f",
   slate = "#76afbf",
+  string = "#79a8ff",
   success = "#c4d5ff",
   tinted_bg_active = "#4a4f69",
   tinted_bg_added = "#003a2f",
@@ -194,6 +201,7 @@ local colors = {
   tritanopia_yellow = "#cabf00",
   tritanopia_yellow_cooler = "#d8af7a",
   tritanopia_yellow_warmer = "#ffa00f",
+  type = "#6ae4b9",
   visual = "#7030af",
   warning = "#cabf00",
   yellow = "#cabf00",
@@ -556,7 +564,6 @@ local highlights = {
     link = "String"
   },
   ["@string.documentation"] = {
-    fg = "#88ca9f",
     style = {
       italic = true
     }
@@ -1133,7 +1140,7 @@ local highlights = {
     fg = "#00d3d0"
   },
   Define = {
-    fg = "#ff7f9f"
+    fg = "#b6a0ff"
   },
   DefinitionCount = {
     fg = "#b6a0ff"
@@ -1277,7 +1284,7 @@ local highlights = {
     fg = "#88ca9f"
   },
   Function = {
-    fg = "#feacd0",
+    fg = "#ffa00f",
     style = {}
   },
   FzfLuaBorder = {
@@ -1442,7 +1449,7 @@ local highlights = {
     fg = "#ffffff"
   },
   Include = {
-    fg = "#ff7f9f"
+    fg = "#b6a0ff"
   },
   IndentBlanklineChar = {
     fg = "#1e1e1e",
@@ -1453,7 +1460,7 @@ local highlights = {
     nocombine = true
   },
   Keyword = {
-    fg = "#b6a0ff",
+    fg = "#00bcff",
     style = {
       italic = true
     }
@@ -1597,7 +1604,7 @@ local highlights = {
     link = "Visual"
   },
   Macro = {
-    fg = "#feacd0"
+    fg = "#ffa00f"
   },
   MatchParen = {
     bg = "#2f7f9f",
@@ -2254,10 +2261,10 @@ local highlights = {
     link = "Cursor"
   },
   PreCondit = {
-    fg = "#ff7f9f"
+    fg = "#b6a0ff"
   },
   PreProc = {
-    fg = "#ff7f9f"
+    fg = "#b6a0ff"
   },
   Question = {
     fg = "#2fafff"
@@ -2431,7 +2438,7 @@ local highlights = {
     bg = "#7030af"
   },
   Special = {
-    fg = "#f78fe7"
+    fg = "#cabf00"
   },
   SpecialChar = {
     fg = "#9ac8e0"
@@ -2514,7 +2521,7 @@ local highlights = {
     fg = "#ffffff"
   },
   Tag = {
-    fg = "#feacd0"
+    fg = "#ffa00f"
   },
   TargetWord = {
     fg = "#00d3d0"
@@ -2550,7 +2557,7 @@ local highlights = {
   },
   Todo = {
     bold = true,
-    fg = "#feacd0"
+    fg = "#ffa00f"
   },
   TroubleCount = {
     bg = "#1e1e1e",

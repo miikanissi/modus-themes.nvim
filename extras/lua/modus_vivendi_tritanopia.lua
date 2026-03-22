@@ -61,6 +61,7 @@ local colors = {
   blue_warmer = "#79a8ff",
   border = "#646464",
   border_highlight = "#C4C4C4",
+  builtin = "#feacd0",
   comment = "#ff9070",
   cursor = "#ff5f5f",
   cyan = "#00d3d0",
@@ -91,6 +92,7 @@ local colors = {
   deuteranopia_yellow = "#cabf00",
   deuteranopia_yellow_cooler = "#d8af7a",
   deuteranopia_yellow_warmer = "#ffa00f",
+  docstring = "#c6daff",
   error = "#ff6740",
   fg_active = "#f4f4f4",
   fg_added = "#9fdfdf",
@@ -107,6 +109,7 @@ local colors = {
   fg_status_line_active = "#f0f0f0",
   fg_status_line_inactive = "#969696",
   fg_tab_other = "#f7f7f7",
+  fn = "#4ae2ff",
   gold = "#c0965b",
   green = "#44bc44",
   green_cooler = "#00c06f",
@@ -114,8 +117,10 @@ local colors = {
   green_intense = "#44df44",
   green_warmer = "#70b900",
   hint = "#9ac8e0",
+  identifier = "#6ae4b9",
   indigo = "#9099d9",
   info = "#00d3d0",
+  keyword = "#ff6f9f",
   magenta = "#feacd0",
   magenta_cooler = "#b6a0ff",
   magenta_faint = "#caa6df",
@@ -126,6 +131,7 @@ local colors = {
   ok = "#00c06f",
   olive = "#9cbd6f",
   pink = "#d09dc0",
+  preproc = "#ff6740",
   red = "#ff5f59",
   red_cooler = "#ff6f9f",
   red_faint = "#ff9070",
@@ -133,6 +139,7 @@ local colors = {
   red_warmer = "#ff6740",
   rust = "#db7b5f",
   slate = "#76afbf",
+  string = "#00d3d0",
   success = "#9fdfdf",
   tinted_bg_active = "#4a4f69",
   tinted_bg_added = "#003a2f",
@@ -194,6 +201,7 @@ local colors = {
   tritanopia_yellow = "#cabf00",
   tritanopia_yellow_cooler = "#d8af7a",
   tritanopia_yellow_warmer = "#ffa00f",
+  type = "#79a8ff",
   visual = "#7030af",
   warning = "#feacd0",
   yellow = "#cabf00",
@@ -358,7 +366,7 @@ local highlights = {
     link = "@variable"
   },
   ["@lsp.type.interface"] = {
-    fg = "#79a8ff"
+    fg = "#00d3d0"
   },
   ["@lsp.type.keyword"] = {
     link = "@keyword"
@@ -556,7 +564,6 @@ local highlights = {
     link = "String"
   },
   ["@string.documentation"] = {
-    fg = "#88ca9f",
     style = {
       italic = true
     }
@@ -914,7 +921,7 @@ local highlights = {
     fg = "#feacd0"
   },
   Character = {
-    fg = "#79a8ff"
+    fg = "#00d3d0"
   },
   CmpDocumentation = {
     link = "Normal"
@@ -1133,7 +1140,7 @@ local highlights = {
     fg = "#00d3d0"
   },
   Define = {
-    fg = "#ff6f9f"
+    fg = "#ff6740"
   },
   DefinitionCount = {
     fg = "#b6a0ff"
@@ -1277,7 +1284,7 @@ local highlights = {
     fg = "#88ca9f"
   },
   Function = {
-    fg = "#feacd0",
+    fg = "#4ae2ff",
     style = {}
   },
   FzfLuaBorder = {
@@ -1425,7 +1432,7 @@ local highlights = {
     nocombine = true
   },
   Identifier = {
-    fg = "#00d3d0",
+    fg = "#6ae4b9",
     style = {}
   },
   IlluminatedWordRead = {
@@ -1442,7 +1449,7 @@ local highlights = {
     fg = "#ffffff"
   },
   Include = {
-    fg = "#ff6f9f"
+    fg = "#ff6740"
   },
   IndentBlanklineChar = {
     fg = "#1e1e1e",
@@ -1453,7 +1460,7 @@ local highlights = {
     nocombine = true
   },
   Keyword = {
-    fg = "#b6a0ff",
+    fg = "#ff6f9f",
     style = {
       italic = true
     }
@@ -1597,7 +1604,7 @@ local highlights = {
     link = "Visual"
   },
   Macro = {
-    fg = "#feacd0"
+    fg = "#4ae2ff"
   },
   MatchParen = {
     bg = "#2f7f9f",
@@ -2254,10 +2261,10 @@ local highlights = {
     link = "Cursor"
   },
   PreCondit = {
-    fg = "#ff6f9f"
+    fg = "#ff6740"
   },
   PreProc = {
-    fg = "#ff6f9f"
+    fg = "#ff6740"
   },
   Question = {
     fg = "#2fafff"
@@ -2431,7 +2438,7 @@ local highlights = {
     bg = "#7030af"
   },
   Special = {
-    fg = "#f78fe7"
+    fg = "#feacd0"
   },
   SpecialChar = {
     fg = "#7fdbdf"
@@ -2470,7 +2477,7 @@ local highlights = {
     fg = "#b6a0ff"
   },
   String = {
-    fg = "#79a8ff"
+    fg = "#00d3d0"
   },
   Structure = {
     fg = "#b6a0ff"
@@ -2514,7 +2521,7 @@ local highlights = {
     fg = "#ffffff"
   },
   Tag = {
-    fg = "#feacd0"
+    fg = "#4ae2ff"
   },
   TargetWord = {
     fg = "#00d3d0"
@@ -2550,7 +2557,7 @@ local highlights = {
   },
   Todo = {
     bold = true,
-    fg = "#feacd0"
+    fg = "#4ae2ff"
   },
   TroubleCount = {
     bg = "#1e1e1e",
@@ -2564,7 +2571,7 @@ local highlights = {
     fg = "#f4f4f4"
   },
   Type = {
-    fg = "#6ae4b9"
+    fg = "#79a8ff"
   },
   TypeDef = {
     fg = "#4ae2ff"

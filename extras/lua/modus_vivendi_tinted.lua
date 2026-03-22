@@ -61,6 +61,7 @@ local colors = {
   blue_warmer = "#79a8ff",
   border = "#61647a",
   border_highlight = "#b290b0",
+  builtin = "#feacd0",
   comment = "#ff9f80",
   cursor = "#f78fe7",
   cyan = "#00d3d0",
@@ -91,6 +92,7 @@ local colors = {
   deuteranopia_yellow = "#cabf00",
   deuteranopia_yellow_cooler = "#d8af7a",
   deuteranopia_yellow_warmer = "#ffa00f",
+  docstring = "#9ac8e0",
   error = "#ff7f9f",
   fg_active = "#f4f4f4",
   fg_added = "#a0e0a0",
@@ -107,6 +109,7 @@ local colors = {
   fg_status_line_active = "#f0f0f0",
   fg_status_line_inactive = "#969696",
   fg_tab_other = "#f7f7f7",
+  fn = "#dfaf7a",
   gold = "#c0965b",
   green = "#44bc44",
   green_cooler = "#00c06f",
@@ -114,8 +117,10 @@ local colors = {
   green_intense = "#44df44",
   green_warmer = "#70b900",
   hint = "#9ac8e0",
+  identifier = "#4ae2f0",
   indigo = "#9099d9",
   info = "#00bcff",
+  keyword = "#79a8ff",
   magenta = "#feacd0",
   magenta_cooler = "#b6a0ff",
   magenta_faint = "#caa6df",
@@ -126,6 +131,7 @@ local colors = {
   ok = "#00c06f",
   olive = "#9cbd6f",
   pink = "#d09dc0",
+  preproc = "#ff7f9f",
   red = "#ff5f59",
   red_cooler = "#ff7f9f",
   red_faint = "#ff9f80",
@@ -133,6 +139,7 @@ local colors = {
   red_warmer = "#ff6b55",
   rust = "#db7b5f",
   slate = "#76afbf",
+  string = "#2fafff",
   success = "#a0e0a0",
   tinted_bg_active = "#4a4f69",
   tinted_bg_added = "#003a2f",
@@ -194,6 +201,7 @@ local colors = {
   tritanopia_yellow = "#cabf00",
   tritanopia_yellow_cooler = "#d8af7a",
   tritanopia_yellow_warmer = "#ffa00f",
+  type = "#00c06f",
   visual = "#7030af",
   warning = "#dfaf7a",
   yellow = "#d0bc00",
@@ -358,7 +366,7 @@ local highlights = {
     link = "@variable"
   },
   ["@lsp.type.interface"] = {
-    fg = "#79a8ff"
+    fg = "#2fafff"
   },
   ["@lsp.type.keyword"] = {
     link = "@keyword"
@@ -556,7 +564,6 @@ local highlights = {
     link = "String"
   },
   ["@string.documentation"] = {
-    fg = "#88ca9f",
     style = {
       italic = true
     }
@@ -914,7 +921,7 @@ local highlights = {
     fg = "#dfaf7a"
   },
   Character = {
-    fg = "#79a8ff"
+    fg = "#2fafff"
   },
   CmpDocumentation = {
     link = "Normal"
@@ -1277,7 +1284,7 @@ local highlights = {
     fg = "#88ca9f"
   },
   Function = {
-    fg = "#feacd0",
+    fg = "#dfaf7a",
     style = {}
   },
   FzfLuaBorder = {
@@ -1425,7 +1432,7 @@ local highlights = {
     nocombine = true
   },
   Identifier = {
-    fg = "#00d3d0",
+    fg = "#4ae2f0",
     style = {}
   },
   IlluminatedWordRead = {
@@ -1453,7 +1460,7 @@ local highlights = {
     nocombine = true
   },
   Keyword = {
-    fg = "#b6a0ff",
+    fg = "#79a8ff",
     style = {
       italic = true
     }
@@ -1597,7 +1604,7 @@ local highlights = {
     link = "Visual"
   },
   Macro = {
-    fg = "#feacd0"
+    fg = "#dfaf7a"
   },
   MatchParen = {
     bg = "#2f7f9f",
@@ -2431,7 +2438,7 @@ local highlights = {
     bg = "#7030af"
   },
   Special = {
-    fg = "#f78fe7"
+    fg = "#feacd0"
   },
   SpecialChar = {
     fg = "#9ac8e0"
@@ -2470,7 +2477,7 @@ local highlights = {
     fg = "#b6a0ff"
   },
   String = {
-    fg = "#79a8ff"
+    fg = "#2fafff"
   },
   Structure = {
     fg = "#b6a0ff"
@@ -2514,7 +2521,7 @@ local highlights = {
     fg = "#ffffff"
   },
   Tag = {
-    fg = "#feacd0"
+    fg = "#dfaf7a"
   },
   TargetWord = {
     fg = "#00d3d0"
@@ -2550,7 +2557,7 @@ local highlights = {
   },
   Todo = {
     bold = true,
-    fg = "#feacd0"
+    fg = "#dfaf7a"
   },
   TroubleCount = {
     bg = "#1d2235",
@@ -2564,7 +2571,7 @@ local highlights = {
     fg = "#f4f4f4"
   },
   Type = {
-    fg = "#6ae4b9"
+    fg = "#00c06f"
   },
   TypeDef = {
     fg = "#4ae2f0"
