@@ -1417,11 +1417,11 @@ local highlights = {
     fg = "#989898"
   },
   IblIndent = {
-    fg = "#989898",
+    fg = "#1e1e1e",
     nocombine = true
   },
   IblScope = {
-    fg = "#b6a0ff",
+    fg = "#989898",
     nocombine = true
   },
   Identifier = {
@@ -1445,11 +1445,11 @@ local highlights = {
     fg = "#ff6f9f"
   },
   IndentBlanklineChar = {
-    fg = "#989898",
+    fg = "#1e1e1e",
     nocombine = true
   },
   IndentBlanklineContextChar = {
-    fg = "#b6a0ff",
+    fg = "#989898",
     nocombine = true
   },
   Keyword = {
@@ -1631,7 +1631,7 @@ local highlights = {
     nocombine = true
   },
   MiniIndentscopeSymbol = {
-    fg = "#79a8ff",
+    fg = "#989898",
     nocombine = true
   },
   MiniJump = {
