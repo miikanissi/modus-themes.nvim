@@ -213,7 +213,7 @@ function M.setup()
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
-		["@string.documentation"] = { fg = c.docsting, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
+		["@string.documentation"] = { fg = c.docstring, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
 		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
 		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
 		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
