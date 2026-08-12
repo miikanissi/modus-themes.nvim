@@ -277,6 +277,9 @@ local highlights = {
   ["@comment.warning"] = {
     fg = "#cabf00"
   },
+  ["@conditional"] = {
+    link = "@keyword.conditional"
+  },
   ["@constant"] = {
     link = "Constant"
   },
@@ -292,6 +295,9 @@ local highlights = {
   ["@constructor.tsx"] = {
     fg = "#2fafff"
   },
+  ["@define"] = {
+    link = "@keyword.directive.define"
+  },
   ["@diff.delta"] = {
     link = "DiffChange"
   },
@@ -300,6 +306,12 @@ local highlights = {
   },
   ["@diff.plus"] = {
     link = "DiffAdd"
+  },
+  ["@exception"] = {
+    link = "@keyword.exception"
+  },
+  ["@field"] = {
+    link = "@variable.member"
   },
   ["@function"] = {
     link = "Function"
@@ -318,6 +330,9 @@ local highlights = {
   },
   ["@function.method.call"] = {
     link = "@function.method"
+  },
+  ["@include"] = {
+    link = "@keyword.import"
   },
   ["@keyword"] = {
     link = "Keyword"
@@ -360,6 +375,9 @@ local highlights = {
   },
   ["@keyword.return"] = {
     link = "@keyword"
+  },
+  ["@keyword.storage"] = {
+    link = "@keyword.modifier"
   },
   ["@keyword.type"] = {
     link = "@keyword"
@@ -404,7 +422,7 @@ local highlights = {
     link = "@keyword"
   },
   ["@lsp.type.lifetime"] = {
-    link = "@keyword.storage"
+    link = "@keyword.modifier"
   },
   ["@lsp.type.namespace"] = {
     link = "@module"
@@ -564,11 +582,20 @@ local highlights = {
   ["@markup.underline"] = {
     underline = true
   },
+  ["@method"] = {
+    link = "@function.method"
+  },
+  ["@method.call"] = {
+    link = "@function.method.call"
+  },
   ["@module"] = {
     link = "Include"
   },
   ["@module.builtin"] = {
     link = "Conditional"
+  },
+  ["@namespace"] = {
+    link = "@module"
   },
   ["@none"] = {},
   ["@number"] = {
@@ -580,8 +607,14 @@ local highlights = {
   ["@operator"] = {
     link = "Operator"
   },
+  ["@parameter"] = {
+    link = "@variable.parameter"
+  },
+  ["@preproc"] = {
+    link = "@keyword.directive"
+  },
   ["@property"] = {
-    link = "@field"
+    link = "@variable.member"
   },
   ["@punctuation.bracket"] = {
     fg = "#ffffff"
@@ -591,6 +624,12 @@ local highlights = {
   },
   ["@punctuation.special"] = {
     fg = "#ffffff"
+  },
+  ["@repeat"] = {
+    link = "@keyword.repeat"
+  },
+  ["@storageclass"] = {
+    link = "@keyword.modifier"
   },
   ["@string"] = {
     link = "String"
@@ -606,6 +645,9 @@ local highlights = {
   ["@string.regex"] = {
     fg = "#00c06f"
   },
+  ["@string.regexp"] = {
+    fg = "#00c06f"
+  },
   ["@string.special"] = {
     fg = "#ff9580"
   },
@@ -617,6 +659,9 @@ local highlights = {
   },
   ["@string.special.url"] = {
     fg = "#6ae4b9"
+  },
+  ["@symbol"] = {
+    link = "@string.special.symbol"
   },
   ["@tag"] = {
     link = "Label"
@@ -633,6 +678,63 @@ local highlights = {
   ["@tag.tsx"] = {
     fg = "#ff5f59"
   },
+  ["@text.danger"] = {
+    link = "@comment.error"
+  },
+  ["@text.diff.add"] = {
+    link = "@diff.plus"
+  },
+  ["@text.diff.delete"] = {
+    link = "@diff.minus"
+  },
+  ["@text.emphasis"] = {
+    link = "@markup.italic"
+  },
+  ["@text.list.checked"] = {
+    link = "@markup.list.checked"
+  },
+  ["@text.list.unchecked"] = {
+    link = "@markup.list.unchecked"
+  },
+  ["@text.literal"] = {
+    link = "@markup.raw"
+  },
+  ["@text.literal.block"] = {
+    link = "@markup.raw.block"
+  },
+  ["@text.math"] = {
+    link = "@markup.math"
+  },
+  ["@text.note"] = {
+    link = "@comment.note"
+  },
+  ["@text.quote"] = {
+    link = "@markup.quote"
+  },
+  ["@text.reference"] = {
+    link = "@markup.link"
+  },
+  ["@text.strike"] = {
+    link = "@markup.strikethrough"
+  },
+  ["@text.strong"] = {
+    link = "@markup.strong"
+  },
+  ["@text.title"] = {
+    link = "@markup.heading"
+  },
+  ["@text.todo"] = {
+    link = "@comment.todo"
+  },
+  ["@text.underline"] = {
+    link = "@markup.underline"
+  },
+  ["@text.uri"] = {
+    link = "@markup.link.url"
+  },
+  ["@text.warning"] = {
+    link = "@comment.warning"
+  },
   ["@type"] = {
     link = "Type"
   },
@@ -641,6 +743,9 @@ local highlights = {
   },
   ["@type.definition"] = {
     link = "Typedef"
+  },
+  ["@type.qualifier"] = {
+    link = "@keyword.modifier"
   },
   ["@variable"] = {
     link = "Identifier"
@@ -1957,26 +2062,96 @@ local highlights = {
   NeogitBranch = {
     fg = "#feacd0"
   },
+  NeogitChangeAdded = {
+    bold = true,
+    fg = "#c4d5ff",
+    italic = true
+  },
+  NeogitChangeDeleted = {
+    bold = true,
+    fg = "#d4d48f",
+    italic = true
+  },
+  NeogitChangeModified = {
+    bold = true,
+    fg = "#82b0ec",
+    italic = true
+  },
+  NeogitChangeNewFile = {
+    bold = true,
+    fg = "#c4d5ff",
+    italic = true
+  },
+  NeogitChangeRenamed = {
+    bold = true,
+    fg = "#82b0ec",
+    italic = true
+  },
+  NeogitChangeUnmerged = {
+    bold = true,
+    fg = "#d2b580",
+    italic = true
+  },
+  NeogitDiffAdd = {
+    bg = "#003066",
+    fg = "#c4d5ff"
+  },
+  NeogitDiffAddCursor = {
+    bg = "#003066",
+    fg = "#8080ff"
+  },
   NeogitDiffAddHighlight = {
-    link = "DiffAdd"
+    bg = "#003066",
+    fg = "#8080ff"
   },
-  NeogitDiffContextHighlight = {
-    bg = "#1e1e1e",
-    fg = "#989898"
-  },
-  NeogitDiffDeleteHighlight = {
-    link = "DiffDelete"
-  },
-  NeogitHunkHeader = {
-    bg = "#1e1e1e",
+  NeogitDiffAddInline = {
+    bg = "#2f822f",
     fg = "#ffffff"
   },
+  NeogitDiffContext = {
+    bg = "NONE"
+  },
+  NeogitDiffContextCursor = {
+    bg = "#2f3849"
+  },
+  NeogitDiffContextHighlight = {
+    bg = "NONE",
+    fg = "#989898"
+  },
+  NeogitDiffDelete = {
+    bg = "#3d3d00",
+    fg = "#d4d48f"
+  },
+  NeogitDiffDeleteCursor = {
+    bg = "#3d3d00",
+    fg = "#d0b05f"
+  },
+  NeogitDiffDeleteHighlight = {
+    bg = "#3d3d00",
+    fg = "#d0b05f"
+  },
+  NeogitDiffDeleteInline = {
+    bg = "#9d1f1f",
+    fg = "#ffffff"
+  },
+  NeogitHunkHeader = {
+    bg = "#282828",
+    fg = "#ffffff"
+  },
+  NeogitHunkHeaderCursor = {
+    bg = "#2d2d2d",
+    fg = "#f4f4f4"
+  },
   NeogitHunkHeaderHighlight = {
-    bg = "#0f0e39",
-    fg = "#2fafff"
+    bg = "#2d2d2d",
+    fg = "#f4f4f4"
   },
   NeogitRemote = {
     fg = "#b6a0ff"
+  },
+  NeogitSectionHeader = {
+    bold = true,
+    fg = "#2fafff"
   },
   NeotestAdapterName = {
     bold = true,
