@@ -214,7 +214,8 @@ function M.setup()
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
 		["@string.documentation"] = { fg = c.docsting, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
-		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
+		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions (v1 compat).
+		["@string.regexp"] = { fg = c.green_cooler }, -- Regular expressions (v2).
 		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
 		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
 		["@string.special.symbol"] = { link = "Identifier" }, -- Symbols or atoms.
@@ -235,7 +236,7 @@ function M.setup()
 
 		["@attribute"] = { link = "PreProc" }, -- Attribute annotations (e.g. Python decorators).
 		["@attribute.builtin"] = { link = "PreProc" }, -- Built-in annotations (e.g. `property` in Python).
-		["@property"] = { link = "@field" }, -- The key in key-value pairs.
+		["@property"] = { link = "@variable.member" }, -- The key in key-value pairs.
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- Function definitions.
@@ -321,6 +322,44 @@ function M.setup()
 
 		["@none"] = {},
 
+		-- Treesitter v1 (master) backwards-compatibility aliases.
+		-- These capture names were renamed in v2 (main). Defining them here
+		-- ensures files parsed by older grammars still get colour.
+		["@field"] = { link = "@variable.member" },
+		["@method"] = { link = "@function.method" },
+		["@method.call"] = { link = "@function.method.call" },
+		["@parameter"] = { link = "@variable.parameter" },
+		["@namespace"] = { link = "@module" },
+		["@conditional"] = { link = "@keyword.conditional" },
+		["@repeat"] = { link = "@keyword.repeat" },
+		["@exception"] = { link = "@keyword.exception" },
+		["@include"] = { link = "@keyword.import" },
+		["@storageclass"] = { link = "@keyword.modifier" },
+		["@keyword.storage"] = { link = "@keyword.modifier" },
+		["@type.qualifier"] = { link = "@keyword.modifier" },
+		["@preproc"] = { link = "@keyword.directive" },
+		["@define"] = { link = "@keyword.directive.define" },
+		["@symbol"] = { link = "@string.special.symbol" },
+		["@text.strong"] = { link = "@markup.strong" },
+		["@text.emphasis"] = { link = "@markup.italic" },
+		["@text.underline"] = { link = "@markup.underline" },
+		["@text.strike"] = { link = "@markup.strikethrough" },
+		["@text.title"] = { link = "@markup.heading" },
+		["@text.quote"] = { link = "@markup.quote" },
+		["@text.math"] = { link = "@markup.math" },
+		["@text.literal"] = { link = "@markup.raw" },
+		["@text.literal.block"] = { link = "@markup.raw.block" },
+		["@text.reference"] = { link = "@markup.link" },
+		["@text.uri"] = { link = "@markup.link.url" },
+		["@text.list.checked"] = { link = "@markup.list.checked" },
+		["@text.list.unchecked"] = { link = "@markup.list.unchecked" },
+		["@text.todo"] = { link = "@comment.todo" },
+		["@text.warning"] = { link = "@comment.warning" },
+		["@text.danger"] = { link = "@comment.error" },
+		["@text.note"] = { link = "@comment.note" },
+		["@text.diff.add"] = { link = "@diff.plus" },
+		["@text.diff.delete"] = { link = "@diff.minus" },
+
 		-- tsx
 		["@tag.tsx"] = { fg = c.red },
 		["@constructor.tsx"] = { fg = c.blue },
@@ -342,7 +381,7 @@ function M.setup()
 		["@lsp.type.generic"] = { link = "@variable" },
 		["@lsp.type.interface"] = { fg = c.string },
 		["@lsp.type.keyword"] = { link = "@keyword" },
-		["@lsp.type.lifetime"] = { link = "@keyword.storage" },
+		["@lsp.type.lifetime"] = { link = "@keyword.modifier" },
 		["@lsp.type.namespace"] = { link = "@module" },
 		["@lsp.type.number"] = { link = "@number" },
 		["@lsp.type.operator"] = { link = "@operator" },
