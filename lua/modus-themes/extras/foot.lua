@@ -4,6 +4,7 @@ local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
+	local is_light = require("modus-themes.config").is_light()
 	local footColors = {}
 	for k, v in pairs(colors) do
 		if type(v) == "string" then
@@ -11,15 +12,17 @@ function M.generate(colors)
 		end
 	end
 
+	-- Foot 1.26+ reads theme colors from `[colors-dark]` or `[colors-light]`,
+	-- light themes also need to select the light theme on startup
+	footColors.section = is_light and "[main]\ninitial-color-theme=light\n\n[colors-light]" or "[colors-dark]"
+
 	local foot = util.template(
 		[[
 ; Modus Themes for Foot
 ; Auto generated with https://github.com/miikanissi/modus-themes.nvim/blob/master/lua/modus-themes/extras/foot.lua
 
-[cursor]
-color=${fg_main} ${visual}
-
-[colors]
+${section}
+cursor=${fg_main} ${visual}
 foreground=${fg_main}
 background=${bg_main}
 selection-foreground=${fg_main}
