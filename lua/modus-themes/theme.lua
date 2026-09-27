@@ -38,7 +38,7 @@ function M.setup()
 			bg = bg_inactive,
 		}, -- Normal text in non-current windows.
 		NormalSB = { fg = c.fg_sidebar, bg = bg_sidebar }, -- Normal text in sidebar.
-		NormalFloat = { fg = c.fg_active, bg = c.bg_active }, -- Float Window.
+		NormalFloat = { fg = c.fg_active, bg = c.bg_popup }, -- Float Window.
 		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
 		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
@@ -63,7 +63,7 @@ function M.setup()
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting.
 		QuickFixLine = { fg = c.fg_main, bg = c.visual }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
-		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item.
+		Pmenu = { fg = c.fg_active, bg = c.bg_popup }, -- Popup menu: normal item.
 		PmenuSel = { fg = c.bg_active, bg = c.fg_active }, -- Popup menu: selected item.
 		PmenuSbar = { fg = c.fg_active, bg = c.bg_dim }, -- Popup menu: scrollbar.
 		PmenuThumb = { link = "Cursor" }, -- Popup menu: Thumb of the scrollbar.
@@ -92,12 +92,12 @@ function M.setup()
 		DiffAdd = { fg = c.fg_added, bg = c.bg_added }, -- Diff mode: Added line |diff.txt|.
 		DiffDelete = { fg = c.fg_removed, bg = c.bg_removed }, -- Diff mode: Deleted line |diff.txt|.
 		DiffChange = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed line |diff.txt|.
-		DiffText = { fg = c.fg_changed, bg = c.bg_changed }, -- Diff mode: Changed text within a changed line |diff.txt|.
+		DiffText = { fg = c.fg_changed, bg = c.bg_changed_refine }, -- Diff mode: Changed text within a changed line |diff.txt|.
 		SpecialKey = { fg = c.fg_dim }, -- Unprintable characters: text displayed differently from what it really is.  But not `listchars` whitespace. |hl-Whitespace|.
-		SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
-		SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
-		SpellLocal = { sp = c.info, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
-		SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
+		SpellBad = { sp = c.underline_error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
+		SpellCap = { sp = c.underline_warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
+		SpellLocal = { sp = c.underline_note, undercurl = true }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
+		SpellRare = { sp = c.underline_note, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
 		WarningMsg = { fg = c.warning }, -- Warning messages.
 		Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions.
 
@@ -114,7 +114,7 @@ function M.setup()
 		Exception = { fg = c.magenta_cooler }, -- `try`, `catch`, `throw`, etc.
 		StorageClass = { fg = c.magenta_cooler }, -- `static`, `register`, `volatile`, etc.
 		Structure = { fg = c.magenta_cooler }, -- `struct`, `union`, `enum`, etc.
-		Constant = { fg = c.fg_main }, -- (preferred) any constant.
+		Constant = { fg = c.constant }, -- (preferred) any constant.
 		Function = { fg = c.fn, style = options.styles.functions }, -- Function names.
 		Identifier = { fg = c.identifier, style = options.styles.variables }, -- (preferred) any variable name.
 		PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor.
@@ -125,7 +125,7 @@ function M.setup()
 		Todo = { fg = c.fn, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.type }, -- (preferred) `int`, `long`, `char`, etc.
 		TypeDef = { fg = c.cyan_warmer }, -- A typedef.
-		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
+		Number = { fg = c.fg_main }, -- Number constant (e.g. `234`, `0xff`).
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
 		Tag = { fg = c.fn }, -- You can use CTRL-] on this.
@@ -186,10 +186,10 @@ function M.setup()
 		DiagnosticVirtualTextHint = { fg = c.hint, bold = true }, -- Used for "Hint" diagnostic virtual text.
 		DiagnosticVirtualTextOk = { fg = c.ok, bold = true }, -- Used for "Ok" diagnostic virtual text.
 
-		DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics.
-		DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics.
-		DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics.
-		DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics.
+		DiagnosticUnderlineError = { undercurl = true, sp = c.underline_error }, -- Used to underline "Error" diagnostics.
+		DiagnosticUnderlineWarn = { undercurl = true, sp = c.underline_warning }, -- Used to underline "Warning" diagnostics.
+		DiagnosticUnderlineInfo = { undercurl = true, sp = c.underline_note }, -- Used to underline "Information" diagnostics.
+		DiagnosticUnderlineHint = { undercurl = true, sp = c.underline_note }, -- Used to underline "Hint" diagnostics.
 		DiagnosticUnderlineOk = { undercurl = true, sp = c.ok }, -- Used to underline "Ok" diagnostics.
 
 		ALEErrorSign = { fg = c.error, bold = true },
@@ -197,7 +197,7 @@ function M.setup()
 
 		-- Neovim tree-sitter highlights
 		-- Identifiers
-		["@variable"] = { link = "Identifier" }, -- Any variable name that does not have another highlight.
+		["@variable"] = { fg = c.variable_use, style = options.styles.variables }, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
 		["@variable.parameter"] = { fg = c.cyan }, -- Parameters of a function.
 		["@variable.parameter.builtin"] = { fg = c.cyan_faint }, -- Built-in parameters of a function (e.g. `...` or `_`).
@@ -213,7 +213,7 @@ function M.setup()
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
-		["@string.documentation"] = { fg = c.docsting, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
+		["@string.documentation"] = { fg = c.docstring, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
 		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions (v1 compat).
 		["@string.regexp"] = { fg = c.green_cooler }, -- Regular expressions (v2).
 		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
@@ -241,11 +241,11 @@ function M.setup()
 		-- Functions
 		["@function"] = { link = "Function" }, -- Function definitions.
 		["@function.builtin"] = { link = "Special" }, -- Built-in functions.
-		["@function.call"] = { link = "@function" }, -- Function calls.
+		["@function.call"] = { fg = c.fn_call, style = options.styles.functions }, -- Function calls.
 		["@function.macro"] = { link = "Macro" }, -- Preprocessor calls.
 
 		["@function.method"] = { link = "Function" }, -- Method definitions.
-		["@function.method.call"] = { link = "@function.method" }, -- Method calls.
+		["@function.method.call"] = { link = "@function.call" }, -- Method calls.
 
 		["@constructor"] = { fg = c.yellow_cooler }, -- Constructor calls and definitions (e.g. `= { }` in Lua, and Java constructors).
 		["@operator"] = { link = "Operator" }, -- Symbolic operators (e.g. `+`, but also `->` and `*` in C).
@@ -391,11 +391,15 @@ function M.setup()
 		["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
 		["@lsp.type.string"] = { link = "@string" },
 		["@lsp.type.typeAlias"] = { link = "@type.definition" },
-		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
+		["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.underline_error },
 		["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
+		["@lsp.type.function"] = {}, -- use treesitter styles to tell definitions and calls apart
+		["@lsp.type.method"] = {}, -- use treesitter styles to tell definitions and calls apart
 		["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
 		["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
+		["@lsp.typemod.variable.declaration"] = { link = "Identifier" },
+		["@lsp.typemod.variable.definition"] = { link = "Identifier" },
 		["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
 		["@lsp.typemod.keyword.async"] = { link = "@keyword.coroutine" },
 		["@lsp.typemod.keyword.injected"] = { link = "@keyword" },
@@ -623,13 +627,13 @@ function M.setup()
 		WhichKeyDesc = { fg = c.magenta },
 		WhichKeySeperator = { fg = c.fg_alt },
 		WhichKeySeparator = { fg = c.fg_alt },
-		WhichKeyFloat = { bg = c.bg_active },
+		WhichKeyFloat = { bg = c.bg_popup },
 		WhichKeyValue = { fg = c.fg_dim },
 
 		-- LspSaga
 		DiagnosticWarning = { link = "DiagnosticWarn" },
 		DiagnosticInformation = { link = "DiagnosticInfo" },
-		LspFloatWinNormal = { bg = c.bg_active },
+		LspFloatWinNormal = { bg = c.bg_popup },
 		LspFloatWinBorder = { fg = c.border },
 		LspSagaBorderTitle = { fg = c.cyan },
 		LspSagaHoverBorder = { fg = c.blue },
