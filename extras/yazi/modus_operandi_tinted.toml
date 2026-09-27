@@ -5,7 +5,7 @@
 # NOTE: can combined with tmTheme (sublime colorshceme file) for preview code highlight
 # syntect_theme = "path/to/tmTheme"
 
-cwd = { fg = "#005e8b", italic = true }
+cwd = { fg = "#00598b", italic = true }
 
 # Hovered
 hovered         = { bg = "#f1d5d0" }
@@ -13,10 +13,10 @@ preview_hovered = { bg = "#f1d5d0" }
 
 # Find
 find_keyword  = { fg = "#000000", bg = "#dfa0f0", bold = true }
-find_position = { fg = "#3548cf", bg = "#efe9dd", bold = true }
+find_position = { fg = "#3546c2", bg = "#efe9dd", bold = true }
 
 # Marker
-marker_copied   = { fg = "#316500", bg = "#316500" }
+marker_copied   = { fg = "#306010", bg = "#306010" }
 marker_cut      = { fg = "#a60000", bg = "#a60000" }
 marker_marked   = { fg = "#721045", bg = "#721045" }
 marker_selected = { fg = "#0031a9", bg = "#0031a9" }
@@ -27,9 +27,9 @@ tab_inactive = { fg = "#595959", bg = "#fbf7f0" }
 tab_width    = 1
 
 # Count
-count_copied   = { fg = "#fbf7f0", bg = "#316500" }
+count_copied   = { fg = "#fbf7f0", bg = "#306010" }
 count_cut      = { fg = "#fbf7f0", bg = "#972500" }
-count_selected = { fg = "#fbf7f0", bg = "#3548cf" }
+count_selected = { fg = "#fbf7f0", bg = "#3546c2" }
 
 # Border
 border_symbol = "│"
@@ -52,9 +52,9 @@ progress_error  = { fg = "#a60000" }
 
 # Permissions
 permissions_t = { fg = "#0031a9" }
-permissions_r = { fg = "#6f5500" }
+permissions_r = { fg = "#6d5000" }
 permissions_w = { fg = "#a60000" }
-permissions_x = { fg = "#006800" }
+permissions_x = { fg = "#006300" }
 permissions_s = { fg = "#595959" }
 
 [select]
@@ -85,7 +85,7 @@ hovered = { fg = "#000000", bg="#9f9690" }
 [which]
 cols = 3
 mask            = { bg = "#f0f0f0" }
-cand            = { fg = "#005e8b" }
+cand            = { fg = "#00598b" }
 rest            = { fg = "#0031a9" }
 desc            = { fg = "#721045" }
 separator       = "  "
@@ -94,12 +94,12 @@ separator_style = { fg = "#595959" }
 # Notify
 [notify]
 title_info  = { fg = "#0000b0" }
-title_warn  = { fg = "#6f5500" }
+title_warn  = { fg = "#6d5000" }
 title_error = { fg = "#a60000" }
 
 # Help
 [help]
-on      = { fg = "#006800" }
+on      = { fg = "#006300" }
 run     = { fg = "#721045" }
 hovered = { bg = "#9f9690" }
 footer  = { fg = "#000000", bg = "#f0f0f0" }
@@ -108,24 +108,24 @@ footer  = { fg = "#000000", bg = "#f0f0f0" }
 
 rules = [
 	# Images
-	{ mime = "image/*", fg = "#005e8b" },
+	{ mime = "image/*", fg = "#00598b" },
 
 	# Media
-	{ mime = "{audio,video}/*", fg = "#884900" },
+	{ mime = "{audio,video}/*", fg = "#894000" },
 
 	# Archives
 	{ mime = "application/*zip", fg = "#721045" },
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#721045" },
 
 	# Documents
-	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#005e8b" },
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#00598b" },
 
 	# Empty files
 	# { mime = "inode/x-empty", fg = "#a60000" },
 
 	# Special files
 	{ name = "*", is = "orphan", bg = "#a60000" },
-	{ name = "*", is = "exec"  , fg = "#006800" },
+	{ name = "*", is = "exec"  , fg = "#006300" },
 
 	{ name = "*.rs", fg = "#8a290f" },
 

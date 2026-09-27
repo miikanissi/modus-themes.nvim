@@ -63,7 +63,7 @@ completion_default.selected.bg=#afdfef
 *.default=true
 *.normal=true
 
-url.fg = #193668
+url.fg = #224960
 header.fg = #3548cf
 
 signature.fg = #7c318f
@@ -74,6 +74,6 @@ diff_del.fg = #8f1313
 
 quote_1.fg = #3548cf
 quote_2.fg = #3f578f
-quote_3.fg = #2f3f83
+quote_3.fg = #104860
 quote_4.fg = #4a3a8a
 quote_x.fg = #624416

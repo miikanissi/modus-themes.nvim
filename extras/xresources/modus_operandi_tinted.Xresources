@@ -4,25 +4,25 @@
 *background: #fbf7f0
 *foreground: #000000
 *accent_light: #003497
-*accent: #3548cf
+*accent: #3546c2
 *accent_darker: #0031a9
 *accent_dark: #0000ff
 
 *color0: #000000
 *color1: #a60000
-*color2: #006800
-*color3: #6f5500
+*color2: #006300
+*color3: #6d5000
 *color4: #0031a9
 *color5: #721045
-*color6: #005e8b
+*color6: #00598b
 *color7: #a6a6a6
 
 *color8: #595959
 *color9: #972500
-*color10: #00663f
-*color11: #884900
-*color12: #3548cf
-*color13: #8f0075
+*color10: #00603f
+*color11: #894000
+*color12: #3546c2
+*color13: #531ab6
 *color14: #005f5f
 *color15: #ffffff
 

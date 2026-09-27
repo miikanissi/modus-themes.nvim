@@ -5,11 +5,11 @@ set -l foreground 000000
 set -l selection dfa0f0
 set -l comment 7f0000
 set -l red a60000
-set -l orange 884900
-set -l yellow 6f5500
-set -l green 006800
+set -l orange 894000
+set -l yellow 6d5000
+set -l green 006300
 set -l purple 531ab6
-set -l cyan 005e8b
+set -l cyan 00598b
 set -l pink 721045
 
 # Syntax Highlighting Colors

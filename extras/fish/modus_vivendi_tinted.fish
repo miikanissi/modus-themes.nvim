@@ -3,7 +3,7 @@
 
 set -l foreground ffffff
 set -l selection 7030af
-set -l comment ff9f80
+set -l comment ef8386
 set -l red ff5f59
 set -l orange fec43f
 set -l yellow d0bc00

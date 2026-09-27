@@ -10,27 +10,27 @@ foreground   = '0x000000'
 [colors.normal]
 black     = '0x000000'
 red       = '0xa60000'
-green     = '0x006800'
-yellow    = '0x6f5500'
+green     = '0x006300'
+yellow    = '0x6d5000'
 blue      = '0x0031a9'
 magenta   = '0x721045'
-cyan      = '0x005e8b'
+cyan      = '0x00598b'
 white     = '0xa6a6a6'
 
 # Bright colors
 [colors.bright]
 black     = '0x595959'
 red       = '0x972500'
-green     = '0x00663f'
-yellow    = '0x884900'
-blue      = '0x3548cf'
-magenta   = '0x8f0075'
+green     = '0x00603f'
+yellow    = '0x894000'
+blue      = '0x3546c2'
+magenta   = '0x531ab6'
 cyan      = '0x005f5f'
 white     = '0xffffff'
 
 [[colors.indexed_colors]]
 index     = 16
-color     = '0x884900'
+color     = '0x894000'
 
 [[colors.indexed_colors]]
 index     = 17

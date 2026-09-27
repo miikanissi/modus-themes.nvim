@@ -28,13 +28,13 @@ dirlist*.selected.fg=#ffffff
 dirlist*.selected.bold=false
 
 *error.bold=true
-*error.fg=#ff7f9f
-*warning.fg=#dfaf7a
+*error.fg=#ff5f59
+*warning.fg=#fec43f
 *success.fg=#a0e0a0
 
-statusline_*.bg=#404040
+statusline_*.bg=#505050
 statusline_*.fg=#f0f0f0
-statusline_error.fg=#ff7f9f
+statusline_error.fg=#ff5f59
 
 msglist_unread.fg=#ffffff
 msglist_unread.bold=true

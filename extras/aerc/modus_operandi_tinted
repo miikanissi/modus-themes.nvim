@@ -14,7 +14,7 @@ title.fg=#000000
 title.bold=true
 
 header.bold=true
-header.fg=#3548cf
+header.fg=#3546c2
 header.bg=#fbf7f0
 
 border.bg=#9f9690
@@ -28,13 +28,13 @@ dirlist*.selected.fg=#000000
 dirlist*.selected.bold=false
 
 *error.bold=true
-*error.fg=#a0132f
-*warning.fg=#7a4f2f
+*error.fg=#a60000
+*warning.fg=#6d5000
 *success.fg=#005000
 
 statusline_*.bg=#cab9b2
 statusline_*.fg=#0a0a0a
-statusline_error.fg=#a0132f
+statusline_error.fg=#a60000
 
 msglist_unread.fg=#000000
 msglist_unread.bold=true
@@ -64,7 +64,7 @@ completion_default.selected.bg=#f0c1cf
 *.normal=true
 
 url.fg = #193668
-header.fg = #3548cf
+header.fg = #3546c2
 
 signature.fg = #7c318f
 diff_chunk.fg = #553d00
@@ -72,8 +72,8 @@ diff_chunk_func.fg = #553d00
 diff_add.fg = #005000
 diff_del.fg = #8f1313
 
-quote_1.fg = #3548cf
-quote_2.fg = #3f578f
+quote_1.fg = #3546c2
+quote_2.fg = #32548f
 quote_3.fg = #2f3f83
 quote_4.fg = #4a3a8a
-quote_x.fg = #624416
+quote_x.fg = #574316

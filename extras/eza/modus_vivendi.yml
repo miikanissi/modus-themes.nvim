@@ -15,7 +15,7 @@ define: &border_highlight = "#C4C4C4"
 # foreground colors
 define: &red "#ff5f59"
 define: &red_warmer "#ff6b55"
-define: &red_cooler "#ff7f9f"
+define: &red_cooler "#ff7f86"
 define: &red_faint "#ff9580"
 define: &green "#44bc44"
 define: &green_warmer "#70b900"

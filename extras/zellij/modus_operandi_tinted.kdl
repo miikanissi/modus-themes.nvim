@@ -10,12 +10,12 @@ themes {
         // This ensures the top and bottom bars are transparent
         black "#fbf7f0"
         red "#a60000"
-        green "#006800"
-        yellow "#6f5500"
+        green "#006300"
+        yellow "#6d5000"
         blue "#0031a9"
         magenta "#721045"
-        cyan "#005e8b"
+        cyan "#00598b"
         white "#000000"
-        orange "#884900"
+        orange "#894000"
     }
 }

@@ -63,7 +63,7 @@ completion_default.selected.bg=#004253
 *.default=true
 *.normal=true
 
-url.fg = #c6daff
+url.fg = #a0d7f2
 header.fg = #79a8ff
 
 signature.fg = #caa6df

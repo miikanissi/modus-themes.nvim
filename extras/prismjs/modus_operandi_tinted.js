@@ -33,7 +33,7 @@ module.exports =  {
     {
       types: ["string", "char", "tag", "selector"],
       style: {
-        color: "#006800",
+        color: "#006300",
       },
     },
     {
@@ -51,7 +51,7 @@ module.exports =  {
     {
       types: ["constant", "boolean"],
       style: {
-        color: "#884900",
+        color: "#894000",
       },
     },
     {
@@ -70,7 +70,7 @@ module.exports =  {
     {
       types: ["attr-name"],
       style: {
-        color: "#624416",
+        color: "#574316",
       },
     },
   ],

@@ -16,7 +16,7 @@ find_keyword  = { fg = "#ffffff", bg = "#7030af", bold = true }
 find_position = { fg = "#79a8ff", bg = "#1d2235", bold = true }
 
 # Marker
-marker_copied   = { fg = "#70b900", bg = "#70b900" }
+marker_copied   = { fg = "#75c13e", bg = "#75c13e" }
 marker_cut      = { fg = "#ff5f59", bg = "#ff5f59" }
 marker_marked   = { fg = "#feacd0", bg = "#feacd0" }
 marker_selected = { fg = "#2fafff", bg = "#2fafff" }
@@ -27,7 +27,7 @@ tab_inactive = { fg = "#989898", bg = "#0d0e1c" }
 tab_width    = 1
 
 # Count
-count_copied   = { fg = "#0d0e1c", bg = "#70b900" }
+count_copied   = { fg = "#0d0e1c", bg = "#75c13e" }
 count_cut      = { fg = "#0d0e1c", bg = "#ff6b55" }
 count_selected = { fg = "#0d0e1c", bg = "#79a8ff" }
 
@@ -43,7 +43,7 @@ separator_style = { fg = "#0f0f0f", bg = "#0f0f0f" }
 # Mode
 mode_normal = { fg = "#0d0e1c", bg = "#2fafff", bold = true }
 mode_select = { fg = "#0d0e1c", bg = "#f78fe7", bold = true }
-mode_unset  = { fg = "#0d0e1c", bg = "#db7b5f", bold = true }
+mode_unset  = { fg = "#0d0e1c", bg = "#db8b3f", bold = true }
 
 # Progress
 progress_label  = { fg = "#989898", bold = true }
@@ -127,7 +127,7 @@ rules = [
 	{ name = "*", is = "orphan", bg = "#ff5f59" },
 	{ name = "*", is = "exec"  , fg = "#44bc44" },
 
-	{ name = "*.rs", fg = "#db7b5f" },
+	{ name = "*.rs", fg = "#db8b3f" },
 
 	# Fallback
 	{ name = "*/", fg = "#2fafff" }
