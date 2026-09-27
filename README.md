@@ -85,6 +85,24 @@ vim.cmd([[colorscheme modus]]) -- modus_operandi, modus_vivendi
 colorscheme modus " modus_operandi, modus_vivendi
 ```
 
+### Switching Variants
+
+Change the variant of the current style without restarting:
+
+```vim
+:ModusVariant tinted " default, tinted, deuteranopia, tritanopia
+```
+
+Or from Lua, optionally passing the style to change:
+
+```lua
+require("modus-themes").set_variant("tinted")
+require("modus-themes").set_variant("deuteranopia", "modus_operandi")
+```
+
+The variant lasts for the session. Calling `setup` again resets it to what the
+configuration says.
+
 ## Configuration
 
 > Ensure the configuration is set **BEFORE** loading the color scheme with

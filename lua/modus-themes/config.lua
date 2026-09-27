@@ -65,6 +65,18 @@ function M.user_supplied_variants()
 	return user_options and user_options.variants ~= nil
 end
 
+--- Set the variant for a style at runtime
+---@param style "modus_operandi"|"modus_vivendi"
+---@param variant "default"|"tinted"|"deuteranopia"|"tritanopia"
+function M.set_variant(style, variant)
+	if M.user_supplied_variant() and not M.user_supplied_variants() then
+		-- Carry the deprecated `variant` over to both styles so only `style` changes
+		M.options.variants = { modus_operandi = M.options.variant, modus_vivendi = M.options.variant }
+	end
+	M.options.variants[style] = variant
+	user_options.variants = M.options.variants
+end
+
 ---@param options Config|nil
 function M.extend(options)
 	M.options = vim.tbl_deep_extend("force", {}, M.options or defaults, options or {})
