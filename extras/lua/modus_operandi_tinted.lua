@@ -1670,7 +1670,7 @@ local highlights = {
   },
   LineNr = {
     bg = "#efe9dd",
-    fg = "#000000"
+    fg = "#595959"
   },
   LineNrAbove = {
     bg = "#efe9dd",
