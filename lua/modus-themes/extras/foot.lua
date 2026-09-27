@@ -28,6 +28,7 @@ background=${bg_main}
 selection-foreground=${fg_main}
 selection-background=${visual}
 urls=${fg_alt}
+scrollback-indicator=${fg_main} ${bg_active}
 
 regular0=${bg_term_black}
 regular1=${bg_term_red}
