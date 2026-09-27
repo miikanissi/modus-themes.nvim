@@ -42,7 +42,7 @@ function M.setup()
 		FloatBorder = { fg = c.border_highlight, bg = bg_main }, -- Float Border.
 		FloatTitle = { fg = c.border_highlight, bg = bg_main }, -- Float Title.
 		Folded = { fg = c.green_faint, bg = c.bg_dim }, -- Line for closed folds.
-		LineNr = { fg = c.fg_main, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
+		LineNr = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number for `:number` and `:#` commands, and when `number`, or `relativenumber` is set for the cursor line.
 		LineNrAbove = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number above the cursor line.
 		LineNrBelow = { fg = c.fg_dim, bg = options.line_nr_column_background and c.bg_dim or bg_main }, -- Line number below the cursor line.
 		CursorLineNr = { fg = c.fg_active, bg = c.bg_active, bold = true }, -- Like LineNr when `cursorline` or `relativenumber` is set for the cursor line.
