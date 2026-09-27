@@ -1,4 +1,4 @@
-*modus-themes.nvim.txt*     For Neovim >= 0.8.0    Last change: 2026 August 12
+*modus-themes.nvim.txt*   For Neovim >= 0.8.0   Last change: 2026 September 27
 
 ==============================================================================
 Table of Contents                        *modus-themes.nvim-table-of-contents*
@@ -111,6 +111,25 @@ VIM SCRIPT ~
 <
 
 
+SWITCHING VARIANTS ~
+
+Change the variant of the current style without restarting:
+
+>vim
+    :ModusVariant tinted " default, tinted, deuteranopia, tritanopia
+<
+
+Or from Lua, optionally passing the style to change:
+
+>lua
+    require("modus-themes").set_variant("tinted")
+    require("modus-themes").set_variant("deuteranopia", "modus_operandi")
+<
+
+The variant lasts for the session. Calling `setup` again resets it to what the
+configuration says.
+
+
 CONFIGURATION                   *modus-themes.nvim-modus-themes-configuration*
 
 
@@ -215,6 +234,9 @@ EXTRAS                                 *modus-themes.nvim-modus-themes-extras*
 - Yazi <https://github.com/sxyazi/yazi> (yazi <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/yazi>)
 - Zathura <https://pwmt.org/projects/zathura/> (zathura <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zathura>)
 - Zellij <https://github.com/zellij-org/zellij> (zellij <https://github.com/miikanissi/modus-themes.nvim/tree/master/extras/zellij>)
+
+The Foot themes need Foot 1.26 or newer, which uses the `[colors-dark]` and
+`[colors-light]` sections.
 
 
 CONTRIBUTING                     *modus-themes.nvim-modus-themes-contributing*
