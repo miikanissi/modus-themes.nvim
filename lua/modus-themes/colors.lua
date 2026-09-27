@@ -45,8 +45,8 @@ M.modus_operandi = {
 	cyan_cooler = "#005f5f",
 	cyan_faint = "#005077",
 	rust = "#8a290f",
-	gold = "#80601f",
-	olive = "#56692d",
+	gold = "#6c501c",
+	olive = "#4c6000",
 	slate = "#2f3f83",
 	indigo = "#4a3a8a",
 	maroon = "#731c52",
@@ -78,15 +78,16 @@ M.modus_operandi = {
 	bg_cyan_subtle = "#bfefff",
 
 	-- Nuanced can be combined with their foreground ie. bg_red_nuanced with red
-	bg_red_nuanced = "#fff1f0",
-	bg_green_nuanced = "#ecf7ed",
-	bg_yellow_nuanced = "#fff3da",
-	bg_blue_nuanced = "#f3f3ff",
-	bg_magenta_nuanced = "#fdf0ff",
-	bg_cyan_nuanced = "#ebf6fa",
+	bg_red_nuanced = "#ffe8e8",
+	bg_green_nuanced = "#e0f6e0",
+	bg_yellow_nuanced = "#f8f0d0",
+	bg_blue_nuanced = "#ecedff",
+	bg_magenta_nuanced = "#f8e6f5",
+	bg_cyan_nuanced = "#e0f2fa",
 
 	-- Special purpose
 	bg_completion = "#c0deff",
+	bg_popup = "#f3f3f3",
 	bg_hl_line = "#dae5ec",
 	bg_paren_match = "#5fcfff",
 	bg_paren_expression = "#efd3f5",
@@ -148,13 +149,21 @@ M.modus_operandi = {
 	tinted_bg_active = "#c9b9b0",
 	tinted_bg_inactive = "#dfd5cf",
 	tinted_red_faint = "#7f0000",
-	tinted_bg_red_nuanced = "#ffe8f0",
-	tinted_bg_green_nuanced = "#e0f5e0",
-	tinted_bg_yellow_nuanced = "#f9ead0",
-	tinted_bg_blue_nuanced = "#ebebff",
-	tinted_bg_magenta_nuanced = "#f6e7ff",
-	tinted_bg_cyan_nuanced = "#e1f3fc",
+	tinted_green = "#006300",
+	tinted_green_warmer = "#306010",
+	tinted_green_cooler = "#00603f",
+	tinted_yellow = "#6d5000",
+	tinted_yellow_warmer = "#894000",
+	tinted_yellow_cooler = "#602938",
+	tinted_yellow_faint = "#574316",
+	tinted_blue_warmer = "#3546c2",
+	tinted_cyan = "#00598b",
+	tinted_cyan_warmer = "#32548f",
+	tinted_cyan_faint = "#304463",
+	tinted_rust = "#8a290f",
+	tinted_olive = "#425d00",
 	tinted_bg_completion = "#f0c1cf",
+	tinted_bg_popup = "#f6eddd",
 	tinted_bg_hl_line = "#f1d5d0",
 	tinted_bg_paren_match = "#7fdfcf",
 	tinted_bg_status_line_active = "#cab9b2",
@@ -178,6 +187,7 @@ M.modus_operandi = {
 	deuteranopia_yellow = "#695500",
 	deuteranopia_yellow_warmer = "#973300",
 	deuteranopia_yellow_cooler = "#77492f",
+	deuteranopia_gold = "#70550f",
 	deuteranopia_bg_status_line_active = "#d0d6ff",
 	deuteranopia_fg_status_line_active = "#0f0f0f",
 	deuteranopia_bg_added = "#d5d7ff",
@@ -200,8 +210,10 @@ M.modus_operandi = {
 	deuteranopia_fg_removed_intense = "#7f6f00",
 
 	-- Tritanopia Variant
+	tritanopia_fg_alt = "#224960",
+	tritanopia_gold = "#70550f",
+	tritanopia_slate = "#104860",
 	tritanopia_red_warmer = "#b21100",
-	tritanopia_red_cooler = "#a0132f",
 	tritanopia_red_faint = "#702000",
 	tritanopia_yellow = "#695500",
 	tritanopia_yellow_warmer = "#973300",
@@ -247,7 +259,7 @@ M.modus_vivendi = {
 	-- Common foreground values
 	red = "#ff5f59",
 	red_warmer = "#ff6b55",
-	red_cooler = "#ff7f9f",
+	red_cooler = "#ff7f86",
 	red_faint = "#ff9580",
 	green = "#44bc44",
 	green_warmer = "#70b900",
@@ -303,15 +315,16 @@ M.modus_vivendi = {
 	bg_cyan_subtle = "#004065",
 
 	-- Nuanced can be combined with corresponding foreground ie. bg_red_nuanced with red
-	bg_red_nuanced = "#2c0614",
-	bg_green_nuanced = "#001904",
-	bg_yellow_nuanced = "#222000",
-	bg_blue_nuanced = "#0f0e39",
-	bg_magenta_nuanced = "#230631",
-	bg_cyan_nuanced = "#041529",
+	bg_red_nuanced = "#3a0c14",
+	bg_green_nuanced = "#092f1f",
+	bg_yellow_nuanced = "#381d0f",
+	bg_blue_nuanced = "#12154a",
+	bg_magenta_nuanced = "#2f0c3f",
+	bg_cyan_nuanced = "#042837",
 
 	-- Special purpose
 	bg_completion = "#2f447f",
+	bg_popup = "#0c0c0c",
 	bg_hl_line = "#2f3849",
 	bg_paren_match = "#2f7f9f",
 	bg_paren_expression = "#453040",
@@ -324,7 +337,7 @@ M.modus_vivendi = {
 	bg_inactive = "#282828",
 	fg_inactive = "#bfc0c4",
 	-- Status line specific colors
-	bg_status_line_active = "#404040",
+	bg_status_line_active = "#505050",
 	fg_status_line_active = "#f0f0f0",
 	bg_status_line_inactive = "#2d2d2d",
 	fg_status_line_inactive = "#969696",
@@ -372,17 +385,25 @@ M.modus_vivendi = {
 	tinted_border_highlight = "#b290b0",
 	tinted_bg_active = "#4a4f69",
 	tinted_bg_inactive = "#2b3045",
-	tinted_red_faint = "#ff9f80",
-	tinted_bg_red_nuanced = "#350f14",
-	tinted_bg_green_nuanced = "#002718",
-	tinted_bg_yellow_nuanced = "#2c1f00",
-	tinted_bg_blue_nuanced = "#131c4d",
-	tinted_bg_magenta_nuanced = "#2f133f",
-	tinted_bg_cyan_nuanced = "#04253f",
+	tinted_red_faint = "#ef8386",
+	tinted_green = "#44bc44",
+	tinted_green_warmer = "#75c13e",
+	tinted_green_cooler = "#11c777",
+	tinted_yellow = "#d0bc00",
+	tinted_yellow_warmer = "#fec43f",
+	tinted_yellow_cooler = "#dfaf7a",
+	tinted_yellow_faint = "#d2b580",
+	tinted_blue_warmer = "#79a8ff",
+	tinted_cyan = "#00d3d0",
+	tinted_cyan_warmer = "#4ae2f0",
+	tinted_cyan_faint = "#9ac8e0",
+	tinted_rust = "#db8b3f",
+	tinted_olive = "#9cbd6f",
 	tinted_bg_completion = "#483d8a",
+	tinted_bg_popup = "#14162c",
 	tinted_bg_hl_line = "#303a6f",
-	tinted_bg_paren_match = "#2f7f9f",
-	tinted_bg_status_line_active = "#393F51",
+	tinted_bg_paren_match = "#4f7f9f",
+	tinted_bg_status_line_active = "#484d67",
 	tinted_bg_status_line_inactive = "#292d48",
 	tinted_bg_tab_bar = "#2c3045",
 	tinted_bg_tab_current = "#0d0e1c",
@@ -403,6 +424,7 @@ M.modus_vivendi = {
 	deuteranopia_yellow = "#cabf00",
 	deuteranopia_yellow_warmer = "#ffa00f",
 	deuteranopia_yellow_cooler = "#d8af7a",
+	deuteranopia_gold = "#c0965b",
 	deuteranopia_bg_status_line_active = "#2a2a6a",
 	deuteranopia_fg_status_line_active = "#f0f0f0",
 	deuteranopia_bg_added = "#003066",
@@ -425,8 +447,10 @@ M.modus_vivendi = {
 	deuteranopia_fg_removed_intense = "#d0b05f",
 
 	-- Tritanopia Variant
+	tritanopia_fg_alt = "#a0d7f2",
+	tritanopia_gold = "#c0965b",
+	tritanopia_slate = "#76afbf",
 	tritanopia_red_warmer = "#ff6740",
-	tritanopia_red_cooler = "#ff6f9f",
 	tritanopia_red_faint = "#ff9070",
 	tritanopia_yellow = "#cabf00",
 	tritanopia_yellow_warmer = "#ffa00f",
@@ -475,65 +499,8 @@ function M.setup(opts)
 	---@class ColorScheme: Palette
 	local colors = vim.deepcopy(M[style])
 
-	colors.bg_sidebar = colors.bg_dim
-	colors.fg_sidebar = colors.fg_main
-
-	colors.cursor = colors.fg_main
-	colors.error = colors.red_cooler
-	colors.warning = colors.yellow_cooler
-	colors.info = colors.blue_cooler
-	colors.hint = colors.cyan_faint
-	colors.ok = colors.green_cooler
-	colors.success = colors.fg_added
-	colors.visual = colors.bg_magenta_intense
-	colors.accent_light = colors.blue_faint
-	colors.accent = colors.blue_warmer
-	colors.accent_darker = colors.blue
-	colors.accent_dark = colors.blue_intense
-
-	-- code specific mappings
-	colors.builtin = colors.magenta_warmer
-	colors.comment = colors.fg_dim
-	colors.fn = colors.magenta
-	colors.keyword = colors.magenta_cooler
-	colors.preproc = colors.red_cooler
-	colors.identifier = colors.cyan
-	colors.string = colors.blue_warmer
-	colors.type = colors.cyan_cooler
-
-	-- terminal
-	colors.bg_term_red = colors.red
-	colors.fg_term_red = colors.red
-	colors.bg_term_red_bright = colors.red_warmer
-	colors.fg_term_red_bright = colors.red_warmer
-	colors.bg_term_green = colors.green
-	colors.fg_term_green = colors.green
-	colors.bg_term_green_bright = colors.green_cooler
-	colors.fg_term_green_bright = colors.green_cooler
-	colors.bg_term_yellow = colors.yellow
-	colors.fg_term_yellow = colors.yellow
-	colors.bg_term_yellow_bright = colors.yellow_warmer
-	colors.fg_term_yellow_bright = colors.yellow_warmer
-	colors.bg_term_blue = colors.blue
-	colors.fg_term_blue = colors.blue
-	colors.bg_term_blue_bright = colors.blue_warmer
-	colors.fg_term_blue_bright = colors.blue_warmer
-	colors.bg_term_magenta = colors.magenta
-	colors.fg_term_magenta = colors.magenta
-	colors.bg_term_magenta_bright = colors.magenta_warmer
-	colors.fg_term_magenta_bright = colors.magenta_warmer
-	colors.bg_term_cyan = colors.cyan
-	colors.fg_term_cyan = colors.cyan
-	colors.bg_term_cyan_bright = colors.cyan_cooler
-	colors.fg_term_cyan_bright = colors.cyan_cooler
-
-	if style == "modus_operandi" then
-		colors.docstring = colors.green_faint
-	end
-	if style == "modus_vivendi" then
-		colors.docstring = colors.cyan_faint
-	end
-
+	-- Variant palette overrides. Named colors are replaced before any semantic
+	-- mapping below is derived, so the mappings pick up the variant values.
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main
 		colors.bg_dim = colors.tinted_bg_dim
@@ -542,13 +509,21 @@ function M.setup(opts)
 		colors.border = colors.tinted_border
 		colors.border_highlight = colors.tinted_border_highlight
 		colors.red_faint = colors.tinted_red_faint
-		colors.bg_red_nuanced = colors.tinted_bg_red_nuanced
-		colors.bg_green_nuanced = colors.tinted_bg_green_nuanced
-		colors.bg_yellow_nuanced = colors.tinted_bg_yellow_nuanced
-		colors.bg_blue_nuanced = colors.tinted_bg_blue_nuanced
-		colors.bg_magenta_nuanced = colors.tinted_bg_magenta_nuanced
-		colors.bg_cyan_nuanced = colors.tinted_bg_cyan_nuanced
+		colors.green = colors.tinted_green
+		colors.green_warmer = colors.tinted_green_warmer
+		colors.green_cooler = colors.tinted_green_cooler
+		colors.yellow = colors.tinted_yellow
+		colors.yellow_warmer = colors.tinted_yellow_warmer
+		colors.yellow_cooler = colors.tinted_yellow_cooler
+		colors.yellow_faint = colors.tinted_yellow_faint
+		colors.blue_warmer = colors.tinted_blue_warmer
+		colors.cyan = colors.tinted_cyan
+		colors.cyan_warmer = colors.tinted_cyan_warmer
+		colors.cyan_faint = colors.tinted_cyan_faint
+		colors.rust = colors.tinted_rust
+		colors.olive = colors.tinted_olive
 		colors.bg_completion = colors.tinted_bg_completion
+		colors.bg_popup = colors.tinted_bg_popup
 		colors.bg_hl_line = colors.tinted_bg_hl_line
 		colors.bg_status_line_active = colors.tinted_bg_status_line_active
 		colors.bg_status_line_inactive = colors.tinted_bg_status_line_inactive
@@ -567,34 +542,13 @@ function M.setup(opts)
 		colors.bg_removed_fringe = colors.tinted_bg_removed_fringe
 		colors.bg_diff_context = colors.tinted_bg_diff_context
 		colors.bg_paren_match = colors.tinted_bg_paren_match
-
-		colors.builtin = colors.magenta
-		colors.comment = colors.tinted_red_faint
-		colors.docstring = colors.cyan_faint
-
-		if style == "modus_operandi" then
-			colors.cursor = colors.red
-			colors.fn = colors.yellow_cooler
-			colors.keyword = colors.blue
-			colors.identifier = colors.green_cooler
-			colors.preproc = colors.yellow_warmer
-			colors.string = colors.cyan
-			colors.type = colors.green_warmer
-		end
-		if style == "modus_vivendi" then
-			colors.cursor = colors.magenta_warmer
-			colors.fn = colors.yellow_cooler
-			colors.keyword = colors.blue_warmer
-			colors.identifier = colors.cyan_warmer
-			colors.string = colors.blue
-			colors.type = colors.green_cooler
-		end
 	end
 
 	if variant == "deuteranopia" then
 		colors.yellow = colors.deuteranopia_yellow
 		colors.yellow_warmer = colors.deuteranopia_yellow_warmer
 		colors.yellow_cooler = colors.deuteranopia_yellow_cooler
+		colors.gold = colors.deuteranopia_gold
 		colors.bg_status_line_active = colors.deuteranopia_bg_status_line_active
 		colors.fg_status_line_active = colors.deuteranopia_fg_status_line_active
 		colors.bg_added = colors.deuteranopia_bg_added
@@ -615,35 +569,11 @@ function M.setup(opts)
 		colors.bg_removed_fringe = colors.deuteranopia_bg_removed_fringe
 		colors.fg_removed = colors.deuteranopia_fg_removed
 		colors.fg_removed_intense = colors.deuteranopia_fg_removed_intense
-
-		colors.bg_term_yellow = colors.deuteranopia_yellow
-		colors.fg_term_yellow = colors.deuteranopia_yellow
-		colors.bg_term_yellow_bright = colors.deuteranopia_yellow_warmer
-		colors.fg_term_yellow_bright = colors.deuteranopia_yellow_warmer
-
-		colors.error = colors.deuteranopia_yellow_warmer
-		colors.warning = colors.deuteranopia_yellow
-		colors.info = colors.blue
-		colors.success = colors.deuteranopia_fg_added
-
-		colors.builtin = colors.deuteranopia_yellow
-		colors.comment = colors.deuteranopia_yellow_cooler
-		colors.fn = colors.deuteranopia_yellow_warmer
-		colors.keyword = colors.blue_cooler
-		colors.preproc = colors.magenta_cooler
-
-		if style == "modus_operandi" then
-			colors.cursor = colors.blue_intense
-		end
-		if style == "modus_vivendi" then
-			colors.cursor = colors.yellow_intense
-			colors.docstring = colors.cyan_faint
-		end
 	end
 
 	if variant == "tritanopia" then
+		colors.fg_alt = colors.tritanopia_fg_alt
 		colors.red_warmer = colors.tritanopia_red_warmer
-		colors.red_cooler = colors.tritanopia_red_cooler
 		colors.red_faint = colors.tritanopia_red_faint
 		colors.yellow = colors.tritanopia_yellow
 		colors.yellow_warmer = colors.tritanopia_yellow_warmer
@@ -651,6 +581,8 @@ function M.setup(opts)
 		colors.magenta_intense = colors.tritanopia_magenta_intense
 		colors.cyan_warmer = colors.tritanopia_cyan_warmer
 		colors.cyan_faint = colors.tritanopia_cyan_faint
+		colors.gold = colors.tritanopia_gold
+		colors.slate = colors.tritanopia_slate
 		colors.bg_completion = colors.tritanopia_bg_completion
 		colors.bg_hl_line = colors.tritanopia_bg_hl_line
 		colors.bg_char_0 = colors.tritanopia_bg_char_0
@@ -670,31 +602,167 @@ function M.setup(opts)
 		colors.bg_changed_fringe = colors.tritanopia_bg_changed_fringe
 		colors.fg_changed = colors.tritanopia_fg_changed
 		colors.fg_changed_intense = colors.tritanopia_fg_changed_intense
+	end
 
-		colors.bg_term_red_bright = colors.tritanopia_red_warmer
-		colors.fg_term_red_bright = colors.tritanopia_red_warmer
-		colors.bg_term_yellow = colors.tritanopia_yellow
-		colors.fg_term_yellow = colors.tritanopia_yellow
-		colors.bg_term_yellow_bright = colors.tritanopia_yellow_warmer
-		colors.fg_term_yellow_bright = colors.tritanopia_yellow_warmer
+	colors.bg_sidebar = colors.bg_dim
+	colors.fg_sidebar = colors.fg_main
 
+	colors.cursor = colors.fg_main
+	colors.error = colors.red
+	colors.warning = colors.yellow_warmer
+	colors.info = colors.cyan_cooler
+	colors.hint = colors.cyan_faint
+	colors.ok = colors.green_cooler
+	colors.success = colors.fg_added
+	colors.visual = colors.bg_magenta_intense
+	colors.accent_light = colors.blue_faint
+	colors.accent = colors.blue_warmer
+	colors.accent_darker = colors.blue
+	colors.accent_dark = colors.blue_intense
+
+	-- Non-text underlines (diagnostics, spelling)
+	colors.underline_error = colors.red_intense
+	if style == "modus_operandi" then
+		colors.underline_warning = colors.yellow_intense
+		colors.underline_note = colors.cyan_intense
+	end
+	if style == "modus_vivendi" then
+		colors.underline_warning = colors.yellow
+		colors.underline_note = colors.cyan
+	end
+
+	-- code specific mappings
+	colors.builtin = colors.magenta_warmer
+	colors.comment = colors.fg_dim
+	colors.constant = colors.blue_cooler
+	colors.fn = colors.magenta
+	colors.fn_call = colors.pink
+	colors.keyword = colors.magenta_cooler
+	colors.preproc = colors.red_cooler
+	colors.identifier = colors.cyan
+	colors.variable_use = colors.slate
+	colors.string = colors.blue_warmer
+	colors.type = colors.cyan_cooler
+
+	if style == "modus_operandi" then
+		colors.docstring = colors.green_faint
+	end
+	if style == "modus_vivendi" then
+		colors.docstring = colors.cyan_faint
+	end
+
+	if variant == "tinted" then
+		colors.warning = colors.yellow
+
+		colors.builtin = colors.magenta
+		colors.comment = colors.red_faint
+		colors.constant = colors.magenta_cooler
+		colors.docstring = colors.cyan_faint
+
+		if style == "modus_operandi" then
+			colors.cursor = colors.red_intense
+			colors.info = colors.green
+			colors.fn = colors.yellow_cooler
+			colors.keyword = colors.blue
+			colors.identifier = colors.green_cooler
+			colors.variable_use = colors.green_faint
+			colors.preproc = colors.yellow_warmer
+			colors.string = colors.cyan
+			colors.type = colors.green_warmer
+		end
+		if style == "modus_vivendi" then
+			colors.cursor = colors.magenta_intense
+			colors.info = colors.green_cooler
+			colors.fn = colors.magenta_warmer
+			colors.keyword = colors.blue_warmer
+			colors.identifier = colors.cyan_warmer
+			colors.string = colors.blue
+			colors.type = colors.green_cooler
+		end
+	end
+
+	if variant == "deuteranopia" then
+		colors.error = colors.yellow_warmer
+		colors.warning = colors.yellow
+		colors.info = colors.blue
+
+		colors.underline_error = colors.yellow_intense
+		colors.underline_warning = colors.magenta_faint
+		colors.underline_note = colors.cyan
+
+		colors.builtin = colors.yellow
+		colors.comment = colors.yellow_cooler
+		colors.constant = colors.blue_faint
+		colors.fn = colors.yellow_warmer
+		colors.fn_call = colors.gold
+		colors.keyword = colors.blue_cooler
+		colors.preproc = colors.magenta_cooler
+
+		if style == "modus_operandi" then
+			colors.cursor = colors.blue_intense
+			colors.variable_use = colors.indigo
+		end
+		if style == "modus_vivendi" then
+			colors.cursor = colors.yellow_intense
+		end
+	end
+
+	if variant == "tritanopia" then
 		colors.error = colors.red_warmer
 		colors.warning = colors.magenta
 		colors.info = colors.cyan
-		colors.success = colors.tritanopia_fg_added
+
+		colors.underline_error = colors.red_intense
+		colors.underline_warning = colors.magenta_intense
+		colors.underline_note = colors.cyan_intense
 
 		colors.builtin = colors.magenta
-		colors.comment = colors.tritanopia_red_faint
+		colors.comment = colors.red_faint
 		colors.docstring = colors.fg_alt
-		colors.fn = colors.tritanopia_cyan_warmer
-		colors.keyword = colors.tritanopia_red_cooler
-		colors.preproc = colors.tritanopia_red_warmer
+		colors.fn = colors.cyan_warmer
+		colors.fn_call = colors.indigo
+		colors.keyword = colors.red_cooler
+		colors.preproc = colors.red_warmer
 		colors.identifier = colors.cyan_cooler
 		colors.string = colors.cyan
 		colors.type = colors.blue_warmer
 
+		if style == "modus_operandi" then
+			colors.constant = colors.green_cooler
+		end
+		if style == "modus_vivendi" then
+			colors.constant = colors.green_faint
+		end
+
 		colors.cursor = colors.red_intense
 	end
+
+	-- terminal
+	colors.bg_term_red = colors.red
+	colors.fg_term_red = colors.red
+	colors.bg_term_red_bright = colors.red_warmer
+	colors.fg_term_red_bright = colors.red_warmer
+	colors.bg_term_green = colors.green
+	colors.fg_term_green = colors.green
+	colors.bg_term_green_bright = colors.green_cooler
+	colors.fg_term_green_bright = colors.green_cooler
+	colors.bg_term_yellow = colors.yellow
+	colors.fg_term_yellow = colors.yellow
+	colors.bg_term_yellow_bright = colors.yellow_warmer
+	colors.fg_term_yellow_bright = colors.yellow_warmer
+	colors.bg_term_blue = colors.blue
+	colors.fg_term_blue = colors.blue
+	colors.bg_term_blue_bright = colors.blue_warmer
+	colors.fg_term_blue_bright = colors.blue_warmer
+	colors.bg_term_magenta = colors.magenta
+	colors.fg_term_magenta = colors.magenta
+	colors.bg_term_magenta_bright = colors.magenta_cooler
+	colors.fg_term_magenta_bright = colors.magenta_cooler
+	colors.bg_term_cyan = colors.cyan
+	colors.fg_term_cyan = colors.cyan
+	colors.bg_term_cyan_bright = colors.cyan_cooler
+	colors.fg_term_cyan_bright = colors.cyan_cooler
+
 	config.options.on_colors(colors)
 
 	return colors
