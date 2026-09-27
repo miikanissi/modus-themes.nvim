@@ -212,6 +212,9 @@ require("modus-themes").setup({
 <!-- extras:end -->
 <!-- prettier-ignore-end -->
 
+The Foot themes need Foot 1.26 or newer, which uses the `[colors-dark]` and
+`[colors-light]` sections.
+
 ## Contributing
 
 Contributions are welcome. Feel free to create a
